@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Homepage Featured Products</title>
+        <title lang="de-DE">Startseite - Hervorgehobene Produkte</title>
+
+        <input-field type="single-select">
+            <name>featuredProductsSource</name>
+            <label>Featured products source</label>
+            <label lang="de-DE">Quelle fuer hervorgehobene Produkte</label>
+            <options>
+                <option>
+                    <id>latest</id>
+                    <name>Latest products</name>
+                    <name lang="de-DE">Neueste Produkte</name>
+                </option>
+                <option>
+                    <id>category</id>
+                    <name>By category ID</name>
+                    <name lang="de-DE">Nach Kategorie-ID</name>
+                </option>
+                <option>
+                    <id>manual</id>
+                    <name>Manual product IDs</name>
+                    <name lang="de-DE">Manuelle Produkt-IDs</name>
+                </option>
+            </options>
+            <defaultValue>latest</defaultValue>
+        </input-field>
+
+        <input-field type="int">
+            <name>featuredProductsLimit</name>
+            <label>Number of products</label>
+            <label lang="de-DE">Anzahl Produkte</label>
+            <defaultValue>4</defaultValue>
+            <min>1</min>
+            <max>12</max>
+        </input-field>
+
+        <input-field type="text">
+            <name>featuredCategoryId</name>
+            <label>Category ID (UUID) for category source</label>
+            <label lang="de-DE">Kategorie-ID (UUID) fuer Kategorie-Quelle</label>
+            <placeholder>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</placeholder>
+        </input-field>
+
+        <input-field type="text">
+            <name>featuredProductIds</name>
+            <label>Manual product IDs (comma-separated UUIDs)</label>
+            <label lang="de-DE">Manuelle Produkt-IDs (durch Komma getrennte UUIDs)</label>
+            <placeholder>uuid-1,uuid-2,uuid-3</placeholder>
+        </input-field>
+    </card>
+</config>

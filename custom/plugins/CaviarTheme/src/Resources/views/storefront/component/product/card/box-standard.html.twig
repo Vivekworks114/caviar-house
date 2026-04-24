@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box_image_placeholder %}
+    {% set productCardFallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='750' viewBox='0 0 600 750'%3E%3Crect width='600' height='750' fill='%23f3f1ed'/%3E%3Cellipse cx='250' cy='350' rx='170' ry='150' fill='%23d8cfbf'/%3E%3Cellipse cx='380' cy='420' rx='150' ry='130' fill='%23c9beac'/%3E%3C/svg%3E" %}
+    <img
+        src="{{ productCardFallbackImage }}"
+        class="caviar-media-placeholder caviar-media-ratio-4x5 product-image is-standard"
+        alt="{{ product.translated.name|default('Product placeholder') }}"
+        loading="lazy"
+    >
+{% endblock %}

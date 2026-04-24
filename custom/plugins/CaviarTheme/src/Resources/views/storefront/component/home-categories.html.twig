@@ -1,0 +1,54 @@
+<section class="caviar-home-categories" aria-label="{{ 'CaviarTheme.home.categories.aria'|trans|sw_sanitize }}">
+    {% set categoryFallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600' viewBox='0 0 900 600'%3E%3Crect width='900' height='600' fill='%23f3f1ed'/%3E%3Cellipse cx='360' cy='300' rx='220' ry='180' fill='%23d8cfbf'/%3E%3Cellipse cx='560' cy='340' rx='180' ry='150' fill='%23c9beac'/%3E%3C/svg%3E" %}
+    <div class="caviar-home-categories__container">
+        <div class="caviar-home-categories__intro">
+            <h2 class="caviar-home-categories__title">{{ 'CaviarTheme.home.categories.title'|trans|sw_sanitize }}</h2>
+            <p class="caviar-home-categories__text">{{ 'CaviarTheme.home.categories.text'|trans|sw_sanitize }}</p>
+            <a class="caviar-home-categories__cta caviar-btn" href="{{ path('frontend.navigation.page', { navigationId: context.salesChannel.navigationCategoryId }) }}">
+                {{ 'CaviarTheme.home.categories.cta'|trans|sw_sanitize }}
+            </a>
+        </div>
+
+        <div class="caviar-home-categories__cards">
+            {% set dynamicCategories = homeCategories ?? null %}
+            {% if dynamicCategories and dynamicCategories|length > 0 %}
+                {% for category in dynamicCategories|slice(0, 2) %}
+                    <article class="caviar-home-category-card">
+                        <a href="{{ seoUrl('frontend.navigation.page', { navigationId: category.id }) }}" class="caviar-home-category-card__media-link">
+                            {% if category.media and category.media.url %}
+                                <img
+                                    src="{{ category.media.url }}"
+                                    class="caviar-home-category-card__media"
+                                    alt="{{ category.translated.name }}"
+                                    loading="lazy"
+                                >
+                            {% else %}
+                                <img
+                                    src="{{ categoryFallbackImage }}"
+                                    class="caviar-home-category-card__media"
+                                    alt="{{ 'CaviarTheme.home.categories.cardAlt'|trans|sw_sanitize }}"
+                                    loading="lazy"
+                                >
+                            {% endif %}
+                        </a>
+                        <div class="caviar-home-category-card__caption">{{ category.translated.name }}</div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                {% for i in 1..2 %}
+                    <article class="caviar-home-category-card">
+                        <a href="#" class="caviar-home-category-card__media-link">
+                            <img
+                                src="{{ categoryFallbackImage }}"
+                                class="caviar-home-category-card__media"
+                                alt="{{ 'CaviarTheme.home.categories.cardAlt'|trans|sw_sanitize }}"
+                                loading="lazy"
+                            >
+                        </a>
+                        <div class="caviar-home-category-card__caption">{{ 'CaviarTheme.home.categories.cardLabel'|trans|sw_sanitize }}</div>
+                    </article>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>

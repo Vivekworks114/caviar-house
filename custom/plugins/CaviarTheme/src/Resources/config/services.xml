@@ -11,6 +11,8 @@
 
         <service id="CaviarTheme\Subscriber\StorefrontSubscriber">
             <argument type="service" id="category.repository"/>
+            <argument type="service" id="sales_channel.product.repository"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
             <tag name="kernel.event_subscriber"/>
         </service>
 

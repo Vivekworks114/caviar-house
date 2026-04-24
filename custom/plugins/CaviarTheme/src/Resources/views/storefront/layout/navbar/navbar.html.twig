@@ -1,37 +1,31 @@
 {% sw_extends '@Storefront/storefront/layout/navbar/navbar.html.twig' %}
 
 {% block layout_navbar %}
-    <div class="container">
-        <div class="caviar-main-nav-row">
-            <nav class="navbar navbar-expand-lg main-navigation-menu"
-                 id="main-navigation-menu"
-                 itemscope="itemscope"
-                 itemtype="https://schema.org/SiteNavigationElement"
-                 aria-label="{{ 'header.navigationAriaLabel'|trans|striptags }}">
-                <div class="collapse navbar-collapse" id="main_nav">
-                    <ul class="navbar-nav main-navigation-menu-list">
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">CAVIARS</a></li>
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">SAUMONS</a></li>
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">EPICERIE &amp; CAVE</a></li>
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">CADEAUX</a></li>
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">ACCESSOIRES</a></li>
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">LA MARQUE</a></li>
-                        <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">NOUS CONTACTER</a></li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="caviar-nav-actions" aria-label="Header actions">
-                <a href="#" class="caviar-nav-action" aria-label="Search">
-                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-search.svg') }}" alt="">
-                </a>
-                <a href="{{ path('frontend.account.home.page') }}" class="caviar-nav-action" aria-label="Account">
-                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-account.svg') }}" alt="">
-                </a>
-                <a href="{{ path('frontend.checkout.cart.page') }}" class="caviar-nav-action" aria-label="Cart">
-                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-cart.svg') }}" alt="">
-                </a>
-            </div>
+    <div class="caviar-main-nav-row" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+        <div class="caviar-main-nav-icons" aria-label="{{ 'header.actionsAriaLabel'|trans|striptags }}">
+            <a href="#" class="caviar-nav-action" aria-label="{{ 'header.searchButton'|trans|striptags }}">
+                <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-search.svg') }}" alt="">
+            </a>
+            <a href="{{ path('frontend.account.home.page') }}" class="caviar-nav-action" aria-label="{{ 'header.accountButton'|trans|striptags }}">
+                <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-account.svg') }}" alt="">
+            </a>
+            <a href="{{ path('frontend.checkout.cart.page') }}" class="caviar-nav-action" aria-label="{{ 'header.cartButton'|trans|striptags }}">
+                <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-cart.svg') }}" alt="">
+            </a>
         </div>
+
+        <nav class="navbar navbar-expand-lg main-navigation-menu" id="main-navigation-menu" aria-label="{{ 'header.navigationAriaLabel'|trans|striptags }}">
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav main-navigation-menu-list">
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.caviars'|trans|sw_sanitize }}</a></li>
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.saumons'|trans|sw_sanitize }}</a></li>
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.epicerie'|trans|sw_sanitize }}</a></li>
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.cadeaux'|trans|sw_sanitize }}</a></li>
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.accessoires'|trans|sw_sanitize }}</a></li>
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.marque'|trans|sw_sanitize }}</a></li>
+                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.contact'|trans|sw_sanitize }}</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 {% endblock %}

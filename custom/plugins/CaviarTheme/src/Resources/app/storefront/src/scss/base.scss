@@ -1,4 +1,9 @@
 @import "base/font";
+@import "tokens/colors";
+@import "tokens/spacing";
+@import "tokens/typography";
+@import "tokens/shadows";
+@import "utilities/media-placeholders";
 
 //layout
 @import "layout/top-bar";
@@ -14,7 +19,13 @@
 @import "component/cms-block";
 @import "component/cms-section";
 @import "component/breadcrumb";
+@import "component/buttons";
+@import "component/cards";
 
 //prodsuct detail
 @import "page/product-detail";
 @import "page/home-hero";
+@import "page/home";
+@import "page/listing";
+@import "page/product";
+@import "page/checkout";

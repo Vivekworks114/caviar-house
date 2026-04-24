@@ -1,0 +1,23 @@
+.caviar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  background: #0d3d34;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.caviar-btn:hover,
+.caviar-btn:focus {
+  background: #0a312a;
+  color: #fff;
+}

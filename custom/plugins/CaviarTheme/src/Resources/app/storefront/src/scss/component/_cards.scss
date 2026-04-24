@@ -1,0 +1,14 @@
+.product-box {
+  border: 1px solid $caviar-color-border;
+  background: $caviar-color-bg;
+}
+
+.product-box .product-name {
+  color: $caviar-color-text;
+  font-family: $caviar-font-heading;
+}
+
+.product-box .product-price {
+  color: $caviar-color-text;
+  font-family: $caviar-font-body;
+}

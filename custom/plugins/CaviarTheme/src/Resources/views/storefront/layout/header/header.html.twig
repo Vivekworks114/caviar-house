@@ -1,6 +1,47 @@
 {% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
 
-{% block layout_top_bar %}{% endblock %}
+{% block layout_top_bar %}
+    <div class="top-bar d-none d-lg-block">
+        <div class="top-bar-nav" aria-label="{{ 'header.topBarAriaLabel'|trans|striptags }}">
+            <div class="top-bar-announcement-row">
+                <div class="top-bar-message">
+                    {{ 'CaviarTheme.header.bannerText'|trans|sw_sanitize }}
+                </div>
+
+                <a class="top-bar-logo-link" href="{{ path('frontend.home.page') }}" title="{{ 'header.logoLink'|trans|striptags }}">
+                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/header/logo-latest.svg') }}"
+                         alt="{{ 'header.logoLink'|trans|striptags }}"
+                         class="top-bar-logo-img">
+                </a>
+
+                <div class="top-bar-meta">
+                    <a href="{{ path('frontend.navigation.page', { navigationId: context.salesChannel.navigationCategoryId }) }}" class="top-bar-locator">
+                        <span class="top-bar-locator-icon" aria-hidden="true">
+                            <svg viewBox="0 0 12 12" focusable="false">
+                                <path d="M6 11C6 11 10 7.6 10 4.8C10 2.7 8.2 1 6 1C3.8 1 2 2.7 2 4.8C2 7.6 6 11 6 11Z"></path>
+                                <circle cx="6" cy="4.8" r="1.4"></circle>
+                            </svg>
+                        </span>
+                        {{ 'CaviarTheme.header.findUs'|trans|sw_sanitize }}
+                    </a>
+
+                    <div class="top-bar-locale">
+                        <span class="top-bar-flag" aria-hidden="true">
+                            <svg viewBox="0 0 14 10" focusable="false">
+                                <rect width="14" height="10" fill="#ffffff"></rect>
+                                <rect width="4.67" height="10" fill="#1f4fb3"></rect>
+                                <rect x="9.33" width="4.67" height="10" fill="#d62828"></rect>
+                            </svg>
+                        </span>
+                        <span class="top-bar-locale-text">{{ 'CaviarTheme.header.locale'|trans|sw_sanitize }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_header_navigation %}{% endblock %}
 
 {% block layout_header_search %}{% endblock %}
 

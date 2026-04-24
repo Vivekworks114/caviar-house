@@ -9,6 +9,10 @@
 {% block cms_content %}
     {% if app.request.attributes.get('_route') == 'frontend.home.page' %}
         {% sw_include '@CaviarTheme/storefront/component/home-hero.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-claim.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-placeholder-a.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-featured-products.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-categories.html.twig' %}
     {% endif %}
 
     {{ parent() }}

@@ -1,0 +1,18 @@
+.caviar-media-placeholder {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: $caviar-color-surface;
+}
+
+.caviar-media-ratio-4x5 {
+  aspect-ratio: 4 / 5;
+}
+
+.caviar-media-ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.caviar-media-ratio-1x1 {
+  aspect-ratio: 1;
+}

@@ -1,3 +1,20 @@
 <section class="caviar-home-hero">
-    <div class="caviar-home-hero__bg" role="img" aria-label="Hero banner"></div>
+    <div class="caviar-home-hero__bg">
+        <img
+            class="caviar-home-hero__image"
+            src="{{ asset('/bundles/caviartheme/storefront/assets/hero/home-hero-banner.png') }}"
+            alt="{{ 'CaviarTheme.home.heroAlt'|trans|default('Caviar House hero banner') }}"
+            loading="eager"
+            fetchpriority="high"
+        >
+
+        <div class="caviar-home-hero__overlay-card">
+            <p class="caviar-home-hero__overlay-eyebrow">{{ 'CaviarTheme.home.heroCard.eyebrow'|trans|sw_sanitize }}</p>
+            <h2 class="caviar-home-hero__overlay-title">{{ 'CaviarTheme.home.heroCard.title'|trans|sw_sanitize }}</h2>
+            <p class="caviar-home-hero__overlay-text">{{ 'CaviarTheme.home.heroCard.text'|trans|sw_sanitize }}</p>
+            <a class="caviar-home-hero__overlay-cta" href="#">
+                {{ 'CaviarTheme.home.heroCard.cta'|trans|sw_sanitize }}
+            </a>
+        </div>
+    </div>
 </section>

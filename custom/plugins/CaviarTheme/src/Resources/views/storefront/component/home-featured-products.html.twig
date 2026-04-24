@@ -1,0 +1,95 @@
+<section class="caviar-home-featured" aria-label="{{ 'CaviarTheme.home.featured.aria'|trans|sw_sanitize }}">
+    {% set featuredFallbackImage = asset('/bundles/caviartheme/storefront/assets/hero/home-hero-banner.png') %}
+    <div class="caviar-home-featured__container">
+        <h2 class="caviar-home-featured__title">{{ 'CaviarTheme.home.featured.title'|trans|sw_sanitize }}</h2>
+
+        <div class="caviar-home-featured__grid">
+            {% set dynamicProducts = featuredProducts ?? null %}
+            {% if dynamicProducts and dynamicProducts|length > 0 %}
+                {% for product in dynamicProducts %}
+                    <article class="caviar-home-featured-card">
+                        <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                        <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
+                        <a href="{{ seoUrl('frontend.detail.page', { productId: product.id }) }}" class="caviar-home-featured-card__media-link">
+                            {% if product.cover and product.cover.media and product.cover.media.url %}
+                                <img
+                                    src="{{ product.cover.media.url }}"
+                                    class="caviar-home-featured-card__media"
+                                    alt="{{ product.cover.media.translated.alt ?: product.translated.name }}"
+                                    onerror="this.onerror=null;this.src='{{ featuredFallbackImage }}';"
+                                    loading="lazy"
+                                >
+                            {% else %}
+                                <img
+                                    src="{{ featuredFallbackImage }}"
+                                    class="caviar-home-featured-card__media"
+                                    alt="{{ 'CaviarTheme.home.featured.cardAlt'|trans|sw_sanitize }}"
+                                    loading="lazy"
+                                >
+                            {% endif %}
+                        </a>
+                        <div class="caviar-home-featured-card__body">
+                            <h3 class="caviar-home-featured-card__name">{{ product.translated.name }}</h3>
+                            <p class="caviar-home-featured-card__meta">
+                                {% if product.manufacturer and product.manufacturer.translated and product.manufacturer.translated.name %}
+                                    • {{ product.manufacturer.translated.name|upper }} •
+                                {% else %}
+                                    {{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}
+                                {% endif %}
+                            </p>
+                            <div class="caviar-home-featured-card__price-row">
+                                <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                <span class="caviar-home-featured-card__price-value">
+                                    {% if product.calculatedPrice is defined and product.calculatedPrice %}
+                                        {{ product.calculatedPrice.unitPrice|currency }}
+                                    {% else %}
+                                        {{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}
+                                    {% endif %}
+                                </span>
+                                <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                {% for i in 1..4 %}
+                <article class="caviar-home-featured-card">
+                    <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                    <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
+                    <a href="#" class="caviar-home-featured-card__media-link">
+                        <img
+                            src="{{ featuredFallbackImage }}"
+                            class="caviar-home-featured-card__media"
+                            alt="{{ 'CaviarTheme.home.featured.cardAlt'|trans|sw_sanitize }}"
+                            loading="lazy"
+                        >
+                    </a>
+                    <div class="caviar-home-featured-card__body">
+                        <h3 class="caviar-home-featured-card__name">{{ 'CaviarTheme.home.featured.cardName'|trans|sw_sanitize }}</h3>
+                        <p class="caviar-home-featured-card__meta">{{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}</p>
+                        <div class="caviar-home-featured-card__price-row">
+                            <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                            <span class="caviar-home-featured-card__price-value">{{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}</span>
+                            <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="caviar-home-featured__actions">
+            <div class="caviar-home-featured__pagination" aria-hidden="true">
+                <span>&lsaquo;</span>
+                <span>1</span>
+                <span class="is-active">2</span>
+                <span>…</span>
+                <span>5</span>
+                <span>&rsaquo;</span>
+            </div>
+            <a href="{{ path('frontend.search.page') }}" class="caviar-home-featured__cta-link">
+                {{ 'CaviarTheme.home.featured.cta'|trans|sw_sanitize }}
+            </a>
+        </div>
+    </div>
+</section>
