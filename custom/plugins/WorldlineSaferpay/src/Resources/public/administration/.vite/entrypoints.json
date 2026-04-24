@@ -1,0 +1,27 @@
+{
+  "base": "/bundles/worldlinesaferpay/administration/",
+  "entryPoints": {
+    "worldline-saferpay": {
+      "css": [
+        "/bundles/worldlinesaferpay/administration/assets/worldline-saferpay-Cs7HeoXi.css"
+      ],
+      "dynamic": [
+        "/bundles/worldlinesaferpay/administration/assets/index-CmX7cwAJ.js"
+      ],
+      "js": [
+        "/bundles/worldlinesaferpay/administration/assets/worldline-saferpay-RbQcMVBY.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}

@@ -1,0 +1,116 @@
+{% sw_extends '@Storfront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_service_menu_content %}{% endblock %}
+{% block layout_footer_copyright %}{% endblock %}
+
+{% block layout_footer_navigation_hotline_content %}
+    {% set cmsPath = 'frontend.cms.page.full' %}
+
+    <div id="collapseFooterHotline"
+         class="footer-column-content collapse js-footer-column-content footer-contact mb-4 mb-md-0"
+         aria-labelledby="collapseFooterHotlineTitle"
+         role="listitem">
+
+        <div class="footer-column-content-inner">
+            <p class="footer-contact-hotline">
+                {{ 'CaviarTheme.footer.contact'|trans|sw_sanitize }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_footer_navigation_columns %}
+    {{ parent() }}
+
+    {# Your 4th column – Newsletter #}
+    <div class="footer-column footer-column-newsletter col-md-3">
+        {% block layout_footer_newsletter %}
+        <div class="footer-column-headline footer-headline js-footer-column-headline"
+             id="collapseFooterTitle3"
+             role="listitem">
+                {{ "newsletter.headline"|trans|sw_sanitize }}
+
+            <button class="footer-column-toggle btn btn-link btn-link-inline js-collapse-footer-column-trigger collapsed"
+                    data-bs-target="#collapseFooter3"
+                    data-bs-toggle="collapse"
+                    aria-controls="collapseFooter3"
+                    aria-labelledby="collapseFooterTitle3"
+                    aria-expanded="false">
+
+                {% sw_icon 'plus' style {
+                    class: 'footer-plus'
+                } %}
+
+                {% sw_icon 'minus' style {
+                    class: 'footer-minus'
+                } %}
+            </button>
+        </div>
+
+        <div id="collapseFooter3"
+             class="footer-column-content collapse js-footer-column-content"
+             aria-labelledby="collapseFooterTitle3"
+             role="listitem">
+
+            <div class="footer-column-content-inner">
+
+            <div class="cms-block cus-newsletter-section">
+                <div class="cms-block-container-row">
+                    <div class="cms-element-form">
+                        <form action="{{ path('frontend.form.newsletter.register.handle') }}"
+                              method="post"
+                              data-form-validation="true">
+
+                            <div class="form-content">
+
+                                <input name="option" id="newsletterAction" type="hidden" value="subscribe">
+
+                                <div class="row">
+                                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                                        with {
+                                        fieldName: 'email',
+                                        type: 'email',
+                                        required: true,
+                                        additionalClass: 'col-12',
+                                        label: 'newsletter.labelMail',
+                                        placeholder: 'newsletter.placeholderMail'
+                                    } %}
+                                    <div class="col-12">
+                                        {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-submit.html.twig'
+                                            with{
+                                            submitText: 'newsletter.formSubmit',
+                                        } %}
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-hidden-fields">
+                                <input type="submit" class="submit--hidden d-none">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block layout_footer_bottom %}
+    {{ parent() }}
+    <div class="footer-copyright">
+        {% for serviceMenuItem in footer.serviceMenu %}
+            <li class="footer-service-menu-item">
+                <a class="footer-service-menu-link"
+                   href="{{ serviceMenuItem.seoUrl }}"
+                   {% if serviceMenuItem.shouldOpenInNewTab %}target="_blank"{% endif %}
+                   title="{{ serviceMenuItem.translated.name }}">
+                    {{ serviceMenuItem.translated.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </div>
+{% endblock %}
+

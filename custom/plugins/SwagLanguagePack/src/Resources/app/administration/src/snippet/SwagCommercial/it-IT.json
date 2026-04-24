@@ -1,0 +1,2771 @@
+{
+    "apps": {
+        "sw-cms": {
+            "detail": {
+                "label": {
+                    "blockCategory": {
+                        "spatial-commerce": "3D"
+                    }
+                }
+            }
+        }
+    },
+    "commercial": {
+        "checkout-sweetener": {
+            "activateAiCopilot": "Attiva i messaggi di check-out generati da AI Copilot",
+            "availabilityRule": "Regola della disponibilità",
+            "availabilityRuleHelpText": "Usa le regole per controllare l'ambito e il pubblico dei messaggi di check-out.",
+            "characterLimit": "Numero caratteri",
+            "characterLimitHelpText": "Il conteggio dei personaggi è solo una linea guida per l'IA. L'IA cercherà di generare un testo il più vicino possibile al numero di caratteri. I nomi dei prodotti non vengono conteggiati nel conteggio dei caratteri.",
+            "description": "I messaggi di pagamento generati dall'intelligenza artificiale possono essere visualizzati nella pagina di conferma al termine della procedura di pagamento. Questi messaggi di pagamento individuali forniscono un livello più elevato di personalizzazione del tuo negozio.",
+            "disclaimer": "Le risposte dell'IA possono non essere accurate o fuorvianti.",
+            "disclaimerHint": "«Questo testo è stato completamente generato da un'intelligenza artificiale».",
+            "keywordOptions": {
+                "exciting": "Eccitato",
+                "humorous": "Divertente",
+                "neutral": "Neutro"
+            },
+            "messageFailure": "Il servizio non è disponibile al momento. Riprova più tardi.",
+            "messageSuccess": "Messaggio generato con successo.",
+            "modalDescription": "Modifica i singoli parametri o la selezione dei prodotti per avere un'idea dei messaggi di pagamento generati dall'IA.",
+            "modalGeneratePreview": "Genera anteprima",
+            "modalPreview": "Messaggio di check-out",
+            "modalProductsHelperText": "Seleziona uno o più prodotti per avere un'idea di come potrebbe apparire il messaggio di check-out.",
+            "modalProductsPlaceholder": "Seleziona prodotti...",
+            "modalProductsSelection": "Selezione dei prodotti",
+            "modalTitle": "Anteprima del messaggio di check-out",
+            "modalToneOfVoicePlaceholder": "Seleziona il tono di voce...",
+            "orderHelpText": "Il messaggio di pagamento generato dall'IA è stato visualizzato nella pagina di conferma di questo ordine. Questo messaggio non può essere modificato e viene salvato qui a scopo di documentazione.",
+            "orderSettingsLink": "Modificare le impostazioni",
+            "preview": "Anteprima di AI Copilot",
+            "title": "Messaggio di check-out",
+            "toneOfVoice": "Tono di voce",
+            "toneOfVoiceHelpText": "Impostando il tono di voce puoi influenzare l'umore dei testi generati dall'intelligenza artificiale."
+        },
+        "subscriptions": {
+            "order": {
+                "labelSubscription": "Abbonamento"
+            },
+            "product": {
+                "card": {
+                    "description": "Assegna piani di abbonamento al tuo prodotto per offrire ordini ricorrenti ai tuoi clienti. I piani di abbonamento e gli intervalli corrispondenti possono essere impostati {link}.",
+                    "descriptionLink": "qui",
+                    "labelPlans": "Piani di abbonamento",
+                    "placeholderPlans": "Seleziona i piani di abbonamento...",
+                    "title": "Abbonamenti"
+                }
+            },
+            "settings": {
+                "activeLabel": "Attivo",
+                "availability": "Regola della disponibilità",
+                "availabilityPlaceholder": "Scegli la regola di disponibilità...",
+                "descriptionLabel": "Descrizione",
+                "descriptionPlaceholder": "Inserisci descrizione...",
+                "discountPercentageLabel": "Sconto (%)",
+                "discountPercentagePlaceholder": "Inserisci lo sconto...",
+                "generalTitle": "Generale",
+                "interval": {
+                    "advancedSettings": "Impostazioni avanzate",
+                    "advancedSettingsExclusiveSelections": "«Giorni del mese» e «Giorni della settimana» si escludono a vicenda.",
+                    "cronOptions": {
+                        "daysOfMonth": {
+                            "label": "Giorni del mese",
+                            "placeholder": "Seleziona giorno/i specifici..."
+                        },
+                        "daysOfWeek": {
+                            "friday": "Venerdì",
+                            "label": "Giorni della settimana",
+                            "monday": "Lunedì",
+                            "placeholder": "Seleziona giorni della settimana specifici...",
+                            "saturday": "Sabato",
+                            "sunday": "Domenica",
+                            "thursday": "Giovedì",
+                            "tuesday": "Martedì",
+                            "wednesday": "Mercoledì"
+                        },
+                        "monthsOfYear": {
+                            "april": "Aprile",
+                            "august": "Agosto",
+                            "december": "Dicembre",
+                            "february": "febbraio",
+                            "january": "Gennaio",
+                            "july": "luglio",
+                            "june": "giugno",
+                            "label": "Mesi",
+                            "march": "marzo",
+                            "may": "maggio",
+                            "november": "Novembre",
+                            "october": "ottobre",
+                            "placeholder": "Seleziona mese/i specifico/i...",
+                            "september": "Settembre"
+                        }
+                    },
+                    "deleteModalInfoText": "Questo intervallo verrà eliminato da tutti i piani in cui è stato selezionato. Gli abbonamenti associati rimarranno invariati.",
+                    "emptySubline": "Non ci sono ancora intervalli.",
+                    "emptyTitle": "Nessun intervallo trovato",
+                    "frequency": "Frequenza",
+                    "frequencyDays": "Giorni",
+                    "frequencyDescription": "Inserisci una frequenza con cui i tuoi ordini devono essere ripetuti. Utilizza le impostazioni avanzate per creare intervalli di ordine specifici, ad esempio il primo lunedì del mese o date distinte.",
+                    "frequencyDisabled": "La frequenza è disabilitata perché sono configurate le impostazioni avanzate.",
+                    "frequencyLabel": "Frequenza",
+                    "frequencyMonths": "Mesi",
+                    "frequencyPlaceholder": "Inserisci la frequenza...",
+                    "frequencyWeeks": "Settimane",
+                    "headlineNew": "Nuovo intervallo",
+                    "preview": {
+                        "helpText": "La frequenza viene utilizzata come base per il calcolo delle date di anteprima. Tutti gli altri filtri sono secondari.",
+                        "impossibleIntervalError": "Le date degli ordini non possono essere calcolate con le impostazioni degli intervalli",
+                        "modalHelpText": "In questa anteprima, vengono visualizzate 15 date future degli ordini per dare un'idea dell'intervallo.",
+                        "modalSubTitle": "Con le impostazioni scelte, queste potrebbero essere alcune date future dell'ordine se un ordine venisse effettuato oggi",
+                        "modalTitle": "Anteprima delle date degli ordini",
+                        "title": "Date previste per gli ordini, se ordinati oggi.",
+                        "viewMoreDates": "Visualizza altro"
+                    },
+                    "saveInfoMessage": "Le modifiche salvate non verranno applicate agli abbonamenti esistenti",
+                    "searchPlaceholder": "Intervalli di ricerca..."
+                },
+                "intervals": "Intervalli",
+                "labelLabel": "Label",
+                "labelPlaceholder": "Inserisci etichetta...",
+                "labelStorefrontLabel": "Usa un nome diverso nella vetrina",
+                "minimumExecutionCountHelpText": "L'ordine iniziale viene conteggiato come esecuzione.",
+                "minimumExecutionCountLabel": "Durata minima (numero di esecuzioni degli ordini)",
+                "minimumExecutionCountPlaceholder": "Inserisci la durata minima...",
+                "nameLabel": "Nome",
+                "namePlaceholder": "Inserisci nome...",
+                "plan": {
+                    "addProducts": "Aggiungi prodotti",
+                    "addProductsButton": "Aggiungi {selectedProductsLength} prodotti | Aggiungi {selectedProductsLength} prodotto | Aggiungi {selectedProductsLength} prodotti",
+                    "deleteModalInfoText": "Gli abbonamenti e gli intervalli associati rimarranno invariati.",
+                    "emptyProductsSubline": "Non ci sono ancora prodotti",
+                    "emptyProductsTitle": "Nessun prodotto trovato",
+                    "emptySubline": "Non ci sono ancora piani",
+                    "emptyTitle": "Nessun piano trovato",
+                    "headlineNew": "Nuovo piano",
+                    "intervalSelectPlaceholder": "Scegli gli intervalli...",
+                    "searchPlaceholder": "Piani di ricerca...",
+                    "tabCategorySelection": "Selezione della categoria",
+                    "tabGeneral": "Generale",
+                    "tabProductGroupSelection": "Selezione del gruppo del prodotto",
+                    "tabProductSelection": "Selezione dei prodotti",
+                    "tabProducts": "Prodotti",
+                    "title": "Piani"
+                },
+                "plans": "Piani",
+                "subscriptions": "Abbonamenti"
+            },
+            "subscriptions": {
+                "customer-detail": {
+                    "buttonCreateSubscription": "Crea abbonamento",
+                    "contextMenuView": "Visualizza l'abbonamento",
+                    "emptySubline": "Questo cliente non ha ancora abbonamenti attivi.",
+                    "emptyTitle": "Nessun abbonamento trovato",
+                    "labelOrderCard": "Ordini e abbonamenti",
+                    "orderCardTitle": "Ordini",
+                    "searchbarPlaceholder": "Cerca il numero di abbonamento, il piano di abbonamento e altro...",
+                    "subscriptionCardTitle": "Abbonamenti"
+                },
+                "detail": {
+                    "details": {
+                        "billingAddressLabel": "Indirizzo di fatturazione",
+                        "emailLabel": "Indirizzo e-mail",
+                        "nextOrderDateLabel": "Data dell'ordine successivo",
+                        "orderLanguageLabel": "Lingua dell'ordine",
+                        "orderNumberOfDeliveries": "Numero di consegne",
+                        "orderRemaining": "Ordini rimanenti fino alla fine del periodo minimo di abbonamento",
+                        "overviewCardTitle": "Panoramica",
+                        "paymentCardTitle": "Modalità di pagamento",
+                        "paymentMethodLabel": "Modalità di pagamento",
+                        "phoneNumberLabel": "Numero di telefono",
+                        "salesChannelLabel": "Canali di vendita",
+                        "shippingAddressLabel": "Indirizzo di consegna",
+                        "shippingCardTitle": "Spedizione",
+                        "shippingCostsLabel": "Costi di spedizione",
+                        "shippingMethodLabel": "Modalità di spedizione"
+                    },
+                    "general": {
+                        "infoCardTitle": "Info",
+                        "intervalLabel": "Intervallo di generazione",
+                        "itemGrid": {
+                            "columnPrice": "Prezzo",
+                            "columnPriceGross": "Prezzo lordo",
+                            "columnPriceNet": "Prezzo netto",
+                            "columnPriceTaxFree": "Prezzo (esente da tasse)",
+                            "columnProductName": "Nome",
+                            "columnProductNumber": "Codice prodotto",
+                            "columnQuantity": "Quantità",
+                            "columnTax": "Aliquota d'imposta",
+                            "columnTotalPrice": "Totale",
+                            "columnTotalPriceGross": "Totale",
+                            "columnTotalPriceNet": "Totale",
+                            "contextMenuOpenProduct": "Aprire il prodotto",
+                            "tax": "Imposte comprese:",
+                            "taxDetail": "{taxRate}%: {tax}",
+                            "textCreditTax": "auto"
+                        },
+                        "itemSummary": {
+                            "labelAmount": "Totale",
+                            "labelAmountGrandTotal": "Somma totale",
+                            "labelAmountTotal": "Somma totale incl. IVA",
+                            "labelAmountTotalRounded": "Totale arrotondato IVA inclusa",
+                            "labelAmountWithoutTaxes": "Somma totale senza IVA",
+                            "labelDiscountShippingCosts": "Sconto sui costi di spedizione",
+                            "labelShippingCosts": "Costi di spedizione",
+                            "labelTaxes": "più {taxRate}% IVA:"
+                        },
+                        "itemsCardTitle": "Voci",
+                        "planLabel": "Piano",
+                        "stateDescription": "Status impostato su {date}",
+                        "stateErrorNoAction": "Nessun nuovo stato selezionato.",
+                        "stateErrorStateChange": "Si è verificato un errore durante l'aggiornamento dello stato: {message}",
+                        "stateName": "Stato: {name}",
+                        "summarySubCreated": "a {date} con {paymentMethod} e {shippingMethod}",
+                        "summarySubUpdated": "Ultima modifica: {date}",
+                        "tagsLabel": "Tag",
+                        "tagsPlaceholder": "Aggiungi tag..."
+                    },
+                    "headlineTitle": "Abbonamento {number}",
+                    "orders": {
+                        "contextOpenOrder": "Apri ordini",
+                        "emptyOrdersSubline": "Non ci sono ancora ordini per questo abbonamento.",
+                        "emptyOrdersTitle": "Nessun ordine trovato"
+                    },
+                    "tabDetails": "Dettagli",
+                    "tabGeneral": "Generale",
+                    "tabOrders": "Ordini"
+                },
+                "general": {
+                    "descriptionTextModule": "Gestisci gli abbonamenti qui",
+                    "mainMenuItem": "Abbonamenti",
+                    "mainMenuItemLabel": "Abbonamenti"
+                },
+                "listing": {
+                    "buttonAddInterval": "Aggiungi intervallo",
+                    "buttonAddPlan": "Aggiungi piano",
+                    "buttonAddSubscription": "Aggiungi abbonamento",
+                    "buttonCancel": "Interrompi",
+                    "buttonTerminate": "Termina l'abbonamento",
+                    "columnActive": "Attivo",
+                    "columnCreatedAt": "Data di conclusione dell'abbonamento",
+                    "columnDescription": "Descrizione",
+                    "columnName": "Nome",
+                    "columnNextSchedule": "Prossimo programma",
+                    "columnProductName": "Nome del prodotto",
+                    "columnProductNumber": "Codice prodotto",
+                    "columnSalesChannelName": "Canali di vendita",
+                    "columnState": "Regione",
+                    "columnSubscriptionCustomerName": "Cliente",
+                    "columnSubscriptionInterval": "Intervallo di generazione",
+                    "columnSubscriptionNumber": "Numero di abbonamento",
+                    "columnSubscriptionPlanName": "Piano di abbonamento",
+                    "contextMenuTerminate": "Termina l'abbonamento",
+                    "contextMenuView": "Visualizza l'abbonamento",
+                    "filters": {
+                        "labelCustomerFilter": "Cliente",
+                        "labelDateFilter": "Data di conclusione dell'abbonamento",
+                        "labelStatusFilter": "Stato dell'abbonamento",
+                        "placeholderCustomerFilter": "Seleziona cliente...",
+                        "placeholderStatusFilter": "Seleziona regione..."
+                    },
+                    "messageEmpty": "Non ci sono ancora abbonamenti.",
+                    "searchBarPlaceholder": "Cerca il numero di abbonamento, il cliente, il piano di abbonamento e altro...",
+                    "textSubscriptions": "Abbonamenti",
+                    "textTerminateConfirm": "Vuoi davvero terminare questo abbonamento ({subscriptionNumber})?"
+                }
+            }
+        }
+    },
+    "error": {
+        "edit": "Si è verificato un problema durante la modifica del testo richiesto. Riprova più tardi.",
+        "generate": "Si è verificato un problema durante la generazione del testo richiesto. Riprova più tardi."
+    },
+    "global": {
+        "businessEvents": {
+            "checkout_order_return_created": "Reso dell'ordine creato",
+            "checkout_subscription_placed": "Abbonamento creato",
+            "order_approval_pending_order_requested": "Ordine in sospeso richiesto",
+            "quote_admin_requested": "Preventivo richiesto dall'amministratore",
+            "quote_change_request": "Richiesta di modifica del preventivo",
+            "quote_requested": "Preventivo richiesto",
+            "state_enter_b2b_components_pending_order_state_approved": "Ordine in sospeso approvato",
+            "state_enter_b2b_components_pending_order_state_declined": "Ordine in sospeso rifiutato",
+            "state_enter_b2b_components_pending_order_state_ordered": "Ordine in sospeso ordinato",
+            "state_enter_order_return_state_cancelled": "Il reso dell'ordine entra nello stato annullato",
+            "state_enter_order_return_state_done": "La restituzione dell'ordine entra nello stato «fatto»",
+            "state_enter_order_return_state_in_progress": "Lo stato della restituzione dell'ordine è in corso",
+            "state_enter_order_return_state_open": "Il reso dell'ordine entra nello stato aperto",
+            "state_enter_quote_state_accepted": "Il preventivo entra nello stato accettato",
+            "state_enter_quote_state_declined": "Il preventivo entra nello stato rifiutato",
+            "state_enter_quote_state_draft": "Il preventivo entra nella bozza di stato",
+            "state_enter_quote_state_expired": "Il preventivo entra nello stato scaduto",
+            "state_enter_quote_state_in_review": "Lo stato del preventivo viene inserito in fase di revisione",
+            "state_enter_quote_state_open": "Il preventivo entra nello stato aperto",
+            "state_enter_quote_state_reopen": "Il preventivo entra in stato di riapertura",
+            "state_enter_quote_state_replied": "Il preventivo entra nello stato inviato",
+            "state_enter_subscription_state_active": "L'abbonamento entra nello stato attivo",
+            "state_enter_subscription_state_cancelled": "L'abbonamento entra nello stato annullato",
+            "state_enter_subscription_state_flagged_cancelled": "L'abbonamento entra nello stato contrassegnato per l'annullamento",
+            "state_enter_subscription_state_paused": "L'abbonamento passa allo stato di pausa",
+            "state_leave_order_return_state_cancelled": "La restituzione dell'ordine lascia lo stato annullato",
+            "state_leave_order_return_state_done": "La restituzione dell'ordine lascia lo stato eseguito",
+            "state_leave_order_return_state_in_progress": "La restituzione dell'ordine lascia lo stato in corso",
+            "state_leave_order_return_state_open": "La restituzione dell'ordine lascia lo stato aperto",
+            "state_leave_quote_state_accepted": "Il preventivo lascia lo stato accettato",
+            "state_leave_quote_state_declined": "La citazione lascia lo stato rifiutato",
+            "state_leave_quote_state_draft": "Il preventivo lascia una bozza di stato",
+            "state_leave_quote_state_expired": "Il preventivo lascia lo stato scaduto",
+            "state_leave_quote_state_in_review": "La citazione lascia lo stato in fase di revisione",
+            "state_leave_quote_state_open": "Lo stato della citazione lascia aperto",
+            "state_leave_quote_state_reopen": "Il preventivo lascia lo stato riaperto",
+            "state_leave_quote_state_replied": "Il preventivo lascia lo stato inviato",
+            "state_leave_subscription_state_active": "L'abbonamento lascia lo stato attivo",
+            "state_leave_subscription_state_cancelled": "L'abbonamento lascia lo stato annullato",
+            "state_leave_subscription_state_flagged_cancelled": "L'abbonamento lascia lo stato contrassegnato per l'annullamento",
+            "state_leave_subscription_state_paused": "L'abbonamento lascia lo stato sospeso"
+        },
+        "entities": {
+            "b2b_components_role": "Ruolo | Ruoli",
+            "b2b_components_shopping_list": "Liste della spesa",
+            "b2b_employee": "Dipendente | Dipendenti",
+            "export_assistant": "Assistente all'esportazione",
+            "quote": "Citazione | Citazioni",
+            "quote_line_item": "Elementi della riga del preventivo | Elementi della riga del preventivo",
+            "search_assistant": "Copilota AI",
+            "spatial_scene": "Scene",
+            "subscription": "Abbonamento",
+            "subscription_interval": "Intervallo di abbonamento",
+            "subscription_plan": "Piano di abbonamento"
+        },
+        "error-codes": {
+            "ADVANCED_SEARCH_ACTION_NAME_DUPLICATED": "Questo nome è già stato utilizzato in un'altra azione",
+            "ADVANCED_SEARCH_ACTION_SEARCH_TERM_DUPLICATED": "Il termine di ricerca \"{term}\" è già in uso",
+            "ADVANCED_SEARCH_ACTION_VALID_TO_INVALID": "La data di attivazione deve essere impostata in futuro",
+            "ADVANCED_SEARCH_BOOSTING_BOOST_INVALID": "Il numero di boost deve essere un valore positivo",
+            "ADVANCED_SEARCH_BOOSTING_NAME_DUPLICATED": "Il nome del potenziamento esiste già",
+            "ADVANCED_SEARCH_BOOSTING_VALID_TO_INVALID": "La data di attivazione deve essere impostata in futuro",
+            "ORGANIZATION_UNIT_FIELD_REQUIRED": "Questo campo non deve essere vuoto.",
+            "SHOPPING_LIST_FIELD_REQUIRED": "Questo campo non deve essere vuoto."
+        },
+        "sw-condition": {
+            "condition": {
+                "subscriptionCartRule": "Carrello abbonamenti",
+                "subscriptionIntervalRule": "Intervallo di abbonamento",
+                "subscriptionPlanRule": "Piano di abbonamento"
+            },
+            "group": {
+                "subscription": "Abbonamento"
+            }
+        },
+        "swag-search-assistant": {
+            "messageEmpty": "Nessuna entità trovata per questo prompt",
+            "messageMissingEntityOrCriteria": "Impossibile rilevare entità o criteri dal prompt",
+            "messageTryAgain": "Assistente: Riprova"
+        }
+    },
+    "property-extractor": {
+        "assistant-modal": {
+            "button-description": "La generazione di nuovi suggerimenti di proprietà sovrascriverà i suggerimenti esistenti.",
+            "description": "Utilizza la descrizione del prodotto esistente o aggiungi il tuo testo per generare automaticamente suggerimenti per proprietà e valori delle proprietà.",
+            "generate-button": {
+                "default": "Genera suggerimenti",
+                "new": "Genera nuovi suggerimenti",
+                "tooltip": "Modifica la descrizione del prodotto per poter generare nuovi suggerimenti."
+            },
+            "help-text": {
+                "to-long": "La descrizione non deve superare i 4000 caratteri.",
+                "to-short": "La descrizione deve contenere almeno 200 caratteri."
+            },
+            "no-result": {
+                "message": "Sulla base di questa descrizione del prodotto non ci sono suggerimenti disponibili.",
+                "title": "Nessun suggerimento"
+            },
+            "no-suggestions": {
+                "message": "Sulla base di questa descrizione del prodotto non ci sono nuovi suggerimenti disponibili. Tutte le proprietà e i valori delle proprietà suggeriti sono già stati assegnati.",
+                "title": "Nessun nuovo suggerimento"
+            },
+            "reset-description-button-label": "Ripristina la descrizione del prodotto",
+            "save-error-message": "Impossibile salvare le proprietà",
+            "search-placeholder": "Sfoglia peculiarità...",
+            "table": {
+                "delete-action": "Cancella",
+                "edit-action": "Modifica",
+                "error-message": "Il servizio non è attualmente disponibile. Riprova più tardi.",
+                "error-save-message": "Impossibile salvare le proprietà.",
+                "name-label": "Proprietà",
+                "new-indicator": "Nuovo",
+                "options-label": "Peculiarità"
+            },
+            "textarea-label": "Descrizione del prodotto",
+            "textarea-placeholder": "Inserisci una descrizione...",
+            "title": "Proprietà"
+        },
+        "property-modal": {
+            "assistant-label": "Apri AI Copilot"
+        }
+    },
+    "spatial-commerce": {
+        "cms-category": "3D",
+        "spatial-viewer": {
+            "block": {
+                "label": "Oggetto 3D"
+            },
+            "element": {
+                "config": {
+                    "formFactor": "Fattore di forma",
+                    "formFactorOptions": {
+                        "auto": "Auto",
+                        "square": "Quadrato",
+                        "tall": "Alto",
+                        "wide": "Ampio"
+                    },
+                    "maxHeight": "Altezza massima"
+                },
+                "label": "Oggetto 3D"
+            }
+        }
+    },
+    "sw-advanced-search": {
+        "actionTab": {
+            "addAction": "Aggiungi azione",
+            "column": {
+                "active": "Attivo",
+                "name": "Nome",
+                "type": "Tipo",
+                "validFrom": "Attivo da",
+                "validTo": "Attivo a"
+            },
+            "detail": {
+                "action": "Promozione",
+                "active": "Attivo",
+                "cancelModal": "Interrompi",
+                "enterSearchTerms": "Inserisci i termini di ricerca...",
+                "forwardTo": "Inoltra a",
+                "name": "Nome",
+                "newAction": "Nuova azione",
+                "placeholderName": "Inserisci il nome dell'azione...",
+                "placeholderType": "Seleziona destinazione...",
+                "searchTerms": "Termini di ricerca",
+                "validFrom": "Attivo da",
+                "validTo": "Attivo a"
+            },
+            "messageEmptySubline": "Gestisci le azioni qui.",
+            "messageEmptyTitle": "Ancora nessuna azione",
+            "notification": {
+                "createSuccess": {
+                    "message": "L'azione è stata creata con successo.",
+                    "title": "Azione creata"
+                },
+                "updateSuccess": {
+                    "message": "L'azione è stata aggiornata correttamente.",
+                    "title": "Azione aggiornata"
+                }
+            },
+            "placeholderSearch": "Azioni di ricerca...",
+            "subtitle": "Indirizza i clienti a un prodotto, una categoria o un URL quando cercano termini specifici.",
+            "title": "Promozioni",
+            "type": {
+                "forwardCategory": {
+                    "category": "Categoria",
+                    "placeholderForwardCategory": "Assegna categorie...",
+                    "title": "Categoria"
+                },
+                "forwardProduct": {
+                    "placeholderForwardProduct": "Seleziona prodotto...",
+                    "product": "Prodotto",
+                    "title": "Prodotto"
+                },
+                "forwardUrl": {
+                    "placeholderForwardUrl": "Inserisci URL...",
+                    "title": "URL",
+                    "url": "URL"
+                }
+            }
+        },
+        "advancedSearchConfigField": {
+            "category": {
+                "description": "Descrizione",
+                "keywords": "Parole chiave",
+                "metaDescription": "Meta descrizione",
+                "metaTitle": "Meta titolo",
+                "name": "Nome",
+                "products": {
+                    "customSearchKeywords": "Parole chiave di ricerca personalizzate del prodotto",
+                    "description": "Descrizione del prodotto",
+                    "ean": "Prodotto GTIN/EAN",
+                    "keywords": "Parole chiave del prodotto",
+                    "manufacturerNumber": "Numero del produttore del prodotto",
+                    "metaDescription": "Meta-descrizione del prodotto",
+                    "metaTitle": "Meta-titolo del prodotto",
+                    "name": "Nome del prodotto",
+                    "productNumber": "Codice prodotto",
+                    "states": "Stati dei prodotti"
+                },
+                "tags": {
+                    "name": "Tag"
+                },
+                "type": "Tipo"
+            },
+            "product": {
+                "availableStock": "Stock disponibile",
+                "categories": {
+                    "name": "Nome delle categorie"
+                },
+                "crossSellings": {
+                    "name": "Nome di vendita incrociata",
+                    "type": "Tipo di vendita incrociata"
+                },
+                "customSearchKeywords": "Parole chiave di ricerca personalizzate",
+                "description": "Descrizione",
+                "ean": "BIANCO/MAGRO",
+                "height": "Altezza",
+                "keywords": "Parole chiave",
+                "length": "Lunghezza",
+                "manufacturer": {
+                    "name": "Nome del produttore"
+                },
+                "manufacturerNumber": "Codice produttore",
+                "maxPurchase": "Acquisto massimo",
+                "metaDescription": "Meta descrizione",
+                "metaTitle": "Meta titolo",
+                "minPurchase": "Acquisto minimo",
+                "name": "Nome",
+                "options": {
+                    "name": "Valori della variante"
+                },
+                "packUnit": "Unità di imballaggio",
+                "packUnitPlural": "Unità di imballaggio plurale",
+                "productNumber": "Codice prodotto",
+                "properties": {
+                    "name": "Peculiarità della proprietà"
+                },
+                "purchasePrices": {
+                    "gross": "Prezzi di acquisto (lordi)",
+                    "net": "Prezzi di acquisto (netti)"
+                },
+                "purchaseUnit": "Unità di vendita",
+                "referenceUnit": "Unità base",
+                "sales": "Vendite",
+                "stock": "Scorta disponibile",
+                "tags": {
+                    "name": "Tag"
+                },
+                "unit": {
+                    "name": "Nome dell'unità",
+                    "shortCode": "Codice breve dell'unità"
+                },
+                "weight": "Peso",
+                "width": "Larghezza"
+            },
+            "product_manufacturer": {
+                "description": "Descrizione",
+                "name": "Nome",
+                "products": {
+                    "customSearchKeywords": "Parole chiave di ricerca personalizzate del prodotto",
+                    "description": "Descrizione del prodotto",
+                    "ean": "Prodotto GTIN/EAN",
+                    "keywords": "Parole chiave del prodotto",
+                    "manufacturerNumber": "Numero del produttore del prodotto",
+                    "metaDescription": "Meta-descrizione del prodotto",
+                    "metaTitle": "Meta-titolo del prodotto",
+                    "name": "Nome del prodotto",
+                    "productNumber": "Codice prodotto",
+                    "states": "Stati dei prodotti"
+                }
+            }
+        },
+        "boostingTab": {
+            "addBoosting": "Aggiungi potenziamento",
+            "column": {
+                "active": "Attivo",
+                "boost": "Potenziamento",
+                "name": "Nome",
+                "type": "Tipo",
+                "validFrom": "Attivo da",
+                "validTo": "Attivo a"
+            },
+            "detail": {
+                "active": "Attivo",
+                "boost": "Pertinenza",
+                "cancelModal": "Interrompi",
+                "category": "Categoria",
+                "entityStream": "Entità",
+                "helpTextBoost": "La pertinenza determina l'impatto di un potenziamento sui risultati di ricerca. I valori più alti gli danno maggiore priorità, mentre i valori più bassi hanno un effetto più lieve.",
+                "manufacturer": "Produttore",
+                "name": "Nome",
+                "newBoosting": "Nuovo potenziamento",
+                "placeholderBoost": "Imposta la pertinenza...",
+                "placeholderName": "Inserisci il nome del potenziamento...",
+                "placeholderStreamType": "Seleziona il tipo di stream...",
+                "placeholderType": "Seleziona un'entità...",
+                "placeholderTypeId": "Seleziona un gruppo dinamico di prodotti",
+                "productStream": "Categoria di prodotti dinamica",
+                "streamType": "Tipo di flusso",
+                "type": "Entità",
+                "typeId": "Streaming",
+                "validFrom": "Attivo da",
+                "validTo": "Attivo a"
+            },
+            "filter": {
+                "placeholderFieldSelect": "Scegli una proprietà",
+                "placeholderOperatorSelect": "Scegli un operatore"
+            },
+            "messageEmptySubline": "Gestisci i potenziamenti qui.",
+            "messageEmptyTitle": "Ancora nessun potenziamento",
+            "notification": {
+                "createSuccess": {
+                    "message": "Il potenziamento è stato creato con successo.",
+                    "title": "Potenziamento creato"
+                },
+                "updateSuccess": {
+                    "message": "Il potenziamento è stato aggiornato con successo.",
+                    "title": "Potenziamento aggiornato"
+                }
+            },
+            "placeholderSearch": "Cerca potenziamenti...",
+            "subtitle": "Dai priorità a prodotti, produttori o categorie durante la ricerca.",
+            "title": "Potenziamenti",
+            "type": {
+                "entity_stream": "Stream di entità",
+                "product_stream": "Stream di prodotti"
+            }
+        },
+        "entity": {
+            "category": "Categoria",
+            "product": "Prodotto",
+            "product_manufacturer": "Produttore"
+        },
+        "entityStream": {
+            "filter": {
+                "type": {
+                    "contains": "Contiene",
+                    "equals": "Uguale",
+                    "equalsAny": "Uno di",
+                    "greaterThan": "Più grande di",
+                    "greaterThanEquals": "Più grande/uguale",
+                    "lessThan": "Minore di",
+                    "lessThanEquals": "Minore/uguale",
+                    "notContains": "Non contiene",
+                    "notEquals": "Diverso",
+                    "notEqualsAny": "Nessuno di",
+                    "range": "Gamma"
+                }
+            }
+        },
+        "generalTab": {
+            "helpTextEnableAdvancedSearch": "Quando si disattiva la ricerca avanzata, la configurazione della ricerca sarà basata sulla lingua anziché sul canale di vendita.",
+            "labelEnableAdvancedSearch": "Abilita la ricerca avanzata",
+            "labelInfoCrossSearch": "Quando abiliti qui ogni campo di configurazione di ricerca avanzata, la ricerca eseguirà una query aggiuntiva al server OpenSearch, rallentando leggermente la velocità di ricerca.",
+            "resetConfirm": "Sei sicuro di voler ripristinare queste configurazioni?"
+        },
+        "hitCount": {
+            "appearance": {
+                "allResults": "Mostra tutti i risultati",
+                "quickSearchTitle": "Ricerca rapida",
+                "resultsPageTitle": "Pagina dei risultati",
+                "subtitle": "Definisci il numero di risultati di ricerca visualizzati agli acquirenti durante la ricerca rapida e nella pagina dei risultati.",
+                "title": "Risultati della ricerca"
+            }
+        },
+        "previewTab": {
+            "boost": "Potenziamento",
+            "boosting": "Potenziamento",
+            "crossEntity": "Ricerche in",
+            "crossSearch": "Ricerca incrociata",
+            "field": "Campo",
+            "messageEmptySubline": "Controlla le configurazioni di ricerca.",
+            "messageEmptyTitle": "Nessun risultato",
+            "name": "Nome",
+            "placeholderSearch": "Inserisci il termine di ricerca...",
+            "ranking": "Classifica",
+            "relevance": "Pertinenza",
+            "score": "Punteggio",
+            "term": "Termine",
+            "title": "Anteprima",
+            "value": "Valore"
+        },
+        "searchConfigField": {
+            "categories": {
+                "customFields": "Campi personalizzati Categoria",
+                "name": "Nome della categoria"
+            },
+            "customSearchKeywords": "Termini di ricerca personalizzati",
+            "description": "Descrizione del prodotto",
+            "ean": "BIANCO/MAGRO",
+            "manufacturer": {
+                "customFields": "Campi personalizzati del produttore",
+                "name": "Nome del produttore"
+            },
+            "manufacturerNumber": "Numero del produttore",
+            "metaDescription": "Meta-descrizione del prodotto",
+            "metaTitle": "Meta-titolo del prodotto",
+            "name": "Nome del prodotto",
+            "options": {
+                "name": "Valori della variante"
+            },
+            "productNumber": "Codice prodotto",
+            "properties": {
+                "name": "Peculiarità della proprietà"
+            },
+            "tags": {
+                "name": "Etichetta prodotto"
+            }
+        },
+        "synonymTab": {
+            "buttonAddSynonym": "Aggiungi regola dei sinonimi",
+            "messageEmptySubline": "Gestisci i sinonimi qui.",
+            "messageEmptyTitle": "Ancora nessun sinonimo",
+            "messageEquivalence": "Equivalente",
+            "modal": {
+                "language": "Lingua",
+                "placeholderLanguage": "Tutte le lingue",
+                "placeholderSearchTerms": "Inserisci i termini di ricerca...",
+                "placeholderSynonyms": "Inserisci sinonimi...",
+                "searchTerms": "Termini di ricerca",
+                "synonyms": "Abbina a",
+                "title": "Sinonimo",
+                "type": {
+                    "equivalence": {
+                        "description": "Definisci termini di ricerca equivalenti.",
+                        "title": "Equivalenza"
+                    },
+                    "mapping": {
+                        "description": "Abbina i termini di ricerca a un gruppo di sinonimi.",
+                        "title": "Mappatura esplicita"
+                    },
+                    "title": "Regola dei sinonimi"
+                }
+            },
+            "notification": {
+                "createSuccess": {
+                    "message": "La regola dei sinonimi è stata creata con successo.",
+                    "title": "Regola sinonimica creata"
+                },
+                "updateSuccess": {
+                    "message": "La regola dei sinonimi è stata aggiornata correttamente.",
+                    "title": "Regola dei sinonimi aggiornata"
+                }
+            },
+            "placeholderSearch": "Cerca sinonimo...",
+            "subtitle": "Usa i sinonimi per aiutare i clienti a trovare i prodotti giusti in base ai termini di ricerca.",
+            "table": {
+                "columnLanguage": "Lingua",
+                "columnSearchTerms": "Termini di ricerca",
+                "columnSynonyms": "Sinonimi"
+            },
+            "title": "Sinonimi"
+        }
+    },
+    "sw-ai-image-classification": {
+        "general": {
+            "mainMenuItemGeneral": "Assistente alle parole chiave dell'immagine"
+        },
+        "media-quickinfo": {
+            "error": {
+                "default": "L'assistente per le parole chiave dell'immagine ha riscontrato un errore durante l'elaborazione dell'immagine.",
+                "rateLimit": "Il limite di frequenza dell'Image Keyword Assistant è stato raggiunto. Riprova più tardi."
+            },
+            "infoText": "Image Keyword Assistant sta elaborando questa immagine, il completamento dell'operazione potrebbe richiedere del tempo."
+        },
+        "settings": {
+            "alert": "L'assistente per le parole chiave Image funziona solo con immagini del tipo di file PNG o JPG. Le immagini che superano i 5 MB non verranno elaborate.",
+            "footnote": "L'assistente per le parole chiave dell'immagine elaborerà le immagini caricate sullo sfondo e potrebbe richiedere del tempo per terminare.",
+            "handlingStrategies": {
+                "append": "Aggiungi ai dati esistenti",
+                "keep": "Conserva i dati esistenti",
+                "label": "Gestione dei dati con testo alternativo",
+                "overwrite": "Sovrascrivi i dati esistenti",
+                "prepend": "Anteponi ai dati esistenti"
+            },
+            "heroImageAlt": "Diversi prodotti e la probabilità di previsione corretta dall'IA",
+            "introductionText": "Ora puoi utilizzare l'assistente per le parole chiave delle immagini che utilizza l'intelligenza artificiale per analizzare e aggiungere tag pertinenti alle immagini caricate. L'assistente consente di utilizzare termini di ricerca naturali per trovare più facilmente le immagini.",
+            "labelAddKeywordsToImageAltText": "Aggiungi parole chiave al testo alternativo dell'immagine",
+            "labelKeywordLanguageId": "Lingua delle parole chiave",
+            "labelUseImageKeywordAssistantActive": "Usa l'assistente per le parole chiave dell'immagine",
+            "sublineImageKeywordAssistant": "Assistente alle parole chiave dell'immagine"
+        }
+    },
+    "sw-b2b-advanced-product-catalogs": {
+        "category-tree": {
+            "deselectAll": "Deseleziona tutto",
+            "disabledTitle": "Questa categoria utilizza gruppi di prodotti dinamici per l'assegnazione dei prodotti, che non sono supportati dai cataloghi di prodotti avanzati.",
+            "emptySearchSubtitle": "Prova un termine di ricerca diverso.",
+            "searchPlaceholder": "Ricerca...",
+            "selectAll": "Seleziona tutto"
+        },
+        "organization-unit": {
+            "advanced-product-catalogs-tab": {
+                "description": "Seleziona le categorie a cui hanno accesso i dipendenti di questa unità organizzativa. La struttura del menu e i prodotti disponibili verranno modificati di conseguenza, garantendo che l'accesso alle categorie non selezionate sia limitato.",
+                "labelDefaultOption": "Tutti i canali di vendita",
+                "loadAdvancedProductCatalogsErrorNotification": "Errore durante il caricamento",
+                "loadAllCategoriesErrorNotification": "Errore durante il caricamento di tutte le categorie",
+                "placeholderSelect": "Inserisci il termine di ricerca...",
+                "salesChannelLabel": "Canale di vendita",
+                "saveChangeNotification": "Il salvataggio delle modifiche può richiedere del tempo, a seconda delle modifiche apportate nei cataloghi avanzati di prodotti.",
+                "saveChangeNotificationInfo": "Attendi che tutte le modifiche siano state salvate completamente.",
+                "saveChangeNotificationLabel": "Salvataggio...",
+                "saveChangeNotificationWarning": "Tieni presente che la chiusura di questa scheda del browser o l'annullamento anticipato del processo in esecuzione può portare alla perdita di dati o all'applicazione incompleta delle modifiche.",
+                "saveChangeTitle": "Salva modifiche",
+                "switcherLabel": "Aggiungi automaticamente nuove categorie alla selezione",
+                "title": "Cataloghi di prodotti avanzati"
+            },
+            "errorNotification": "Errore durante il salvataggio dell'unità organizzativa",
+            "successNotification": "Unità organizzativa salvata con successo"
+        }
+    },
+    "sw-cms": {
+        "blockGenerateImageLinkText": "Genera immagine",
+        "elConfigImageGenerateLinkText": "Genera immagine",
+        "sw-image-generator-banner": {
+            "buttonText": "Genera immagine",
+            "contentText": "Crea le tue immagini d'atmosfera per personalizzare il layout con l'aiuto dell'immagine generata dall'intelligenza artificiale.",
+            "header": "Copilota AI"
+        }
+    },
+    "sw-cms-generation": {
+        "AITextButton": "Copilota AI",
+        "AIToggle": "Copilota AI",
+        "description": "Le risposte dell'IA possono non essere accurate o fuorvianti.",
+        "modalContent": "Vuoi ignorare la tua richiesta all'AI Copilot?",
+        "modalTitle": "Richiesta di annullamento",
+        "placeholder": "Premi la barra spaziatrice per chiedere informazioni all'AI Copilot..."
+    },
+    "sw-config-sharing": {
+        "feature": {
+            "description": "Questo plugin ti consente di condividere le tue configurazioni con altre istanze di Shopware.",
+            "title": "Condivisione delle configurazioni"
+        },
+        "modals": {
+            "flow": {
+                "download": {
+                    "description": "Questo download includerà tutte le sequenze e le configurazioni utilizzate in esse. Una volta caricati su un sistema esterno, verranno creati i dati o i riferimenti mancanti, selezionati di seguito.<br><br>Seleziona i riferimenti per includerne i dati. Quando vengono caricati su un sistema esterno, questi riferimenti verranno creati con i relativi dati. Altrimenti, i riferimenti dovranno essere riassegnati dopo il caricamento.",
+                    "title": "Scarica il flusso"
+                },
+                "upload": {
+                    "title": "Flusso di caricamento"
+                }
+            },
+            "general": {
+                "download": {
+                    "button-label": "Download",
+                    "warning": {
+                        "description": "L'inclusione delle entità di seguito può portare a dati mancanti o errati se caricati su un sistema esterno! Usare con cautela.",
+                        "title": "Avviso di download"
+                    }
+                },
+                "upload": {
+                    "button-label": "Upload",
+                    "file-upload": {
+                        "caption": "Seleziona un file json per caricare un'entità",
+                        "label": "Carica file"
+                    },
+                    "warning": {
+                        "description": "Le entità incluse e i relativi dati verranno creati in questo sistema. Tieni presente che ciò può portare a duplicati o dati errati.",
+                        "title": "Avviso di caricamento"
+                    }
+                }
+            },
+            "notifications": {
+                "error": {
+                    "download": "Si è verificato un errore durante la creazione del file di download.",
+                    "fetch-data": "Si è verificato un errore durante il recupero dei dati dell'entità.",
+                    "read-data": "Si è verificato un errore durante la lettura dei dati dell'entità: {error}",
+                    "upload": "Si è verificato un errore durante il caricamento del file: {error}"
+                },
+                "success": {
+                    "download": "Il download è andato a buon fine.",
+                    "upload": "Il caricamento è andato a buon fine."
+                }
+            },
+            "references": {
+                "category": "Categoria",
+                "country": "Paese",
+                "country_state": "Paese e stato",
+                "currency": "Valuta",
+                "custom_field": "Campo personalizzato",
+                "customer_group": "Categoria di clienti",
+                "document_type": "Tipo di documento",
+                "language": "Lingua",
+                "mail_template": "Modello di posta",
+                "payment_method": "Modalità di pagamento",
+                "product_manufacturer": "Produttore",
+                "product_stream": "Categoria di prodotti dinamica",
+                "promotion": "Promozione",
+                "property_group_option": "Opzione di gruppo di proprietà",
+                "rule": "Regola",
+                "sales_channel": "Canali di vendita",
+                "salutation": "Appellativo",
+                "shipping_method": "Modalità di spedizione",
+                "state_machine_state": "Stato",
+                "tag": "Etichetta"
+            },
+            "rule": {
+                "download": {
+                    "description": "Questo download includerà tutte le condizioni e le configurazioni utilizzate in esse. Una volta caricati su un sistema esterno, verranno creati i dati o i riferimenti mancanti, selezionati di seguito.<br><br>Seleziona i riferimenti per includerne i dati. Quando vengono caricati su un sistema esterno, questi riferimenti verranno creati con i relativi dati. Altrimenti, i riferimenti dovranno essere riassegnati dopo il caricamento.",
+                    "title": "Scarica la regola"
+                },
+                "upload": {
+                    "title": "Regola di caricamento"
+                }
+            }
+        },
+        "rule": {
+            "warning": {
+                "description": "Questa regola non è valida e non può essere utilizzata in questo momento. Controlla la regola, risolvi i riferimenti mancanti e riprova.",
+                "title": "Regola non valida"
+            }
+        },
+        "rule-list": {
+            "download-button": {
+                "label": "Download"
+            },
+            "upload-button": {
+                "label": "Regola di caricamento",
+                "tooltip": "Carica una regola dal tuo archivio locale."
+            }
+        }
+    },
+    "sw-customer": {
+        "businessPartner": {
+            "buttonCreateEmployee": "Aggiungi un account dipendente",
+            "grid": {
+                "actions": {
+                    "activate": "Attivare",
+                    "deactivate": "Disattiva",
+                    "descriptionActivate": "Sei sicuro di voler davvero attivare l'account dipendente di {name}?",
+                    "descriptionDeactivate": "Sei sicuro di voler davvero disattivare l'account dipendente di {name}?",
+                    "resend": "Invia nuovamente l'invito",
+                    "revoke": "Revoca l'invito",
+                    "titleActivate": "Attiva l'account dipendente",
+                    "titleDeactivate": "Disattiva l'account del dipendente"
+                },
+                "sublineEmptyState": "Gestisci qui gli account dei dipendenti dei tuoi clienti",
+                "titleEmptyState": "Non ci sono ancora dipendenti."
+            }
+        },
+        "customer-card": {
+            "checkboxCustomerBusinessPartner": "Partner commerciale"
+        },
+        "detailBase": {
+            "labelCompanyCard": "Ditta"
+        },
+        "detailOrder": {
+            "columnOrganizationUnit": "Unità organizzative",
+            "columnOrganizationUnitEmpty": "Nessuna unità"
+        },
+        "employee": {
+            "buttonCreate": "Invia invito",
+            "descriptionDelete": "Sei sicuro di voler davvero eliminare l'account dipendente di {name}?",
+            "descriptionRevoke": "Sei sicuro di voler davvero revocare l'invito di {name}?",
+            "helpTextSalesChannelInvitation": "Seleziona un canale di vendita sul quale il dipendente deve completare la registrazione. Questo campo è disabilitato se il cliente è associato a un canale di vendita.",
+            "labelEmail": "Indirizzo e-mail",
+            "labelFirstName": "Nome",
+            "labelLanguage": "Lingua",
+            "labelLastName": "Cognome",
+            "labelRole": "Ruolo",
+            "labelRoleDefault": "(Standard)",
+            "labelSalesChannelInvitation": "Canale di vendita utilizzato per l'invito",
+            "labelStatus": "Stato",
+            "notification": {
+                "existingEmployeeEmail": "L'indirizzo e-mail è già in uso.",
+                "inviteFailedMessage": "L'invito non può essere inviato.",
+                "inviteSuccessMessage": "L'invito è stato inviato."
+            },
+            "placeholderEmail": "Inserisci un indirizzo e-mail...",
+            "placeholderFirstName": "Inserisci nome...",
+            "placeholderLastName": "Inserisci cognome...",
+            "placeholderRole": "Nessuna",
+            "status": {
+                "active": "Attivo",
+                "inactive": "Inattivo",
+                "invitationExpired": "Invito scaduto",
+                "invitationSent": "Invito inviato"
+            },
+            "titleCreate": "Nuovo account dipendente",
+            "titleDelete": "Elimina l'account del dipendente",
+            "titleDetail": "Modifica l'account del dipendente",
+            "titleEmployeeData": "Dati dei dipendenti",
+            "titleRevoke": "Revoca l'invito",
+            "warningDelete": "L'eliminazione di questo account dipendente sarà definitiva."
+        },
+        "employee-management": {
+            "employees": "Dipendenti",
+            "warningEdit": "Tieni presente che qualsiasi modifica apportata avrà un impatto sulla struttura aziendale del tuo partner commerciale."
+        },
+        "list": {
+            "b2bLabel": "B2B",
+            "b2cLabel": "B2C",
+            "customerTypeLabel": "Tipo di cliente",
+            "customerTypePlaceholder": "Seleziona il tipo di cliente..."
+        },
+        "organizationUnit": {
+            "cardLabel": "Unità organizzativa",
+            "createNewListLabel": "Aggiungi unità",
+            "createdAtColumn": "Aggiunto il",
+            "createdByColumn": "Creato da",
+            "employeeColumn": "Dipendente",
+            "nameColumn": "Nome",
+            "sublineEmptyState": "Gestisci qui le unità organizzative dei tuoi clienti",
+            "tabLabel": "Ditta",
+            "titleEmptyState": "Ancora nessuna unità organizzativa"
+        },
+        "quote": {
+            "buttonAddQuote": "Aggiungi preventivo",
+            "changeQuoteStateError": "Si è verificato un errore durante il tentativo di modificare lo stato della citazione in \"{stateName}».",
+            "labelEmptyTitle": "Ancora nessuna quotazione",
+            "labelManualQuote": "Creato da admin",
+            "labelOpenQuote": "Apri preventivo",
+            "labelSubline": "Gestisci qui i preventivi dei tuoi clienti",
+            "labelTransactionsTab": "Transazioni",
+            "list": {
+                "gridHeaderCreatedDate": "Aggiunto il",
+                "gridHeaderId": "Numero del preventivo",
+                "gridHeaderQuotePrice": "Prezzo del preventivo",
+                "gridHeaderStatus": "Stato"
+            },
+            "searchBarPlaceholder": "Cerca preventivi...",
+            "textQuote": "Citazioni",
+            "textSearchNoResults": "Non sono stati trovati risultati.",
+            "titleTransactions": "Transazioni"
+        },
+        "role": {
+            "create": {
+                "basicInformation": {
+                    "defaultRoleLabel": "Ruolo predefinito per i nuovi account dei dipendenti",
+                    "labelName": "Nome",
+                    "placeholderName": "Inserisci nome...",
+                    "title": "Informazioni base"
+                },
+                "permissions": {
+                    "labelAllPermissions": "Tutte le autorizzazioni",
+                    "title": "Autorizzazioni",
+                    "tooltipDependenciesTitle": "L'autorizzazione dipende da:",
+                    "tree": {
+                        "groups": {
+                            "approval_rule": "Gestione delle regole di approvazione",
+                            "employee": "Gestione dei dipendenti",
+                            "order": "Ordini",
+                            "organization_unit": "Unità organizzative",
+                            "organization_unit_address": "Indirizzi delle unità organizzative",
+                            "pending_order": "Gestione degli ordini in sospeso",
+                            "quote": "Gestione delle quotazioni",
+                            "role": "Gestione dei ruoli"
+                        },
+                        "permissions": {
+                            "advanced_product_catalogs": {
+                                "organization_unit": {
+                                    "create": "Può creare unità organizzative e cataloghi di prodotti avanzati",
+                                    "delete": "Può eliminare le unità organizzative",
+                                    "read": "Può visualizzare le unità organizzative e i cataloghi di prodotti avanzati",
+                                    "update": "Può aggiornare le unità organizzative e i cataloghi di prodotti avanzati"
+                                }
+                            },
+                            "approval_rule": {
+                                "create": "Può creare regole di approvazione",
+                                "delete": "Può eliminare le regole di approvazione",
+                                "read": "Può leggere le regole di approvazione",
+                                "update": "Può aggiornare le regole di approvazione"
+                            },
+                            "employee": {
+                                "create": "Può creare dipendenti",
+                                "delete": "Può eliminare i dipendenti",
+                                "edit": "Può modificare i dipendenti",
+                                "read": "Può visualizzare i dipendenti"
+                            },
+                            "order": {
+                                "read": {
+                                    "all": "Può visualizzare tutti gli ordini"
+                                }
+                            },
+                            "organization_unit": {
+                                "billing_address": {
+                                    "create": "Crea un nuovo indirizzo di fatturazione",
+                                    "delete": "Elimina l'indirizzo di fatturazione",
+                                    "update": "Modifica l'indirizzo di fatturazione"
+                                },
+                                "create": "Crea una nuova unità organizzativa",
+                                "delete": "Elimina unità organizzativa",
+                                "order": {
+                                    "read": "Può visualizzare tutti gli ordini dall'unità organizzativa assegnata"
+                                },
+                                "quote": {
+                                    "read": "Può visualizzare tutti i preventivi dell'unità organizzativa assegnata"
+                                },
+                                "read": "Può visualizzare le unità organizzative",
+                                "shipping_address": {
+                                    "create": "Crea un nuovo indirizzo di spedizione",
+                                    "delete": "Elimina l'indirizzo di spedizione",
+                                    "update": "Modifica l'indirizzo di spedizione"
+                                },
+                                "update": "Modifica unità organizzativa"
+                            },
+                            "pending_order": {
+                                "approve_decline": "Può approvare/rifiutare gli ordini in sospeso",
+                                "approve_decline_all": "Può approvare/rifiutare tutti gli ordini in sospeso",
+                                "read_all": "Può visualizzare tutti gli ordini in sospeso"
+                            },
+                            "quote": {
+                                "accept": "Può accettare un preventivo",
+                                "decline": "Può rifiutare la quotazione",
+                                "read": {
+                                    "all": "Può visualizzare tutte le quotazioni"
+                                },
+                                "request": "Può richiedere un preventivo",
+                                "request_change": "Può richiedere la modifica del preventivo"
+                            },
+                            "role": {
+                                "create": "Può creare ruoli",
+                                "delete": "Può eliminare i ruoli",
+                                "edit": "Può modificare i ruoli",
+                                "read": "Può visualizzare i ruoli"
+                            }
+                        },
+                        "switchAllLabel": "Tutte le autorizzazioni"
+                    }
+                },
+                "title": "Nuovo ruolo"
+            },
+            "delete": {
+                "description": "L'eliminazione di questo ruolo sarà permanente.",
+                "title": "Cancella ruolo"
+            },
+            "detail": {
+                "title": "Modifica ruolo"
+            },
+            "list": {
+                "addButtonLabel": "Aggiungi ruolo",
+                "grid": {
+                    "columnRole": "Ruolo",
+                    "defaultLabel": "Standard",
+                    "modals": {
+                        "delete": {
+                            "description": "Sei sicuro di voler eliminare il ruolo {name}?",
+                            "title": "Cancella ruolo"
+                        },
+                        "edit": {
+                            "description": "Sei sicuro di voler applicare le modifiche al ruolo {name}?",
+                            "title": "Modifica ruolo"
+                        }
+                    },
+                    "sublineEmptyState": "Gestisci i ruoli dei tuoi clienti qui",
+                    "titleEmptyState": "Ancora nessun ruolo."
+                },
+                "title": "Ruoli"
+            },
+            "notification": {
+                "companyNotFound": "Partner commerciale non trovato.",
+                "deleteError": "Eliminazione del ruolo non riuscita.",
+                "permissionsNotFound": "Caricamento delle autorizzazioni non riuscito.",
+                "saveError": "Impossibile salvare il ruolo.",
+                "setDefaultRoleError": "Impossibile impostare il ruolo predefinito."
+            }
+        },
+        "shoppingList": {
+            "cardLabel": "Liste della spesa",
+            "createNewListLabel": "Aggiungi elenco",
+            "creatorColumn": "Creatore",
+            "detail": {
+                "labelCreator": "Creatore",
+                "labelOrganizationUnit": "Unità organizzativa"
+            },
+            "emptyListSubline": "Gestisci le liste della spesa dei tuoi clienti qui",
+            "emptyListTitle": "Ancora nessuna lista",
+            "modal": {
+                "deleteListDesc": "Sei sicuro di voler eliminare \"{listName}\"?"
+            },
+            "nameColumn": "Nome",
+            "noOrganizationUnitSelected": "Nessuna unità",
+            "organizationUnitColumn": "Unità organizzativa",
+            "productCountColumn": "Prodotti",
+            "tabLabel": "Ditta",
+            "totalPriceColumn": "Totale"
+        }
+    },
+    "sw-flow": {
+        "action": {
+            "descriptionAuthorizePayment": "{payer}",
+            "descriptionGenerateQuoteDoc": "Attiva: {activate}",
+            "labelAuthorizePayment": "Autorizza il pagamento",
+            "labelGenerateQuoteDoc": "Genera documento di preventivo"
+        },
+        "modal": {
+            "helpTextActivate": "Impostalo come documento corrente.",
+            "labelActivate": "Attivare",
+            "titleActivate": "Documento attuale",
+            "titleGenerateQuoteDocModal": "Genera documento di preventivo"
+        },
+        "modals": {
+            "authorizePaymentLabelToField": "Utilizza per",
+            "authorizePaymentOptions": {
+                "approver": "Approvatore",
+                "buyer": "Acquirente"
+            },
+            "authorizePaymentPlaceholderToField": "Seleziona un utente",
+            "authorizePaymentTitle": "Autorizza il pagamento"
+        },
+        "triggers": {
+            "accepted": "Accettata",
+            "adminRequested": "Amministratore richiesto",
+            "approved": "Approvato",
+            "changeRequest": "Richiesta di modifica",
+            "created": "Creato",
+            "declined": "Rifiutato",
+            "done": "Finito",
+            "draft": "Bozza",
+            "draftCreated": "Bozza creata",
+            "employee": "Dipendente",
+            "expired": "Scaduto",
+            "inReview": "In rassegna",
+            "invite": "Invito",
+            "open": "Apri",
+            "orderApproval": "Approvazione dell'ordine",
+            "orderReturn": "Restituzione dell'ordine",
+            "pending": "In sospeso",
+            "pendingOrder": "Ordine in sospeso",
+            "quote": "Citazione",
+            "reopen": "Riaprire",
+            "replied": "Inviato",
+            "requested": "Richiesto",
+            "return": "Restituire",
+            "status": "Stato",
+            "subscription": "Abbonamento"
+        }
+    },
+    "sw-flow-call-webhook": {
+        "action": {
+            "descriptionWebhook": "Metodo: {method} <div class='sw-flow-sequence-action__webhook-description'>URL: {baseUrl}</div>",
+            "titleCallWebhook": "URL di chiamata (Webhook)"
+        },
+        "labelWebhookLog": "Registro webhook",
+        "log": {
+            "list": {
+                "actionShowInfo": "Visualizza i dettagli",
+                "columnDate": "Data",
+                "columnName": "Nome",
+                "columnStatus": "Stato",
+                "emptyStateTitle": "Nessun registro webhook ancora",
+                "fetchErrorMessage": "Si è verificato un errore durante il recupero dei dati.",
+                "labelFailed": "Fallito",
+                "labelFrom": "Da",
+                "labelStatus": "Stato",
+                "labelSuccess": "Successo",
+                "labelTo": "A",
+                "placeholderStatus": "Seleziona uno stato..."
+            },
+            "modal": {
+                "actionClose": "Chiudi",
+                "labelContent": "Contenuto",
+                "labelDuration": "Durata",
+                "labelHttpStatus": "Stato HTTP",
+                "labelMethod": "Metodo",
+                "labelUrl": "URL",
+                "tabRequest": "Richiesta",
+                "tabResponse": "Risposta",
+                "title": "Informazioni log"
+            }
+        },
+        "modal": {
+            "basicAuth": {
+                "labelActive": "Attivo",
+                "labelPassword": "Password",
+                "labelUsername": "Nome utente",
+                "placeholderPassword": "Inserisci la password...",
+                "placeholderUsername": "Inserisci nome utente..."
+            },
+            "body": {
+                "labelBodyType": "Tipo di corpo",
+                "labelCode": "Codice"
+            },
+            "buttonAddAction": "Aggiungi azione",
+            "buttonSaveAction": "Salva azione",
+            "columnData": "Dati",
+            "columnName": "Nome",
+            "contextButton": {
+                "choosePredefinedParam": "Scegli i parametri predefiniti",
+                "deleteParameter": "Elimina parametro",
+                "useOwnParam": "Usa il proprio parametro"
+            },
+            "general": {
+                "labelBaseUrl": "URL",
+                "labelDescription": "Descrizione",
+                "labelMethod": "Metodo",
+                "labelUrlPreview": "Anteprima URL",
+                "placeholderBaseUrl": "Inserisci l'URL...",
+                "placeholderDescription": "Inserisci la descrizione...",
+                "titleParameters": "Parametri"
+            },
+            "placeholderCustomData": "Inserisci dati personalizzati...",
+            "placeholderData": "Seleziona dati...",
+            "placeholderName": "Inserisci parametro...",
+            "tabBasicAuth": "Autenticazione di base",
+            "tabBody": "Corpo",
+            "tabGeneral": "Generale",
+            "tabHeader": "Parametri dell'intestazione",
+            "titleCallUrl": "URL di chiamata"
+        },
+        "tabLog": "Log"
+    },
+    "sw-flow-custom-event": {
+        "flow-list": {
+            "employee_invite": "È stato invitato un nuovo dipendente B2B",
+            "employee_recovery_request": "Il dipendente richiede una nuova password",
+            "employee_status_changed": "Lo status dei dipendenti B2B è cambiato"
+        }
+    },
+    "sw-flow-delay": {
+        "action": {
+            "contextButton": {
+                "deleteDelayAction": "Ritardo di eliminazione",
+                "editDelayAction": "Ritardo di modifica"
+            }
+        },
+        "actions": {
+            "group": {
+                "swagflowbuilder": "Swag Flow Builder"
+            }
+        },
+        "delay": {
+            "itemDetail": {
+                "actions": "Promozioni",
+                "condition": "Condizioni",
+                "conditionIf": "Se la condizione è",
+                "delay": "Ritardo",
+                "delayed": "Ritardato",
+                "details": "Dettagli"
+            },
+            "list": {
+                "actionCancelDelayedAction": "Interrompi",
+                "actionExecuteDelayedAction": "Esegui ora",
+                "actionShowError": "Mostra errore",
+                "btnExecuteAll": "Esegui tutto",
+                "buttonExecute": "Esegui",
+                "cancelWarningMessage": "Sei sicuro di voler eliminare questa azione ritardata?",
+                "columnCustomer": "Cliente",
+                "columnError": "Stato",
+                "columnName": "Azione o condizione ritardata",
+                "columnOrderNumber": "Codice ordine",
+                "columnRemainingTime": "Tempo residuo",
+                "columnScheduleFor": "Pianificato per",
+                "confirmExecuteActionText": "Sei sicuro di voler eseguire questa azione? Questa azione non può essere annullata.",
+                "day": "giorno | giorni",
+                "emptyStateTitle": "Nessuna azione ritardata",
+                "executeActionErrorMessage": "Si è verificato un errore durante l'esecuzione dell'azione ritardata.",
+                "executeAllWarningMessage": "Sei sicuro di voler eseguire tutte queste azioni ritardate? Questa azione non può essere annullata.",
+                "expiredAction": "Scaduto",
+                "fetchErrorMessage": "Si è verificato un errore durante il recupero dei dati.",
+                "filter": "Filtra",
+                "filterLabel": "Azione o condizione ritardata",
+                "hour": "ora | ore",
+                "inactivateWarningMessage": "Questo flusso contiene azioni ritardate. Se desideri disattivare questo flusso, risolvi preventivamente tutte le azioni ritardate.",
+                "minute": "minuto | minuti",
+                "notAvailable": "N/A",
+                "placeholderSearch": "Cerca numeri d'ordine, clienti...",
+                "resetFilter": "Reimposta"
+            },
+            "warningText": "Le azioni pianificate verranno eseguite solo se il trigger è nuovamente disponibile prima della scadenza del tempo rimanente."
+        },
+        "detail": {
+            "sequence": {
+                "continueButton": "Continua",
+                "delayActionExplainsDescription": "Usa i ritardi per aggiungere periodi definiti di inattività nel tuo flusso. A seconda delle tue preferenze, questi periodi possono durare solo pochi minuti o durare un paio di mesi.",
+                "delayActionExplainsTitle": "Imposta un ritardo",
+                "delayActionTitle": "Ritardo (WAIT)",
+                "labelChangingAction": "La modifica di questa azione avrà un effetto immediato sulle azioni ritardate pianificate.",
+                "labelChangingCondition": "La modifica di questa condizione avrà un effetto immediato sulle condizioni di ritardo programmate.",
+                "labelChangingDelay": "La modifica di questo ritardo non influirà sui ritardi programmati.",
+                "labelDeletingDelay": "L'eliminazione di questo ritardo annullerà tutte le azioni e le condizioni ritardate pianificate correlate.",
+                "labelDontRemind": "Non mostrare più questo messaggio",
+                "labelThen": "Poi",
+                "noDelayAction": "Nessun ritardo impostato",
+                "selectorDelayAction": "Aggiungi ritardo (WAIT)",
+                "warningText": "Ci sono azioni pianificate per questo flusso. Qualsiasi modifica a questo flusso non influirà sulle azioni già pianificate."
+            }
+        },
+        "errorModal": {
+            "defaultMessage": "Si è verificato un errore sconosciuto durante l'esecuzione del flusso ritardato.",
+            "logFileHint": "Controlla il file di registro per ulteriori informazioni.",
+            "title": "Errore durante l'esecuzione del flusso ritardato"
+        },
+        "labelDelayedAction": "Azioni ritardate",
+        "list": {
+            "sequence": {
+                "warningText": "Questo flusso contiene azioni ritardate. Se desideri eliminare questo flusso, risolvi preventivamente tutte le azioni ritardate."
+            }
+        },
+        "modal": {
+            "customTimeInvalid": "Non corrisponde al formato richiesto mm:WW:DD:HH.",
+            "helpTextCustomTime": "Le durate di ritardo personalizzate devono essere inserite esattamente nel seguente formato (mesi): (settimane): (giorni): (ore). <br/> Esempio: 01:03:00:00 ritarderà il flusso di un mese e tre settimane.",
+            "labelCustom": "Individuale",
+            "labelDay": "giorno | giorni",
+            "labelHour": "ora | ore",
+            "labelMonth": "mese | mesi",
+            "labelTime": "{type}",
+            "labelWeek": "settimana | settimane",
+            "placeholderCustomTime": "Inserisci un ritardo personalizzato (mm:ww:dd:HH)...",
+            "placeholderTime": "Inserisci il numero di {type}",
+            "titleDelayAction": "Durata del ritardo",
+            "typeDelayAction": "Tipo"
+        },
+        "tabDelay": "Azioni pianificate",
+        "trigger": {
+            "modal": {
+                "textConfirmChangeTrigger": "Questo flusso contiene azioni pianificate. La modifica del trigger ripristinerà il flusso e rimuoverà tutte le azioni pianificate."
+            }
+        }
+    },
+    "sw-flow-sharing": {
+        "downloadButton": "Download",
+        "downloadModal": {
+            "dataIncluded": "Dati inclusi in questo file",
+            "description": "Questo file di flusso includerà tutte le sequenze e le configurazioni utilizzate nelle sue condizioni e azioni. Quando viene caricato su un sistema esterno, verranno creati i dati mancanti.<br><br>I riferimenti a categorie, prodotti e proprietà possono essere esclusi dal file di flusso. Quando vengono caricati su un sistema esterno, questi riferimenti mancanti dovranno essere riassegnati.",
+            "downloadButton": "Scarica il flusso",
+            "isNotIncludedReferences": "Nessun riferimento incluso",
+            "mailTemplateLabel": "Modello di email: {mail}",
+            "references": "Riferimenti inclusi in questo file",
+            "ruleLabel": "Regola: {ruleName}",
+            "title": "Scarica il flusso"
+        },
+        "importError": {
+            "confirmButton": "Abbandona pagina",
+            "description": "Ci sono modifiche non salvate. Vuoi comunque abbandonare la pagina?",
+            "invalidActionHeading": "Azione non valida",
+            "invalidActionText": "Questa azione fa riferimento a dati che non sono stati trovati nel sistema.",
+            "invalidRuleHeading": "Regola non valida",
+            "invalidRuleText": "Questa regola fa riferimento a dati che non sono stati trovati nel tuo sistema.",
+            "missingRuleText": "Questa regola non è stata trovata nel tuo sistema.",
+            "textAssignCustomerGroup": "Riassegna il gruppo di clienti:",
+            "textCustomerGroup": "Gruppo clienti:",
+            "textMissingObject": "I seguenti dati non sono stati trovati nel tuo sistema:"
+        },
+        "notification": {
+            "messageDownloadError": "Impossibile scaricare il flusso.",
+            "messageDownloadSuccess": "Flow è stato scaricato."
+        },
+        "uploadButton": "Flusso di caricamento",
+        "uploadModal": {
+            "affectedRules": "Regole interessate",
+            "dataWillBeCreated": "verrà creato durante il caricamento di questo flusso.",
+            "description": "Questo flusso contiene nuove regole e modelli di email. Seleziona le regole e i modelli di email che verranno creati nel tuo sistema:",
+            "emails": "modello di email {emails} | modelli di email {emails}",
+            "keepLocalRulesDescription": "Le regole locali rimarranno invariate, ma il flusso caricato potrebbe non funzionare come previsto. Ricontrolla le regole interessate all'interno del flusso.",
+            "keepLocalRulesLabel": "Mantieni le regole locali",
+            "mailTemplateLabel": "Modello di email: {mail}",
+            "overrideLocalRulesDescription": "Le regole locali verranno sovrascritte con le regole del file di flusso «{flowFile}». Assicurati di ricontrollare le assegnazioni di tutte le regole interessate e le relative condizioni per eventuali modifiche.",
+            "overrideLocalRulesLabel": "Sovrascrivi le regole locali",
+            "references": "{references} referenza | {references} referenze",
+            "referencesNeedToAssign": "deve essere riassegnato quando si carica questo flusso. | deve essere riassegnato quando si carica questo flusso.",
+            "ruleLabel": "Regola: {ruleName}",
+            "rules": "regola {rules} | regole {rules}",
+            "tags": "Etichetta {tags} | Etichette {tags}",
+            "title": "Flusso di caricamento",
+            "uploadFileLabel": "Carica file",
+            "uploadLabel": "Seleziona un file json per caricare un modello di flusso",
+            "warningAlert": {
+                "description": "Il tuo sistema non è attualmente compatibile con il flusso caricato.",
+                "extensionsLabel": "Estensione richiesta:",
+                "ruleConflictDescription": "Il file di flusso \"{flowFile}\" contiene regole già esistenti nel sistema. Queste regole utilizzano condizioni diverse dalle condizioni utilizzate nelle regole locali. Quali regole vuoi usare?",
+                "ruleConflictLabel": "Regole contrastanti",
+                "shopwareVersionLabel": "Versione Shopware richiesta:"
+            }
+        }
+    },
+    "sw-label-ai": {
+        "AITextButton": "Chiedi a AI Copilot",
+        "AIToggle": "Copilota AI"
+    },
+    "sw-media": {
+        "image-generator": {
+            "generateError": "Messaggio di test",
+            "header": "Genera immagine",
+            "imageGenerating": "Generazione di immagini",
+            "imageGeneratingTime": "L'operazione potrebbe richiedere alcuni secondi",
+            "imageGeneration": "Genera immagine",
+            "imageSaved": "Salvato",
+            "image_root_folder_name": "Radice",
+            "image_saved_to_folder_message": "L'immagine \"{imageName}\" è stata salvata nella cartella \"{folderName}»",
+            "image_saved_to_folder_title": "Successo",
+            "instructionsDescription": "Personalizza i banner, crea sfondi ambientali per il tuo catalogo di prodotti e crea un'atmosfera invitante per il tuo negozio.",
+            "instructionsFurtherDescription": "Guida la nostra intelligenza artificiale per composizioni diverse e infondi entusiasmo per scintille creative. Mantieni le istruzioni concise per una magia rapida ed efficace.",
+            "instructionsGetStarted": "Inizia con questo prompt: ",
+            "instructionsHeader": "Migliora il tuo negozio in generale con immagini d'atmosfera",
+            "instructionsPrompt": "Crea un'atmosfera calda e invitante con luci soffuse e toni neutri",
+            "invalidPromptErrorMessage": "L'immagine non può essere generata con l'input fornito. Riprova con una richiesta diversa.",
+            "notificationGeneric": "Notifica generica di test",
+            "promptDescription": "Descrivi il tuo suggerimento con parole brevi e precise.",
+            "promptFieldLabel": "Descrivi come dovrebbe apparire l'immagine",
+            "promptFieldPlaceholder": "Inserisci il prompt...",
+            "saveImage": "Salva immagine",
+            "serviceErrorMessage": "Servizio attualmente non disponibile. Riprova più tardi.",
+            "tooManyRequestErrorMessage": "Hai raggiunto il limite di richieste. Riprova più tardi.",
+            "unallowedPromptErrorMessage": "Il prompt contiene contenuti non consentiti. Riprova con una richiesta diversa."
+        },
+        "leave-modal": {
+            "confirmButton": "Abbandona pagina",
+            "contentHeader": "Le tue immagini non verranno salvate.",
+            "description": "Assicurati di salvare tutte le immagini che ti piacciono, prima di lasciare la pagina.",
+            "headline": "Informazioni"
+        },
+        "sidebar": {
+            "usage": {
+                "tooltipFoundSpatialObject": "Trovato in Scene Editor"
+            }
+        }
+    },
+    "sw-organization-unit": {
+        "detail": {
+            "addressErrorNotification": "Assicurati che questa unità organizzativa abbia almeno un indirizzo di spedizione e un indirizzo di fatturazione",
+            "addresses": {
+                "addAdresses": "Aggiungi selezionato",
+                "billing": "Indirizzo di fatturazione",
+                "columns": {
+                    "city": "Città",
+                    "company": "Ditta",
+                    "defaultAddress": "Indirizzo predefinito",
+                    "firstName": "Nome",
+                    "lastName": "Cognome",
+                    "street": "Via",
+                    "zipcode": "Codice postale"
+                },
+                "default": "Standard",
+                "messageEmptyAddress": "Nessun indirizzo",
+                "modalTitle": "Crea indirizzo",
+                "newAddress": "Crea indirizzo",
+                "searchPlaceholder": "Ricerca",
+                "setDefault": "Imposta come predefinito",
+                "shipping": "Indirizzo di consegna",
+                "tab": "Indirizzi",
+                "title": "{addressType} Indirizzi"
+            },
+            "errorNotification": "Errore durante il salvataggio dell'unità organizzativa",
+            "general": {
+                "field": {
+                    "createdAt": {
+                        "label": "Aggiunto il"
+                    },
+                    "employees": {
+                        "label": "Dipendenti",
+                        "placeholder": "Seleziona un dipendente"
+                    },
+                    "id": {
+                        "label": "Numero dell'unità organizzativa"
+                    },
+                    "name": {
+                        "label": "Nome dell'unità organizzativa",
+                        "placeholder": "Inserire il nome dell'unità organizzativa"
+                    },
+                    "paymentMethod": {
+                        "label": "Modalità di pagamento",
+                        "placeholder": "Seleziona un metodo di pagamento"
+                    },
+                    "shippingMethod": {
+                        "label": "Modalità di spedizione",
+                        "placeholder": "Seleziona un metodo di spedizione"
+                    }
+                },
+                "tab": "Generale",
+                "title": "Informazioni generali"
+            },
+            "newTitle": "Nuova unità organizzativa",
+            "orders": {
+                "tab": "Ordini",
+                "title": "Ordini"
+            },
+            "quotes": {
+                "tab": "Citazioni",
+                "title": "Citazioni"
+            },
+            "shoppingList": {
+                "tab": "Lista della spesa",
+                "title": "Lista della spesa"
+            },
+            "successNotification": "Unità organizzativa salvata con successo"
+        }
+    },
+    "sw-privileges": {
+        "permissions": {
+            "ai-image": {
+                "label": "Assistente alle parole chiave dell'immagine"
+            },
+            "b2b_components_organization": {
+                "label": "Unità organizzative"
+            },
+            "b2b_components_shopping_list": {
+                "label": "Lista della spesa"
+            },
+            "b2b_employee_management": {
+                "label": "Gestione dei dipendenti"
+            },
+            "b2b_role_management": {
+                "label": "Gestione dei ruoli"
+            },
+            "custom_price": {
+                "label": "Prezzo del prodotto al cliente"
+            },
+            "order_return": {
+                "label": "Restituisce"
+            },
+            "parents": {
+                "b2b": "B2B",
+                "subscription": "Abbonamenti"
+            },
+            "plans_and_intervals": {
+                "label": "Piani e intervalli"
+            },
+            "quote": {
+                "label": "Gestione delle quotazioni"
+            },
+            "subscription": {
+                "label": "Abbonamenti"
+            },
+            "warehouse": {
+                "label": "Magazzini"
+            },
+            "warehouse-group": {
+                "label": "Gruppi di magazzino"
+            }
+        }
+    },
+    "sw-product": {
+        "card": {
+            "textHeadline": "Magazzino e consegnabilità",
+            "textLinkModal": "Visualizza le scorte per magazzini e gruppi di magazzini",
+            "textProductWarehouseModalDisabled": "Salva le modifiche prima di poter aprire ulteriori dettagli sulle scorte.",
+            "textTooltipMultiSelect": "Assegna gruppi di magazzini per gestire le tue scorte individualmente in più magazzini."
+        },
+        "modal-warehouse-group": {
+            "buttonCancel": "Chiudi",
+            "buttonSave": "Salva",
+            "columnName": "Nome",
+            "columnPriority": "Priorità",
+            "columnStock": "Scorta disponibile",
+            "deliveryTimeHelpText": "I tempi di consegna vengono salvati automaticamente dopo l'aggiornamento",
+            "deliveryTimeLabel": "Tempo di consegna",
+            "labelTotalStock": "Stock totale: ",
+            "navigationLabelStock": "Azione {totalStock}",
+            "tabDeliveryTime": "Tempo di consegna",
+            "tabStock": "Scorta disponibile",
+            "textHeadline": "Stock per magazzino e gruppi di magazzini",
+            "textInlineEdit": "Modifica stock"
+        },
+        "variants-overview": {
+            "inlineText": "Vedi dettagli"
+        }
+    },
+    "sw-product-detail-review-summary": {
+        "actions": {
+            "renew": "Rinnova testo",
+            "renewOverrideWarning": "ATTENZIONE: Questo sovrascriverà il testo corrente."
+        },
+        "aiWarning": "Le risposte dell'IA possono non essere accurate o fuorvianti.",
+        "alerts": {
+            "errorText": "Il servizio non è disponibile al momento. Riprova più tardi.",
+            "errorTitle": "Impossibile generare il riepilogo della recensione",
+            "successText": "È possibile eseguire una correzione di bozze e apportare le modifiche desiderate o rinnovare il testo utilizzando l'opzione di fraseggio. Salva prima il testo perché «Rinnova testo» sovrascriverà il testo corrente.",
+            "successTitle": "Il riepilogo della recensione è stato generato con successo"
+        },
+        "deleteConfirm": "Sei sicuro di voler eliminare questo riepilogo? Questa operazione non può essere annullata e dovrai generare un nuovo riepilogo.",
+        "emptyState": {
+            "createAction": "Chiedi a AI Copilot",
+            "text": "Sulla base di tutte le recensioni dei prodotti disponibili, AI Copilot può generare un riepilogo delle recensioni. Il riepilogo verrà visualizzato nella vetrina sopra le recensioni per aiutare l'utente a identificare le critiche più importanti senza leggere tutte le recensioni.",
+            "title": "Nessun riepilogo della recensione ancora nella lingua corrente"
+        },
+        "fieldLabels": {
+            "phrasing": "Fraseggio",
+            "textarea": "Riepilogo delle recensioni generate",
+            "visible": "Mostra in vetrina"
+        },
+        "phrasingOptions": {
+            "neutral": "Fraseggio neutro",
+            "positive": "Fraseggio positivo"
+        },
+        "title": "Riepilogo della recensione",
+        "titleGenerate": "Generatore di riepilogo recensioni"
+    },
+    "sw-product-generated-description": {
+        "buttonCopy": "Copia",
+        "buttonGenerate": "Genera",
+        "keywords": {
+            "helpText": "Inserisci le informazioni che descrivono in modo specifico il tuo prodotto. Includi misure precise, fatti e parole chiave obbligatorie per renderle parte della descrizione generata. Senza informazioni chiave, solo il nome del prodotto influirà sul risultato generato dall'IA.",
+            "label": "Informazioni chiave",
+            "placeholder": "Inserisci parole chiave, fatti, misurazioni..."
+        },
+        "labelCopyrightNotice": "Avviso sul copyright",
+        "labelGeneratedText": "Descrizione generata",
+        "labelLearnMore": "Per saperne di più",
+        "modalTitle": "Assistente alla descrizione",
+        "notifications": {
+            "messageCopied": "Il testo della descrizione è stato copiato negli appunti.",
+            "messageCopyFailed": "Il testo della descrizione non è stato copiato.",
+            "messageError": "Il servizio non è disponibile al momento. Riprova più tardi.",
+            "messageSuccess": "Descrizione generata con successo."
+        },
+        "textDisclaimer": "Questo servizio basato sull'intelligenza artificiale è progettato per non produrre contenuti errati, offensivi o dannosi. Tuttavia, potrebbero comunque verificarsi degli errori e dovresti ricontrollare tutte le informazioni generate per quanto riguarda la conformità legale, la validità e la completezza. In caso di dubbio, le descrizioni generate dall'intelligenza artificiale devono essere utilizzate solo come fonte di ispirazione per il proprio lavoro."
+    },
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "order": {
+                    "returnNumber": "Numero di ritorno"
+                },
+                "quote": {
+                    "company": "Ditta",
+                    "customerNumber": "Codice cliente",
+                    "email": "Indirizzo e-mail",
+                    "quoteNumber": "Numero del preventivo"
+                },
+                "spatial_scene": {
+                    "name": "Nome della scena"
+                }
+            }
+        }
+    },
+    "sw-quote": {
+        "create": {
+            "buttonContinue": "Continua",
+            "buttonSaveAsDraft": "Crea bozza",
+            "detailsHeader": {
+                "descriptionInfo": "Questo cliente avrà accesso alla gestione delle quotazioni dei componenti B2B.",
+                "titleInfo": "Gestione delle quotazioni disponibile"
+            },
+            "selectSalesChannel": {
+                "alert": "Poiché il canale di vendita selezionato determina i prodotti e le opzioni disponibili, modificarlo rimuoverà tutti i prodotti selezionati e ripristinerà tutte le opzioni configurate.",
+                "buttonSelect": "Selezione",
+                "description": "Il cliente selezionato ha accesso a più canali di vendita. Seleziona il canale di vendita che desideri utilizzare per questo preventivo.",
+                "label": "Usa il canale di vendita",
+                "labelAllChannel": "Tutti i canali di vendita",
+                "placeholder": "Seleziona un canale di vendita...",
+                "title": "Seleziona canale di vendita"
+            }
+        },
+        "deleteLineItemModal": {
+            "description": "Vuoi davvero rimuovere questo articolo dal preventivo? | Vuoi davvero rimuovere questi articoli dal preventivo?"
+        },
+        "detail": {
+            "buttonAddCustomItems": "Aggiungi voce vuota",
+            "buttonAddItems": "Aggiungi articolo",
+            "buttonReopenQuote": "Riapri preventivo",
+            "buttonSend": "Invia",
+            "buttonSendMessageOnly": "Invia solo messaggio",
+            "buttonSendQuote": "Invia preventivo",
+            "commentCustomerDeclinedQuote": "Preventivo rifiutato",
+            "commentCustomerRequestQuote": "Preventivo richiesto",
+            "commentDeclinedQuote": "Rifiutato",
+            "commentEmployeeType": "Dipendente",
+            "commentExpiredQuote": "Scaduto",
+            "commentMerchantSent": "Merchant inviato",
+            "commentOpenedQuote": "Iniziamo una conversazione",
+            "commentReopenedQuote": "Riaperto",
+            "commentRepiedQuote": "Inviato",
+            "commentTitle": "Cronologia dei messaggi",
+            "commentType": "Cliente",
+            "contextMenuRemove": "Rimuovi dal preventivo",
+            "contextMenuShowProduct": "Visualizza prodotto",
+            "createdAtColumn": "Aggiunto il",
+            "currentDocument": "Attuale",
+            "customDocument": "Allega documento personalizzato",
+            "downloadDocument": "Scarica documento",
+            "generatedDocument": "Genera e allega documento",
+            "gridHeaderAmount": "Quantità",
+            "gridHeaderDiscount": "Sconto",
+            "gridHeaderItem": "Nome",
+            "gridHeaderProductPriceGross": "Prezzo del prodotto (lordo)",
+            "gridHeaderProductPriceNet": "Prezzo del prodotto (netto)",
+            "gridHeaderPurchasePriceGross": "Prezzo di acquisto (lordo)",
+            "gridHeaderPurchasePriceNet": "Prezzo d'acquisto (netto)",
+            "gridHeaderQuoteSubtotal": "Subtotale del preventivo (netto)",
+            "gridHeaderSubtotalGross": "Subtotale (lordo)",
+            "gridHeaderSubtotalNet": "Subtotale (netto)",
+            "gridHeaderTax": "Aliquota d'imposta",
+            "gridHeaderUnitPriceGross": "Prezzo unitario (lordo)",
+            "gridHeaderUnitPriceNet": "Prezzo unitario (netto)",
+            "gridSearch": "Ricerca...",
+            "gridTitle": "Voci",
+            "labelAbsoluteDiscount": "Sconto assoluto",
+            "labelComment": "Messaggio",
+            "labelCompany": "Ditta",
+            "labelCustomer": "Cliente",
+            "labelCustomerNumber": "Codice cliente",
+            "labelDocument": "Allega documento",
+            "labelEmail": "Indirizzo e-mail",
+            "labelExpirationDate": "Data di scadenza",
+            "labelExpirationDateError": "Questa data è passata",
+            "labelExpired": "Scaduto",
+            "labelExpiresDate": "Data di scadenza",
+            "labelItemInCart": "Articoli nel carrello",
+            "labelLastUpdated": "Data di modifica",
+            "labelNew": "Nuovo",
+            "labelOrderNumber": "Codice ordine",
+            "labelPercentageDiscount": "Sconto relativo",
+            "labelQuoteCreatedAt": "Aggiunto il",
+            "labelQuoteGrandTotal": "Totale complessivo (lordo)",
+            "labelQuoteSubtotal": "Totale (netto)",
+            "labelRequestedAt": "Richiesto a",
+            "labelSaleChannel": "Canale di vendita",
+            "labelShippingCosts": "Costi di spedizione",
+            "labelSubtotalAllItem": "Totale parziale di tutti gli articoli (netto)",
+            "labelTotalDiscount": "Sconto",
+            "labelVAT": "IVA ({number}%)",
+            "messageCreateSuccess": "La citazione \"{quoteNumber}\" è stata creata.",
+            "messageEmptyDocument": "Nessun documento ancora aggiunto",
+            "messageEmptyItem": "Ancora nessuna voce presente",
+            "messageNoFoundItem": "Nessun articolo trovato",
+            "messageSaveAsDraftSuccess": "La citazione \"{quoteNumber}\" è stata salvata come bozza.",
+            "messageSaveSuccess": "La citazione \"{name}\" è stata salvata.",
+            "nameColumn": "Nome",
+            "noDocumentOption": "Nessun documento",
+            "notificationCancelQuoteErrorMessage": "Abbiamo riscontrato un errore durante l'elaborazione della tua richiesta di cancellazione.",
+            "openDocument": "Apri documento",
+            "placeHolderSetExpireDate": "Seleziona una data...",
+            "placeholderComment": "Aggiungi un messaggio...",
+            "placeholderExpirationDate": "Seleziona una data...",
+            "quoteUpdateSuccess": "Il preventivo è stato aggiornato.",
+            "subtitle": "Qui vengono visualizzati solo i clienti con la gestione delle quotazioni attivata.",
+            "textDeleteConfirm": "Sei sicuro di voler eliminare la citazione \"{quoteNumber}\"?",
+            "textDraftDeletion": "L'eliminazione di questa bozza di preventivo sarà definitiva.",
+            "textInfo": "Generale",
+            "textNewQuote": "Nuova citazione",
+            "titleDocument": "Documento",
+            "titleDraftDeletion": "Elimina bozza",
+            "titleQuote": "Citazione {quoteNumber}",
+            "titleSendMessageOnly": "Invia messaggio",
+            "titleSendQuoteModal": "Invia preventivo"
+        },
+        "filters": {
+            "createdByFilter": {
+                "label": "Creato da",
+                "placeholder": "Seleziona utente..."
+            },
+            "customerFilter": {
+                "label": "Cliente",
+                "placeholder": "Seleziona un cliente..."
+            },
+            "quoteDateFilter": {
+                "label": "Data del preventivo"
+            },
+            "statusFilter": {
+                "label": "Stato del preventivo",
+                "placeholder": "Seleziona stato..."
+            }
+        },
+        "general": {
+            "descriptionTextModule": "Gestisci gli articoli qui.",
+            "mainMenuItemGeneral": "Citazioni",
+            "mainMenuItemList": "Citazioni",
+            "searchBarPlaceholder": "Cerca preventivi..."
+        },
+        "leavePageModal": {
+            "cancelButton": "Rimani sulla pagina",
+            "confirmButton": "Abbandona pagina",
+            "description": "Ci sono modifiche non salvate in questa pagina. Sei sicuro di voler partire senza risparmiare?",
+            "headline": "Avviso"
+        },
+        "list": {
+            "buttonAddQuote": "Aggiungi preventivo",
+            "changeQuoteStateError": "Si è verificato un errore durante il tentativo di modificare lo stato della citazione in \"{stateName}».",
+            "gridHeaderCompany": "Ditta",
+            "gridHeaderEmail": "Indirizzo e-mail",
+            "gridHeaderExpirationDate": "Data di scadenza",
+            "gridHeaderId": "Numero del preventivo",
+            "gridHeaderLastUpdate": "Data di modifica",
+            "gridHeaderName": "Cliente",
+            "gridHeaderQuoteCreatedAt": "Aggiunto il",
+            "gridHeaderQuotePrice": "Prezzo del preventivo",
+            "gridHeaderRequestedAt": "Richiesto a",
+            "gridHeaderStatus": "Stato",
+            "gridHeaderSubmittedBy": "Cliente",
+            "labelManualQuote": "Creato da admin",
+            "messageEmpty": "Ancora nessuna quotazione",
+            "textQuote": "Citazioni"
+        }
+    },
+    "sw-review-list-summaries": {
+        "actions": {
+            "continue": "Continua e chiudi",
+            "generate": "Inizia a generare"
+        },
+        "alerts": {
+            "errorText": "Il servizio non è disponibile al momento. Riprova più tardi.",
+            "errorTitle": "Impossibile avviare la generazione",
+            "successText": "La generazione è ora iniziata e creerà i riassunti {amount} . Verrà eseguita in background. Puoi continuare a lavorare con l'amministrazione.",
+            "successTitle": "La generazione è iniziata"
+        },
+        "infoText": "Sulla base di tutte le recensioni dei prodotti disponibili, AI Copilot può generare un riepilogo delle recensioni. Quando si utilizza «Inizia a generare», tutti i prodotti con un numero sufficiente di recensioni riceveranno un riepilogo delle recensioni.",
+        "minFieldHelpText": "Numero minimo di recensioni per prodotto per generare un riepilogo",
+        "minFieldLabel": "Recensioni minime",
+        "title": "Riepiloghi delle recensioni per tutti i prodotti"
+    },
+    "sw-rule-builder-preview": {
+        "dateTime": "Ora e data",
+        "dateTimeDescription": "La regola deve utilizzare condizioni basate sul tempo per selezionare l'ora e la data per l'anteprima.",
+        "order": "Ordine",
+        "orderPlaceholder": "Seleziona ordine...",
+        "preview": "Anteprima",
+        "previewDescription": "Seleziona un ordine per visualizzare in anteprima se le condizioni restituiranno vere o false. L'anteprima non influirà sull'ordine selezionato.",
+        "previewMode": "Modalità anteprima",
+        "ruleResultFalse": "Questa regola restituisce false",
+        "ruleResultInvalid": "Aspettando...",
+        "ruleResultTrue": "Questa regola ritorna vera"
+    },
+    "sw-rule-builder-preview-indicator": {
+        "false": "False",
+        "invalid": "...",
+        "true": "True"
+    },
+    "sw-scene-editor": {
+        "blueprint": {
+            "feedback-description": "Vogliamo rendere lo Scene Editor ancora migliore! Fateci sapere se avete idee, dubbi o avete riscontrato problemi.",
+            "feedback-label": "Condividi il tuo feedback",
+            "feedback-link": "https://feedback.shopware.com/forums/942607-shopware-6-product-feedback-ideas/suggestions/48535382-scene-editor",
+            "feedback-title": "Aiutaci a migliorare!",
+            "label": "schema"
+        },
+        "camera-options": {
+            "camera-reset-tooltip": "Reimposta fotocamera",
+            "camera-zoom-tooltip": "Fotocamera con zoom",
+            "layer-toggle-tooltip": "Attiva/disattiva la visualizzazione dell'editor",
+            "orbit-view": "Vista dell'orbita"
+        },
+        "detail": {
+            "toolbar": {
+                "mode": {
+                    "edit": "Esporta l'immagine su file multimediali",
+                    "render": "Chiudi"
+                },
+                "save": "Salva scena"
+            }
+        },
+        "edit-options": {
+            "move-tooltip": "Sposta oggetto",
+            "rotate-tooltip": "Ruota oggetto",
+            "scale-tooltip": "Oggetto in scala"
+        },
+        "general": {
+            "descriptionTextModule": "Gestisci le scene 3D qui.",
+            "notificationGeneric": "Si è verificato un errore.",
+            "placeholderSearchBar": "Cerca scene...",
+            "title": "Editor di scene"
+        },
+        "mediaModal": {
+            "primitives": {
+                "tabTitle": "Primitivi"
+            }
+        },
+        "notification": {
+            "image_root_folder_name": "Radice",
+            "image_saved_to_folder_message": "L'immagine \"{imageName}\" è stata salvata nella cartella \"{folderName}»",
+            "image_saved_to_folder_title": "Immagine salvata con successo!",
+            "save-error-msg": "Errore nel salvataggio, non so esattamente...",
+            "scene-not-found-msg": "Scena non trovata",
+            "scene-save-success-msg": "Scena salvata con successo."
+        },
+        "sidebar": {
+            "base": {
+                "position": {
+                    "label": "Voce"
+                }
+            },
+            "group": {
+                "options": "Opzioni",
+                "positionRotationScale": "Posizione, rotazione e scala"
+            },
+            "light": {
+                "add": "Aggiungi luce",
+                "color": {
+                    "label": "Colore"
+                },
+                "create": {
+                    "point": "Nuova luce puntiforme",
+                    "prefix": "Leggero"
+                },
+                "delete": {
+                    "label": "Elimina luce",
+                    "tooltip-disable": "Questa luce non può essere cancellata"
+                },
+                "duplicate": {
+                    "label": "Duplica",
+                    "tooltip-disable": "Questa luce non può essere duplicata"
+                },
+                "enabled": {
+                    "label": "Abilitato"
+                },
+                "intensity": {
+                    "label": "Intensità",
+                    "placeholder": "Inserisci l'intensità..."
+                },
+                "name": {
+                    "label": "Nome della luce",
+                    "placeholder": "Nome"
+                },
+                "options": "Opzioni",
+                "position": {
+                    "label": "Voce",
+                    "locked": "Bloccato",
+                    "reset": "Reimposta"
+                },
+                "preset": {
+                    "bright": "Luce intensa",
+                    "cool": "Luce fredda",
+                    "custom": "Individuale",
+                    "day": "Luce diurna",
+                    "dim": "Luce fioca",
+                    "label": "Preimpostazione della luce",
+                    "night": "Luce notturna",
+                    "placeholder": "Seleziona una luce preimpostata",
+                    "sunrise": "Luce dell'alba",
+                    "sunset": "Luce del tramonto",
+                    "warm": "Luce calda e morbida"
+                },
+                "select": {
+                    "label": "Leggero",
+                    "placeholder": "Seleziona una luce"
+                },
+                "settings": {
+                    "label": "Impostazioni",
+                    "placeholder": "Seleziona impostazioni..."
+                },
+                "title": "Luci",
+                "type": {
+                    "ambient": "Ambiente",
+                    "label": "Tipo",
+                    "placeholder": "Seleziona un tipo di luce",
+                    "point": "Punto",
+                    "scene": "Luce di scena"
+                }
+            },
+            "model": {
+                "addGroup": "Aggiungi gruppo",
+                "addModel": "Aggiungi oggetto 3D",
+                "copy": "(Copia)",
+                "dropIt": "Lascialo cadere",
+                "hide": "Nascondi",
+                "lock": "Serratura",
+                "locked": "Bloccato",
+                "material": {
+                    "color": {
+                        "label": "Colore"
+                    },
+                    "label": "Materiale",
+                    "metalness": {
+                        "helperText": "La proprietà Metallizzazione di un materiale determina quanto sia «metallica» la superficie. Più una superficie è metallica, più riflette l'ambiente circostante e meno visibile diventa il suo colore (albedo). ",
+                        "label": "Metallizzazione"
+                    },
+                    "preset": {
+                        "placeholder": "Seleziona preimpostazione..."
+                    },
+                    "roughness": {
+                        "helperText": "La proprietà di rugosità di un materiale determina quanto sia «ruvida» la superficie. Una superficie ruvida ha molti picchi e valli, quindi la luce rimbalza in modi diversi, creando un colore diffuso.",
+                        "label": "Rugosità"
+                    }
+                },
+                "name": {
+                    "label": "Nome del modello",
+                    "placeholder": "Nome"
+                },
+                "noObjectCard": {
+                    "textContent": "Nessun oggetto 3D nella scena"
+                },
+                "options": "Opzioni",
+                "placeOnFloor": "Posizionare sul pavimento",
+                "position": {
+                    "label": "Voce",
+                    "locked": "Bloccato",
+                    "reset": "Reimposta"
+                },
+                "positionRotationScale": "Posizione, rotazione e scala",
+                "reset": "Reimposta",
+                "rotation": {
+                    "label": "Rotazione"
+                },
+                "scale": {
+                    "label": "Scala"
+                },
+                "show": "Mostra",
+                "title": "Modello",
+                "unlock": "Sblocca",
+                "upload": {
+                    "label": "Carica modello",
+                    "placeholder": "Scegli il modello"
+                },
+                "visible": "Visibile"
+            },
+            "pov": {
+                "add": "Aggiungi videocamera",
+                "create": {
+                    "perspective": "Nuova fotocamera",
+                    "prefix": "Fotocamera"
+                },
+                "delete": {
+                    "label": "Elimina fotocamera"
+                },
+                "duplicate": {
+                    "label": "Duplica"
+                },
+                "locked": "Bloccato",
+                "name": {
+                    "label": "Nome videocamera",
+                    "placeholder": "Nome"
+                },
+                "options": "Opzioni",
+                "position": {
+                    "label": "Voce"
+                },
+                "positionRotation": "Posizione e rotazione",
+                "reset": "Reimposta",
+                "rotation": {
+                    "label": "Rotazione"
+                },
+                "select": {
+                    "label": "Fotocamera",
+                    "placeholder": "Seleziona una videocamera"
+                },
+                "target": {
+                    "label": "Perno"
+                },
+                "title": "Telecamere"
+            },
+            "render": {
+                "camera-select": {
+                    "label": "Fotocamera",
+                    "placeholder": "Seleziona una videocamera",
+                    "render-orbit-view": "Rendering da Orbit View"
+                },
+                "height": {
+                    "label": "Altezza"
+                },
+                "render-button": {
+                    "label": "Salva immagine"
+                },
+                "render-modal": {
+                    "subtitle": "L'immagine è in fase di renderizzazione, l'operazione potrebbe richiedere del tempo.",
+                    "title": "Rendering dell'immagine"
+                },
+                "render-notification-error": {
+                    "message": "Impossibile renderizzare l'immagine"
+                },
+                "render-notification-success": {
+                    "message": "Immagine renderizzata con successo"
+                },
+                "resolution-select": {
+                    "2K": "2K (2560x1440)",
+                    "4K": "Risoluzione 4K (3840x2160)",
+                    "Full HD": "Full HD (1920x1080)",
+                    "custom": "Individuale",
+                    "full-hd-landscape": "Full HD (1920x1080)",
+                    "full-hd-portrait": "Full HD (1080x1920)",
+                    "full-hd-square": "Full HD (1080x1080)",
+                    "label": "Risoluzione",
+                    "placeholder": "Seleziona una risoluzione"
+                },
+                "title": "Esporta l'immagine su file multimediali",
+                "width": {
+                    "label": "Larghezza"
+                }
+            },
+            "scene": {
+                "color": {
+                    "label": "Colore dello sfondo"
+                },
+                "floor": {
+                    "color": {
+                        "label": "Colore del pavimento"
+                    },
+                    "label": "Pavimento"
+                },
+                "name": {
+                    "label": "Nome della scena",
+                    "placeholder": "Nome"
+                },
+                "title": "Scena"
+            }
+        }
+    },
+    "sw-scene-listing": {
+        "editModal": {
+            "createButtonText": "Crea documento",
+            "sceneNamePlaceholder": "Nome della scena"
+        },
+        "general": {
+            "changeListModeError": "Qualcosa è andato storto durante la modifica della modalità di inserzione.",
+            "createNewSceneText": "Crea una nuova scena",
+            "createSceneError": "Qualcosa è andato storto durante la creazione della scena.",
+            "deleteSceneError": "Qualcosa è andato storto durante l'eliminazione della scena.",
+            "duplicateSceneError": "Qualcosa è andato storto durante la duplicazione della scena.",
+            "moduleTitle": "Editor di scene",
+            "saveImageError": "Qualcosa è andato storto durante il salvataggio dell'immagine.",
+            "scenesTitle": "Scene"
+        },
+        "item": {
+            "emptyText": "Scena vuota"
+        }
+    },
+    "sw-settings-aisearch": {
+        "component": {
+            "AISearch": {
+                "imageUploadSearch": {
+                    "card": {
+                        "subtitle": "I tuoi clienti possono trovare i prodotti nel tuo negozio online caricando immagini.",
+                        "title": "Ricerca per immagine"
+                    }
+                },
+                "naturalLanguageSearch": {
+                    "card": {
+                        "subtitle": "Consente al cliente di descrivere ciò che sta cercando utilizzando il linguaggio naturale e di trovare più facilmente i prodotti.",
+                        "title": "Ricerca per contesto"
+                    }
+                },
+                "salesChannelCard": {
+                    "descriptionLabel": "Contesto",
+                    "descriptionPlaceholder": "Inserisci parole chiave...",
+                    "salesChannelDescriptionExample": {
+                        "1": "«snack, prodotti da forno, caffè, cucina, ingredienti, utensili, prodotti per la casa»",
+                        "2": "«attività all'aperto, attrezzatura, arrampicata, sci, abbigliamento, giacche, pantaloni, impermeabili, protezione solare»",
+                        "3": "«forniture artigianali, viti, tasselli, trapani, seghe, martelli, legno, attrezzature»",
+                        "title": "Esempi:"
+                    },
+                    "salesChannelDescriptionSubTitle": "Per ottenere i migliori risultati, descrivi la tua attività con poche parole chiave (massimo 100 caratteri).",
+                    "salesChannelDescriptionTitle": "Contesto del canale di vendita",
+                    "title": "Contesto del canale di vendita"
+                }
+            }
+        },
+        "general": {
+            "title": "Ricerca per contesto"
+        },
+        "notification": {
+            "configSaveErrorMessage": "Impossibile salvare la configurazione di AiSearch",
+            "invalidData": "Recupero dei dati di configurazione di AiSearch non riuscito: risposta errata ai dati",
+            "missingDescriptionErrorMessage": "Impossibile salvare la configurazione di AiSearch: la descrizione del canale di vendita non può essere vuota",
+            "schemaErrorMessage": "Impossibile caricare la configurazione del sistema"
+        },
+        "page": {
+            "aisearchTab": "Copilota AI"
+        }
+    },
+    "sw-settings-basic-information": {
+        "captcha": {
+            "label": {
+                "friendlyCaptcha": "Captcha amichevole",
+                "friendlyCaptchaDescription": "Basato su meccanismi proof-work e segnali di rischio avanzati, Friendly Captcha utilizza un approccio fondamentalmente nuovo per proteggere in modo sicuro i tuoi siti Web e i tuoi servizi online da spam e bot.",
+                "friendlyCaptchaSecretKey": "Chiave segreta Captcha amichevole",
+                "friendlyCaptchaSiteKey": "Chiave del sito Captcha amichevole"
+            }
+        }
+    },
+    "sw-settings-customer-group": {
+        "registration": {
+            "activateCheckbox": {
+                "employee_management_activate_feature": "Abilita la gestione dei dipendenti dei componenti B2B",
+                "order_approval_activate_feature": "Abilita l'approvazione degli ordini dei componenti B2B",
+                "organization_units_activate_feature": "Abilita le unità organizzative dei componenti B2B",
+                "quote_management_activate_feature": "Abilita la gestione delle quotazioni dei componenti B2B",
+                "shopping_list_activate_feature": "Abilita le liste della spesa dei componenti B2B",
+                "swag_quick_order_activate_feature": "Abilita gli ordini rapidi dei componenti B2B"
+            },
+            "activateHelptext": {
+                "features": {
+                    "employee_management_activate_feature": "Gestione dei dipendenti",
+                    "order_approval_activate_feature": "Approvazione dell'ordine",
+                    "organization_units_activate_feature": "Unità organizzative",
+                    "quote_management_activate_feature": "Gestione delle quotazioni",
+                    "shopping_list_activate_feature": "Liste della spesa",
+                    "swag_quick_order_activate_feature": "Ordini rapidi"
+                },
+                "template": "Abilita {name} per tutti i clienti di questo gruppo di clienti. Richiede un modulo di registrazione aziendale."
+            }
+        }
+    },
+    "sw-settings-login-registration-sso-detail": {
+        "activeLabel": "Attivo",
+        "deleteButton": "Elimina provider SSO",
+        "deleteDescription": "L'eliminazione di questo provider SSO sarà definitiva.",
+        "deleteError": "Si è verificato un errore durante l'eliminazione del provider SSO.",
+        "deleteModal": "Sei sicuro di voler eliminare questo provider SSO?",
+        "deleteSuccess": "Il provider SSO è stato eliminato",
+        "deleteTitle": "Elimina provider SSO",
+        "description": "Quando utilizzi i provider SSO, i tuoi clienti verranno reindirizzati per autenticare il proprio account.",
+        "headerNew": "Nuovo provider SSO",
+        "loadError": "Si è verificato un errore durante il caricamento dei provider SSO.",
+        "nameLabel": "Nome",
+        "namePlaceholder": "Inserisci un nome che abbia un significato per te...",
+        "providerConfigInfo": "Puoi trovare le seguenti informazioni nelle impostazioni del tuo provider SSO.",
+        "redirectUrlHelpText": "Incolla questo URL nelle impostazioni del tuo provider SSO. I tuoi clienti verranno reindirizzati a questa pagina dopo l'avvenuta autenticazione con il provider SSO esterno.",
+        "redirectUrlLabel": "URL di reindirizzamento",
+        "saveError": "Si è verificato un errore durante il salvataggio del provider SSO.",
+        "title": "Informazioni sul fornitore",
+        "typeHelpText": "Non tutti i provider SSO supportano tutti i protocolli disponibili.\nVerifica in anticipo se il protocollo selezionato è compatibile con il provider SSO desiderato.",
+        "typeLabel": "Protocollo",
+        "typePlaceholder": "Seleziona protocollo..."
+    },
+    "sw-settings-search": {
+        "notification": {
+            "saveSuccess": "Impostazioni salvate con successo."
+        }
+    },
+    "sw-settings-sso-provider-card": {
+        "buttonAdd": "Aggiungi fornitore",
+        "emptyState": {
+            "iconAlt": "Provider SSO",
+            "subline": "Aggiungi il tuo primo provider Single Sign-On.",
+            "title": "Non ci sono ancora provider SSO"
+        },
+        "listing": {
+            "activeLabel": "Attivo",
+            "nameLabel": "Nome",
+            "typeLabel": "Protocollo"
+        },
+        "searchPlaceholder": "Cerca provider SSO...",
+        "subtitle": "I tuoi clienti possono accedere o registrarsi utilizzando le credenziali esistenti di un provider SSO esterno.",
+        "title": "I tuoi provider SSO"
+    },
+    "sw-settings-tag": {
+        "detail": {
+            "assignments": {
+                "subscriptions": "Abbonamenti"
+            }
+        },
+        "list": {
+            "assignments": {
+                "content": {
+                    "subscriptions": "abbonamenti | abbonamenti | abbonamenti"
+                },
+                "filter": {
+                    "subscriptions": "Abbonamento"
+                },
+                "header": {
+                    "subscriptions": "Assegnazioni di abbonamenti"
+                }
+            }
+        }
+    },
+    "sw-settings-translator": {
+        "detail": {
+            "buttonCancel": "Interrompi",
+            "buttonSave": "Salva",
+            "title": "Valutazioni"
+        },
+        "general": {
+            "notificationGeneric": "Si è verificato un errore.",
+            "title": "Valutazioni"
+        }
+    },
+    "sw-settings-warehouse": {
+        "create": {
+            "title": "Nuovo magazzino"
+        },
+        "detail": {
+            "buttonCancel": "Interrompi",
+            "buttonDelete": "Elimina magazzino",
+            "buttonDeleteModal": "Cancella",
+            "buttonSave": "Salva",
+            "helpTextGroups": "Usa i gruppi per organizzare i tuoi magazzini e assegna regole per gestire le responsabilità di magazzino per i diversi casi aziendali.",
+            "labelDescription": "Descrizione interna",
+            "labelGroups": "Gruppi di magazzino",
+            "labelName": "Nome del magazzino",
+            "placeholderDescription": "Inserisci una descrizione interna...",
+            "placeholderGroups": "Seleziona gruppi di magazzini...",
+            "placeholderName": "Inserisci un nome per il magazzino...",
+            "textDeleteConfirm-1": "L'eliminazione di un magazzino rimuove tutte le scorte associate.",
+            "textDeleteConfirm-2": "Sei sicuro di voler eliminare il magazzino? ",
+            "textDeleteConfirm-3": "?",
+            "textDeleteWarehouseWarning": "L'eliminazione di questo magazzino sarà definitiva.",
+            "title": "Magazzino",
+            "titleCardDelete": "Elimina magazzino",
+            "titleCardMain": "Informazioni sul magazzino",
+            "titleModalDelete": "Elimina magazzino"
+        },
+        "general": {
+            "notificationGeneric": "Si è verificato un errore.",
+            "subtitle": "Crea magazzini per gestire le scorte disponibili.",
+            "title": "Magazzini"
+        },
+        "list": {
+            "actionCreate": "Aggiungi nuovo magazzino",
+            "actionCreateShort": "Aggiungi magazzino",
+            "actionDelete": "Cancella",
+            "actionDetail": "Modifica",
+            "buttonCancel": "Interrompi",
+            "buttonDelete": "Cancella",
+            "columnName": "Nome",
+            "columnWarehouseGroups": "Gruppi di magazzino",
+            "placeholderSearchWarehouse": "Cerca nel magazzino...",
+            "placeholderSearchWarehouseGroup": "Cerca gruppo di magazzini...",
+            "textDeleteConfirm-1": "L'eliminazione di un magazzino rimuove tutte le scorte associate.",
+            "textDeleteConfirm-2": "Sei sicuro di voler eliminare il magazzino? ",
+            "textDeleteConfirm-3": "?",
+            "warehouseMessages": {
+                "noRuleAssignedMessage": "La configurazione di alcuni gruppi di Warehouse viene ignorata perché non viene assegnata alcuna regola. Senza una regola, il gruppo di Warehouse non ha alcuna responsabilità e non è funzionale.<br>Assegna una regola o crea una nuova regola tramite il Rule Builder per dare responsabilità ai tuoi gruppi.<br>Gruppi di magazzino interessati: {warehouseGroups}",
+                "noRuleAssignedMessageTitle": "I gruppi di magazzino non sono funzionali"
+            },
+            "whitespaceSubTitle": "Crea magazzini per gestire le scorte disponibili.",
+            "whitespaceTitle": "Non ci sono ancora magazzini."
+        }
+    },
+    "sw-settings-warehouse-group": {
+        "create": {
+            "title": "Nuovo gruppo di magazzini"
+        },
+        "detail": {
+            "buttonCancel": "Interrompi",
+            "buttonDelete": "Elimina gruppo di magazzini",
+            "buttonDeleteModal": "Cancella",
+            "buttonSave": "Salva",
+            "helpTextPriority": "Ai gruppi di magazzino con una priorità più alta viene data la preferenza se si applica più di una regola.",
+            "labelDescription": "Descrizione interna",
+            "labelName": "Nome del gruppo di magazzino",
+            "labelPriority": "Priorità",
+            "labelRule": "Regola",
+            "placeholderDescription": "Inserisci una descrizione interna...",
+            "placeholderName": "Inserisci un nome per il gruppo...",
+            "placeholderPriority": "1...",
+            "placeholderRule": "Seleziona una regola...",
+            "ruleInfoText": "Utilizza le regole per gestire singolarmente la disponibilità di questo gruppo di magazzini. Se non viene selezionata alcuna regola, il gruppo di magazzino verrà ignorato.",
+            "ruleInfoTitle": "Gestisci la disponibilità",
+            "textDeleteConfirm-1": "L'eliminazione di un gruppo di magazzini ne rimuove l'assegnazione ai prodotti. Questi prodotti potrebbero non essere più disponibili.",
+            "textDeleteConfirm-2": "Sei sicuro di voler eliminare il gruppo di magazzino? ",
+            "textDeleteConfirm-3": "?",
+            "textDeleteWarehouseWarning": "L'eliminazione di questo gruppo di magazzini sarà definitiva.",
+            "title": "Gruppo di magazzini",
+            "titleCardDelete": "Elimina gruppo di magazzini",
+            "titleCardMain": "Informazioni sul gruppo di magazzino",
+            "titleModalDelete": "Elimina gruppo Warehouse"
+        },
+        "general": {
+            "notificationGeneric": "Si è verificato un errore.",
+            "subtitle": "Crea gruppi per organizzare i tuoi magazzini e assegna regole per gestire le responsabilità di magazzino per i diversi casi aziendali.",
+            "title": "Gruppi di magazzino",
+            "titleDelete": "Elimina gruppo di magazzini"
+        },
+        "list": {
+            "actionCreate": "Aggiungi nuovo gruppo di magazzini",
+            "actionCreateShort": "Aggiungi gruppo di magazzini",
+            "actionDelete": "Cancella",
+            "actionDetail": "Modifica",
+            "buttonCancel": "Interrompi",
+            "buttonDelete": "Cancella",
+            "columnName": "Nome",
+            "columnPriority": "Priorità",
+            "columnRule": "Regola",
+            "textDeleteConfirm-1": "L'eliminazione di un gruppo di magazzini ne rimuove l'assegnazione ai prodotti. Questi prodotti potrebbero non essere più disponibili.",
+            "textDeleteConfirm-2": "Sei sicuro di voler eliminare il gruppo di magazzino? ",
+            "textDeleteConfirm-3": "?",
+            "whitespaceSubTitle": "Crea gruppi per organizzare i tuoi magazzini in modo individuale.",
+            "whitespaceTitle": "Non ci sono ancora gruppi di magazzino."
+        },
+        "warehouseAssignment": {
+            "actionDeleteWarehouse": "Cancella",
+            "buttonAddWarehouses": "Aggiungi magazzini",
+            "buttonCancel": "Interrompi",
+            "buttonConfirmSelection": "Aggiungi magazzini {count}",
+            "buttonDelete": "Cancella",
+            "columnWarehouseName": "Nome",
+            "columnWarehousePriority": "Priorità",
+            "helpTextWarehousePriority": "I magazzini con una priorità più alta hanno la preferenza se più di un magazzino è in grado di soddisfare una determinata richiesta di prodotto.",
+            "textDeleteConfirm-1": "La rimozione di un magazzino assegnato renderà le scorte configurate non disponibili per questo gruppo.",
+            "textDeleteConfirm-2": "Sei sicuro di voler rimuovere il magazzino assegnato? ",
+            "textDeleteConfirm-3": "?",
+            "titleCard": "Assegnazioni di magazzino",
+            "titleWarehouseSelect": "Aggiungi magazzini",
+            "titleWhitespace": "Non ci sono ancora magazzini assegnati",
+            "whitespaceButtonAdd": "Aggiungi magazzini",
+            "whitespaceTitleWarehouseSelection": "Nessun magazzino non assegnato trovato."
+        }
+    },
+    "sw-shopping-list": {
+        "detail": {
+            "labelAddNewItem": "Aggiungi articolo",
+            "labelColumnName": "Nome",
+            "labelColumnQuantity": "Quantità",
+            "labelColumnTotalPrice": "Prezzo totale",
+            "labelColumnUnitPrice": "Prezzo unitario",
+            "labelCreatedAt": "Aggiunto il",
+            "labelGrandTotal": "Somma totale incl. IVA",
+            "labelSearchLineItem": "Sfoglia voci...",
+            "labelShoppingListCustomer": "Cliente",
+            "labelShoppingListCustomerNumber": "Codice cliente",
+            "labelShoppingListName": "Nome",
+            "labelShoppingListSalesChannel": "Canali di vendita",
+            "labelTotal": "Somma totale senza IVA",
+            "labelUpdatedAt": "Aggiornato il",
+            "labelVAT": "più {number}% di IVA",
+            "messageEmptyItem": "Ancora nessuna voce presente",
+            "messageSaveSuccess": "Lista della spesa salvata con successo.",
+            "notification": {
+                "deleteLineItemFailed": "Si è verificato un errore durante l'eliminazione della voce. Riprova.",
+                "deleteLineItemSuccess": "L'articolo è stato eliminato.",
+                "duplicateFailed": "Si è verificato un errore durante la duplicazione della lista della spesa. Per favore riprova.",
+                "duplicateSuccess": "L'articolo è stato duplicato.",
+                "saveLineItemFailed": "Si è verificato un errore durante il salvataggio della voce. Riprova.",
+                "saveLineItemSuccess": "L'articolo è stato salvato."
+            },
+            "titleGeneral": "Generale",
+            "titleItems": "Voci",
+            "titleNew": "Nuova lista della spesa"
+        },
+        "general": {
+            "descriptionTextModule": "Gestisci gli articoli qui.",
+            "mainMenuItemGeneral": "Lista della spesa",
+            "mainMenuItemList": "Liste della spesa",
+            "searchBarPlaceholder": "Cerca nella lista della spesa..."
+        }
+    },
+    "sw-sso-protocol-oidc": {
+        "clientIdLabel": "ID client",
+        "clientIdPlaceholder": "Inserisci l'ID cliente...",
+        "clientSecretLabel": "Segreto client",
+        "clientSecretPlaceholder": "Inserisci il segreto del cliente...",
+        "providerUrlLabel": "URL del provider",
+        "providerUrlPlaceholder": "Inserisci l'URL del provider...",
+        "scopeLabel": "Ambito",
+        "scopeLabelHelpText": "L'ambito definisce a quali dati utente può accedere il provider SSO. Per impostazione predefinita, si tratta di posta elettronica quando si lascia vuoto questo campo.",
+        "scopeLabelPlaceholder": "Inserisci ambito...",
+        "title": "Connessione OpenID (OIDC)",
+        "userInfoUrlHelpText": "Nel caso in cui il tuo provider SSO non supporti l'endpoint OIDC standard per le informazioni sugli utenti, puoi inserire un URL personalizzato qui.",
+        "userInfoUrlLabel": "URL delle informazioni sull'utente",
+        "userInfoUrlPlaceholder": "Inserisci l'URL delle informazioni utente..."
+    },
+    "sw-text-field-ai": {
+        "ai": "AI",
+        "cancel": "Interrompi",
+        "retry": "Riprova"
+    },
+    "sw-vector-field": {
+        "lock-uniform-scale": "Scala uniforme Lock",
+        "unlock-uniform-scale": "Sblocca una scala uniforme"
+    },
+    "swag-b2b-features": {
+        "employeeManagementDescription": "I tuoi clienti possono creare account per i dipendenti con ruoli e autorizzazioni per realizzare singoli processi di ordinazione.",
+        "employeeManagementName": "Gestione dei dipendenti",
+        "orderApprovalDescription": "Fornisce il controllo a livello aziendale sul processo di ordinazione, aiuta a mantenere la conformità al budget e riduce gli errori di ordinazione.",
+        "orderApprovalName": "Approvazione dell'ordine",
+        "organizationUnitDescription": "I tuoi clienti possono organizzare i propri dipendenti con ruoli e autorizzazioni.",
+        "organizationUnitName": "Unità organizzative",
+        "quickOrderDescription": "I tuoi clienti possono velocizzare il processo di ordinazione inserendo i numeri di prodotto o caricando i file.",
+        "quickOrderName": "Ordine rapido",
+        "quoteManagementDescription": "I tuoi clienti possono richiedere prezzi di offerta individuali.",
+        "quoteManagementName": "Gestione delle quotazioni",
+        "shoppingListDescription": "I tuoi clienti possono ritirare i prodotti a cui devono accedere frequentemente o ordinarli in un secondo momento.",
+        "shoppingListName": "Liste della spesa",
+        "specificFeaturesCard": {
+            "activateHelpText": {
+                "features": {
+                    "EMPLOYEE_MANAGEMENT": "Gestione dei dipendenti",
+                    "ORDER_APPROVAL": "Approvazione dell'ordine",
+                    "ORGANIZATION_UNITS": "Unità organizzative",
+                    "QUICK_ORDER": "Ordini rapidi",
+                    "QUOTE_MANAGEMENT": "Gestione delle quotazioni"
+                },
+                "template": "{dependency} è richiesto per {name}"
+            },
+            "activeLabel": "Attivo",
+            "title": "Componenti B2B"
+        }
+    },
+    "swag-customer-classification": {
+        "alertPageIntroduction": "Crea classificazioni dei clienti in base ai dati degli ordini e aggiungili ai clienti come tag.",
+        "buttonClassify": "Classificare",
+        "buttonGenerate": "Genera tag",
+        "buttonStart": "Inizio",
+        "cardTitleBasicInfo": "Informazioni",
+        "cardTitleLabels": "Tag",
+        "editTagModal": {
+            "title": "Modifica tag"
+        },
+        "emptyState": {
+            "messageEmptySubline": "Torna indietro e seleziona i clienti.",
+            "messageEmptyTitle": "Nessun cliente selezionato"
+        },
+        "helpTextGenerateContent": "Aggiungi ulteriori informazioni come gli scopi delle classificazioni, la campagna di marketing, la valutazione o lascia che sia l'IA a sceglierla da sola.",
+        "labelAdditionalInfo": "Genera contenuti",
+        "labelGrid": {
+            "buttonEdit": "Modifica",
+            "buttonRemove": "Rimuovi",
+            "columnCondition": "Condizioni",
+            "columnDescription": "Descrizione",
+            "columnTag": "Nome del tag"
+        },
+        "labelNumberOfTags": "Numero di tag",
+        "mainMenuItemIndex": "Classificazione dei clienti",
+        "notificationModal": {
+            "confirm": {
+                "buttonContinue": "Continua",
+                "description": "Inizia a classificare il cliente {totalCustomer} ? Questa azione non può essere annullata.",
+                "title": "Classificazione - Conferma?",
+                "warning": "Utilizzeremo i seguenti dati per la classificazione dei clienti: numero cliente, numero degli ordini, data dell'ultimo ordine, importo totale dell'ordine, ultimo accesso e primo accesso.<br><br>Una volta avviato il processo di classificazione dei clienti, i vecchi tag delle etichette generati dall'intelligenza artificiale verranno rimossi e sovrascritti dalle etichette appena generate."
+            },
+            "error": {
+                "description": "Classificazione del cliente non riuscita.",
+                "title": "Classificazione - Errore"
+            },
+            "messageBeforeTabLeave": "La classificazione è in corso di elaborazione. Se si chiude la scheda, è possibile che non tutte le modifiche vengano applicate.",
+            "process": {
+                "description": "La tua lista clienti è in fase di classificazione. Attendi per favore!",
+                "title": "Classificazione - In corso"
+            },
+            "success": {
+                "description": "Classificate con successo i clienti {totalCustomer} .",
+                "title": "Classificazione - Successo"
+            }
+        },
+        "placeholderAdditionalInfo": "Valore del ciclo di vita del cliente del gruppo negli ultimi 3 mesi",
+        "placeholderNumberOfTags": "Inserisci il numero di tag",
+        "tagWarning": "Tieni presente che le condizioni specifiche per ogni tag possono variare a seconda della tua attività e del settore, quindi è importante modificare le condizioni di conseguenza per garantire una classificazione accurata.",
+        "textTitle": "Classificazione: cliente {totalCustomer} | Classificazione: clienti {totalCustomer}",
+        "tooltipButtonStart": "Seleziona i tag per iniziare la classificazione"
+    },
+    "swag-export-assistant": {
+        "alert": {
+            "action": "Abilita AI Copilot",
+            "message": "L'assistente all'esportazione <b></b> consente di esportare facilmente utilizzando input rapidi.",
+            "title": "Copilota AI"
+        },
+        "base": {
+            "buttonDisableAICopilot": "Disattiva AI Copilot",
+            "description": "titolo",
+            "example": {
+                "exampleOne": "Dammi tutti i clienti che si sono registrati l'ultimo mese",
+                "exampleThree": "Dammi tutti i codici promozionali che sono stati utilizzati",
+                "exampleTwo": "Dammi tutti gli ordini effettuati durante l'ultimo Black Friday"
+            },
+            "helpText": "Questa versione dell'assistente supporta solo clienti, prodotti, ordini, categorie, newsletter, codici promozionali, sconti promozionali, proprietà, vendita incrociata e prezzo del prodotto",
+            "label": "Pronto",
+            "labelExportAssistant": "Assistente all'esportazione",
+            "labelExportDefault": "Esportazione predefinita",
+            "messageExportDone": "Assistente: è stato aggiunto un nuovo processo di esportazione",
+            "placeholder": "Dammi tutti i clienti registrati questo mese",
+            "subtitle": "Ad esempio:",
+            "title": "Questo assistente può aiutarti a esportare i dati di cui hai bisogno con facilità."
+        },
+        "default": {
+            "placeholderSearchBar": "Dammi tutti i clienti registrati questo mese",
+            "preview": "Anteprima"
+        },
+        "modal": {
+            "buttonStartExport": "Esporta",
+            "foundItem": "(0 articoli trovati) | ({total} articoli trovati)",
+            "messageEmptyTitle": "Nessuna entità trovata per questo prompt",
+            "messageLoading": "Attendi durante la creazione del prompt. Potrebbe volerci del tempo."
+        }
+    },
+    "swag-return-management": {
+        "changeStateModal": {
+            "buttonUpdateStatus": "Aggiorna",
+            "description": "Sei sicuro di voler cambiare lo stato di questo ritorno in {state}?",
+            "title": "Cambia stato"
+        },
+        "deleteLineItemModal": {
+            "description": "Questo articolo è già stato aggiunto al reso. Vuoi davvero eliminarlo dall'ordine e restituirlo? | Questi articoli sono già stati aggiunti per la restituzione. Vuoi davvero eliminarli dall'ordine e restituirli?"
+        },
+        "deleteReturnItemModal": {
+            "description": "Vuoi davvero rimuovere questo articolo dal reso? | Vuoi davvero rimuovere questi articoli dal reso?"
+        },
+        "deleteReturnModal": {
+            "confirmation": "Vuoi davvero eliminare questo reso (#{returnNumber})?",
+            "warning": "Lo stato degli articoli non verrà aggiornato.<br>Questa operazione deve essere eseguita manualmente."
+        },
+        "detail": {
+            "buttonReturnItems": "Restituisci articoli",
+            "buttonSetStatus": "Imposta lo stato",
+            "contextMenuSetStatus": "Imposta lo stato",
+            "messageErrorCreateReturnModal": "Solo i prodotti fisici e gli articoli personalizzati che non fanno parte del reso o che non rientrano nello stato Annullato, Restituito o Restituito parzialmente possono essere aggiunti a un reso.",
+            "messageErrorSetStatusModal": "Solo l'articolo prodotto o l'articolo personalizzato possono impostare lo stato",
+            "tooltipChangeItemStatusManually": "Questo articolo non esiste nel reso dell'ordine corrente o è già stato rimosso dal reso dell'ordine, aggiorna il suo stato (Aperto o Spedito) manualmente"
+        },
+        "documentConfig": {
+            "helpTextPartialCancellation": "Una fattura di annullamento parziale non può essere creata senza una fattura.",
+            "includeCancelled": "Includi articoli annullati"
+        },
+        "notification": {
+            "labelErrorNoAction": "Nessun nuovo stato selezionato.",
+            "labelErrorStateChange": "Si è verificato un errore durante l'aggiornamento dello stato: ",
+            "labelErrorUpdateRefund": "Si è verificato un errore durante l'aggiornamento dell'importo del rimborso",
+            "messageErrorLineItemQuantity": "La quantità dell'articolo ordinato deve essere maggiore o uguale alla quantità restituita: {returnQuantity}",
+            "requiredFields": "Ti preghiamo di compilare tutti i campi obbligatori."
+        },
+        "openReturnDetails": {
+            "fieldComment": "Commento",
+            "fieldTotalAmount": "Importo totale"
+        },
+        "returnCard": {
+            "excludedTax": "IVA esclusa:",
+            "generalTab": {
+                "headlineOrderState": "Stato del reso",
+                "items": "(Nessun articolo) | ({total} articolo) | ({total} articoli)",
+                "labelComment": "Commento",
+                "labelGeneralInformation": "Informazioni",
+                "numberOfProducts": "Numero di prodotti",
+                "placeholderComment": "Inserisci un commento..."
+            },
+            "labelReturnCreated": "Ritorno creato il {time} da {user}",
+            "labelTitle": "Ritorno #{returnNumber}",
+            "positionsTab": {
+                "labelPositions": "Posizioni"
+            },
+            "statusTab": {
+                "columnDate": "Data",
+                "columnStatus": "Stato",
+                "columnUser": "Modificato da",
+                "labelStatusHistory": "Storico dello stato",
+                "labelSystemUser": "Sistema"
+            },
+            "summaryLabelAmount": "Totale",
+            "summaryLabelAmountTotal": "Rimborso totale IVA inclusa",
+            "summaryLabelAmountWithoutTaxes": "Rimborso totale IVA esclusa",
+            "summaryLabelShippingCosts": "Costi di spedizione",
+            "summaryLabelTaxes": "più {taxRate}% IVA:"
+        },
+        "returnFilter": {
+            "label": "Stato del reso",
+            "placeholder": "Seleziona lo stato del reso..."
+        },
+        "returnItemGrid": {
+            "buttonSetStatus": "Imposta lo stato",
+            "buttonUpdateRefund": "Aggiorna rimborso",
+            "columnPriceGross": "Prezzo lordo",
+            "columnPriceNet": "Prezzo netto",
+            "columnPriceTaxFree": "Prezzo (esente da tasse)",
+            "columnProductName": "Nome del prodotto",
+            "columnQuantity": "Quantità",
+            "columnRefund": "Rimborso",
+            "columnStatus": "Stato",
+            "columnSubTotal": "Totale",
+            "columnTax": "Aliquota d'imposta",
+            "contextMenuDelete": "Rimuovi dal reso",
+            "contextMenuOpenReturnDetails": "Apri i dettagli dell'articolo",
+            "contextMenuReturn": "Restituisci articolo",
+            "contextMenuSetStatus": "Imposta lo stato",
+            "contextMenuShowProduct": "Visualizza prodotto",
+            "discountWarning": {
+                "textCheckRefundAmount": "Controlla e aggiorna l'importo del rimborso",
+                "textCreditDescription": "Nota di credito con {value}",
+                "textOrderHasDiscount": "Questo ordine include articoli in promozione o in credito:"
+            },
+            "placeholderSearchBarItem": "Cerca elemento...",
+            "textNoItemFound": "Nessun articolo trovato",
+            "tooltipSuggestedPrice": "Il prezzo di rimborso del prodotto è influenzato dalle promozioni.<br>Prezzo suggerito: {price}"
+        },
+        "returnModal": {
+            "buttonAddItemToReturn": "Aggiungi per restituire",
+            "buttonCreateReturn": "Crea reso",
+            "columnComment": "Commento",
+            "columnName": "Nome",
+            "columnOrderQuantity": "Quantità ordine",
+            "columnReturnQuantity": "Quantità da restituire",
+            "messageErrorNoItemHasQuantity": "Deve avere almeno 1 articolo con una quantità superiore a 0 per creare un reso",
+            "messagePreventAddItem": "Questo articolo fa già parte del reso o il suo stato è Annullato, Restituito o Restituito parzialmente.",
+            "placeholderComment": "Inserisci commento...",
+            "subtitle": "Return #{returnNumber} ({state}) creato il {time} da {user}",
+            "title": "Restituisci articoli",
+            "titleEmptyState": "Nessun articolo accettabile aggiunto"
+        },
+        "setStatusModal": {
+            "labelStatus": "Stato",
+            "positions": "{quantity} posizioni",
+            "title": "Imposta stato - Nessun elemento selezionato | Imposta stato - {content} | Imposta stato - {content} posizioni"
+        },
+        "tabReturns": "Restituisce"
+    },
+    "swag-search-assistant": {
+        "default": {
+            "placeholderSearchBar": "Trova tutti gli ordini effettuati ieri"
+        }
+    }
+}

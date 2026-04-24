@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/layout/header/logo.html.twig' %}
+
+{% block layout_header_logo_image_default %}
+    <img src="{{ asset('/bundles/caviartheme/storefront/assets/header/logo-latest.svg') }}"
+         alt="{{ 'header.logoLink'|trans|striptags }}"
+         class="img-fluid header-logo-main-img">
+{% endblock %}

@@ -1,0 +1,15 @@
+.emotion--wrapper.is--fullscreen section.emotion--container {
+
+    .banner-slider--container {
+
+        .arrow.is--left {
+            @include unitize(left, 20);
+        }
+
+        .image-slider--dots {
+            @include unitize(bottom, 20);
+        }
+
+    }
+
+}

@@ -1,0 +1,194 @@
+/*
+Cookie consent manager components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for cookie consent manager and related UI elements.
+*/
+
+// TODO: Add cookie consent manager styles from original LESS file
+@import "../abstract";
+@import "../mixins";
+
+#cookie-consent {
+  @extend .sidebar-main;
+  @extend .off-canvas;
+  @include unitize-width(280);
+  @include transition(transform 0.45s cubic-bezier(.3,0,.15,1));
+
+  &.off-canvas {
+    position: fixed;
+    z-index: 8000;
+    background: $body-bg;
+  }
+
+  &.block-transition {
+    transition: none;
+  }
+
+  .cookie-consent--header {
+    @extend .navigation--smartphone;
+    @extend .entry--close-off-canvas;
+    @extend .navigation--smartphone;
+    @extend .entry--close-off-canvas;
+    @extend .navigation--link;
+
+    cursor: pointer;
+
+    .icon--arrow-right {
+      @extend .navigation--smartphone;
+      @extend .entry--close-off-canvas;
+      @extend .icon--arrow-right;
+    }
+  }
+
+  .cookie-consent--description {
+    @include unitize-padding(15, 10);
+  }
+
+  .cookie-consent--configuration {
+    .cookie-consent--group {
+      @include unitize-padding(15, 10);
+      @include clearfix();
+
+      border-bottom: 1px solid $border-color;
+      position: relative;
+    }
+
+    .cookie-consent--group-title {
+      cursor: pointer;
+      float: left;
+      width: 85%;
+
+      &.is--active .cookie-consent--group-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .cookie-consent--configuration-header-text {
+      @include unitize-padding(15, 10);
+
+      font-weight: $font-bold-weight;
+      color: $text-color-dark;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .cookie-consent--group-description {
+      @include unitize(margin-left, 42);
+
+      color: lighten($text-color, 15%);
+    }
+  }
+
+  .cookie-consent--cookie {
+    @include clearfix();
+    @include unitize-padding(15, 0);
+
+    position: relative;
+
+    .cookie--label {
+      cursor: pointer;
+    }
+  }
+
+  .cookie-consent--group-container {
+    @include unitize(padding-top, 10);
+
+    float: none;
+    clear: both;
+  }
+
+  .cookie-consent--group-arrow {
+    @include unitize(right, 15);
+    @include unitize(font-size, 12);
+    @include unitize(top, 18);
+
+    position: absolute;
+  }
+
+  .cookie-consent--save {
+    @include unitize-padding(15, 10);
+
+    .cookie-consent--save-button {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .cookie-consent--configuration-main {
+    background: #fff;
+  }
+
+  .cookie-consent--state-label {
+    @include unitize(margin-left, 40);
+  }
+}
+
+// State input
+.cookie-consent--state-input {
+  display: block;
+  position: absolute;
+
+  &.cookie-consent--cookie-state {
+    top: calc(50% - 10px);
+  }
+
+  &.cookie-consent--required {
+    opacity: 0.4;
+
+    .cookie-consent--state-input-element {
+      cursor: default;
+    }
+  }
+
+  .cookie-consent--state-input-element {
+    @include unitize-height(20);
+    @include unitize-width(20);
+    @include unitize(border-radius, 3);
+    border: 1px solid $border-color;
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+
+  input {
+    display: none;
+
+    &:checked + .cookie-consent--state-input-element {
+      background: darken($gray-dark, 20%);
+
+      &::after {
+        @include unitize-width(10);
+        @include unitize-height(5);
+        @include unitize(top, 4);
+        @include unitize(left, 3);
+
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        background: transparent;
+        content: '';
+        position: absolute;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:indeterminate + .cookie-consent--state-input-element {
+      background: darken($gray-dark, 20%);
+
+      &::after {
+        @include unitize-width(10);
+        @include unitize-height(5);
+        @include unitize(top, 3);
+        @include unitize(left, 4);
+
+        border: 2px none #fff;
+        border-bottom-style: solid;
+        background: transparent;
+        content: '';
+        position: absolute;
+      }
+    }
+  }
+}

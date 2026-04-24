@@ -1,0 +1,109 @@
+/*
+==================================================
+Search Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add search functionality styling, search forms, and search results from the original Responsive theme.
+*/
+/*
+Search
+==========================================
+Contains the styles for the main search-box component of the Shopware storefront.
+
+The styling defines the search result page layout and its components.
+
+It contains the viewport specific styles inside media queries.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.search--content {
+  @include unitize-padding(40, 0, 0, 0);
+}
+
+.search--headline {
+  @include unitize-margin(0, 0, 40, 0);
+  text-align: center;
+}
+
+.search--cat-filter {
+  @include unitize-margin(0, 0, 20, 0);
+
+  .cat-filter--headline {
+    @include unitize-padding(0, 0, 5, 0);
+    @include unitize-margin(0, 0, 20, 0);
+    @include unitize(font-size, 16);
+    @include unitize(line-height, 24);
+    border-bottom: 1px solid $border-color;
+  }
+
+  .cat-filter--reset {
+    @extend .filter--active;
+    @include unitize-margin(0, 0, 15, 0);
+    @include unitize(line-height, 24);
+    border-color: $brand-primary;
+
+    [class^="icon--"] {
+      @include unitize(top, -1);
+      @include unitize(margin-right, 10);
+      @include unitize(font-size, 8);
+      position: relative;
+    }
+  }
+
+  .cat-filter--active-path {
+    @include unitize-margin(0, 0, 20, 0);
+  }
+
+  .cat-filter--label {
+    @include unitize-margin(0, 10, 0, 0);
+    font-weight: $font-bold-weight;
+  }
+
+  .cat-filter--path {
+    white-space: nowrap;
+
+    [class^="icon--"] {
+      @include unitize-margin(0, 20);
+      @include unitize(font-size, 10);
+    }
+  }
+
+  .cat-filter--link,
+  .cat-filter--sub-cat {
+    color: $text-color;
+
+    &:hover {
+      color: $link-color;
+    }
+
+    .checkbox {
+      @include unitize-margin(0, 5, 0, 0);
+      @include unitize(-1, 16, top);
+      position: relative;
+    }
+  }
+
+  .cat-filter--sub-cat {
+    @include unitize-width(180);
+    @include unitize(line-height, 24);
+    @include unitize-margin(0, 10, 0, 0);
+    display: block;
+  }
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+
+  .search--cat-filter {
+    @include unitize-margin(0, 0, 40, 0);
+  }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+  .search--content {
+    @include unitize-padding(45, 0, 0, 0);
+  }
+}

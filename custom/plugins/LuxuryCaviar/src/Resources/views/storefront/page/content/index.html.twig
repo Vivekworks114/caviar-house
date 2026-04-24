@@ -1,0 +1,817 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+
+{% block base_head_title %}
+    <title>Caviar House - Selectionneur de Caviars Premium | Depuis 1950</title>
+{% endblock %}
+
+{% block base_head_meta_tags %}
+    {{ parent() }}
+    <meta name="description" content="Decouvrez Caviar House, selectionneur de caviars du monde depuis 1950. Caviars premium, saumons, epicerie fine et cadeaux gastronomiques. Livraison offerte des 350EUR.">
+    <meta name="keywords" content="caviar, caviar premium, saumon, epicerie fine, gastronomie, cadeaux, livraison, caviar house">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Caviar House - Selectionneur de Caviars Premium | Depuis 1950">
+    <meta property="og:description" content="Decouvrez Caviar House, selectionneur de caviars du monde depuis 1950. Caviars premium, saumons, epicerie fine et cadeaux gastronomiques.">
+{% endblock %}
+
+{% block page_content %}
+  
+  <!-- Header -->
+  <header class="w-full" id="61:2893">
+    <!-- Top Banner -->
+    <div class="w-full bg-[#0d3d34] px-[20px] sm:px-[30px] md:px-[40px] py-[4px] sm:py-[6px] md:py-[8px]" id="I61:2893;1905:69861">
+      <div class="flex flex-col sm:flex-row justify-between items-center w-full">
+        <!-- Banner Text -->
+        <div class="flex justify-center items-center px-[5px] sm:px-[8px] md:px-[10px] py-[6px] sm:py-[10px] md:py-[12px]" id="I61:2893;1905:69861;1905:69821">
+          <p class="text-[12px] sm:text-[13px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto']" id="I61:2893;1905:69861;1905:69822">
+            Bandeau: Information livraison, promo festive, actualité importante
+          </p>
+        </div>
+        
+        <!-- Logo -->
+        <div class="flex justify-center items-center my-2 sm:my-0" id="I61:2893;1905:69861;1905:69823">
+          <img src="{{ asset('assets/images/img_header_logo.png', 'theme') }}" class="w-[150px] sm:w-[180px] md:w-[214px] h-auto" alt="Caviar House Logo" />
+        </div>
+        
+        <!-- Top Right Menu -->
+        <div class="flex justify-end items-center py-[12px] sm:py-[15px] md:py-[18px] w-full sm:w-auto" id="I61:2893;1905:69861;1905:69851">
+          <div class="flex justify-end items-center gap-[4px] sm:gap-[6px] md:gap-[8px]" id="I61:2893;1905:69861;1905:69852">
+            <img src="{{ asset('assets/images/img_icon.svg', 'theme') }}" class="w-[12px] sm:w-[13px] md:w-[14px] h-[14px] sm:h-[15px] md:h-[16px]" alt="Location icon" />
+            <span class="text-[10px] sm:text-[11px] md:text-[12px] font-semibold leading-[13px] sm:leading-[14px] md:leading-[15px] text-left uppercase text-[#ffffff] font-['Roboto']" id="I61:2893;1905:69861;1905:69856">
+              NOUS TROUVER
+            </span>
+          </div>
+          <div class="flex justify-end items-center ml-[32px] sm:ml-[48px] md:ml-[64px]" id="I61:2893;1905:69861;1905:69857">
+            <span class="text-[10px] sm:text-[11px] md:text-[12px] font-semibold leading-[13px] sm:leading-[14px] md:leading-[15px] text-left uppercase text-[#ffffff] font-['Roboto']" id="I61:2893;1905:69861;1905:69859">
+              FR | EUR €
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Header -->
+    <div class="w-full bg-[#ffffff] px-[20px] sm:px-[30px] md:px-[40px] py-[6px] sm:py-[9px] md:py-[12px]" id="I61:2893;1387:37034">
+      <div class="flex flex-col gap-[3px] sm:gap-[4px] md:gap-[6px] justify-start items-center w-full">
+        <!-- User Icons -->
+        <div class="flex justify-end items-center w-full px-[20px] sm:px-[30px] md:px-[40px] mt-[3px] sm:mt-[4px] md:mt-[6px]" id="I61:2893;1387:37035">
+          <img src="{{ asset('assets/images/img_search.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[16px] sm:h-[17px] md:h-[18px]" alt="Search" />
+          <img src="{{ asset('assets/images/img_icon_compte_client.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[18px] sm:h-[19px] md:h-[20px] ml-[12px] sm:ml-[14px] md:ml-[16px]" alt="Account" />
+          <img src="{{ asset('assets/images/img_icoon_shoping_car.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[18px] sm:h-[19px] md:h-[20px] ml-[12px] sm:ml-[14px] md:ml-[16px]" alt="Cart" />
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="hidden lg:flex justify-center items-center gap-[30px] sm:gap-[40px] md:gap-[58px] w-auto" role="navigation" id="61_2892_182_157_1072_24">
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37046">
+            CAVIARS
+          </button>
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37048">
+            SAUMONS
+          </button>
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37050">
+            ÉPICERIE & CAVE
+          </button>
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37052">
+            CADEAUX
+          </button>
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37054">
+            ACCESSOIRES
+          </button>
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37056">
+            LA MARQUE
+          </button>
+          <button role="menuitem" class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left uppercase text-[#111111] font-['ITC Franklin Gothic Std'] hover:text-[#1a8c6f] transition-colors" id="I61:2893;1387:37058">
+            NOUS CONTACTER
+          </button>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden p-3" aria-label="Open menu" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="w-full bg-[#dde1e6] py-[140px] sm:py-[200px] md:py-[280px] px-[31px] sm:px-[46px] md:px-[62px]" id="61_2892_0_196_1440_900">
+      <div class="flex flex-col lg:flex-row justify-between items-center w-full">
+        <!-- Hero Content -->
+        <div class="w-full lg:w-[40%] flex flex-col gap-[16px] sm:gap-[24px] md:gap-[32px] justify-start items-center">
+          <div class="bg-[#0d3d34] px-[12px] sm:px-[18px] md:px-[24px] py-[18px] sm:py-[27px] md:py-[36px] flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-center w-full ml-[9px] sm:ml-[13px] md:ml-[18px]" id="I61:2894;1523:53061">
+            <div class="px-[11px] sm:px-[16px] md:px-[22px] flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-center w-full" id="I61:2894;1831:69565">
+              <p class="text-[14px] sm:text-[16px] md:text-[18px] font-medium leading-[18px] sm:leading-[20px] md:leading-[22px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-center uppercase text-[#b2d0c3] font-['ITC Franklin Gothic Std']" id="I61:2894;1523:53063">
+                - TITRE -
+              </p>
+              <h1 class="text-[24px] sm:text-[36px] md:text-[48px] font-normal leading-[27px] sm:leading-[40px] md:leading-[53px] tracking-[1px] sm:tracking-[1.5px] md:tracking-[2px] text-center text-[#fcfdfc] font-['Roxie Rossa']" id="I61:2894;1523:53064">
+                <span>PLACEHOLDER</span>
+                <span> </span>
+              </h1>
+              <p class="text-[18px] sm:text-[21px] md:text-[24px] font-medium leading-[21px] sm:leading-[24px] md:leading-[28px] text-center text-[#deede5] font-['ITC Franklin Gothic Std'] shadow-[0px_0px_4px_#0000003f]" id="I61:2894;1523:53065">
+                Rhoncus morbi et augue nec, in id ullamcorper at sit, condimentum sit.
+              </p>
+            </div>
+            <button class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#b2d0c3] border border-solid border-[#b2d0c3] rounded-[4px] px-[17px] sm:px-[25px] md:px-[34px] py-[6px] sm:py-[9px] md:py-[12px] mx-[31px] sm:mx-[46px] md:mx-[62px] mb-[3px] sm:mb-[4px] md:mb-[6px] w-full font-['Roboto'] hover:bg-[#b2d0c3] hover:text-[#0d3d34] transition-all" id="I61:2894;1831:69552">
+              CTA
+            </button>
+          </div>
+        </div>
+        
+        <!-- Hero Button -->
+        <div class="mt-8 lg:mt-0 lg:self-end" id="I61:2894;1523:53067">
+          <button class="w-[40px] sm:w-[45px] md:w-[50px] h-[40px] sm:h-[45px] md:h-[50px] bg-[#ffffff8c] border border-solid border-[#1a8c6f] rounded-[20px] sm:rounded-[22px] md:rounded-[24px] p-[2px] sm:p-[3px] md:p-[4px] mb-[66px] sm:mb-[99px] md:mb-[132px]">
+            <img src="{{ asset('assets/images/img_button.svg', 'theme') }}" class="w-full h-full" alt="Button" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tagline -->
+    <div class="w-full flex justify-center mt-[25px] sm:mt-[37px] md:mt-[50px]" id="61:2898">
+      <h2 class="text-[24px] sm:text-[28px] md:text-[32px] font-normal leading-[26px] sm:leading-[30px] md:leading-[35px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-center text-[#262626] font-['Roxie Rossa']">
+        Sélectionneur de caviars du monde depuis 1950.
+      </h2>
+    </div>
+
+    <!-- Content Section -->
+    <section class="w-full bg-[#ffffff] py-[40px] sm:py-[60px] md:py-[80px]" id="61:2899">
+      <div class="w-full max-w-[1282px] mx-auto px-[35px] sm:px-[52px] md:px-[70px] mr-[44px] sm:mr-[66px] md:mr-[88px]" id="61_2892_70_1264_1282_562">
+        <div class="flex flex-col lg:flex-row justify-center items-center w-full">
+          <!-- Text Content -->
+          <div class="w-full lg:w-[46%] flex flex-col justify-start items-start" id="I61:2899;1912:66029">
+            <h2 class="text-[24px] sm:text-[36px] md:text-[48px] font-normal leading-[27px] sm:leading-[40px] md:leading-[53px] tracking-[1px] sm:tracking-[1.5px] md:tracking-[2px] text-left text-[#000000] font-['Roxie Rossa'] mt-[24px] sm:mt-[36px] md:mt-[48px]" id="I61:2899;1912:66031">
+              PLACEHOLDER
+            </h2>
+            <p class="text-[18px] sm:text-[21px] md:text-[24px] font-normal leading-[20px] sm:leading-[23px] md:leading-[26px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left text-[#21272a] font-['ITC Franklin Gothic Std'] w-[74%] mt-[14px] sm:mt-[21px] md:mt-[28px]" id="I61:2899;1912:66033">
+              Rhoncus morbi et augue nec, in id ullam corper at sit nunc in eros scelerisque sed.
+            </p>
+            <button class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#3f3f3e] border border-solid border-[#3f3f3e] rounded-[4px] bg-[#fcfdfd] px-[17px] sm:px-[25px] md:px-[34px] py-[6px] sm:py-[9px] md:py-[12px] mt-[43px] sm:mt-[64px] md:mt-[86px] font-['Roboto'] hover:bg-[#3f3f3e] hover:text-[#fcfdfd] transition-all" id="I61:2899;1912:66035">
+              Découvrir
+            </button>
+          </div>
+          
+          <!-- Image -->
+          <div class="w-full lg:w-[52%] mt-8 lg:mt-0" id="I61:2899;1912:66036">
+            <img src="{{ asset('assets/images/img_placeholder_picture.png', 'theme') }}" class="w-full h-auto" alt="Placeholder picture" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="w-full bg-[#ffffff] py-[20px] sm:py-[30px] md:py-[40px]" id="61:2907">
+      <div class="flex flex-col gap-[28px] sm:gap-[42px] md:gap-[56px] justify-start items-start w-full">
+        <!-- Section Title -->
+        <h2 class="text-[32px] sm:text-[37px] md:text-[42px] font-normal leading-[35px] sm:leading-[40px] md:leading-[46px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left text-[#000000] font-['Roxie Rossa'] ml-[40px] sm:ml-[60px] md:ml-[80px]" id="61:2909">
+          Produits Phares
+        </h2>
+        
+        <!-- Products Grid -->
+        <div class="w-[94%] ml-[40px] sm:ml-[60px] md:ml-[80px] overflow-x-auto" id="61_2892_80_2052_1360_434">
+          <div class="flex gap-[12px] sm:gap-[18px] md:gap-[24px] w-full min-w-max" id="61:2911">
+            
+            <!-- Product Card 1 -->
+            <div class="border border-solid border-[#d4d6d8] bg-[#ffffff] w-[250px] sm:w-[275px] md:w-[300px] flex-shrink-0" id="61:2912">
+              <div class="flex flex-col gap-[7px] sm:gap-[10px] md:gap-[14px] justify-start items-center w-full h-auto">
+                <!-- Product Header -->
+                <div class="flex flex-col justify-start items-center w-full h-auto">
+                  <div class="flex justify-between items-center w-full border-t border-l border-r border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[6px] sm:py-[9px] md:py-[12px] mb-[120px] sm:mb-[180px] md:mb-[240px]" id="I61:2912;1518:51550">
+                    <span class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#65665c] bg-[#ecedee] rounded-[14px] px-[8px] sm:px-[12px] md:px-[16px] py-[1px] sm:py-[1.5px] md:py-[2px] font-['ITC Franklin Gothic Std']" id="I61:2912;1518:51551">
+                      Série limitée
+                    </span>
+                    <img src="{{ asset('assets/images/img_like_interaction.svg', 'theme') }}" class="w-[20px] sm:w-[22px] md:w-[24px] h-[20px] sm:h-[22px] md:h-[24px]" alt="Like" />
+                  </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="flex flex-col gap-[2px] sm:gap-[3px] md:gap-[4px] justify-start items-center w-full px-[13px] sm:px-[19px] md:px-[26px]" id="I61:2912;1518:51553">
+                  <h3 class="text-[16px] sm:text-[17px] md:text-[18px] font-medium leading-[19px] sm:leading-[20px] md:leading-[22px] text-center text-[#262626] font-['ITC Franklin Gothic Std']" id="I61:2912;1518:51554">
+                    Oscietre
+                  </h3>
+                  <p class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-center text-[#21272a] font-['ITC Franklin Gothic Std']" id="I61:2912;1518:51555">
+                    Id eros pellentesque facilisi id mollis
+                  </p>
+                  <div class="flex gap-[4px] sm:gap-[6px] md:gap-[8px] justify-center items-center w-auto" id="61_2892_190_2419_78_18">
+                    <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#27d0ca] rounded-[2px]" id="I61:2912;1518:51558"></div>
+                    <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-left text-[#27d0ca] font-['Roboto']" id="I61:2912;1518:51559">
+                      PRUNIER
+                    </span>
+                    <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#27d0ca] rounded-[2px]" id="I61:2912;1518:51560"></div>
+                  </div>
+                </div>
+                
+                <!-- Product Footer -->
+                <div class="flex justify-center items-center w-full border-t border-solid border-[#d4d6d8]" id="I61:2912;1518:51561">
+                  <div class="flex justify-start items-center w-full px-[4px] sm:px-[6px] md:px-[8px] py-[2px] sm:py-[3px] md:py-[4px]" id="I61:2912;1518:51562">
+                    <span class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#8c8c8c] self-end font-['Roboto']" id="I61:2912;1518:51563">
+                      à partir de 
+                    </span>
+                    <span class="text-[16px] sm:text-[17px] md:text-[18px] font-bold leading-[19px] sm:leading-[20px] md:leading-[22px] text-left text-[#1f1f1f] font-['Roboto'] ml-[4px] sm:ml-[6px] md:ml-[8px]" id="I61:2912;1518:51564">
+                      89 €
+                    </span>
+                  </div>
+                  <button class="border-l border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[4px] sm:py-[6px] md:py-[8px]" id="I61:2912;1518:51565">
+                    <img src="{{ asset('assets/images/img_frame_14665.svg', 'theme') }}" class="w-[30px] sm:w-[33px] md:w-[36px] h-[30px] sm:h-[33px] md:h-[36px]" alt="Add to cart" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="border border-solid border-[#d4d6d8] bg-[#ffffff] w-[250px] sm:w-[275px] md:w-[300px] flex-shrink-0" id="61:2913">
+              <div class="flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-center w-full h-auto">
+                <!-- Product Header -->
+                <div class="flex justify-between items-start w-full border-t border-l border-r border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[8px] sm:py-[12px] md:py-[16px] mb-[120px] sm:mb-[180px] md:mb-[240px]" id="I61:2913;1518:51549">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#65665c] bg-[#ecedee] rounded-[14px] px-[8px] sm:px-[12px] md:px-[16px] py-[1px] sm:py-[1.5px] md:py-[2px] font-['ITC Franklin Gothic Std']" id="I61:2913;1518:51551">
+                    Série limitée
+                  </span>
+                  <img src="{{ asset('assets/images/img_like_interaction.svg', 'theme') }}" class="w-[20px] sm:w-[22px] md:w-[24px] h-[20px] sm:h-[22px] md:h-[24px]" alt="Like" />
+                </div>
+                
+                <!-- Product Info -->
+                <div class="flex flex-col gap-[6px] sm:gap-[9px] md:gap-[12px] justify-start items-center w-full" id="61_2892_404_2368_300_118">
+                  <div class="flex flex-col gap-[2px] sm:gap-[3px] md:gap-[4px] justify-start items-center w-full px-[13px] sm:px-[19px] md:px-[26px]" id="I61:2913;1518:51553">
+                    <h3 class="text-[16px] sm:text-[17px] md:text-[18px] font-medium leading-[19px] sm:leading-[20px] md:leading-[22px] text-center text-[#262626] font-['ITC Franklin Gothic Std']" id="I61:2913;1518:51554">
+                      Nom du produit 
+                    </h3>
+                    <p class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-center text-[#21272a] font-['ITC Franklin Gothic Std']" id="I61:2913;1518:51555">
+                      Id eros pellentesque facilisi id mollis
+                    </p>
+                    <div class="flex gap-[4px] sm:gap-[6px] md:gap-[8px] justify-center items-center w-auto" id="I61:2913;1518:51557">
+                      <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#1a8c6f] rounded-[2px]" id="I61:2913;1518:51558"></div>
+                      <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-left text-[#1a8c6f] font-['Roboto']" id="I61:2913;1518:51559">
+                        CAVIAR HOUSE
+                      </span>
+                      <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#1a8c6f] rounded-[2px]" id="I61:2913;1518:51560"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Product Footer -->
+                  <div class="flex justify-center items-center w-full border-t border-solid border-[#d4d6d8]" id="I61:2913;1518:51561">
+                    <div class="flex justify-start items-center w-full px-[4px] sm:px-[6px] md:px-[8px] py-[2px] sm:py-[3px] md:py-[4px]" id="I61:2913;1518:51562">
+                      <span class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#8c8c8c] self-end font-['Roboto']" id="I61:2913;1518:51563">
+                        à partir de 
+                      </span>
+                      <span class="text-[16px] sm:text-[17px] md:text-[18px] font-bold leading-[19px] sm:leading-[20px] md:leading-[22px] text-left text-[#1f1f1f] font-['Roboto'] ml-[4px] sm:ml-[6px] md:ml-[8px]" id="I61:2913;1518:51564">
+                        89 €
+                      </span>
+                    </div>
+                    <button class="border-l border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[4px] sm:py-[6px] md:py-[8px]" id="I61:2913;1518:51565">
+                      <img src="{{ asset('assets/images/img_frame_14665.svg', 'theme') }}" class="w-[30px] sm:w-[33px] md:w-[36px] h-[30px] sm:h-[33px] md:h-[36px]" alt="Add to cart" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="border border-solid border-[#d4d6d8] bg-[#ffffff] w-[250px] sm:w-[275px] md:w-[300px] flex-shrink-0" id="61:2914">
+              <div class="flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-center w-full h-auto">
+                <!-- Product Header -->
+                <div class="flex justify-between items-start w-full border-t border-l border-r border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[8px] sm:py-[12px] md:py-[16px] mb-[120px] sm:mb-[180px] md:mb-[240px]" id="I61:2914;1518:51549">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#65665c] bg-[#ecedee] rounded-[14px] px-[8px] sm:px-[12px] md:px-[16px] py-[1px] sm:py-[1.5px] md:py-[2px] font-['ITC Franklin Gothic Std']" id="I61:2914;1518:51551">
+                    Série limitée
+                  </span>
+                  <img src="{{ asset('assets/images/img_like_interaction.svg', 'theme') }}" class="w-[20px] sm:w-[22px] md:w-[24px] h-[20px] sm:h-[22px] md:h-[24px]" alt="Like" />
+                </div>
+                
+                <!-- Product Info -->
+                <div class="flex flex-col gap-[6px] sm:gap-[9px] md:gap-[12px] justify-start items-center w-full" id="61_2892_728_2368_300_118">
+                  <div class="flex flex-col gap-[2px] sm:gap-[3px] md:gap-[4px] justify-start items-center w-full px-[13px] sm:px-[19px] md:px-[26px]" id="I61:2914;1518:51553">
+                    <h3 class="text-[16px] sm:text-[17px] md:text-[18px] font-medium leading-[19px] sm:leading-[20px] md:leading-[22px] text-center text-[#262626] font-['ITC Franklin Gothic Std']" id="I61:2914;1518:51554">
+                      Qiandao
+                    </h3>
+                    <p class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-center text-[#21272a] font-['ITC Franklin Gothic Std']" id="I61:2914;1518:51555">
+                      Id eros pellentesque facilisi id mollis
+                    </p>
+                    <div class="flex gap-[4px] sm:gap-[6px] md:gap-[8px] justify-center items-center w-auto" id="I61:2914;1518:51557">
+                      <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#1a8c6f] rounded-[2px]" id="I61:2914;1518:51558"></div>
+                      <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-left text-[#1a8c6f] font-['Roboto']" id="I61:2914;1518:51559">
+                        CAVIAR HOUSE
+                      </span>
+                      <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#1a8c6f] rounded-[2px]" id="I61:2914;1518:51560"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Product Footer -->
+                  <div class="flex justify-center items-center w-full border-t border-solid border-[#d4d6d8]" id="I61:2914;1518:51561">
+                    <div class="flex justify-start items-center w-full px-[4px] sm:px-[6px] md:px-[8px] py-[2px] sm:py-[3px] md:py-[4px]" id="I61:2914;1518:51562">
+                      <span class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#8c8c8c] self-end font-['Roboto']" id="I61:2914;1518:51563">
+                        à partir de 
+                      </span>
+                      <span class="text-[16px] sm:text-[17px] md:text-[18px] font-bold leading-[19px] sm:leading-[20px] md:leading-[22px] text-left text-[#1f1f1f] font-['Roboto'] ml-[4px] sm:ml-[6px] md:ml-[8px]" id="I61:2914;1518:51564">
+                        89 €
+                      </span>
+                    </div>
+                    <button class="border-l border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[4px] sm:py-[6px] md:py-[8px]" id="I61:2914;1518:51565">
+                      <img src="{{ asset('assets/images/img_frame_14665.svg', 'theme') }}" class="w-[30px] sm:w-[33px] md:w-[36px] h-[30px] sm:h-[33px] md:h-[36px]" alt="Add to cart" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="border border-solid border-[#d4d6d8] bg-[#ffffff] w-[250px] sm:w-[275px] md:w-[300px] flex-shrink-0" id="61:2915">
+              <div class="flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-center w-full h-auto">
+                <!-- Product Header -->
+                <div class="flex justify-between items-start w-full border-t border-l border-r border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[8px] sm:py-[12px] md:py-[16px] mb-[120px] sm:mb-[180px] md:mb-[240px]" id="I61:2915;1518:51549">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#65665c] bg-[#ecedee] rounded-[14px] px-[8px] sm:px-[12px] md:px-[16px] py-[1px] sm:py-[1.5px] md:py-[2px] font-['ITC Franklin Gothic Std']" id="I61:2915;1518:51551">
+                    Série limitée
+                  </span>
+                  <img src="{{ asset('assets/images/img_like_interaction.svg', 'theme') }}" class="w-[20px] sm:w-[22px] md:w-[24px] h-[20px] sm:h-[22px] md:h-[24px]" alt="Like" />
+                </div>
+                
+                <!-- Product Info -->
+                <div class="flex flex-col gap-[6px] sm:gap-[9px] md:gap-[12px] justify-start items-center w-full" id="61_2892_1052_2368_300_118">
+                  <div class="flex flex-col gap-[2px] sm:gap-[3px] md:gap-[4px] justify-start items-center w-full px-[13px] sm:px-[19px] md:px-[26px]" id="I61:2915;1518:51553">
+                    <h3 class="text-[16px] sm:text-[17px] md:text-[18px] font-medium leading-[19px] sm:leading-[20px] md:leading-[22px] text-center text-[#262626] font-['ITC Franklin Gothic Std']" id="I61:2915;1518:51554">
+                      Malossol
+                    </h3>
+                    <p class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-center text-[#21272a] font-['ITC Franklin Gothic Std']" id="I61:2915;1518:51555">
+                      Id eros pellentesque facilisi id mollis
+                    </p>
+                    <div class="flex gap-[4px] sm:gap-[6px] md:gap-[8px] justify-center items-center w-auto" id="I61:2915;1518:51557">
+                      <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#27d0ca] rounded-[2px]" id="I61:2915;1518:51558"></div>
+                      <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-left text-[#27d0ca] font-['Roboto']" id="I61:2915;1518:51559">
+                        PRUNIER
+                      </span>
+                      <div class="w-[3px] sm:w-[3.5px] md:w-[4px] h-[3px] sm:h-[3.5px] md:h-[4px] bg-[#27d0ca] rounded-[2px]" id="I61:2915;1518:51560"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Product Footer -->
+                  <div class="flex justify-center items-center w-full border-t border-solid border-[#d4d6d8]" id="I61:2915;1518:51561">
+                    <div class="flex justify-start items-center w-full px-[4px] sm:px-[6px] md:px-[8px] py-[2px] sm:py-[3px] md:py-[4px]" id="I61:2915;1518:51562">
+                      <span class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#8c8c8c] self-end font-['Roboto']" id="I61:2915;1518:51563">
+                        à partir de 
+                      </span>
+                      <span class="text-[16px] sm:text-[17px] md:text-[18px] font-bold leading-[19px] sm:leading-[20px] md:leading-[22px] text-left text-[#1f1f1f] font-['Roboto'] ml-[4px] sm:ml-[6px] md:ml-[8px]" id="I61:2915;1518:51564">
+                        89 €
+                      </span>
+                    </div>
+                    <button class="border-l border-solid border-[#d4d6d8] px-[4px] sm:px-[6px] md:px-[8px] py-[4px] sm:py-[6px] md:py-[8px]" id="I61:2915;1518:51565">
+                      <img src="{{ asset('assets/images/img_frame_14665.svg', 'theme') }}" class="w-[30px] sm:w-[33px] md:w-[36px] h-[30px] sm:h-[33px] md:h-[36px]" alt="Add to cart" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Product Cards would continue here... -->
+          </div>
+        </div>
+        
+        <!-- Pagination and View All -->
+        <div class="w-full max-w-[1282px] mx-auto px-[35px] sm:px-[52px] md:px-[70px] mb-[20px] sm:mb-[30px] md:mb-[40px]" id="61:2919">
+          <div class="flex flex-col sm:flex-row justify-center items-center w-full px-[31px] sm:px-[46px] md:px-[62px] py-[4px] sm:py-[6px] md:py-[8px]" id="61:2921">
+            <!-- Pagination -->
+            <div class="flex justify-end items-center w-full px-[28px] sm:px-[42px] md:px-[56px] py-[4px] sm:py-[6px] md:py-[8px] mr-[161px] sm:mr-[241px] md:mr-[322px]">
+              <img src="{{ asset('assets/images/img_arrow_left.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[16px] sm:h-[17px] md:h-[18px]" alt="Previous" />
+              <div class="flex gap-[3px] sm:gap-[4px] md:gap-[6px] justify-end items-center w-[22%] ml-[9px] sm:ml-[13px] md:ml-[18px]">
+                <div class="flex justify-center items-end w-full px-[3px] sm:px-[4px] md:px-[6px]">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#858585] font-['ITC Franklin Gothic Std']">1</span>
+                </div>
+                <div class="flex justify-center items-end w-auto px-[3px] sm:px-[4px] md:px-[6px]">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#1a8c6f] font-['ITC Franklin Gothic Std']">2</span>
+                </div>
+                <div class="flex justify-center items-end w-auto px-[2px] sm:px-[3px] md:px-[4px]">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#858585] font-['ITC Franklin Gothic Std']">...</span>
+                </div>
+                <div class="flex justify-center items-end w-auto px-[3px] sm:px-[4px] md:px-[6px]">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#858585] font-['ITC Franklin Gothic Std']">5</span>
+                </div>
+              </div>
+              <img src="{{ asset('assets/images/img_arrow_right.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[16px] sm:h-[17px] md:h-[18px] ml-[12px] sm:ml-[18px] md:ml-[24px]" alt="Next" />
+            </div>
+            
+            <!-- View All Button -->
+            <button class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#8c8c8c] bg-[#ffffff] rounded-[6px] px-[16px] sm:px-[24px] md:px-[32px] py-[6px] sm:py-[9px] md:py-[12px] font-['Roboto'] hover:bg-[#f5f5f5] transition-all" id="61:2922">
+              Voir tous les produits
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Slider Section -->
+    <section class="w-full bg-[#ffffff] py-[40px] sm:py-[60px] md:py-[80px]" id="61_2892_0_2669_1440_826">
+      <div class="w-full flex justify-start items-center">
+        <div class="w-full flex justify-start items-center">
+          <div class="w-full flex flex-col justify-start items-start">
+            <!-- Slider Container -->
+            <div class="w-full flex justify-start items-start ml-[40px] sm:ml-[60px] md:ml-[80px] overflow-x-auto" id="61_2892_80_2744_1360_664">
+              <!-- Left Content -->
+              <div class="w-[36%] flex flex-col gap-[30px] sm:gap-[45px] md:gap-[60px] justify-center items-start self-center py-[91px] sm:py-[136px] md:py-[182px] mt-[2px] sm:mt-[3px] md:mt-[4px]" id="61:2925">
+                <div class="w-full flex flex-col gap-[11px] sm:gap-[16px] md:gap-[22px] justify-start items-start" id="61:2926">
+                  <h2 class="text-[32px] sm:text-[37px] md:text-[42px] font-normal leading-[38px] sm:leading-[44px] md:leading-[50px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left text-[#000000] font-['Roxie Rossa']" id="61:2927">
+                    CAVIAR HOUSE, <br>Placeholder
+                  </h2>
+                  <div class="w-[64%] h-[2px] sm:h-[2.5px] md:h-[3px] bg-[#000000]" id="61:2928"></div>
+                </div>
+                <p class="text-[18px] sm:text-[21px] md:text-[24px] font-normal leading-[27px] sm:leading-[31px] md:leading-[36px] text-left text-[#212121] font-['ITC Franklin Gothic Std'] w-[90%]" id="61:2929">
+                  Découvrez notre sélection du produit, pour un moment de dégustation privilégié, à offrir ou à partager
+                </p>
+              </div>
+              
+              <!-- Category Cards -->
+              <div class="flex justify-start items-center w-full" id="61_2892_568_2744_2810_604">
+                <div class="flex justify-start items-center w-full">
+                  <!-- Category 1 -->
+                  <div class="flex flex-col gap-[9px] sm:gap-[13px] md:gap-[18px] justify-center items-start w-full ml-[15px] sm:ml-[22px] md:ml-[30px]" id="61:2936">
+                    <img src="{{ asset('assets/images/img_placeholder_picture_554x450.png', 'theme') }}" class="w-full h-auto" alt="Caviar category" />
+                    <h3 class="text-[18px] sm:text-[21px] md:text-[24px] font-medium leading-[22px] sm:leading-[25px] md:leading-[29px] text-left text-[#262626] font-['ITC Franklin Gothic Std']" id="I61:2936;381:40577">
+                      CAVIAR
+                    </h3>
+                  </div>
+                  
+                  <!-- Category 2 -->
+                  <div class="flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-start w-full" id="61:2937">
+                    <img src="{{ asset('assets/images/img_placeholder_picture_1.png', 'theme') }}" class="w-full h-auto mr-[8px] sm:mr-[12px] md:mr-[16px]" alt="Saumon category" />
+                    <h3 class="text-[18px] sm:text-[21px] md:text-[24px] font-medium leading-[22px] sm:leading-[25px] md:leading-[29px] text-left text-[#262626] font-['ITC Franklin Gothic Std']" id="I61:2937;381:40577">
+                      SAUMON
+                    </h3>
+                  </div>
+                  
+                  <!-- Category 3 -->
+                  <div class="flex flex-col gap-[9px] sm:gap-[13px] md:gap-[18px] justify-center items-center w-full ml-[8px] sm:ml-[12px] md:ml-[16px]" id="61:2938">
+                    <div class="w-full h-[277px] sm:h-[415px] md:h-[554px] bg-[#dde1e6]" id="I61:2938;381:40576"></div>
+                    <p class="text-[18px] sm:text-[21px] md:text-[24px] font-normal leading-[23px] sm:leading-[27px] md:leading-[31px] text-left text-[#262626] font-['Roboto']" id="I61:2938;381:40577">
+                      Catégorie
+                    </p>
+                  </div>
+                  
+                  <!-- Additional categories would continue here... -->
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slider Navigation -->
+            <div class="flex justify-start items-center w-full mt-[-17px] sm:mt-[-25px] md:mt-[-34px] mx-[142px] sm:mx-[213px] md:mx-[284px]" id="61:2942">
+              <div class="flex justify-end items-center self-end w-full px-[28px] sm:px-[42px] md:px-[56px] py-[3px] sm:py-[4px] md:py-[6px] mb-[3px] sm:mb-[4px] md:mb-[6px]">
+                <!-- Dots -->
+                <div class="w-[6px] sm:w-[7px] md:w-[8px] h-[6px] sm:h-[7px] md:h-[8px] bg-[#1fb58a] border border-solid border-[#65665c] rounded-[4px]"></div>
+                <div class="w-[6px] sm:w-[7px] md:w-[8px] h-[6px] sm:h-[7px] md:h-[8px] bg-[#a7a8a9] rounded-[4px] ml-[6px] sm:ml-[9px] md:ml-[12px]"></div>
+                <div class="w-[6px] sm:w-[7px] md:w-[8px] h-[6px] sm:h-[7px] md:h-[8px] bg-[#a7a8a9] rounded-[4px] ml-[6px] sm:ml-[9px] md:ml-[12px]"></div>
+                <div class="w-[6px] sm:w-[7px] md:w-[8px] h-[6px] sm:h-[7px] md:h-[8px] bg-[#a7a8a9] rounded-[4px] ml-[6px] sm:ml-[9px] md:ml-[12px]"></div>
+                <div class="w-[6px] sm:w-[7px] md:w-[8px] h-[6px] sm:h-[7px] md:h-[8px] bg-[#a7a8a9] rounded-[4px] ml-[6px] sm:ml-[9px] md:ml-[12px]"></div>
+              </div>
+              
+              <!-- Navigation Arrows -->
+              <div class="flex justify-end items-end w-[28%]">
+                <img src="{{ asset('assets/images/img_arrow_left.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[16px] sm:h-[17px] md:h-[18px]" alt="Previous" />
+                <div class="flex justify-end items-center self-center w-auto">
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#1a8c6f] font-['ITC Franklin Gothic Std']">2</span>
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#9a9a9a] font-['ITC Franklin Gothic Std']">/</span>
+                  <span class="text-[14px] sm:text-[15px] md:text-[16px] font-normal leading-[17px] sm:leading-[18px] md:leading-[20px] text-left text-[#9a9a9a] font-['ITC Franklin Gothic Std']">5</span>
+                </div>
+                <img src="{{ asset('assets/images/img_arrow_right.svg', 'theme') }}" class="w-[16px] sm:w-[17px] md:w-[18px] h-[16px] sm:h-[17px] md:h-[18px] ml-[10px] sm:ml-[15px] md:ml-[20px]" alt="Next" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="w-full bg-[#fcfdfd] py-[17px] sm:py-[25px] md:py-[34px]" id="61_2892_0_3495_1440_414">
+      <div class="w-full flex justify-center items-center">
+        <div class="w-[94%] flex gap-[16px] sm:gap-[24px] md:gap-[32px] justify-center items-end py-[17px] sm:py-[25px] md:py-[34px]">
+          <!-- Left Arrow -->
+          <button class="w-[35px] sm:w-[39px] md:w-[44px] h-[35px] sm:h-[39px] md:h-[44px] bg-[#fcfdfd] rounded-[18px] sm:rounded-[20px] md:rounded-[22px] p-[1px] sm:p-[1.5px] md:p-[2px] mb-[37px] sm:mb-[55px] md:mb-[74px]">
+            <img src="{{ asset('assets/images/img_arrow_down.svg', 'theme') }}" class="w-full h-full" alt="Previous reviews" />
+          </button>
+          
+          <!-- Reviews Content -->
+          <div class="w-full flex flex-col gap-[16px] sm:gap-[24px] md:gap-[32px] justify-start items-center self-center">
+            <!-- Section Title -->
+            <div class="flex justify-start items-center w-full px-[12px] sm:px-[18px] md:px-[24px] py-[5px] sm:py-[7px] md:py-[10px] mx-[12px] sm:mx-[18px] md:mx-[24px]">
+              <h2 class="text-[32px] sm:text-[37px] md:text-[42px] font-normal leading-[35px] sm:leading-[40px] md:leading-[46px] tracking-[0.8px] sm:tracking-[0.9px] md:tracking-[1px] text-left text-[#262626] font-['Roxie Rossa']">
+                Avis client placeholder
+              </h2>
+            </div>
+            
+            <!-- Reviews Slider -->
+            <div class="w-full flex gap-[16px] sm:gap-[24px] md:gap-[32px] justify-start items-center overflow-x-auto" id="61_2892_136_3656_1168_194">
+              <!-- Review Card 1 -->
+              <div class="w-full h-auto flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-center border border-solid border-[#cef3e9] rounded-[20px] bg-[#f3fcf9] px-[11px] sm:px-[16px] md:px-[22px] py-[11px] sm:py-[16px] md:py-[22px] flex-shrink-0">
+                <!-- Rating and Date -->
+                <div class="flex justify-center items-center w-full">
+                  <div class="flex justify-start items-center w-full">
+                    <!-- Stars -->
+                    <div class="flex items-center">
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="flex flex-col justify-start items-start w-full ml-[9px] sm:ml-[13px] md:ml-[18px]">
+                        <div class="w-[9px] sm:w-[10px] md:w-[12%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#88ddcc] rounded-[1px]"></div>
+                        <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] -mt-[9px] sm:-mt-[13px] md:-mt-[18px]"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-right text-[#1f1f1f] font-['ITC Franklin Gothic Std']">
+                    JJ/MM/AAAA
+                  </span>
+                </div>
+                
+                <!-- Review Content -->
+                <div class="flex flex-col gap-[3px] sm:gap-[4px] md:gap-[6px] justify-start items-center w-full">
+                  <p class="text-[16px] sm:text-[17px] md:text-[18px] font-normal leading-[20px] sm:leading-[23px] md:leading-[27px] text-left text-[#262626] font-['ITC Franklin Gothic Std'] w-full">
+                    Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.
+                  </p>
+                  <div class="flex justify-center items-center w-full">
+                    <div class="flex justify-start items-center w-full">
+                      <span class="text-[12px] sm:text-[13px] md:text-[14px] font-medium leading-[14px] sm:leading-[15px] md:leading-[17px] text-left text-[#262626] font-['ITC Franklin Gothic Std']">
+                        Anonyme
+                      </span>
+                      <img src="{{ asset('assets/images/img_subtract.svg', 'theme') }}" class="w-[14px] sm:w-[15px] md:w-[16px] h-[14px] sm:h-[15px] md:h-[16px] ml-[8px] sm:ml-[12px] md:ml-[16px]" alt="Verified" />
+                    </div>
+                    <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-right text-[#146452] font-['Roboto']">
+                      Voir plus
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Review Card 2 -->
+              <div class="w-full h-auto flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-center border border-solid border-[#cef3e9] rounded-[20px] bg-[#f3fcf9] px-[11px] sm:px-[16px] md:px-[22px] py-[11px] sm:px-[16px] md:py-[22px] flex-shrink-0">
+                <!-- Rating and Date -->
+                <div class="flex justify-center items-center w-full">
+                  <div class="flex justify-start items-center w-full">
+                    <!-- Stars -->
+                    <div class="flex items-center">
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="flex flex-col justify-start items-start w-full ml-[9px] sm:ml-[13px] md:ml-[18px]">
+                        <div class="w-[9px] sm:w-[10px] md:w-[12%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#88ddcc] rounded-[1px]"></div>
+                        <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] -mt-[9px] sm:-mt-[13px] md:-mt-[18px]"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-right text-[#1f1f1f] font-['ITC Franklin Gothic Std']">
+                    JJ/MM/AAAA
+                  </span>
+                </div>
+                
+                <!-- Review Content -->
+                <div class="flex flex-col gap-[3px] sm:gap-[4px] md:gap-[6px] justify-start items-center w-full">
+                  <p class="text-[16px] sm:text-[17px] md:text-[18px] font-normal leading-[20px] sm:leading-[23px] md:leading-[27px] text-left text-[#262626] font-['ITC Franklin Gothic Std'] w-full">
+                    Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.
+                  </p>
+                  <div class="flex justify-center items-center w-full">
+                    <div class="flex justify-start items-center w-full">
+                      <span class="text-[12px] sm:text-[13px] md:text-[14px] font-medium leading-[14px] sm:leading-[15px] md:leading-[17px] text-left text-[#262626] font-['ITC Franklin Gothic Std']">
+                        Anonyme
+                      </span>
+                      <img src="{{ asset('assets/images/img_subtract.svg', 'theme') }}" class="w-[14px] sm:w-[15px] md:w-[16px] h-[14px] sm:h-[15px] md:h-[16px] ml-[8px] sm:ml-[12px] md:ml-[16px]" alt="Verified" />
+                    </div>
+                    <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-right text-[#146452] font-['Roboto']">
+                      Voir plus
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Review Card 3 -->
+              <div class="w-full h-auto flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-center border border-solid border-[#cef3e9] rounded-[20px] bg-[#f3fcf9] px-[11px] sm:px-[16px] md:px-[22px] py-[11px] sm:py-[16px] md:py-[22px] flex-shrink-0">
+                <!-- Rating and Date -->
+                <div class="flex justify-center items-center w-full">
+                  <div class="flex justify-start items-center w-full">
+                    <!-- Stars -->
+                    <div class="flex items-center">
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] ml-[9px] sm:ml-[13px] md:ml-[18px]"></div>
+                      <div class="flex flex-col justify-start items-start w-full ml-[9px] sm:ml-[13px] md:ml-[18px]">
+                        <div class="w-[9px] sm:w-[10px] md:w-[12%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#88ddcc] rounded-[1px]"></div>
+                        <div class="w-[6px] sm:w-[7px] md:w-[8%] h-[14px] sm:h-[16px] md:h-[18px] bg-[#1a8c6f] rounded-[1px] -mt-[9px] sm:-mt-[13px] md:-mt-[18px]"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-right text-[#1f1f1f] font-['ITC Franklin Gothic Std']">
+                    JJ/MM/AAAA
+                  </span>
+                </div>
+                
+                <!-- Review Content -->
+                <div class="flex flex-col gap-[3px] sm:gap-[4px] md:gap-[6px] justify-start items-center w-full">
+                  <p class="text-[16px] sm:text-[17px] md:text-[18px] font-normal leading-[20px] sm:leading-[23px] md:leading-[27px] text-left text-[#1f1f1f] font-['ITC Franklin Gothic Std'] w-full">
+                    Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.
+                  </p>
+                  <div class="flex justify-center items-center w-full">
+                    <div class="flex justify-start items-center w-full">
+                      <span class="text-[12px] sm:text-[13px] md:text-[14px] font-medium leading-[14px] sm:leading-[15px] md:leading-[17px] text-left text-[#1f1f1f] font-['ITC Franklin Gothic Std']">
+                        Anonyme
+                      </span>
+                      <img src="{{ asset('assets/images/img_subtract.svg', 'theme') }}" class="w-[14px] sm:w-[15px] md:w-[16px] h-[14px] sm:h-[15px] md:h-[16px] ml-[8px] sm:ml-[12px] md:ml-[16px]" alt="Verified" />
+                    </div>
+                    <span class="text-[11px] sm:text-[12px] md:text-[13px] font-medium leading-[13px] sm:leading-[14px] md:leading-[16px] text-right text-[#146452] font-['Roboto']">
+                      Voir plus
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Arrow -->
+          <button class="w-[35px] sm:w-[39px] md:w-[44px] h-[35px] sm:h-[39px] md:h-[44px] bg-[#fcfdfd] rounded-[18px] sm:rounded-[20px] md:rounded-[22px] p-[1px] sm:p-[1.5px] md:p-[2px] mb-[37px] sm:mb-[55px] md:mb-[74px]">
+            <img src="{{ asset('assets/images/img_arrow_down.svg', 'theme') }}" class="w-full h-full" alt="Next reviews" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="w-full bg-[#0000008c] py-[55px] sm:py-[82px] md:py-[110px] mt-[5px] sm:mt-[7px] md:mt-[10px]">
+      <div class="w-full px-[28px] sm:px-[42px] md:px-[56px] mt-[51px] sm:mt-[76px] md:mt-[102px]" id="61_2892_0_4134_1440_162">
+        <div class="flex flex-col gap-[7px] sm:gap-[10px] md:gap-[14px] justify-start items-center w-full">
+          <h2 class="text-[32px] sm:text-[37px] md:text-[42px] font-normal leading-[38px] sm:leading-[44px] md:leading-[50px] tracking-[1px] sm:tracking-[1.5px] md:tracking-[2px] text-center text-[#ffffff] font-['Roxie Rossa']">
+            Découvrez nos boutiques<br>& restaurants & Seafood bars
+          </h2>
+          <button class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#ffffff] border border-solid border-[#fcfdfd] rounded-[4px] px-[17px] sm:px-[25px] md:px-[34px] py-[6px] sm:py-[9px] md:py-[12px] font-['Roboto'] hover:bg-[#ffffff] hover:text-[#0000008c] transition-all">
+            NOUS TROUVER
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="w-full px-[28px] sm:px-[42px] md:px-[56px] mt-[32px] sm:mt-[48px] md:mt-[64px]" id="61_2892_0_4472_1440_142">
+      <div class="w-full mx-[12px] sm:mx-[18px] md:mx-[24px]" id="61_2892_80_4472_1280_142">
+        <div class="flex flex-col lg:flex-row justify-start items-center w-full">
+          <!-- Service 1 -->
+          <div class="w-full lg:w-[22%] flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-start">
+            <img src="{{ asset('assets/images/img_icon_teal_800.svg', 'theme') }}" class="w-[52px] sm:w-[61px] md:w-[70px] h-[45px] sm:h-[52px] md:h-[60px] ml-[48px] sm:ml-[72px] md:ml-[96px]" alt="Delivery icon" />
+            <div class="w-full flex flex-col gap-[4px] sm:gap-[6px] md:gap-[8px] justify-start items-start" id="61_2892_80_4548_300_66">
+              <p class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-center font-['ITC Franklin Gothic Std'] ml-[5px] sm:ml-[7px] md:ml-[10px]">
+                <span class="text-[#333534]">Livraison offerte dès </span>
+                <span class="text-[#1a8c6f]">350€ d'achat</span>
+              </p>
+              <p class="text-[10px] sm:text-[11px] md:text-[12px] font-normal leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#262626] font-['ITC Franklin Gothic Std'] w-full">
+                Chaîne du froid garantie, à la date de votre choix
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 2 -->
+          <div class="w-full lg:w-auto flex justify-start items-center px-[15px] sm:px-[22px] md:px-[30px] mt-8 lg:mt-0">
+            <div class="flex flex-col gap-[4px] sm:gap-[6px] md:gap-[8px] justify-start items-start w-full px-[10px] sm:px-[15px] md:px-[20px]">
+              <div class="flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-start w-full mx-[27px] sm:mx-[40px] md:mx-[54px]" id="61_2892_486_4472_176_98">
+                <img src="{{ asset('assets/images/img_contact_icon.svg', 'theme') }}" class="w-[46px] sm:w-[54px] md:w-[62px] h-[45px] sm:h-[52px] md:h-[60px] ml-[16px] sm:ml-[24px] md:ml-[32px]" alt="Contact icon" />
+                <h3 class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#333534] font-['ITC Franklin Gothic Std']">
+                  Conseils d'experts
+                </h3>
+              </div>
+              <p class="text-[10px] sm:text-[11px] md:text-[12px] font-normal leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#262626] font-['ITC Franklin Gothic Std'] w-full">
+                Notre équipe répond à toutes vos questions
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 3 -->
+          <div class="w-full lg:w-auto flex flex-col justify-start items-start self-end px-[28px] sm:px-[42px] md:px-[56px] mt-8 lg:mt-0" id="61_2892_738_4481_318_132">
+            <img src="{{ asset('assets/images/img_group.svg', 'theme') }}" class="w-[21px] sm:w-[24px] md:w-[28px] h-[7px] sm:h-[8px] md:h-[10px] self-center" alt="Gift icon top" />
+            <div class="flex flex-col justify-start items-start self-center w-auto">
+              <img src="{{ asset('assets/images/img_group_14190.svg', 'theme') }}" class="w-[25px] sm:w-[29px] md:w-[34px] h-[19px] sm:h-[22px] md:h-[26px] self-end mr-[16px] sm:mr-[24px] md:mr-[32px]" alt="Gift icon right" />
+              <img src="{{ asset('assets/images/img_group_teal_800.svg', 'theme') }}" class="w-[85px] sm:w-[99px] md:w-[114px] h-[24px] sm:h-[28px] md:h-[32px] -mt-[12px] sm:-mt-[18px] md:-mt-[24px]" alt="Gift icon main" />
+            </div>
+            <h3 class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#333534] font-['ITC Franklin Gothic Std'] mt-[12px] sm:mt-[18px] md:mt-[24px] ml-[27px] sm:ml-[40px] md:ml-[54px]">
+              L'art d'offrir
+            </h3>
+            <p class="text-[10px] sm:text-[11px] md:text-[12px] font-normal leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#262626] font-['ITC Franklin Gothic Std'] w-full mt-[4px] sm:mt-[6px] md:mt-[8px]">
+              Choisissiez votre coffret et votre message personnalisé
+            </p>
+          </div>
+          
+          <!-- Service 4 -->
+          <div class="w-full lg:w-[30%] flex flex-col gap-[4px] sm:gap-[6px] md:gap-[8px] justify-start items-end mt-8 lg:mt-0" id="61_2892_1056_4472_272_138">
+            <img src="{{ asset('assets/images/img_paiments_secutises.svg', 'theme') }}" class="w-[46px] sm:w-[54px] md:w-[62px] h-[45px] sm:h-[52px] md:h-[60px] mr-[34px] sm:mr-[51px] md:mr-[68px]" alt="Payment icon" />
+            <h3 class="text-[14px] sm:text-[15px] md:text-[16px] font-medium leading-[17px] sm:leading-[18px] md:leading-[20px] text-center text-[#484e4b] font-['ITC Franklin Gothic Std'] mr-[14px] sm:mr-[21px] md:mr-[28px]">
+              Paiements sécurisés
+            </h3>
+            <p class="text-[10px] sm:text-[11px] md:text-[12px] font-normal leading-[15px] sm:leading-[16px] md:leading-[18px] text-center text-[#333534] font-['ITC Franklin Gothic Std'] w-full">
+              et paiement en plusieurs fois avec Alma 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="w-full mt-[32px] sm:mt-[48px] md:mt-[64px]" id="61_2892_0_4678_1440_144">
+      <div class="w-full flex justify-center items-start bg-[#fcfdfd] px-[16px] sm:px-[24px] md:px-[32px] py-[16px] sm:py-[24px] md:py-[32px]">
+        <div class="w-[86%] flex justify-center items-center mb-[4px] sm:mb-[6px] md:mb-[8px]" id="61_2892_130_4712_1180_68">
+          <div class="flex flex-col justify-start items-start w-auto">
+            <h2 class="text-[24px] sm:text-[28px] md:text-[32px] font-medium leading-[29px] sm:leading-[34px] md:leading-[39px] text-left text-[#262626] font-['ITC Franklin Gothic Std']">
+              Ne manquez plus rien !
+            </h2>
+            <p class="text-[16px] sm:text-[17px] md:text-[18px] font-normal leading-[19px] sm:leading-[20px] md:leading-[22px] text-left text-[#262626] font-['ITC Franklin Gothic Std']">
+              Recevez nos actualités, recettes et conseils d'expert
+            </p>
+          </div>
+          <div class="flex justify-center items-center self-end w-auto mb-[3px] sm:mb-[4px] md:mb-[6px]">
+            <div class="w-[331px] sm:w-[386px] md:w-[442px] h-[35px] sm:h-[40px] md:h-[46px] border-t border-l border-b border-solid border-[#d4d6d8] rounded-tl-[4px] rounded-bl-[4px]"></div>
+            <button class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] bg-[#111111] rounded-tr-[4px] rounded-br-[4px] px-[11px] sm:px-[16px] md:px-[22px] py-[6px] sm:py-[9px] md:py-[12px] font-['Roboto'] hover:bg-[#333333] transition-all">
+              JE M'INSCRIS
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-[#0d3d34] px-[28px] sm:px-[42px] md:px-[56px] py-[32px] sm:py-[48px] md:py-[64px]" id="I61:3042;1591:36889">
+    <div class="w-[96%] flex flex-col gap-[11px] sm:gap-[16px] md:gap-[22px] justify-start items-start ml-[35px] sm:ml-[52px] md:ml-[70px]" id="61_2892_70_4888_1282_464">
+      <!-- Footer Top -->
+      <div class="flex flex-col lg:flex-row justify-between items-center w-full" id="61_2892_70_4888_1274_114">
+        <!-- Footer Logo Section -->
+        <div class="w-full lg:w-[20%] flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-start items-center">
+          <img src="{{ asset('assets/images/img_group_lime_800.svg', 'theme') }}" class="w-[42px] sm:w-[49px] md:w-[56px] h-[33px] sm:h-[38px] md:h-[44px]" alt="Caviar House Logo" />
+          <img src="{{ asset('assets/images/img_group_white_a700.svg', 'theme') }}" class="w-full h-[21px] sm:h-[24px] md:h-[28px]" alt="Company name" />
+          <img src="{{ asset('assets/images/img_group_lime_800_8x78.svg', 'theme') }}" class="w-[58px] sm:w-[68px] md:w-[78px] h-[6px] sm:h-[7px] md:h-[8px]" alt="Decorative line" />
+        </div>
+        
+        <!-- Social Media -->
+        <div class="flex gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center items-center self-end w-auto mb-[6px] sm:mb-[9px] md:mb-[12px] mt-8 lg:mt-0" id="61_2892_1045_4966_300_26">
+          <span class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] self-start font-['Roboto']">
+            Nous suivre : 
+          </span>
+          <img src="{{ asset('assets/images/img_icon_jam_icons.svg', 'theme') }}" class="w-[20px] sm:w-[23px] md:w-[26px] h-[20px] sm:h-[23px] md:h-[26px]" alt="Social media" />
+          <img src="{{ asset('assets/images/img_icon_jam_icons_white_a700.svg', 'theme') }}" class="w-[20px] sm:w-[23px] md:w-[26px] h-[20px] sm:h-[23px] md:h-[26px]" alt="Social media" />
+          <img src="{{ asset('assets/images/img_icon_jam_icons_white_a700_26x26.svg', 'theme') }}" class="w-[20px] sm:w-[23px] md:w-[26px] h-[20px] sm:h-[23px] md:h-[26px]" alt="Social media" />
+          <img src="{{ asset('assets/images/img_icon_jam_icons_26x26.svg', 'theme') }}" class="w-[20px] sm:w-[23px] md:w-[26px] h-[20px] sm:h-[23px] md:h-[26px]" alt="Social media" />
+          <img src="{{ asset('assets/images/img_icon_jam_icons_1.svg', 'theme') }}" class="w-[20px] sm:w-[23px] md:w-[26px] h-[20px] sm:h-[23px] md:h-[26px]" alt="Social media" />
+        </div>
+      </div>
+      
+      <!-- Divider -->
+      <div class="w-full max-w-[1282px] h-[1px] bg-[#bdbfc1]"></div>
+      
+      <!-- Footer Links -->
+      <div class="flex flex-col lg:flex-row justify-between items-start w-[80%]" id="61_2892_70_5050_1038_236">
+        <!-- Column 1 -->
+        <ul class="w-full lg:w-[42%] flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-start" id="61_2892_70_5050_446_192">
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Caviars</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Saumons</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Épicerie & Cave</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Coffrets cadeaux</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Accessoires</a></li>
+        </ul>
+        
+        <!-- Column 2 -->
+        <ul class="w-full lg:w-[42%] flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-start mt-8 lg:mt-0" id="61_2892_516_5052_446_192">
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">La marque</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Nos marques partenaires</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Prunier</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Balik</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Nos boutiques & restaurants & Seafood bars</a></li>
+        </ul>
+        
+        <!-- Column 3 -->
+        <ul class="w-full lg:w-auto flex flex-col gap-[10px] sm:gap-[15px] md:gap-[20px] justify-start items-start self-center mt-8 lg:mt-0" id="61_2892_962_5052_146_234">
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Blog</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Service client</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Contact entreprise</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Questions fréquentes</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">Mentions légales</a></li>
+          <li><a href="#" class="text-[13px] sm:text-[14px] md:text-[15px] font-medium leading-[15px] sm:leading-[16px] md:leading-[18px] text-left text-[#ffffff] font-['Roboto'] hover:text-[#b2d0c3] transition-colors">CGV</a></li>
+        </ul>
+      </div>
+      
+      <!-- Bottom Divider -->
+      <div class="w-full max-w-[1282px] h-[1px] bg-[#bdbfc1]"></div>
+      
+      <!-- Copyright -->
+      <p class="text-[12px] sm:text-[13px] md:text-[14px] font-normal leading-[14px] sm:leading-[15px] md:leading-[17px] text-left text-[#ffffff] font-['Roboto']">
+        Caviar house @ 2026. Tous droits réservés.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    let mobileMenuOpen = false;
+    
+    function toggleMobileMenu() {
+      mobileMenuOpen = !mobileMenuOpen;
+      const nav = document.querySelector('nav[role="navigation"]');
+      if (mobileMenuOpen) {
+        nav.classList.remove('hidden');
+        nav.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'shadow-lg', 'z-50');
+      } else {
+        nav.classList.add('hidden');
+        nav.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'shadow-lg', 'z-50');
+      }
+    }
+  </script>
+{% endblock %}
+

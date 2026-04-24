@@ -1,0 +1,21 @@
+{
+  "worldline": {
+    "saferpay": {
+      "scd": {
+        "saved": "Stored payment data",
+        "other": "New payment data",
+        "delete": "Delete",
+        "deleteSuccess": "Payment data deleted successfully",
+        "deleteError": "Payment data could not be deleted due to an unexpected error"
+      },
+      "fields": {
+        "placeholders": {
+          "holdername": "Card holder",
+          "cardnumber": "0000 0000 0000 0000",
+          "expiration": "MM/YY",
+          "cvc": "CVC"
+        }
+      }
+    }
+  }
+}

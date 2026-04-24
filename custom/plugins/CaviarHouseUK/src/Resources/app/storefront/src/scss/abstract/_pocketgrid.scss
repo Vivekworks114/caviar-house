@@ -1,0 +1,49 @@
+/*
+ * PocketGrid v2.0.1
+ * Simple grid system for responsive layouts
+ * @license: MIT - http://opensource.org/licenses/mit-license.php
+ */
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.table {
+    display: table;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: top;
+}
+
+@for $i from 1 through 12 {
+    .block-group-#{$i} > .block {
+        width: percentage(1 / $i);
+    }
+}
+
+@for $i from 1 through 12 {
+    .inline-block-group-#{$i} > .inline-block {
+        width: percentage(1 / $i);
+    }
+}
+
+@for $i from 1 through 12 {
+    .table-group-#{$i} {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .table-group-#{$i} > .table-cell {
+        width: percentage(1 / $i);
+    }
+}

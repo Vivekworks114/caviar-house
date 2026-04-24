@@ -1,0 +1,423 @@
+/*
+==================================================
+User Registration Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add user registration forms and styling from the original Responsive theme.
+*/
+/*
+Register
+==========================================
+Contains the styles of the registration process form and its components.
+
+The user can see the registration steps, advantages and required information.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.register--message {
+  @include unitize(margin-top, 20);
+}
+
+.register--content {
+  @include unitize-margin(10, 0);
+  @include clearfix();
+  width: 100%;
+  display: none;
+
+  &.is--collapsed {
+    display: block;
+  }
+
+  .alert {
+    @include unitize-margin(20, 18, 20, 18, 16);
+  }
+
+  .register--check {
+    @include unitize(padding-bottom, 8);
+  }
+
+  .register--action {
+    @include unitize-margin(20, 20);
+
+    .register--submit {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .register--required-info {
+    @include unitize(padding-bottom, 30);
+    @include unitize-margin(0, 26, 16);
+    @include unitize(font-size, 14);
+  }
+
+  .select-field {
+    @include unitize(margin-bottom, 10);
+    max-width: 100%;
+  }
+
+  .register--field {
+    @include unitize(margin-bottom, 10);
+    width: 100%;
+  }
+
+  .register--customertype {
+    display: block;
+  }
+
+  .register--zip-city {
+    .register--field-zipcode {
+      width: 28%;
+      float: left;
+    }
+
+    .register--field-city {
+      @include clearfix();
+      width: 70%;
+      float: left;
+    }
+
+    .register--spacer {
+      margin-right: 2%;
+    }
+
+  }
+
+  .birthday--label {
+    @include clearfix();
+    @include unitize-margin(0, 0, 5, 0);
+    display: block;
+    font-weight: $font-bold-weight;
+  }
+
+  .register--password-description {
+    @include unitize(padding-bottom, 20);
+  }
+
+  .register--birthdate {
+
+    .select-field {
+      @include unitize(margin-bottom, 15);
+      max-width: 100%;
+      float: left;
+    }
+
+    .datepicker {
+      @include unitize(margin-bottom, 15);
+      width: 100%;
+      max-width: 100%;
+      float: left;
+    }
+
+    .register--birthyear,
+    .register--birthyear.select-field {
+      @include unitize(margin-right, 0);
+    }
+
+  }
+
+  .register--privacy {
+    @include unitize-padding(20, 20);
+    @include unitize-margin(0, 20, 20);
+    @include unitize(font-size, 14);
+    border: 1px solid $border-color;
+
+    input[type="checkbox"] {
+      @include unitize-margin(0, 10, 0, 0);
+    }
+  }
+
+  // Personal information fieldset
+  .register--personal {
+    @include unitize(padding-bottom, 10);
+    @include clearfix();
+  }
+}
+
+// Register Login
+.register--login {
+  @include clearfix();
+
+  .register--new-customer {
+    @include unitize-margin(20, 0);
+
+    .new-customer-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: relative;
+
+      &:after {
+        @include unitize-width(16);
+        @include unitize-height(16);
+        @include unitize(line-height, 16);
+        @include unitize(margin-top, -8);
+        @include unitize(font-size, 6);
+        @include unitize(right, 10);
+        position: absolute;
+        font-family: $sw-icon-fontname;
+        font-weight: $font-base-weight;
+        content: $sw-icon-arrow-down;
+        color: inherit;
+        top: 50%;
+      }
+
+      &.is--active:after {
+        content: $sw-icon-arrow-up;
+      }
+    }
+  }
+
+  .register--login-field {
+    @include unitize(margin-bottom, 10);
+    width: 100%;
+  }
+
+  .register--login-description {
+    @include unitize(padding-bottom, 20);
+  }
+
+  .register--login-lostpassword {
+    @include unitize(padding-bottom, 20);
+  }
+
+  .register--login-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Register Advantages
+.register--advantages {
+  display: none;
+}
+
+.password--success {
+  @include unitize-margin(10, 0, 20, 0);
+}
+
+// Register Steps
+.steps--container {
+  background: transparent;
+}
+
+.steps--content {
+  @include unitize(padding-top, 16);
+  display: table;
+  border-top: 1px solid $border-color;
+  width: 100%;
+
+  .steps--list {
+    @include clearfix();
+    display: table-row;
+  }
+
+  .steps--entry {
+    @include unitize-padding(0, 10);
+    display: table-cell;
+    list-style: none;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .steps--spacer {
+    display: none;
+    vertical-align: middle;
+  }
+
+  .steps--entry .icon {
+    @include secondary-gradient();
+    @include border-radius(22px);
+    @include unitize-padding(10, 16);
+    @include unitize-width(46, 16);
+    @include unitize(font-size, 20);
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-weight: $font-bold-weight;
+  }
+
+  .is--active .icon {
+    @include primary-gradient();
+    color: #fff;
+  }
+
+  // Text
+  .steps--entry .text {
+    @include unitize-margin(0, 0, 0, 10);
+    @include unitize-height(52);
+    position: relative;
+    top: -2px;
+    display: none;
+    vertical-align: middle;
+
+    &::after {
+      content: '';
+      height: 100%;
+    }
+  }
+
+  .is--active .text {
+    color: $brand-primary;
+    display: inline-block;
+    font-weight: $font-bold-weight;
+  }
+
+  .steps--entry .text--inner, .steps--entry .text::after {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+.account--change-payment {
+  .payment--method {
+    @include unitize-padding(10, 0, 10, 0);
+  }
+
+  .payment--selection-input {
+    @include unitize-width(40);
+    float: left;
+    text-align: center;
+  }
+
+  .payment--selection-label,
+  .payment--description,
+  .payment--content {
+    @include unitize-padding(0, 0, 0, 40);
+    width: 100%;
+  }
+
+  .payment--content input {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+  .register--message {
+    @include unitize(margin-top, 45);
+  }
+
+  // General Register Form
+  .register--content {
+    @include unitize(margin-top, 50);
+    width: 64%;
+    float: right;
+    display: block;
+
+    .select-field {
+      @include unitize(margin-bottom, 15);
+
+      .register--birthday {
+        margin-right: 2%;
+      }
+    }
+
+    .register--field {
+      @include unitize(margin-bottom, 15);
+    }
+
+    .register--check {
+      @include unitize(padding-bottom, 8);
+    }
+
+    .select-field {
+      @include unitize(max-width, 290);
+    }
+
+    .register--birthdate {
+      .select-field {
+        width: 32%;
+        margin-right: 2%;
+      }
+    }
+
+    .register--action {
+      text-align: right;
+
+      .register--submit {
+        width: 35%;
+      }
+    }
+  }
+
+  // Register Steps
+  .steps--content {
+    @include unitize-padding(30, 0, 24, 0, 16);
+    background: transparent;
+    border: none;
+
+    .steps--spacer {
+      @include unitize-width(80);
+      display: table-cell;
+      text-align: center;
+    }
+
+    .steps--entry {
+      .text {
+        @include unitize-margin(0, 10, 0, 10);
+        display: inline-block;
+        font-weight: $font-bold-weight;
+      }
+    }
+  }
+
+  // Register Login
+  .register--login {
+    @include unitize(margin-top, 50);
+    width: 34%;
+    float: left;
+
+    .register--new-customer {
+      display: none;
+    }
+
+    .register--login-field {
+      @include unitize(margin-bottom, 15);
+    }
+
+    .register--login-btn {
+      width: auto;
+      text-align: left;
+    }
+  }
+
+  // Register advantages
+  .register--advantages {
+    @include clearfix();
+    display: block;
+    width: 34%;
+    float: left;
+
+    .panel--title {
+      @include unitize-margin(0, 0, 10, 0, 16);
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+
+  // Register Steps
+  .steps--content {
+
+    .steps--entry {
+      &.step--payment {
+        width: 30%;
+      }
+
+      .text {
+        @include unitize-margin(0, 0, 0, 10);
+        width: 70%;
+        text-align: left;
+      }
+    }
+
+    .steps--spacer {
+      width: 15%
+    }
+  }
+}

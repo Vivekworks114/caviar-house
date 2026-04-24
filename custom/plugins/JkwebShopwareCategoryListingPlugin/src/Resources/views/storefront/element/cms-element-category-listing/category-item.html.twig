@@ -1,0 +1,61 @@
+{% block element_category_listing_item %}
+
+    {% set headingPosition = element.data.headingPosition|default('top') %}
+
+    <div class="cms-element-category-listing-category-item">
+        {% block element_category_listing_item_inner %}
+            {% block element_category_listing_item_heading %}
+                {% if(headingPosition == 'top' or headingPosition == 'overlay') %}
+                    <h2 class="cms-element-category-listing-item-title cms-element-category-listing-item-title--{{ headingPosition }}">
+                        {% block element_category_listing_item_heading_inner %}
+                            <a href="{{ category_url(category) }}"
+                                    {% if category_linknewtab(category) %} target="_blank" {% endif %}
+                               class="stretched-link" title="{{ category.translated.name }}">
+                                {{ category.translated.name }}
+                            </a>
+                        {% endblock %}
+                    </h2>
+                {% endif %}
+            {% endblock %}
+            {% block element_category_listing_item_image %}
+                <div class="cms-element-category-listing-item-image-wrapper">
+                    {% if category.media %}
+                        {% block element_category_listing_item_image_inner %}
+                            {% sw_thumbnails 'cms-element-category-listing-item-image' with {
+                                media: category.media,
+                                sizes: {
+                                    default: '720px',
+                                },
+                                attributes: {
+                                    class: 'img-fluid cms-element-category-listing-item-image',
+                                    alt: (category.media.translated.alt ?: ''),
+                                    title: (category.media.translated.title ?: ''),
+                                    'data-object-fit': 'cover',
+                                },
+                            } %}
+                        {% endblock %}
+                    {% else %}
+                        <div class="cms-element-category-listing-item-image-placeholder">
+                            {% sw_icon 'placeholder' style {
+                                'size': 'fluid'
+                            } %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endblock %}
+            {% block element_category_listing_item_heading_bottom %}
+                {% if(headingPosition == 'bottom') %}
+                    <h2 class="cms-element-category-listing-item-title cms-element-category-listing-item-title--bottom">
+                        {% block element_category_listing_item_heading_bottom_inner %}
+                            <a href="{{ category_url(category) }}"
+                                    {% if category_linknewtab(category) %} target="_blank" {% endif %}
+                               class="stretched-link" title="{{ category.translated.name }}">
+                                {{ category.translated.name }}
+                            </a>
+                        {% endblock %}
+                    </h2>
+                {% endif %}
+            {% endblock %}
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% block sw_cms_element_category_listing %}
+    <div class="sw-cms-el-category-listing">
+        <div
+            v-if="!element.config.categories.value.length"
+            class="sw-cms-el-child-listing"
+        >
+            <div
+                v-for="i in 3"
+                :key="i"
+            >
+                <img
+                    class="sw-cms-el-child-listing-img"
+                    :src="assetFilter('/administration/static/img/cms/preview_mountain_small.jpg')"
+                />
+                <div class="sw-cms-el-child-listing-title-placeholder title"></div>
+                <div
+                    v-for="j in 3"
+                    :key="j"
+                    class="sw-cms-el-child-listing-title-placeholder small"
+                ></div>
+            </div>
+        </div>
+        <div
+            v-else
+            :class="element.config.rowElementClassName.value"
+        >
+            <div
+                v-for="category in element.data.categories"
+                :class="element.config.colElementClassName.value"
+            >
+                <div class="sw-cms-el-category-listing-item">
+                    <h2>{{ category.name }}</h2>
+                    <img
+                        v-if="category.media"
+                        :src="category.media.url"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

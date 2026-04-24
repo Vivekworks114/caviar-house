@@ -1,0 +1,552 @@
+/*
+==================================================
+Product Listing Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add product listing page styling, grid layout, and listing filters from the original Responsive theme.
+*/
+/*
+Listing
+==========================================
+Contains the styles of the product listing and its components.
+
+The styling defines the listing components such as the product filter element.
+
+It contains the viewport specific styles inside media queries.
+*/
+@import "../abstract";
+@import "../mixins";
+
+// Listing main content
+.listing--content {
+  @include unitize-margin(20, 0);
+}
+
+// Category banner
+.banner--container {
+  @include unitize-margin(0, 0, 20, 0);
+}
+
+// Listing teaser text
+.category--teaser {
+  @include unitize-margin(0, 0, 20, 0);
+
+  .hero--text {
+    @include unitize-padding(10, 20);
+  }
+
+  .offcanvas--content {
+    @include unitize(padding, 20);
+
+    .content--title {
+      @include unitize(font-size, 18);
+      @include unitize-margin(10, 0, 15, 0);
+      font-weight: $font-bold-weight;
+      color: $text-color-dark;
+    }
+  }
+}
+
+// Vendor information
+.vendor--info {
+  @include clearfix();
+  @include unitize-margin(0, 0, 20, 0);
+
+  .vendor--image-wrapper {
+    @include unitize-margin(0, 0, 10, 0);
+    @include unitize-max-width(200);
+    @include unitize-height(70);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vendor--image {
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .vendor--text {
+    @include unitize-margin(0, 0, 20, 0);
+  }
+}
+
+// Listing actions
+.listing--actions {
+  @include clearfix();
+  @include tap-highlight-color();
+}
+
+.listing--wrapper.js--is-loading .js--loading-indicator {
+  @include unitize(top, 150);
+}
+
+.listing {
+  @include transition(opacity 0.5s ease-out);
+  opacity: 1;
+
+  &.is--loading {
+    opacity: 0;
+  }
+}
+
+
+.action--filter-btn {
+  @include unitize(margin-bottom, 10);
+
+  .filter--trigger {
+    @include unitize-height(34);
+    @include unitize-padding(4, 4, 4, 10);
+    @include unitize(24, 16, line-height);
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    .icon--filter {
+      @include unitize(margin-right, 8);
+    }
+
+    .action--collapse-icon {
+      @include unitize-padding(0, 10);
+      @include unitize(line-height, 24);
+      @include primary-gradient();
+      @include border-radius();
+      display: inline-block;
+      color: #fff;
+      float: right;
+    }
+  }
+}
+
+// Filter options
+.action--filter-options {
+  .filter--container {
+    @include unitize-padding(0, 10);
+  }
+
+  .filter--close-btn {
+    @include unitize-padding(12, 10);
+    @include secondary-gradient();
+    display: block;
+    color: #fff;
+    font-weight: $font-bold-weight;
+
+    &:hover {
+      color: #fff;
+    }
+
+    .icon--arrow-right {
+      @include unitize-margin(3, 0, 0, 0);
+      float: right;
+    }
+  }
+
+  .filter--btn-apply {
+    clear: both;
+  }
+
+  .filter--list {
+    list-style: none;
+  }
+
+  .filter--entry {
+    @include unitize-padding(10, 20);
+    @include unitize(font-size, 16);
+    display: block;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border: 0 none;
+    }
+  }
+
+  .filter--link {
+    color: $text-color;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+}
+
+// Sorting options
+.action--sort {
+  @include unitize(margin-bottom, 20);
+  display: block;
+
+  .sort--label {
+    display: none;
+  }
+
+  .sort--select {
+    @include unitize-height(34);
+    max-width: 100%;
+
+    &:after,
+    .sort--field {
+      @include unitize(line-height, 34);
+    }
+  }
+}
+
+// Items per page filter
+.action--per-page {
+  display: none;
+}
+
+// Listing paging
+.listing--paging {
+  @include clearfix();
+  @include unitize-padding(10, 0);
+  display: block;
+
+  .paging--label {
+    display: none;
+  }
+
+  .paging--display {
+    @include unitize(line-height, 30);
+    @include unitize(margin-left, 10);
+  }
+}
+
+.listing--bottom-paging {
+  @include unitize-margin(10, 0, 20, 0);
+}
+
+.listing--container {
+  overflow: hidden;
+}
+
+.listing {
+  @include clearfix();
+  margin: -2% 0 0 -2%;
+  padding: 0 0 2% 0;
+}
+
+// button wrapper for ininite scrolling actions
+.infinite--actions {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  .js--load-more, .js--load-previous {
+    @include unitize(margin-bottom, 20);
+  }
+}
+
+// Tablet view
+@media screen and(min-width: $tablet-viewport-width) {
+  .filter--facet-container .filter-panel {
+    margin-left: 0;
+  }
+  .category--teaser {
+    .hero--headline {
+      @include unitize($font-size-h1, 16, font-size);
+      @include unitize-padding(40, 0, 0, 0);
+      @include unitize-margin(0, 40);
+    }
+    .hero--text {
+      @include unitize-padding(25, 40, 10, 40);
+    }
+  }
+
+  .listing--content {
+    @include clearfix();
+    @include unitize-margin(30, 0);
+  }
+
+  .vendor--info {
+    .vendor--image-wrapper {
+      @include unitize-margin(0, 20, 20, 0);
+      float: left;
+
+      & + .vendor--text {
+        @include unitize-margin(0, 0, 0, 250);
+      }
+
+      .vendor--image {
+        margin: 0;
+      }
+    }
+  }
+
+  .listing--actions {
+    @include border-radius();
+    @include unitize-margin(0, 0, 20, 0);
+    @include unitize(padding-top, 10);
+    border: 1px solid $border-color;
+    background: darken($gray-light, 1%);
+
+    .listing--paging {
+      @include unitize-padding(10, 10);
+      display: block;
+      border-top: 1px solid $border-color;
+    }
+  }
+
+  .listing--actions.without-facets.without-sortings.without-pagination {
+    display: none;
+  }
+
+  .listing--actions.without-facets.without-sortings {
+    @include unitize(padding-top, 0);
+    border-top: none;
+  }
+
+  .action--per-page {
+    @include unitize(line-height, 32);
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    float: right;
+
+    .per-page--label { display: none }
+
+    .per-page--select {
+      @include unitize-width(80);
+      @include unitize-height(32);
+      vertical-align: top;
+
+      &:after,
+      .per-page--field {
+        @include unitize(line-height, 30);
+        text-align: center;
+      }
+    }
+  }
+
+  .action--sort {
+    @include unitize-width(200);
+    @include unitize-margin(0, 10, 0, 0);
+    display: inline-block;
+    text-align: right;
+    float: right;
+
+    .sort--select {
+      @include unitize(max-width, 200);
+    }
+  }
+
+  .action--filter-btn {
+    @include unitize-width(190);
+    @include unitize-margin(0, 20, 10, 10);
+    float: left;
+
+    .filter--trigger {
+      .action--collapse-icon {
+        display: none;
+      }
+
+      &:before,
+      &:after {
+        @include transition(margin-top .4s cubic-bezier(.02, .01, .47, 1));
+        @include unitize-width(16);
+        @include unitize-height(16);
+        @include unitize(right, 10);
+        @include unitize(margin-top, -8);
+        @include unitize(font-size, 6);
+        @include unitize(line-height, 16);
+        font-family: $sw-icon-fontname;
+        content: $sw-icon-arrow-down;
+        position: absolute;
+        text-align: center;
+        background: none;
+        color: inherit;
+        top: 50%;
+      }
+
+      &:after {
+        @include unitize(margin-top, -48);
+        content: $sw-icon-arrow-up;
+      }
+
+      &.is--active {
+        @include unitize-padding(2, 12);
+        @include unitize(line-height, 34);
+        @include linear-gradient($btn-primary-top-bg, $btn-primary-bottom-bg);
+        border: 0 none;
+        color: $btn-primary-text-color;
+
+        &:hover {
+          background: $btn-primary-hover-bg;
+          color: $btn-primary-hover-text-color;
+        }
+
+        /** State: Small button */
+        &.is--small {
+          @include unitize(line-height, 30);
+        }
+
+        /** State: Large button */
+        &.is--large {
+          @include unitize(line-height, 38);
+        }
+
+        &:before {
+          @include unitize(margin-top, 40);
+        }
+
+        &:after {
+          @include unitize(margin-top, -8);
+        }
+      }
+    }
+  }
+
+  .action--filter-options {
+    width: auto;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    position: relative;
+    background: #fff;
+    border: 0 none;
+    clear: both;
+
+    &.is--collapsed,
+    &.is--active-filter {
+      border-width: 1px 0 0 0;
+      border-style: solid;
+      border-color: $border-color;
+    }
+
+    &.is--active-filter {
+      .filter--active-container {
+        display: block;
+      }
+    }
+
+    &.is--instant-filter-active .filter--active-container {
+      display: block;
+    }
+
+    .filter--close-btn {
+      display: none;
+    }
+
+    .filter--container {
+      @include clearfix();
+      margin-left: -2%;
+      padding-left: 3%;
+    }
+
+    .filter--group {
+      @include unitize-height(38);
+      width: 31%;
+      margin: 0 2% 2% 0;
+      position: relative;
+      float: left;
+    }
+
+    .filter--header {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: $zindex-listing-filter-header;
+
+      &.is--active {
+        z-index: $zindex-listing-filter-header-active;
+      }
+    }
+
+    .filter--content {
+      @include unitize(top, 38);
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+
+    #filter {
+      @include clearfix();
+    }
+  }
+
+  .listing--bottom-paging {
+    @include unitize-padding(0, 10, 0, 10);
+    @include border-radius();
+    border: 1px solid $border-color;
+    background: darken($gray-light, 1%);
+  }
+}
+
+// Desktop view
+@media screen and(min-width: $desktop-viewport-width) {
+
+  .listing--content {
+    @include unitize(padding-top, 45);
+    @include unitize-margin(0, 0);
+  }
+
+  .action--filter-btn {
+    width: 20%;
+    margin-right: 2%;
+
+    .filter--trigger {
+      @include unitize(font-size, 14);
+
+      .action--collapse-icon {
+        @include unitize(-8, 16, margin-top);
+      }
+    }
+  }
+
+  .action--filter-options {
+    background: #fff;
+
+    &.is--collapsed,
+    &.is--active-filter {
+      border-width: 1px 0 0 0;
+    }
+  }
+
+  .action--sort {
+    @include unitize(line-height, 32);
+    @include unitize-margin(0, 10, 10, 0);
+    width: 40%;
+
+    .sort--label {
+      @include unitize-margin(0, 10, 0, 0);
+      display: inline-block;
+      font-weight: $font-bold-weight;
+    }
+
+    .sort--select {
+      @include unitize(max-width, 200);
+      vertical-align: top;
+    }
+  }
+
+  .action--per-page {
+
+    .per-page--label {
+      @include unitize-margin(0, 10, 0, 0);
+      display: inline-block;
+      font-weight: $font-bold-weight;
+    }
+  }
+
+  .listing--paging {
+    display: block;
+    clear: both;
+
+    .paging--label {
+      @include unitize-margin(0, 10, 0, 0);
+      font-weight: $font-bold-weight;
+    }
+
+    .paging--display {
+      @include unitize(line-height, 30);
+    }
+  }
+}
+.cvh-swiss {
+  .navigation--smartphone .entry--close-off-canvas .navigation--link,
+  .offcanvas--overlay .overlay--category .category--headline,
+  .off-canvas .navigation--headline {
+    color: #fff;
+  }
+}

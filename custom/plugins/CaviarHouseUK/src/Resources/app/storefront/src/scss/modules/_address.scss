@@ -1,0 +1,280 @@
+/*
+==================================================
+Address Management Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add address forms and address management styling from the original Responsive theme.
+*/
+/*
+Address
+================================
+Defines the styles for the address pages and the modals.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.address-manager--modal {
+
+  .header > .title {
+    padding-left: 2%;
+  }
+
+  &.address-manager--editor {
+
+    .address-editor--errors {
+      @include unitize(padding, 20);
+      padding-bottom: 0;
+    }
+
+    .address-editor--body {
+      padding: 0;
+    }
+  }
+
+  &.address-manager--selection {
+    .content {
+      @include clearfix();
+
+      .modal--container {
+        @include clearfix();
+        margin: -2% 0 0 -2%;
+
+        .modal--container-item {
+          padding: 2% 0 0 2%;
+          float: left;
+          width: 100%;
+        }
+      }
+
+      .panel--actions {
+        .btn {
+          width: 100%;
+          text-align: center;
+
+          .js--loading {
+            @include unitize-width(18);
+            @include unitize-height(18);
+            @include border-radius(100%);
+            @include unitize(right, 6);
+            @include unitize(top, 2);
+            @include unitize-margin(8, 5, 8, 5);
+            @include animation(keyframe--spin 1s linear infinite);
+            border: 2px solid $border-color;
+            border-top: 2px solid darken($border-color, 50%);
+            display: block;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+.account--address,
+.address-manager--modal {
+
+  &.account--content {
+    @include unitize(margin, 0);
+    @include unitize(padding-top, 45);
+  }
+
+  .address--item-body .panel--title {
+    @include unitize-margin(0, 0, 20, 0);
+    padding-top: 0;
+  }
+
+  .account--welcome {
+    margin-bottom: 0;
+  }
+
+  &.account--address-form {
+    .alert {
+      @include unitize-margin(20, 18, 20, 18);
+    }
+  }
+
+  .address--form-actions {
+    @include clearfix();
+
+    .address--form-submit {
+      @include unitize(margin-bottom, 10);
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .address--actions-set-defaults {
+    @include unitize(margin-bottom, 10);
+    line-height: normal;
+
+    .btn {
+      padding: 0;
+      color: $brand-secondary;
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  .address--required-info {
+    @include unitize-margin(0, 26, 16);
+    @include unitize(font-size, 14);
+  }
+
+  .select-field {
+    @include unitize(margin-bottom, 5);
+    max-width: 100%;
+  }
+
+  .address--field {
+    @include unitize(margin-bottom, 10);
+    width: 100%;
+  }
+
+  .address--customertype {
+    display: block;
+  }
+
+  .address--zip-city {
+    .address--field-zipcode {
+      width: 28%;
+      float: left;
+    }
+
+    .address--field-city {
+      @include clearfix();
+      width: 70%;
+      float: left;
+    }
+
+    .address--spacer {
+      margin-right: 2%;
+    }
+
+  }
+
+  &.address--delete {
+    .panel {
+      @include unitize(margin-bottom, 20);
+    }
+  }
+
+  .address--delete-actions .btn.is--primary {
+    float: right;
+  }
+
+  .address--content {
+    @include clearfix();
+
+    margin: -2% 0 0 -2%;
+  }
+
+  .address--item-content {
+    width: 100%;
+    float: left;
+    padding: 2%;
+
+    .panel--actions {
+      display: table-cell;
+      vertical-align: bottom;
+    }
+  }
+
+  .address--item-create .btn {
+    text-align: center;
+  }
+
+  .address--item-actions form {
+    display: block;
+  }
+
+  .js--loading {
+    @include unitize-width(18);
+    @include unitize-height(18);
+    @include border-radius(100%);
+    @include unitize-margin(0, 0, 0, 5);
+    @include unitize(top, 4);
+    @include animation(keyframe--spin 1s linear infinite);
+    border: 2px solid $border-color;
+    border-top: 2px solid darken($border-color, 50%);
+    display: inline-block;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+
+  .account--address,
+  .address-manager--modal {
+    .address--form-actions .address--form-submit {
+      width: auto;
+    }
+  }
+
+  .address-manager--modal.address-manager--selection {
+    .content {
+      .modal--container {
+        .modal--container-item {
+          width: 50%
+        }
+      }
+    }
+  }
+
+  .account--address.account--content {
+
+    .address--field {
+      @include unitize(margin-bottom, 15);
+      width: 70%;
+    }
+
+    .select-field {
+      @include unitize(max-width, 290);
+    }
+
+    .address--form-actions {
+      @include clearfix();
+    }
+
+    .address--item-content {
+      width: 50%;
+    }
+
+    .address--zip-city {
+      .address--field-zipcode {
+        width: 18%;
+        float: left;
+      }
+
+      .address--field-city {
+        @include clearfix();
+        width: 50%;
+        float: left;
+      }
+
+      .address--spacer {
+        margin-right: 2%;
+      }
+
+    }
+  }
+}
+
+@media screen and(min-width: $desktop-viewport-width) {
+  .address-manager--modal.address-manager--selection {
+    // Restrict the width of the modal box in desktop mode to fit the shop width
+    @include unitize-max-width(1145);
+
+    .content {
+      .modal--container {
+        .modal--container-item {
+          width: 33.3%
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/*
+Last seen products components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for last seen products widgets and similar product history elements.
+*/
+
+// TODO: Add last seen products styles from original LESS file
+/*
+Last-seen products element
+=======================================================
+The Last-seen products element fetches the recently viewed articles of the user and displays them inside a slider-element.
+
+The slider contains a title element and a product box with the article-image and price.
+*/
+@import "../abstract";
+@import "../mixins";
+.last-seen-products {
+  @include clearfix();
+  @include unitize-margin(10, 0, 0, 0);
+  clear: both;
+
+  .last-seen-products--title {
+    @include unitize-padding(10, 0);
+    border-bottom: 1px solid $panel-border;
+    @include unitize(font-size, 16);
+    display: block;
+    font-weight: $font-bold-weight;
+    color: $text-color-dark;
+  }
+}
+
+.last-seen-products--slider {
+  @include border-radius(3px);
+  height: auto;
+
+  .product--box .product--title {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.last-seen-products--slider,
+.last-seen-products--container {
+  position: relative;
+  overflow: hidden;
+}
+
+.last-seen-products--container {
+  @include unitize-padding(10, 0);
+}
+
+.last-seen-products-item--image {
+  @include unitize(line-height, 120);
+  display: block;
+}
+
+.last-seen-products--item {
+  @include unitize-padding(10, 10);
+}
+
+@media screen and(min-width: $tablet-viewport-width) {
+
+  .last-seen-products {
+    @include unitize-margin(30, 0, 0, 0);
+  }
+}

@@ -1,0 +1,27 @@
+{% sw_extends '@WorldlineSaferpay/saferpay/transaction/_page.html.twig' %}
+
+{% block base_head %}
+    {{ parent() }}
+
+    {% block worldline_saferpay_head_script_iframe_breakout %}
+        <script>
+            if (window.top !== window.self) {
+                window.top.location = window.location.href;
+            }
+        </script>
+    {% endblock %}
+{% endblock %}
+
+{% block worldline_saferpay_scripts %}
+
+    {{ parent() }}
+
+    {% block worldline_saferpay_scripts_redirect %}
+        <script>
+            if (window.top === window.self) {
+                window.top.location = '{{ returnUrl }}';
+            }
+        </script>
+    {% endblock %}
+
+{% endblock %}

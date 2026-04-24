@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+
+{% block cms_breadcrumb %}
+    {% if app.request.attributes.get('_route') != 'frontend.home.page' %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block cms_content %}
+    {% if app.request.attributes.get('_route') == 'frontend.home.page' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-hero.html.twig' %}
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,1167 @@
+/*
+==================================================
+User Account Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add user account pages styling, dashboard, and account management from the original Responsive theme.
+*/
+/*
+Account
+================================================
+Defines the styles for the Shopware 5 user account page.
+
+The my-account page displays a dashboard that shows an overview of the user information, payment methods, billing and shipping information inside panel elements.
+
+It allows the user to directly see and change the important information of their account.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.account--content {
+  @include unitize-margin(10, 0, 0, 0);
+}
+
+.partner-statistic .panel--title {
+  @include unitize(padding-bottom, 20);
+}
+
+.account--content,
+.payment_logo_debit,
+.account-address--container,
+.account-info--container {
+  @include clearfix();
+}
+
+// Logout success message
+.account--logout {
+  .logout--headline {
+    @include unitize(font-size, 24);
+    @include unitize-margin(10, 0, 20, 0);
+  }
+
+  .logout--actions {
+    @include unitize(margin-bottom, 10);
+  }
+
+  .logout-back-to-shop {
+    display: block;
+  }
+}
+
+.account--menu {
+  .link--logout {
+    font-weight: $font-bold-weight;
+    color: $brand-primary;
+  }
+
+  .navigation--logout-personalized {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.account--box {
+  @include unitize-margin(0, 0, 20, 0);
+}
+
+.account--password,
+.account--email {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+  }
+}
+
+// Account teaser text padding
+.account--welcome {
+  @include unitize(margin-bottom, 20);
+
+  .panel--body {
+    padding: 0;
+  }
+
+  .panel--title {
+    @include unitize-padding(20, 0);
+    margin: 0;
+  }
+
+  .panel--actions {
+    padding: 0;
+  }
+}
+
+// Account error message margin
+.account--error,
+.account--success {
+  @include unitize-margin(0, 0, 10, 0);
+}
+
+.register--error-msg {
+  color: $highlight-error;
+}
+
+.account--actions {
+  @include unitize-margin(0, 20, 20, 16);
+  @include clearfix();
+}
+
+// Change Address / Payment method
+.account--change-payment {
+  &.register--content {
+    display: block;
+    width: 100%
+  }
+}
+
+.account--newsletter fieldset {
+  border: 0;
+  padding: 0;
+
+  input[type="checkbox"] {
+    @include unitize-margin(0, 10, 0, 0);
+  }
+}
+
+.account--paging {
+  @include clearfix();
+  @include unitize-padding(10, 10);
+  display: block;
+  background: lighten($panel-bg, 4%);
+
+  .paging--display {
+    float: right;
+  }
+}
+
+.account--orders-overview {
+  border: 1px solid $panel-border;
+
+  p { @include unitize(font-size, 14); }
+
+  .orders--table-header {
+    display: none;
+    background: $panel-table-header-bg;
+
+    .panel--th {
+      color: $panel-table-header-color;
+    }
+  }
+
+  .panel--tr {
+    @include unitize-padding(10, 0);
+  }
+
+  .panel--td {
+    @include clearfix();
+    @include unitize-padding(5, 10);
+    display: block;
+    float: none;
+  }
+
+  .column--info-labels,
+  .column--info-data {
+    width: 50%;
+    float: left;
+    text-align: left;
+
+  }
+
+  .column--info-data {
+    @include unitize-padding(5, 10, 0, 0);
+  }
+
+  .column--summary-labels,
+  .column--summary-data {
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+
+  .column--summary-data {
+    @include unitize-padding(5, 10, 0, 0);
+  }
+
+  .column--label,
+  .column--value {
+    width: 50%;
+    float: left;
+  }
+
+  .column--label {
+    font-weight: $font-bold-weight;
+  }
+}
+
+.is--act-partnerStatistic {
+  .content-main--inner {
+    @include unitize-padding(0, 0, 16, 0);
+  }
+
+  .account--welcome {
+    @include unitize-padding(0, 0, 0, 10);
+  }
+
+  .listing--actions {
+    @include unitize-padding(10, 18, 24, 18);
+    border-bottom: 1px solid $border-color;
+  }
+
+  .date-filter {
+    @include unitize(font-size, 14);
+    @include unitize-height(50);
+    display: block;
+    width: 100%;
+  }
+
+  .date-filter--label {
+    @include unitize-padding(9, 0, 10, 0);
+    @include unitize-width(40);
+    display: block;
+    float: left;
+  }
+
+  .date-filter--input {
+    @include unitize-margin(0, 0, 0, 40);
+    width: auto;
+  }
+
+  .datepicker {
+    @include unitize(padding-right, 35);
+    width: 100%;
+    float: left;
+  }
+
+  .ui-datepicker-trigger {
+    @include unitize-width(20);
+    @include unitize-height(20);
+    @include unitize-margin(10, 0, 0, -30);
+    display: inline;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    color: $text-color;
+    padding: 0;
+  }
+
+  .btn--filter {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+
+  .chart--holder {
+    display: none;
+  }
+
+  .panel--th,
+  .panel--td {
+    @include unitize-padding(8, 10, 7, 10);
+    width:25%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  .panel--th {
+    @include unitize-padding(3, 10, 2, 10);
+    @include unitize(font-size, 12);
+    color: $text-color;
+  }
+
+  .is--odd {
+    @include unitize-padding(0, 0, 9, 0);
+    border-bottom: 1px solid $border-color;
+
+    .column--price,
+    .column--total {
+      @include unitize-padding(10, 10, 10, 10);
+      width:100%;
+    }
+  }
+
+  .column--label {
+    text-align: left;
+  }
+
+  .column--value {
+    text-align: right;
+  }
+
+  .column--label,
+  .column--value {
+    width: 50%;
+    float: left;
+  }
+
+  .column--item-sum {
+    .column--label {
+      .is--block {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.order--status-icon {
+  @include unitize-width(8);
+  @include unitize-height(8);
+  @include unitize(top, 8);
+  display: inline-block;
+  position: relative;
+
+  &.status--0,  //The order has not been processed yet.
+  &.status--1,  //The order is in process
+  &.status--3,  //Partially completed
+  &.status--6 { //The order has been sent in part
+    background: $highlight-info;
+  }
+
+  &.status--2,  //Completed
+  &.status--5,  //Ready for shipping
+  &.status--7 { //The order has been sent
+    background: $highlight-success;
+  }
+
+  &.status--4,  //The order has been cancelled
+  &.status--8 { //Clarification needed
+    background: $highlight-error;
+  }
+}
+
+.order--name {
+  color: $text-color-dark;
+}
+
+.order--details,
+.order--price-unit,
+.order--current-price {
+  display: none;
+}
+
+.order--details .panel--tr {
+  border-bottom: 1px solid $panel-border;
+}
+
+.order--repeat {
+  text-align: center;
+  background: $gray;
+  border-bottom: 1px solid $border-color;
+}
+
+.order--actions {
+  .is--align-center {
+    text-align: center !important;
+  }
+}
+
+.order--user-comments,
+.order--shop-comments {
+  border-bottom: 1px solid $border-color;
+}
+
+.account--downloads {
+  border: 1px solid $panel-border;
+
+  p { @include unitize(font-size, 14) }
+
+  .downloads--table-header {
+    display: none;
+  }
+
+  .panel--tr {
+    @include unitize-padding(10, 0);
+  }
+
+  .panel--td {
+    @include clearfix();
+    @include unitize-padding(5, 10);
+    display: block;
+    float: none;
+  }
+}
+
+.account--password-reset {
+  @include unitize(margin-top, 10);
+
+  p { margin: 0; }
+
+  .password-reset--input {
+    @include unitize-margin(0, 0, 30, 0);
+    width: 100%;
+  }
+
+  .password-reset--link {
+    width: 100%;
+    margin: 0;
+
+    &:first-child {
+      @include unitize-margin(0, 0, 10, 0);
+    }
+  }
+}
+
+.account--password-new {
+  @include unitize(margin-top, 10);
+
+  .password-new--input {
+    @include unitize(margin-bottom, 15);
+    width: 100%;
+  }
+
+  .password-new--helptext {
+    margin-bottom: 0;
+  }
+
+  .password-new--submit {
+    display: block;
+    width: 100%;
+  }
+}
+
+.account--profile {
+  @include unitize(margin, 0);
+  @include unitize(padding-top, 30);
+
+  .profile--email-password-container {
+    @include clearfix();
+  }
+
+  .profile-password--container {
+    float: right;
+    width: 100%;
+  }
+
+  .profile-email--container {
+    float: left;
+    width: 100%;
+  }
+
+  .alert {
+    @include unitize(margin-bottom, 20);
+  }
+
+  .js--loading {
+    @include unitize-width(18);
+    @include unitize-height(18);
+    @include border-radius(100%);
+    @include unitize-margin(0, 0, 0, 5);
+    @include unitize(top, 4);
+    @include animation(keyframe--spin 1s linear infinite);
+    border: 2px solid $border-color;
+    border-top: 2px solid darken($border-color, 50%);
+    display: inline-block;
+    position: relative;
+  }
+
+  .panel {
+    @include unitize(margin-bottom, 20);
+  }
+
+  .required-info {
+    @include unitize(font-size, 14);
+  }
+
+  .select-field {
+    @include unitize(margin-bottom, 10);
+    max-width: 100%;
+  }
+
+  .profile--field {
+    @include unitize(margin-bottom, 10);
+    width: 100%;
+  }
+
+  .profile--zip-city {
+    .profile--field-zipcode {
+      width: 28%;
+      float: left;
+    }
+
+    .profile--field-city {
+      @include clearfix();
+      width: 70%;
+      float: left;
+    }
+  }
+
+  .birthday--label {
+    @include unitize-margin(0, 0, 5, 0);
+    display: block;
+    font-weight: $font-bold-weight;
+  }
+
+  .profile--birthdate {
+    .select-field {
+      @include unitize(margin-bottom, 15);
+      max-width: 100%;
+      float: left;
+    }
+
+    .datepicker {
+      @include unitize(margin-bottom, 15);
+      width: 100%;
+      max-width: 100%;
+      float: left;
+    }
+
+    .profile--birthyear,
+    .profile--birthyear.select-field {
+      @include unitize(margin-right, 0);
+    }
+
+  }
+}
+
+@media screen and(max-width: $tablet-viewport-width ) {
+  .column--info-wrapper {
+    @include clearfix();
+  }
+}
+
+@media screen and(min-width: $phone-landscape-viewport-width ) {
+  .account--password-reset {
+    @include unitize(margin-top, 10);
+
+    .password-reset--input {
+      @include unitize-margin(10, 0, 30, 0);
+    }
+
+    .password-reset--link {
+      @include unitize-margin(0, 0, 10, 0);
+      width: auto;
+
+      &:first-child {
+        @include unitize-margin(0, 10, 0, 0);
+      }
+    }
+  }
+
+  .account--password-new .password-new--submit {
+    display: inline-block;
+    width: auto;
+  }
+
+  .account--logout .logout-back-to-shop {
+    display: inline-block;
+  }
+}
+
+@media screen and(min-width: $tablet-viewport-width) {
+
+  .account--content {
+    @include unitize-margin(30, 0, 0, 0);
+
+    &.is--wide {
+      width: 100%;
+    }
+  }
+
+  .account--password-reset {
+    @include unitize-margin(20, 0, 0, 0);
+  }
+
+  .account--password-new {
+    @include unitize(margin-top, 20);
+
+    .password-new--input {
+      @include unitize-width(320);
+    }
+  }
+
+  .account--menu {
+    border: 1px solid $border-color;
+
+    .navigation--headline {
+      @include unitize-padding(20, 0, 0, 0);
+      @include unitize-margin(0, 20);
+      @include unitize(font-size, 16);
+      display: block;
+      font-weight: $font-bold-weight;
+      color: $text-color-dark;
+
+      &.is--underline {
+        @include unitize-padding(20, 0, 10, 0);
+        border-bottom: 1px solid $panel-border;
+        text-decoration: none !important;
+      }
+
+      &.is--secondary {
+        color: $text-color;
+      }
+
+      &.is--primary {
+        color: $brand-primary;
+      }      text-decoration: underline !important;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .account--menu-container {
+      @include unitize-padding(10, 10);
+      @include unitize(font-size, 14);
+      @include unitize(line-height, 24);
+      display: block;
+      position: relative;
+
+      &.has--border {
+        border: 1px solid $panel-border;
+      }
+
+      &.is--slim {
+        @include unitize-padding(5, 5);
+      }
+
+      &.is--wide {
+        @include unitize-padding(20, 20);
+      }
+
+      &.is--flat {
+        background: $gray;
+      }
+
+      &.is--embossed {
+        @include box-shadow(inset 0 0 3px 0 rgba(0, 0, 0, 0.2));
+        background: $gray;
+      }      @include unitize-padding(10, 20);
+    }
+
+    .navigation--list {
+      padding: 0;
+      border: 0 none;
+    }
+
+    .navigation--entry {
+      margin: 0;
+      border: 0 none;
+    }
+
+    .navigation--link {
+      @include unitize-padding(5, 0);
+
+      &.link--logout {
+        @include unitize-margin(10, 0, 0, 0);
+        @include unitize-padding(10, 0, 0, 0);
+        border-top: 1px solid $border-color;
+        font-weight: $font-bold-weight;
+        color: $brand-primary;
+
+        [class^="icon--"] {
+          @include unitize-margin(0, 5, 0, 0);
+          display: inline-block;
+        }
+
+      }
+    }
+  }
+
+  .account--welcome {
+    .panel--title {
+      @include unitize($font-size-h1, 16, font-size);
+    }
+  }
+
+  // Select Address
+  .account--orders-overview {
+    .orders--table-header {
+      display: block;
+    }
+
+    .panel--tr {
+      padding: 0;
+      border-width: 0 0 1px 0;
+
+      &.order--repeat {
+        @include unitize-padding(20, 20);
+      }
+    }
+    .panel--td {
+      @include unitize-padding(10, 10);
+      display: inline-block;
+      float: left;
+    }
+
+    .column--label {
+      display: none;
+    }
+
+    .column--value {
+      width: 100%;
+      float: none;
+    }
+
+    .column--summary-labels,
+    .column--summary-data {
+      width: 20%;
+      text-align: right;
+    }
+
+    .column--date,
+    .column--id,
+    .column--dispatch {
+      width: 20%;
+    }
+    .column--status {
+      width: 25%;
+    }
+    .column--actions {
+      width: 15%;
+
+      .btn {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+    }
+    .column--name {
+      width: 50%;
+    }
+    .column--quantity {
+      width: 10%;
+    }
+    .column--price {
+      width: 20%;
+    }
+    .column--total {
+      width: 20%;
+    }
+    .column--info-labels {
+      width: 20%;
+    }
+    .column--info-data {
+      width: 40%;
+    }
+  }
+
+  .order--item {
+    margin: 0;
+  }
+
+  .order--pseudo-price {
+    @include unitize(font-size, 12);
+  }
+
+  .order--download,
+  .order--price-unit,
+  .order--current-price {
+    display: block !important;
+  }
+
+  .order--download {
+    @include unitize-margin(10, 0, 0, 0);
+  }
+
+  .order--quantity {
+    text-align: center !important;
+  }
+
+  .order--actions,
+  .order--price,
+  .order--amount {
+    text-align: right !important;
+  }
+
+  .account--downloads {
+    .downloads--table-header {
+      display: block !important;
+      background: $panel-table-header-bg;
+
+      .panel--th {
+        color: $panel-table-header-color;
+      }
+    }
+
+    .panel--tr {
+      padding: 0;
+      border-width: 0 0 1px 0;
+    }
+    .panel--td {
+      @include unitize-padding(10, 10);
+      display: inline-block;
+      float: left;
+    }
+
+    .column--date,
+    .column--actions {
+      width: 20%;
+    }
+    .column--info {
+      width: 60%;
+    }
+  }
+
+  .column--label {
+    display: none;
+  }
+
+  .column--date,
+  .column--id,
+  .column--dispatch {
+    width: 20%;
+  }
+
+  .column--status {
+    width: 25%;
+  }
+
+  .column--actions {
+    width: 15%;
+  }
+
+  .column--name {
+    width: 50%;
+  }
+
+  .column--quantity {
+    width: 10%;
+  }
+
+  .column--price {
+    width: 20%;
+  }
+
+  .column--total {
+    width: 20%;
+  }
+
+  .column--info-labels {
+    width: 20%;
+  }
+
+  .column--info-data {
+    width: 40%;
+  }
+
+  .column--summary {
+    width: 20%;
+  }
+
+  .account--password-reset {
+    .password-reset--input {
+      @include unitize-width(320);
+    }
+  }
+
+  // Account error message margin
+  .account--error,
+  .account--success {
+    @include unitize-margin(0, 0, 20, 0);
+  }
+
+  .is--act-partnerStatistic {
+    .content-main--inner {
+      @include unitize-padding(0, 20, 16, 20);
+    }
+
+    .account--welcome {
+      @include unitize-padding(0, 0, 0, 0);
+    }
+
+    .listing--actions {
+      @include unitize-padding(10, 10, 10, 10);
+      @include border-radius();
+      border: 1px solid $border-color;
+      background: $gray-light;
+    }
+
+    .date-filter {
+      @include unitize-padding(0, 10, 0, 10);
+      width: 40%;
+      float: left;
+      height: auto;
+    }
+
+    .date-filter--label {
+      width:10%;
+    }
+
+    .btn--filter {
+      width: 20%;
+      float: left;
+      height:40px;
+    }
+
+    .chart--holder {
+      text-align: center !important;
+      display: block !important;
+      width: 100%;
+    }
+
+    .panel--th,
+    .panel--td {
+      @include unitize-padding(10, 10, 10, 10);
+    }
+
+    .column--item-sum {
+      width: 75% !important;
+
+      .column--label,
+      .column--value {
+        float: left;
+        width: 50%;
+      }
+    }
+
+    .is--odd {
+      border: 0;
+      padding: 0;
+    }
+
+    .is--odd .column--total {
+      width: 25%;
+      float: left !important;
+
+      .column--value {
+        width:100%;
+      }
+    }
+  }
+
+  .account--profile {
+    @include unitize(margin, 0);
+
+    .select-field {
+      @include unitize(margin-bottom, 15);
+    }
+
+    .profile--field {
+      @include unitize(margin-bottom, 15);
+    }
+
+    .select-field {
+      @include unitize(max-width, 290);
+    }
+
+    .profile--birthdate {
+      .select-field {
+        width: 32%;
+        margin-right: 2%;
+      }
+    }
+  }
+}
+
+@media screen and(min-width: $tablet-landscape-viewport-width) {
+
+  .account--info,
+  .account--billing {
+    width: 49%;
+    float: left;
+  }
+
+  .account--payment,
+  .account--shipping {
+    width: 49%;
+    float: right;
+  }
+
+  .account--email,
+  .account--password,
+  .account--userdata {
+    display: none;
+  }
+
+  .account--email,
+  .account--password,
+  .account--userdata,
+  .account--newsletter {
+    clear: both;
+  }
+
+  .account--password-reset {
+    @include unitize-margin(20, 0, 0, 0);
+  }
+
+  .account--info,
+  .account--payment {
+    .panel--body {
+      @include unitize-height(120);
+    }
+  }
+
+  .account--profile {
+    .profile-password--container {
+      float: right;
+      width: 49%;
+    }
+
+    .profile-email--container {
+      float: left;
+      width: 49%;
+      margin-right: 2%;
+    }
+  }
+}
+
+@media screen and(min-width: $desktop-viewport-width) {
+
+  .is--act-partnerStatistic {
+    .content-main--inner {
+      @include unitize-padding(0, 45, 45, 45);
+    }
+  }
+
+  .account--profile {
+    @include unitize(padding-top, 45);
+  }
+
+  .account--content {
+    @include unitize-margin(45, 0, 0, 0);
+  }
+
+  .account--password-reset {
+    @include unitize-margin(45, 0, 0, 0);
+  }
+
+  .account--password-new {
+    @include unitize(margin-top, 45);
+  }
+
+  // Account error message margin
+  .account--error,
+  .account--success {
+    @include unitize-margin(0, 0, 20, 0);
+  }
+}
+
+.partner-statistic {
+
+  .account--welcome {
+    margin-bottom: 0;
+  }
+
+  .partner-statistic-body {
+    @include unitize-padding(10, 10);
+    @include unitize-margin(0, 0, 20, 0);
+  }
+
+  .date-filter {
+    display: inline-block;
+  }
+
+  .date-filter--input {
+    @include unitize-margin(0, 0, 20, 0);
+  }
+
+  .ui-datepicker-trigger{
+      @include unitize-padding(2, 10);
+      @include unitize(line-height, 32);
+      @include border-radius(3px);
+      @include appearance();
+      @include unitize($btn-font-size, 16, font-size);
+      @include linear-gradient($btn-default-top-bg, $btn-default-bottom-bg);
+      -webkit-font-smoothing: inherit;
+      display: inline-block;
+      position: relative;
+      font-weight: $font-bold-weight;
+      text-decoration: none;
+      text-align: left;
+      cursor: pointer;
+      border: 1px solid $btn-default-border-color;
+      color: $btn-default-text-color;
+
+      /** Button icon font size */
+      [class^="icon--"] {
+        @include unitize($btn-icon-size, 16, font-size);
+      }
+
+      /** Larger icon */
+      .is--large {
+        $largeFontSize: $btn-font-size + 2;
+        @include unitize($largeFontSize, 16, font-size);
+      }
+
+      &.is--icon-right {
+        @include unitize(padding-right, 36);
+
+        [class^="icon--"] {
+          @include unitize-height(16);
+          @include unitize(line-height, 32);
+          @include unitize-margin(-16, 0, 0, 0);
+          @include unitize(right, 12);
+          font-weight: $font-base-weight;
+          display: block;
+          position: absolute;
+          top: 50%;
+        }
+      }
+
+      &.is--icon-left {
+        @include unitize(padding-left, 36);
+
+        [class^="icon--"] {
+          @include unitize-height(16);
+          @include unitize(line-height, 32);
+          @include unitize-margin(-16, 0, 0, 0);
+          @include unitize(left, 12);
+          font-weight: $font-base-weight;
+          display: block;
+          position: absolute;
+          top: 50%;
+        }
+      }
+
+      &:disabled,
+      &:disabled:hover,
+      &.is--disabled,
+      &.is--disabled:hover {
+        @include opacity(0.5);
+        @include linear-gradient($btn-default-top-bg, $btn-default-bottom-bg);
+        border: 1px solid $btn-default-border-color;
+        color: $btn-default-text-color;
+        cursor: not-allowed;
+      }
+
+      &:hover {
+        background: $btn-default-hover-bg;
+        color: $btn-default-hover-text-color;
+        border-color: $btn-default-hover-border-color;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      /** State: Small button */
+      &.is--small {
+        @include unitize(line-height, 28);
+      }
+
+      /** State: Medium button */
+      &.is--medium {
+        @include unitize(line-height, 32);
+        @include unitize(height, 38);
+      }
+
+      /** State: Large button */
+      &.is--large {
+        @include unitize(line-height, 36);
+        @include unitize(height, 42);
+      }
+
+      /** State: Button with 100% width */
+      &.is--full {
+        display: block;
+      }
+
+      /** State: Button with text align center */
+      &.is--center {
+        text-align: center;
+      }
+
+    @include unitize-padding(10,10,9,10);
+    @include unitize-margin(0, 25, 0, 0);
+    @include unitize(line-height,20);
+  }
+}

@@ -1,0 +1,23 @@
+{% block element_category_listing %}
+    <div class="cms-element-category-listing">
+        {% block element_category_listing_inner %}
+            {% if element.data.categories|length %}
+                {% if element.data.categories is iterable %}
+                    <div class="{{ element.data.rowElementClassName }}">
+                        {% for category in element.data.categories %}
+                            {% block element_category_listing_item %}
+                                <div class="{{ element.data.colElementClassName }}">
+                                    <div class="cms-element-category-listing-item">
+                                        {% block element_child_listing_tree_item_inner %}
+                                            {% sw_include '@Storefront/storefront/element/cms-element-category-listing/category-item.html.twig' %}
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                            {% endblock %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}

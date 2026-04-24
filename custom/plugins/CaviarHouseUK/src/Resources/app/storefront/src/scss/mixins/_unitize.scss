@@ -1,0 +1,103 @@
+//@mixin unitize($property, $value, $unit: px) {
+//  #{$property}: #{$value}#{$unit};
+//}
+//
+//@mixin unitize-padding($top, $right: $top, $bottom: $top, $left: $right, $unit: px) {
+//  padding: #{$top}#{$unit} #{$right}#{$unit} #{$bottom}#{$unit} #{$left}#{$unit};
+//}
+//
+//@mixin unitize-margin($top, $right: $top, $bottom: $top, $left: $right, $unit: px) {
+//  @include unitize-multiple($top, $right, $bottom, $left;
+//}
+//
+//@mixin unitize-height($value, $baseValue: $rem-scale-factor) {
+//  @include unitize(height, $value, $baseValue);
+//}
+//@mixin unitize-width($value, $baseValue: $rem-scale-factor) {
+//  @include unitize(width, $value, $baseValue);
+//}
+//@mixin unitize-max-height($value, $baseValue: $rem-scale-factor) {
+//  @include unitize(max-height, $value, $baseValue);
+//}
+//@mixin unitize-max-width($value, $baseValue: $rem-scale-factor) {
+//  @include unitize(max-width, $value, $baseValue);
+//}
+//@mixin unitize-variable($value, $baseValue: $rem-scale-factor) {
+//  $emValue: ($value / $baseValue);
+//}
+//@mixin unitize-min-height($value, $baseValue: $rem-scale-factor) {
+//  @include unitize(min-height, $value, $baseValue);
+//}
+//@mixin unitize-min-width($value, $baseValue: $rem-scale-factor) {
+//  @include unitize(min-width, $value, $baseValue);
+//}
+
+
+
+
+// @deprecated unitize mixin which should be called like ```.unitize(200, @remScaleFactor, height);```
+//@mixin unitize($value, $baseValue: $remScaleFactor, $property: font-size) when (isnumber(@value)) and(isnumber(@baseValue)) and (iskeyword(@property)) {
+//@remValue: (@value / @baseValue);
+//@{property}: ~"@{remValue}rem";
+//}
+// New default unitize mixin which should be called like ```.unitize(height, 200);```
+//@mixin unitize($property, $value, $baseValue: $remScaleFactor) when (iskeyword($property)) and (isnumber($value)) and (isnumber($baseValue)) {
+//  $remValue: ($value / $baseValue);
+//  #{$property}: #{$remValue}rem;
+//}
+$remScaleFactor: 16;
+
+//@mixin unitize($value, $baseValue: $remScaleFactor, $property: font-size) {
+//  $remValue: ($value / $baseValue);
+//  #{$property}: #{$remValue}rem;
+//}
+
+@mixin unitize($property, $value, $baseValue: $remScaleFactor) {
+  $remValue: ($value / $baseValue);
+  #{$property}: #{$remValue}rem;
+}
+
+@mixin unitize-multiple($topValue, $rightValue: $topValue, $bottomValue: $topValue, $leftValue: $rightValue, $baseValue: $remScaleFactor, $property: padding) {
+  $emTopValue: ($topValue / $baseValue);
+  $emRightValue: ($rightValue / $baseValue);
+  $emBottomValue: ($bottomValue / $baseValue);
+  $emLeftValue: ($leftValue / $baseValue);
+
+  #{$property}: #{$emTopValue}rem #{$emRightValue}rem #{$emBottomValue}rem #{$emLeftValue}rem;
+}
+
+@mixin unitize-height($value, $baseValue: $remScaleFactor) {
+  @include unitize(height, $value, $baseValue);
+}
+
+@mixin unitize-width($value, $baseValue: $remScaleFactor) {
+  @include unitize(width, $value, $baseValue);
+}
+
+@mixin unitize-max-height($value, $baseValue: $remScaleFactor) {
+  @include unitize(max-height, $value, $baseValue);
+}
+
+@mixin unitize-min-height($value, $baseValue: $remScaleFactor) {
+  @include unitize(min-height, $value, $baseValue);
+}
+
+@mixin unitize-max-width($value, $baseValue: $remScaleFactor) {
+  @include unitize(max-width, $value, $baseValue);
+}
+
+@mixin unitize-min-width($value, $baseValue: $remScaleFactor) {
+  @include unitize(min-width, $value, $baseValue);
+}
+
+@mixin unitize-margin($topValue, $rightValue: $topValue, $bottomValue: $topValue, $leftValue: $rightValue, $baseValue: $remScaleFactor) {
+  @include unitize-multiple($topValue, $rightValue, $bottomValue, $leftValue, $baseValue, margin);
+}
+
+@mixin unitize-padding($topValue, $rightValue: $topValue, $bottomValue: $topValue, $leftValue: $rightValue, $baseValue: $remScaleFactor) {
+  @include unitize-multiple($topValue, $rightValue, $bottomValue, $leftValue, $baseValue, padding);
+}
+
+@mixin unitize-variable($value, $baseValue: $remScaleFactor) {
+$emValue: ($value / $baseValue);
+}

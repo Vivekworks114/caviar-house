@@ -1,0 +1,143 @@
+{% sw_extends '@Storefront/storefront/layout/footer.html.twig' %}
+    {% block base_footer %}
+{#{{ dump() }}#}
+        {% block base_footer_inner %}
+            <div class="logo-bar">
+                <div class="container">
+                    <div class="logo">
+                        <img src="https://www.caviarhouse-prunier.co.uk/media/image/db/14/44/Caviar-House-Prunier-Logo.png" alt="Logo" />
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                {% if theme_config('footer_navigation_layout_field') %}
+                    <div class="footer--columns block-group">
+                        {% if theme_config('footer_navigation_layout_field') == 'default' %}
+                            {# Service Hotline #}
+                            <div class="footer--column column--hotline is--first block">
+                                <div class="column--headline">
+                                    {{ "footer.serviceHotlineHeadline"|trans|striptags }}
+                                </div>
+
+                                <div class="column--content">
+                                    <p class="column--desc">
+                                        {{ "footer.serviceHotline"|trans|raw }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {# Service Menu #}
+                            <div class="footer--column column--menu block">
+                                <div class="column--headline">
+                                    {{ "footer.serviceMenuTitle"|trans|striptags }}
+                                </div>
+
+                                <nav class="column--navigation column--content">
+                                    <ul class="navigation--list" role="menu">
+                                        {% for item in footer.navigation.tree['019980826f51766ca479d3720cc4ea7c'].children %}
+                                            <li class="navigation--entry" role="menuitem">
+                                                <a
+                                                    class="navigation--link"
+                                                    href="
+                                                        {% if item.category.translated.externalLink %}
+                                                            {{ item.category.translated.externalLink }}
+                                                        {% else %}
+                                                            {{ path('frontend.cms.page', {'id': item.id}) }}
+                                                        {% endif %}
+                                                    "
+                                                    {% if item.category.translated.linkNewTab %}target="_blank"{% endif %}
+                                                    title="{{ item.category.translated.name|striptags }}"
+                                                >
+                                                    {{ item.category.translated.name }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            {# Information Menu #}
+                            <div class="footer--column column--menu block">
+{#                                {{ dump(footer.navigation.tree['01997561351c78aabd0992a13f7b637b'].children) }}#}
+{#                                    {% if footer.navigation.tree['01997561351c78aabd0992a13f7b637b'].category.type == 'folder' %}#}
+{#                                        {{ footer.navigation.tree['01997561351c78aabd0992a13f7b637b'].category.translated.name }}#}
+{#                                    {% else %}#}
+{#                                        <a href="{{ footer.navigation.tree['01997561351c78aabd0992a13f7b637b'].category.seoUrl }}">#}
+{#                                            {{ footer.navigation.tree['01997561351c78aabd0992a13f7b637b'].category.translated.name }}#}
+{#                                        </a>#}
+{#                                        {% endif %}#}
+{#                                {% endfor %}#}
+                                <div class="column--headline">
+                                    {{ "footer.informationMenuTitle"|trans|striptags }}
+                                </div>
+
+                                <nav class="column--navigation column--content">
+                                    <ul class="navigation--list" role="menu">
+                                        {% for item in footer.navigation.tree['019980827c187c9f8eb018e9db53f78a'].children %}
+                                            <li class="navigation--entry" role="menuitem">
+                                                <a
+                                                    class="navigation--link"
+                                                    href="{{ item.category.seoUrl }}"
+                                                    {% if item.category.shouldOpenInNewTab %}target="_blank"{% endif %}
+                                                    title="{{ item.category.translated.name }}"
+                                                >
+                                                    {{ item.category.translated.name }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="bottom-bar">
+                <div class="container">
+                    <ul class="menu">
+                        {% for item in footer.navigation.tree['019980828c187fe1b202cff8142b6569'].children %}
+                            <li class="navigation--entry" role="menuitem">
+                                <a
+                                    class="navigation--link"
+                                    href={{ item.category.seoUrl}}
+                                    {% if item.category.shouldOpenInNewTab %}target="_blank"{% endif %}
+                                    title="{{ item.category.translated.name }}"
+                                >
+                                    {{ item.category.translated.name }}
+                                </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endblock %}
+    {% endblock %}
+{#    {% block base_footer_inner %}#}
+{#        {% sw_include '@CaviarHouseUK/storefront/layout/footer/logo.html.twig' %}#}
+{#        {% sw_include '@CaviarHouseUK/storefront/layout/footer/footer_navigation/default.html.twig' %}#}
+{#        {% endblock %}#}
+{#    {% endblock %}#}
+
+{#{% block layout_footer_navigation %}#}
+
+{#    {% for item in footer.navigation.tree %}#}
+{#        <li>{{ item.category.translated.name }}</li>#}
+{#    {% endfor %}#}
+{#    {{ dump(footer.navigation.tree) }}#}
+
+{#    {% if theme_config('footer_navigation_layout_field') %}#}
+{#        <div class="footer--columns block-group">#}
+{#            {% if theme_config('footer_navigation_layout_field') == 'default' %}#}
+{#                {% sw_include '@CaviarHouseUK/storefront/layout/footer/footer_navigation/default.html.twig' %}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#    {% endif %}#}
+{#{% endblock %}#}
+
+{#{% block layout_footer_copyright %}#}
+{#    {% if theme_config('footer_copyright_layout_field') %}#}
+{#        {{ parent() }}#}
+{#    {% endif %}#}
+{#{% endblock %}#}
+

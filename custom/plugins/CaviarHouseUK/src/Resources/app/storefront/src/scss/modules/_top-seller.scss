@@ -1,0 +1,57 @@
+/*
+==================================================
+Top Seller Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add top seller products styling and layout from the original Responsive theme.
+*/
+/*
+Topseller
+=========================
+
+The topseller element is a modified product slider that is used to display a selection of best selling articles inside a slim slider element.
+
+*/
+@import "../abstract";
+@import "../mixins";
+
+.topseller {
+  @include clearfix();
+  @include unitize-margin(0, 0 , 20, 0);
+
+  .topseller--content {
+    @include unitize-padding(0, 10);
+  }
+
+  .product-slider--arrow {
+    &.arrow--next {
+      @include unitize(-1, 16, right);
+    }
+
+    &.arrow--prev {
+      @include unitize(-1, 16, left);
+    }
+  }
+}
+
+.topseller--product {
+  text-align: center;
+
+  &:hover {
+    .badge {
+      @include primary-gradient();
+      color: #fff;
+      text-shadow: 0 1px 1px #AD1200;
+    }
+    .product--title {
+      color: $brand-primary;
+    }
+  }
+}
+
+.topseller--number {
+  @include unitize-margin(10, 0, 5, 0);
+}

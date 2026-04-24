@@ -1,0 +1,51 @@
+/*
+Components
+====================================
+The `_components.scss` contains the imports to all styled elements of Shopware.
+
+The files are stored inside the `components/` folder.
+
+Converted from Shopware 5 LESS to Shopware 6 compatible SCSS.
+*/
+
+@import "components/alert";
+@import "components/badge";
+@import "components/buttons";
+@import "components/captcha-honeypot";
+@import "components/checkbox";
+@import "components/collapse";
+@import "components/collapse-cart";
+@import "components/container";
+@import "components/cookie-consent-manager";
+@import "components/datepicker";
+@import "components/delivery-information";
+@import "components/emotions";
+@import "components/fields";
+@import "components/filter-panel";
+@import "components/flags";
+@import "components/fonts";
+@import "components/form";
+@import "components/icon-set";
+@import "components/image-gallery";
+@import "components/image-slider";
+@import "components/image-zoom";
+@import "components/label";
+@import "components/last-seen-products";
+@import "components/lightbox";
+@import "components/lists";
+@import "components/loading-indicator";
+@import "components/mailchimp";
+@import "components/mailerlite";
+@import "components/menu-scroller";
+@import "components/modal";
+@import "components/navigation-list";
+@import "components/offcanvas-button";
+@import "components/offcanvas-menu";
+@import "components/overlay";
+@import "components/panel";
+@import "components/product-quick-view";
+@import "components/product-slider";
+@import "components/range-slider";
+@import "components/tab-menu";
+@import "components/tables";
+@import "components/tag-cloud";

@@ -1,0 +1,254 @@
+/*
+Button components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles all button styling including primary, secondary, and utility buttons.
+*/
+
+// TODO: Add button styles from original LESS file
+// Import Shopware 6 mixin functions for unit conversion
+//@use 'sass:math';
+/*
+Buttons
+===================================================================
+######Basic button layout
+
+Creates a basic button. Button type classes can be added by using multiple classes on the `.btn` element.
+
+Adding the class `is--disabled` changes the element to a disabled button.
+```
+<button class="btn">
+    Basic button
+</button>
+
+<button class="btn is--disabled">
+    Disabled button
+</button>
+```
+*/
+@import "../abstract";
+@import "../mixins";
+
+.btn {
+  @include unitize-padding(2, 10);
+  @include unitize(line-height, 32);
+  @include border-radius(3px);
+  @include appearance();
+  @include unitize($btn-font-size, 16, font-size);
+  @include linear-gradient($btn-default-top-bg, $btn-default-bottom-bg);
+  -webkit-font-smoothing: inherit;
+  display: inline-block;
+  position: relative;
+  font-weight: $font-bold-weight;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid $btn-default-border-color;
+  color: $btn-default-text-color;
+
+  /** Button icon font size */
+  [class^="icon--"] {
+    @include unitize($btn-icon-size, 16, font-size);
+  }
+
+  /** Larger icon */
+  .is--large {
+    $largeFontSize: $btn-font-size + 2;
+    @include unitize($largeFontSize, 16, font-size);
+  }
+
+  /*
+  ######Icon alignment
+
+  To work properly the button needs the class `is--icon-left` or `is--icon-right` and an `icon` inside it.
+  ```
+  <button class="btn is--icon-left">
+      <i class="icon--account"></i>
+      Icon left
+  </button>
+
+  <button class="btn is--icon-right">
+      <i class="icon--account"></i>
+      Icon right
+  </button>
+  ```
+  */
+  &.is--icon-right {
+    @include unitize(padding-right, 36);
+
+    [class^="icon--"] {
+      @include unitize-height(16);
+      @include unitize(line-height, 32);
+      @include unitize-margin(-16, 0, 0, 0);
+      @include unitize(right, 12);
+      font-weight: $font-base-weight;
+      display: block;
+      position: absolute;
+      top: 50%;
+    }
+  }
+
+  &.is--icon-left {
+    @include unitize(padding-left, 36);
+
+    [class^="icon--"] {
+      @include unitize-height(16);
+      @include unitize(line-height, 32);
+      @include unitize-margin(-16, 0, 0, 0);
+      @include unitize(left, 12);
+      font-weight: $font-base-weight;
+      display: block;
+      position: absolute;
+      top: 50%;
+    }
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &.is--disabled,
+  &.is--disabled:hover {
+    @include opacity(0.5);
+    @include linear-gradient($btn-default-top-bg, $btn-default-bottom-bg);
+    border: 1px solid $btn-default-border-color;
+    color: $btn-default-text-color;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background: $btn-default-hover-bg;
+    color: $btn-default-hover-text-color;
+    border-color: $btn-default-hover-border-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  /*
+  ######Button size class
+  Adding a button-size class creates a larger or smaller button or changes the button properies.
+
+  Options: `is--large`, `is--small`, `is--full`, `is--center`
+  ```
+  <button class="btn is--large">
+      Large button
+  </button>
+
+  <button class="btn is--small">
+      Small button
+  </button>
+  ```
+  */
+
+  /** State: Small button */
+  &.is--small {
+    @include unitize(line-height, 28);
+  }
+
+  /** State: Medium button */
+  &.is--medium {
+    @include unitize(line-height, 32);
+    @include unitize(height, 38);
+  }
+
+  /** State: Large button */
+  &.is--large {
+    @include unitize(line-height, 36);
+    @include unitize(height, 45);
+  }
+
+  /** State: Button with 100% width */
+  &.is--full {
+    display: block;
+  }
+
+  /** State: Button with text align center */
+  &.is--center {
+    text-align: center;
+  }
+}
+
+/*
+######Button type class
+
+Options: `is--primary`, `is--secondary`
+```
+<button class="btn is--primary">
+    Primary
+</button>
+
+<button class="btn is--secondary">
+    Secondary
+</button>
+```
+*/
+.is--primary {
+  @include unitize-padding(2, 12);
+  @include unitize(line-height, 34);
+  @include linear-gradient($btn-primary-top-bg, $btn-primary-bottom-bg);
+  border: 0 none;
+  color: $btn-primary-text-color;
+
+  &:hover {
+    background: $btn-primary-hover-bg;
+    color: $btn-primary-hover-text-color;
+  }
+
+  /** State: Small button */
+  &.is--small {
+    @include unitize(line-height, 30);
+  }
+
+  /** State: Large button */
+  &.is--large {
+    @include unitize(line-height, 38);
+  }
+}
+
+.is--secondary {
+  @include unitize-padding(2, 12);
+  @include unitize(line-height, 34);
+  @include linear-gradient($btn-secondary-top-bg, $btn-secondary-bottom-bg);
+  border: 0 none;
+  color: $btn-secondary-text-color;
+
+  &:hover {
+    background: $btn-secondary-hover-bg;
+    color: $btn-secondary-hover-text-color;
+  }
+
+  /** State: Small button */
+  &.is--small {
+    @include unitize(line-height, 30);
+  }
+
+  /** State: Large button */
+  &.is--large {
+    @include unitize(line-height, 38);
+  }
+}
+
+.is--link {
+  @include unitize-padding(2, 12);
+  @include unitize(line-height, 34);
+
+  border: 0 none;
+  background: transparent;
+  color: $brand-secondary;
+
+  &:hover {
+    color: $brand-primary;
+  }
+
+  /** State: Small button */
+  &.is--small {
+    @include unitize(line-height, 30);
+  }
+
+  /** State: Large button */
+  &.is--large {
+    @include unitize(line-height, 38);
+  }
+}

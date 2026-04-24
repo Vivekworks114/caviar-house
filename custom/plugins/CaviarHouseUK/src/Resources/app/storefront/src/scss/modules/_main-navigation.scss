@@ -1,0 +1,78 @@
+/*
+==================================================
+Main Navigation Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add main navigation styling, menu items, dropdowns, and mobile navigation from the original Responsive theme.
+*/
+/*
+Main navigation
+==========================================
+Contains the styles of the main navigation of the Shopware storefront.
+
+The main navigation is positioned above the content section.
+
+It contains the viewport specific styles inside media queries.
+*/
+@import "../abstract";
+@import "../mixins";
+.navigation-main {
+  background: #fff;
+  display: none;
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+  .navigation-main .navigation--list {
+    white-space: inherit;
+  }
+  .navigation-main {
+    border-bottom: 1px solid $brand-primary;
+    display: block;
+    position: relative;
+
+    .navigation--list {
+      @include clearfix();
+      @include unitize-padding(0, 10);
+      margin: 0;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .navigation--entry {
+      display: inline-block;
+      -ms-touch-action: none;
+    }
+
+    .navigation--link {
+      @include transition(none);
+      @include unitize-padding(8, 14);
+      @include unitize(font-size, 16);
+      @include border-radius-multi(3px, 3px, 0, 0);
+      margin: 0;
+      display: block;
+      cursor: pointer;
+      color: $text-color;
+
+      &:hover { color: $brand-primary; }
+    }
+
+    .is--active .navigation--link {
+      @include primary-gradient();
+      font-weight: $font-bold-weight;
+      color: #fff;
+
+      &:hover { color: #fff; }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+  .navigation-main {
+    .navigation--list {
+      padding: 0;
+    }
+  }
+}

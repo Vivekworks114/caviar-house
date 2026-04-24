@@ -1,0 +1,1075 @@
+/*
+Emotions components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for emotion/shopping world components and layouts.
+*/
+
+// TODO: Add emotions styles from original LESS file
+/*
+Emotions
+=========================================
+Contains the basic styles for the Shopware 5 shopping worlds and its elements.
+
+Shopware 5 provides 11 integrated elements inside the shopping worlds that can be chosen and modified inside the backend shopping world editor such as sliders, video elements and blog-articles.
+*/
+@import "../abstract";
+@import "../mixins";
+
+// Content fullscreen mode
+.content-main.is--fullscreen {
+  @include box-shadow(none);
+  max-width: none;
+  padding: 0;
+  margin: 0;
+
+  .content,
+  .content-main--inner {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .content--breadcrumb,
+  .tagcloud--content,
+  .last-seen-products {
+    display: none;
+  }
+
+  .listing--wrapper {
+    @include unitize(max-width, 1160);
+    @include unitize-padding(20, 10);
+    margin: 0 auto;
+
+    @media screen and(min-width: $tablet-viewport-width) {
+      @include unitize-padding(20, 30);
+    }
+
+    @media screen and(min-width: $desktop-viewport-width) {
+      @include unitize-padding(20, 0);
+    }
+  }
+}
+
+// Emotion loading overlay
+.emotion--overlay {
+  @include unitize-width(50);
+  @include unitize-height(50);
+  @include unitize(top, 50);
+  @include border-radius(3px);
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  z-index: $zindex-emotion-overlay;
+
+  & .emotion--loading-indicator {
+    padding: 0;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+  }
+
+  & ~ .content-main {
+    @include unitize-min-height(2000);
+    visibility: hidden;
+  }
+}
+
+// Emotion loading indicator
+.emotion--loading-indicator {
+  @include unitize-width(21);
+  @include unitize-height(21);
+  @include unitize-padding(50, 0);
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  box-sizing: content-box;
+
+  &:before {
+    @include border-radius(100%);
+    @include animation(keyframe--spin 1s linear infinite);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    border-width: 2px;
+    border-style: solid;
+    border-color: #333 #CCC #CCC #CCC;
+  }
+}
+
+// Emotion content
+.content--emotions {
+  display: block;
+
+  .emotion--wrapper {
+    max-width: 100%;
+  }
+
+  .emotion--html {
+    @include unitize(padding-top, 20);
+
+    .html--title {
+      text-align: center;
+      text-transform: uppercase;
+      font-family: $font-family-serif;
+      font-weight: bold;
+      @include unitize(letter-spacing, 4);
+      @include unitize(font-size, 30);
+
+      &:after {
+        background-color: $brand-primary;
+        content: '';
+        display: block;
+        margin: 20px auto;
+        width: 50%;
+        @include unitize(height, 2);
+      }
+    }
+
+    .html--content {
+      text-align: center;
+      @include unitize(letter-spacing, 1.6);
+      @include unitize(font-size, 15);
+    }
+  }
+
+  .emotion--product .product--box {
+    font-family: $font-family-serif;
+
+    .box--content {
+      border-color: $brand-primary;
+    }
+
+    .product--info {
+      text-align: center;
+    }
+
+    .product--title {
+      font-weight: normal;
+      @include unitize(font-size, 19);
+      @include unitize(height, 42);
+    }
+
+    .product--price {
+      .price--default {
+        color: #666;
+        font-weight: bold;
+        @include unitize(font-size, 12);
+        @include unitize(line-height, 40);
+
+        .smaller {
+          @include unitize(font-size, 10);
+        }
+      }
+    }
+  }
+}
+
+// Emotion preview content
+body.emotion--preview {
+  background: #ffffff;
+
+  .content-main {
+    @include box-shadow(none);
+    margin: 0;
+  }
+}
+
+// Emotion show listing link
+.emotion--show-listing {
+  @include unitize-margin(20, 0);
+}
+
+// Emotion wrapper
+.emotion--wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 1160px;
+  overflow: hidden;
+
+  &.is--fullscreen {
+    max-width: none;
+  }
+}
+.emotion--wrapper.is--fullscreen section.emotion--container {
+
+  .banner-slider--container {
+
+    .arrow.is--left {
+      left: 20px;
+    }
+
+    .image-slider--dots {
+      bottom: 20px;
+    }
+
+  }
+
+}
+// Emotion container
+.emotion--container {
+  @include clearfix();
+  display: block;
+  position: relative;
+  top: 0; left: 0;
+  background: #fff;
+
+  &.emotion--mode-resize {
+    @include transform-origin(0, 0, 0);
+  }
+
+  &.emotion--mode-rows {
+    .emotion--sizer,
+    .emotion--sizer-xs,
+    .emotion--sizer-s,
+    .emotion--sizer-m,
+    .emotion--sizer-l,
+    .emotion--sizer-xl {
+      display: none;
+    }
+
+    .emotion--row {
+      @include clearfix();
+    }
+  }
+
+  // Create the grid classes for different grid sizes
+  @include createGrid(1); // Container with one column
+  @include createGrid(2); // Container with two columns
+  @include createGrid(3); // Container with three columns
+  @include createGrid(4); // Container with four columns
+  @include createGrid(5); // Container with five columns
+  @include createGrid(6); // Container with six columns
+  @include createGrid(7); // Container with seven columns
+  @include createGrid(8); // Container with eight columns
+  @include createGrid(9); // Container with nine columns
+  @include createGrid(10); // Container with ten columns
+  @include createGrid(11); // Container with eleven columns
+  @include createGrid(12); // Container with twelve columns
+
+  // Hide elements which are not visible in the current viewport
+  .is--hidden-s,
+  .is--hidden-m,
+  .is--hidden-l,
+  .is--hidden-xl {
+    display: block;
+  }
+
+  .is--hidden-xs {
+    display: none;
+  }
+
+  // Hide all sizer which don't match the current viewport
+  .emotion--sizer-s,
+  .emotion--sizer-m,
+  .emotion--sizer-l,
+  .emotion--sizer-xl {
+    display: none;
+  }
+
+  // Only show the sizer of the current viewport
+  .emotion--sizer-xs {
+    display: block;
+
+    // Hide the default sizer when there is a sizer for the current viewport
+    & ~ .emotion--sizer {
+      display: none;
+    }
+  }
+
+  @media screen and(min-width: $phone-landscape-viewport-width) {
+    .is--hidden-xs,
+    .is--hidden-m,
+    .is--hidden-l,
+    .is--hidden-xl {
+      display: block;
+    }
+
+    .is--hidden-s {
+      display: none;
+    }
+
+    .emotion--sizer-xs,
+    .emotion--sizer-m,
+    .emotion--sizer-l,
+    .emotion--sizer-xl {
+      display: none;
+    }
+
+    .emotion--sizer-s {
+      display: block;
+
+      & ~ .emotion--sizer {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and(min-width: $tablet-viewport-width) {
+    .is--hidden-xs,
+    .is--hidden-s,
+    .is--hidden-l,
+    .is--hidden-xl {
+      display: block;
+    }
+
+    .is--hidden-m {
+      display: none;
+    }
+
+    .emotion--sizer-s,
+    .emotion--sizer-xs,
+    .emotion--sizer-l,
+    .emotion--sizer-xl {
+      display: none;
+    }
+
+    .emotion--sizer-m {
+      display: block;
+
+      & ~ .emotion--sizer {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and(min-width: $tablet-landscape-viewport-width) {
+    .is--hidden-xs,
+    .is--hidden-s,
+    .is--hidden-m,
+    .is--hidden-xl {
+      display: block;
+    }
+
+    .is--hidden-l {
+      display: none;
+    }
+
+    .emotion--sizer-xs,
+    .emotion--sizer-s,
+    .emotion--sizer-m,
+    .emotion--sizer-xl {
+      display: none;
+    }
+
+    .emotion--sizer-l {
+      display: block;
+
+      & ~ .emotion--sizer {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and(min-width: $desktop-viewport-width) {
+    .is--hidden-xs,
+    .is--hidden-s,
+    .is--hidden-m,
+    .is--hidden-l {
+      display: block;
+    }
+
+    .is--hidden-xl {
+      display: none;
+    }
+
+    .emotion--sizer-s,
+    .emotion--sizer-xs,
+    .emotion--sizer-m,
+    .emotion--sizer-l {
+      display: none;
+    }
+
+    .emotion--sizer-xl {
+      display: block;
+
+      & ~ .emotion--sizer {
+        display: none;
+      }
+    }
+  }
+}
+
+// Emotion element
+.emotion--element {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+
+  .emotion--container.emotion--mode-rows & {
+    position: relative;
+    top: 0; left: 0;
+    float: left;
+    vertical-align: top;
+  }
+}
+
+// Banner element
+.emotion--banner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .banner--content {
+    @include transform(translate(-50%, -50%));
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+
+    &.left.top {
+      @include transform(translate(0, 0));
+      left: 0; top: 0;
+    }
+    &.left.center {
+      @include transform(translate(0, -50%));
+      left: 0; top: 50%;
+    }
+    &.left.bottom {
+      @include transform(translate(0, -100%));
+      left: 0; top: 100%;
+    }
+    &.center.top {
+      @include transform(translate(-50%, 0));
+      left: 50%; top: 0;
+    }
+    &.center.bottom {
+      @include transform(translate(-50%, -100%));
+      left: 50%; top: 100%;
+    }
+    &.right.top {
+      @include transform(translate(-100%, 0));
+      left: 100%; top: 0;
+    }
+    &.right.center {
+      @include transform(translate(-100%, -50%));
+      left: 100%; top: 50%;
+    }
+    &.right.bottom {
+      @include transform(translate(-100%, -100%));
+      left: 100%; top: 100%;
+    }
+  }
+
+  .emotion--mode-rows & {
+    height: auto;
+
+    .banner--content,
+    .banner--content.left.top,
+    .banner--content.left.center,
+    .banner--content.left.bottom,
+    .banner--content.center.top,
+    .banner--content.center.bottom,
+    .banner--content.right.top,
+    .banner--content.right.center,
+    .banner--content.right.bottom {
+      @include transform(translate(0, 0));
+      position: relative;
+      left: 0; top: 0;
+      float: none;
+    }
+
+    .banner--image-src {
+      max-height: none;
+      width: 100%;
+    }
+  }
+
+  .banner--image {
+    width: 100%;
+  }
+
+  .banner--link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-mapping-link;
+  }
+
+  .banner--mapping {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  .banner--mapping-link {
+    position: absolute;
+    display: block;
+    z-index: $zindex-emotion-mapping-link;
+    background: rgba(0,0,0,0);
+  }
+}
+
+// Banner-Slider element
+.emotion--banner-slider {
+  width: 100%;
+  height: 100%;
+
+  .emotion--mode-rows & {
+    height: auto;
+
+    .banner-slider--container,
+    .banner-slider--slide {
+      height: auto;
+    }
+
+    .banner-slider--item {
+      vertical-align: middle;
+    }
+
+    .banner-slider--banner {
+      @include transform(none);
+      position: relative;
+      top: 0; left: 0;
+      width: 100%;
+    }
+  }
+
+  .banner-slider--title {
+    @include unitize-padding(10, 20);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-image-slider-title;
+    color: #fff;
+    font-weight: $font-bold-weight;
+    background: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+
+  .banner-slider--container,
+  .banner-slider--slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-slider--container .arrow {
+    display: block;
+  }
+
+  .banner-slider--item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner-slider--banner {
+    @include transform(translate(-50%, -50%));
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    z-index: 100;
+  }
+
+  .banner-slider--image {
+    width: 100%;
+  }
+
+  .banner-slider--link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 200;
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .image-slider--dots {
+    display: none;
+  }
+}
+
+// Product-Slider element
+.emotion--product-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .emotion--mode-rows & {
+    @include unitize-height(360);
+  }
+
+  .product-slider--title {
+    @include unitize-height(55);
+    position: relative;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-product-slider-title;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .product-slider--content {
+    @include unitize-padding(10, 10);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-product-slider-content;
+  }
+
+  .product-slider--title ~ .product-slider--content {
+    @include unitize(padding-top, 65);
+  }
+
+  .product-slider--arrow {
+    &.arrow--next { border-right: 0 none; }
+    &.arrow--prev { border-left: 0 none; }
+  }
+
+  .box--emotion {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+
+    .box--content {
+      padding: 0;
+      border: 0 none;
+    }
+
+    .product--info {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product--image {
+      height: 60%;
+      margin: 0 auto;
+    }
+
+    .product--details {
+      max-height: 35%;
+      width: 100%;
+      margin-top: 5%;
+    }
+
+    .product--title {
+      @include unitize(14, 16, font-size);
+      font-weight: $font-base-weight;
+      white-space: normal;
+    }
+
+    .product--price-info .price--unit {
+      @include unitize-height(15);
+      @include unitize(10, 16, font-size);
+    }
+
+    .product--price .price--default {
+      @include unitize(14, 16, font-size);
+    }
+  }
+}
+
+// Product-Box element
+.emotion--product {
+  width: 100%;
+  height: 100%;
+
+  .emotion--mode-rows & {
+    @include unitize-height(360);
+  }
+
+  &.is--no-border {
+    .box--content {
+      border: 0 none;
+    }
+  }
+
+  .product--box {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    float: none;
+
+    .box--content {
+      @include unitize-padding(10, 10);
+    }
+
+    .product--info {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product--image {
+      height: 70%;
+      margin: 0 auto;
+
+      &.is--large {
+        height: 100%;
+      }
+    }
+
+    .product--details {
+      max-height: 30%;
+      width: 100%;
+      position: absolute;
+      bottom: 0; left: 0;
+    }
+
+    .product--title {
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+// Category-Teaser element
+.emotion--category-teaser {
+  width: 100%;
+  height: 100%;
+
+  .emotion--mode-rows & {
+    @include unitize-height(360);
+  }
+
+  .category-teaser--link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+  }
+
+  .category-teaser--title {
+    @include unitize-padding(10, 20);
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0; left: 0;
+    color: #fff;
+    font-weight: $font-bold-weight;
+    background: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Manufacturer element
+.emotion--manufacturer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .emotion--mode-rows & {
+    @include unitize-height(260);
+  }
+
+  .manufacturer--title {
+    @include unitize-height(55);
+    position: relative;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-product-slider-title;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .manufacturer--content {
+    @include unitize-padding(10, 20);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-product-slider-content;
+  }
+
+  .manufacturer--title ~ .manufacturer--content {
+    @include unitize(padding-top, 65);
+  }
+
+  .manufacturer--slider {
+    height: 100%;
+
+    .arrow--next {
+      @include unitize(-20, 16, right);
+      border-right: 0 none;
+    }
+    .arrow--prev {
+      @include unitize(-20, 16, left);
+      border-left: 0 none;
+    }
+  }
+
+  .manufacturer--item {
+    @include unitize-padding(10, 15);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .manufacturer--link {
+    @include unitize(font-size, 18);
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $text-color;
+    font-weight: $font-bold-weight;
+    position: relative;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  .manufacturer--image {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+  }
+}
+
+// YouTube element
+.emotion--youtube {
+  width: 100%;
+  height: 100%;
+
+  .emotion--mode-rows & {
+    @include unitize-height(360);
+  }
+}
+
+// Video element
+.emotion--video {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .emotion--mode-rows & {
+    height: auto;
+
+    .video--element {
+      height: auto;
+      position: relative;
+    }
+  }
+
+  video::-moz-media-controls,
+  video::-webkit-media-controls {
+    bottom: 15%;
+  }
+
+  .video--element {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-video-element;
+  }
+
+  .video--cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: $zindex-emotion-video-cover;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+    text-align: center;
+
+    .video--play-icon {
+      @include unitize-width(100);
+      @include unitize-height(100);
+      @include unitize(font-size, 100);
+      display: block;
+      position: absolute;
+      top: 0; bottom: 0;
+      right: 0; left: 0;
+      margin: auto;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+      color: #fff;
+    }
+  }
+
+  .video--play-btn {
+    @include transition();
+    @include unitize(top, 25);
+    @include unitize(right, 25);
+    @include unitize(line-height, 40);
+    @include unitize(font-size, 21);
+    @include unitize-width(42);
+    @include unitize-height(42);
+    @include border-radius(100%);
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    z-index: $zindex-emotion-video-play-btn;
+  }
+
+  .video--text {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    z-index: $zindex-emotion-video-text;
+    color: #fff;
+    text-align: center;
+
+    &.no--events {
+      pointer-events: none;
+    }
+  }
+}
+
+// Iframe element
+.emotion--iframe {
+  width: 100%;
+  height: 100%;
+
+  .emotion--mode-rows & {
+    @include unitize-height(360);
+  }
+}
+
+// Blog element
+.emotion--blog {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  .emotion--mode-rows & {
+    height: auto;
+
+    .blog--image {
+      @include unitize-height(160);
+    }
+  }
+
+  .blog--container {
+    height: 100%;
+    margin: 0 0 0 -1%;
+  }
+
+  .blog--entry {
+    height: 100%;
+    padding-left: 1%;
+  }
+
+  .blog--image {
+    height: 40%;
+    width: 100%;
+    display: block;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 2%;
+  }
+
+  .blog--title {
+    @include unitize(font-size, 14);
+    display: block;
+    font-weight: $font-bold-weight;
+    color: $text-color-dark;
+    margin-bottom: 2%;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  .blog--description {
+    @include unitize(font-size, 14);
+    @include unitize(line-height, 20);
+    color: $text-color;
+    height: auto;
+    max-height: 60%;
+  }
+}
+
+// HTML element
+.emotion--html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+
+  .emotion--mode-rows & {
+    height: auto;
+  }
+
+  .html--content {
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and(min-width: $tablet-viewport-width) {
+  .emotion--blog {
+    overflow: hidden;
+  }
+}
+
+@media screen and(min-width: $desktop-viewport-width) {
+
+  .content--emotions .emotion--product .product--box .product--price {
+    .price--default {
+      @include unitize(font-size, 22);
+
+      .smaller {
+        @include unitize(font-size, 14);
+      }
+    }
+  }
+
+  .emotion--banner-slider {
+    .image-slider--dots {
+      @include unitize(bottom, 10);
+      top: auto;
+      left: 0;
+      display: block;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+
+      .dot--link {
+        @include border-radius(100%);
+        @include unitize-margin(0, 2);
+        @include unitize-width(20);
+        @include unitize-height(20);
+        @include transition(all .3s ease);
+        background: darken($brand-secondary, 15%);
+        display: inline-block;
+        border: 5px solid rgba(255, 255, 255, .5);
+        cursor: pointer;
+        text-indent: -99999em;
+        background-clip: padding-box;
+
+        &.is--active {
+          background: $brand-primary;
+          background-clip: padding-box;
+        }
+      }
+    }
+  }
+}

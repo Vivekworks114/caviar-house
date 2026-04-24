@@ -1,0 +1,28 @@
+.caviar-home-hero {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.caviar-home-hero__bg {
+  min-height: 680px;
+  position: relative;
+  background-image: url('/bundles/caviartheme/storefront/assets/hero/home-hero-banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.is-act-home .cms-page .cms-section:first-of-type {
+  display: none;
+}
+
+.is-act-home .container-main {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.is-act-home .content-main {
+  margin-top: 0;
+  padding-top: 0;
+}

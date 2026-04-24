@@ -1,0 +1,20 @@
+/**
+ * Header Module Styles
+ *
+ * Contains styles for the main header including sticky positioning,
+ * navigation elements and responsive header behavior.
+ *
+ * Compatible with Shopware 6
+ */
+
+.header-main {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+  body:not(.is--minimal-header) header.header-main.inline nav.navigation-main .navigation--entry.top-btn {
+    // background-color: $footer-color-one-field;
+  }
+}

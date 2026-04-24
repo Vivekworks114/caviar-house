@@ -1,0 +1,13 @@
+.header-main{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+@media screen and (min-width: $tabletViewportWidth) {
+
+  body:not(.is--minimal-header) header.header-main.inline nav.navigation-main .navigation--entry.top-btn {
+    //background-color: $footer_color_one_field;
+  }
+
+}
+

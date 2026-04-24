@@ -1,0 +1,159 @@
+@import "mixins/footer";
+@import "mixins/icon-element";
+@import "mixins/linear-gradient";
+@import "mixins/unitize";
+@import "mixins/visibility-helper";
+@import "abstract";
+@mixin appearance($type: none) {
+  -webkit-appearance: $type;
+  -moz-appearance: $type;
+  appearance: $type;
+}
+
+@mixin border-radius($radius: 3px) {
+  border-radius: $radius;
+  // Prevent the background color leaks out
+  background-clip: padding-box;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+}
+
+@mixin border-radius-multi($leftTop: 0, $rightTop:0, $rightBottom: 0, $leftBottom: 0) {
+  border-top-left-radius: $leftTop;
+  border-top-right-radius:  $rightTop;
+  border-bottom-right-radius: $rightBottom;
+  border-bottom-left-radius: $leftBottom;
+  // Prevent the background color leaks out
+  background-clip: padding-box;
+}
+
+@mixin box-shadow($shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2)) {
+  box-shadow: $shadow;
+}
+
+@mixin transition($transition: all 0.3s ease-out) {
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  animation: $value;
+}
+
+@mixin box-sizing($box-sizing: border-box) {
+  box-sizing: $box-sizing;
+}
+
+@mixin reset-border-radius() {
+  border-radius: 0;
+}
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate($degree);
+  transform: rotate($degree);
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin user-select($type: none) {
+  -webkit-user-select: $type;
+  user-select: $type;
+}
+
+@mixin touch-callout($type: none) {
+  -webkit-touch-callout: $type;
+}
+
+@mixin tap-highlight-color($color: rgba(0, 0, 0, 0)) {
+  -webkit-tap-highlight-color: $color;
+}
+
+@mixin backface-visibility($visibility: hidden) {
+  -webkit-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@mixin translate($x: 0, $y: 0, $z: -1) {
+  @if $z > -1 {
+    -webkit-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+  } @else {
+    -webkit-transform: translate($x, $y);
+    transform: translate($x, $y);
+  }
+}
+
+@mixin transform($transformation) {
+  -webkit-transform: $transformation;
+  transform: $transformation;
+}
+
+@mixin transform-style($style: preserve-3d) {
+  -webkit-transform-style: $style;
+  transform-style: $style;
+}
+
+@mixin createColumns($n, $state: '', $i: 1) {
+  @if $i <= $n {
+    .col#{$state}-#{$i} {
+      width: (100% / $n * $i);
+    }
+
+    .start-col#{$state}-#{$i} {
+      left: (100% / $n * ($i - 1));
+    }
+
+    @include createColumns($n, $state, ($i + 1));
+  }
+}
+
+@mixin createGrid($n) {
+
+  &.emotion--column-#{$n} {
+
+    @include createColumns($n);
+    @include createColumns($n, -xs);
+
+    @media screen and(min-width: $phone-landscape-viewport-width) {
+      @include createColumns($n, -s);
+    }
+
+    @media screen and(min-width: $tablet-viewport-width) {
+      @include createColumns($n, -m);
+    }
+
+    @media screen and(min-width: $tablet-landscape-viewport-width) {
+      @include createColumns($n, -l);
+    }
+
+    @media screen and(min-width: $desktop-viewport-width) {
+      @include createColumns($n, -xl);
+    }
+  }
+}
+
+@mixin transform-origin($x: 50%, $y: 50%, $z: 0) {
+  -webkit-transform-origin: $x $y $z;
+  transform-origin: $x $y $z;
+}
+
+@mixin clear-form-button() {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin transition-delay ($delay) {
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
+}

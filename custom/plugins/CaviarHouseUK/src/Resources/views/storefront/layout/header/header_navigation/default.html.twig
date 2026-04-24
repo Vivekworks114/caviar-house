@@ -1,0 +1,32 @@
+<div class="container header--navigation">
+    <nav class="shop--navigation block-group">
+        <ul class="navigation--list block-group" role="menubar">
+            {# Menu (Off canvas left) trigger #}
+            <li class="navigation--entry entry--menu-left" role="menuitem">
+                <a
+                    class="entry--link entry--trigger btn is--icon-left"
+                    href="#offcanvas--left"
+                    data-offcanvas="true"
+                    data-offCanvasSelector=".sidebar-main"
+                >
+                    <i class="icon--menu"></i>
+                </a>
+            </li>
+
+            {# Search form #}
+            <li
+                class="navigation--entry entry--search"
+                role="menuitem"
+                data-search="true"
+                aria-haspopup="true"
+            >
+
+            </li>
+        </ul>
+    </nav>
+
+    <div
+        class="container--ajax-cart"
+        data-collapse-cart="true"
+    ></div>
+</div>

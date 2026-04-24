@@ -1,0 +1,22 @@
+<header class="header-main inline uk-shop">
+    {# Include the top bar navigation #}
+    {% sw_include '@CaviarHouseUK/storefront/layout/header/topbar-navigation.html.twig' %}
+
+    <div class="container">
+        {% if config.header_navigation_layout_field %}
+            {% sw_include '@CaviarHouseUK/storefront/layout/header/header_navigation/default.html.twig' %}
+        {% endif %}
+    </div>
+</header>
+
+{# Main Categories navigation top #}
+<nav class="navigation-main">
+    <div
+        class="container"
+        data-menu-scroller="true"
+        data-listSelector=".navigation--list.container"
+        data-viewPortSelector=".navigation--list-wrapper"
+    >
+{#        {% sw_include '@CaviarHouseUK/storefront/layout/main-navigation.html.twig' %}#}
+    </div>
+</nav>

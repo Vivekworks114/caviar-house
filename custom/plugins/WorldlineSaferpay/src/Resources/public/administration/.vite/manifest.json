@@ -1,0 +1,23 @@
+{
+  "main.js": {
+    "file": "assets/worldline-saferpay-RbQcMVBY.js",
+    "name": "worldline-saferpay",
+    "src": "main.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "module/sw-order/view/sw-order-detail-wlsprefunds/index.js"
+    ],
+    "css": [
+      "assets/worldline-saferpay-Cs7HeoXi.css"
+    ]
+  },
+  "module/sw-order/view/sw-order-detail-wlsprefunds/index.js": {
+    "file": "assets/index-CmX7cwAJ.js",
+    "name": "index",
+    "src": "module/sw-order/view/sw-order-detail-wlsprefunds/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "main.js"
+    ]
+  }
+}

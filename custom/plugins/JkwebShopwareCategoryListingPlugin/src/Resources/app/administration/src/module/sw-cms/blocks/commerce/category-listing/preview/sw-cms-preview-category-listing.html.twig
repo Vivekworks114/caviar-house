@@ -1,0 +1,13 @@
+{% block sw_cms_block_preview_category_listing %}
+    <div class="sw-cms-preview-category-listing">
+        <div
+            v-for="i in 3"
+            :key="i"
+        >
+            <img
+                :src="assetFilter('/administration/static/img/cms/preview_mountain_small.jpg')"
+            />
+            <h2>Lorem ipsum</h2>
+        </div>
+    </div>
+{% endblock %}

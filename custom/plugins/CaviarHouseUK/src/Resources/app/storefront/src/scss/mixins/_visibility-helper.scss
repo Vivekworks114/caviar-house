@@ -1,0 +1,222 @@
+/*
+Visibility Helper Mixins and Classes
+====================================
+Provides visibility control mixins and utility classes for responsive design.
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+*/
+
+@mixin visibility($display-type: block) {
+    display: #{$display-type} !important;
+
+    table& {
+        display: table !important;
+    }
+
+    tr& {
+        display: table-row !important;
+    }
+
+    th&,
+    td& {
+        display: table-cell !important;
+    }
+}
+
+.visible--s,
+.visible-inline--s,
+.visible-inline-block--s,
+.visible--m,
+.visible-inline--m,
+.visible-inline-block--m,
+.visible--l,
+.visible-inline--l,
+.visible-inline-block--l,
+.visible--xl,
+.visible-inline--xl,
+.visible-inline-block--xl {
+    display: none !important;
+}
+
+.visible--xs {
+    @include visibility();
+}
+
+.visible-inline--xs {
+    @include visibility(inline);
+}
+
+.visible-inline-block--xs {
+    @include visibility(inline-block);
+}
+
+.hidden--s,
+.hidden--m,
+.hidden--l,
+.hidden--xl {
+    display: inherit !important;
+}
+
+.hidden--xs {
+    display: none !important;
+}
+
+@media screen and (min-width: $phone-landscape-viewport-width) {
+    .visible--xs,
+    .visible-inline--xs,
+    .visible-inline-block--xs,
+    .visible--m,
+    .visible-inline--m,
+    .visible-inline-block--m,
+    .visible--l,
+    .visible-inline--l,
+    .visible-inline-block--l,
+    .visible--xl,
+    .visible-inline--xl,
+    .visible-inline-block--xl {
+        display: none !important;
+    }
+
+    .visible--s {
+        @include visibility();
+    }
+
+    .visible-inline--s {
+        @include visibility(inline);
+    }
+
+    .visible-inline-block--s {
+        @include visibility(inline-block);
+    }
+
+    .hidden--xs,
+    .hidden--m,
+    .hidden--l,
+    .hidden--xl {
+        display: inherit !important;
+    }
+
+    .hidden--s {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+    .visible--xs,
+    .visible-inline--xs,
+    .visible-inline-block--xs,
+    .visible--s,
+    .visible-inline--s,
+    .visible-inline-block--s,
+    .visible--l,
+    .visible-inline--l,
+    .visible-inline-block--l,
+    .visible--xl,
+    .visible-inline--xl,
+    .visible-inline-block--xl {
+        display: none !important;
+    }
+
+    .visible--m {
+        @include visibility();
+    }
+
+    .visible-inline--m {
+        @include visibility(inline);
+    }
+
+    .visible-inline-block--m {
+        @include visibility(inline-block);
+    }
+
+    .hidden--xs,
+    .hidden--s,
+    .hidden--l,
+    .hidden--xl {
+        display: inherit !important;
+    }
+
+    .hidden--m {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: $tablet-landscape-viewport-width) {
+    .visible--xs,
+    .visible-inline--xs,
+    .visible-inline-block--xs,
+    .visible--s,
+    .visible-inline--s,
+    .visible-inline-block--s,
+    .visible--m,
+    .visible-inline--m,
+    .visible-inline-block--m,
+    .visible--xl,
+    .visible-inline--xl,
+    .visible-inline-block--xl {
+        display: none !important;
+    }
+
+    .visible--l {
+        @include visibility();
+    }
+
+    .visible-inline--l {
+        @include visibility(inline);
+    }
+
+    .visible-inline-block--l {
+        @include visibility(inline-block);
+    }
+
+    .hidden--xs,
+    .hidden--s,
+    .hidden--m,
+    .hidden--xl {
+        display: inherit !important;
+    }
+
+    .hidden--l {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+    .visible--xs,
+    .visible-inline--xs,
+    .visible-inline-block--xs,
+    .visible--s,
+    .visible-inline--s,
+    .visible-inline-block--s,
+    .visible--m,
+    .visible-inline--m,
+    .visible-inline-block--m,
+    .visible--l,
+    .visible-inline--l,
+    .visible-inline-block--l {
+        display: none !important;
+    }
+
+    .visible--xl {
+        @include visibility();
+    }
+
+    .visible-inline--xl {
+        @include visibility(inline);
+    }
+
+    .visible-inline-block--xl {
+        @include visibility(inline-block);
+    }
+
+    .hidden--xs,
+    .hidden--s,
+    .hidden--m,
+    .hidden--l {
+        display: inherit !important;
+    }
+
+    .hidden--xl {
+        display: none !important;
+    }
+}

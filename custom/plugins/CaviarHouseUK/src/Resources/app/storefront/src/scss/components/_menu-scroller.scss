@@ -1,0 +1,99 @@
+/*
+Menu scroller components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for scrollable menus, menu navigation, and menu scrolling behavior.
+*/
+
+// TODO: Add menu scroller styles from original LESS file
+/*
+Menu scroller
+==================================
+Some styling rules can also be found in the hacks.less!
+*/
+@import "../abstract";
+@import "../mixins";
+.js--menu-scroller {
+  position: relative;
+}
+
+.navigation--list-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.js--menu-scroller--list {
+  max-width: none;
+  overflow-x: scroll;
+  position: relative;
+  white-space: nowrap;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.js--menu-scroller--arrow {
+  @include unitize-width(22);
+  @include unitize-height(37);
+  @include unitize(line-height, 36);
+  @include unitize(font-size, 12);
+  @include linear-gradient($btn-default-top-bg, $btn-default-bottom-bg);
+  @include unitize(top, 1);
+  border: 1px solid $btn-default-border-color;
+  position: absolute;
+  font-family: $sw-icon-fontname;
+  text-align: center;
+  color: $btn-default-text-color;
+  cursor: pointer;
+  z-index: $zindex-menu-scroller-arrow;
+  display: none;
+
+  &:hover,
+  &:active {
+    color: $btn-default-hover-text-color;
+    border-color: $btn-default-hover-border-color;
+    background: $btn-default-hover-bg;
+  }
+
+  &.left--arrow {
+    @include border-radius-multi(0, 3px, 3px, 0);
+    border-left: 0 none;
+    left: 0;
+  }
+
+  &.right--arrow {
+    @include border-radius-multi(3px, 0, 0, 3px);
+    border-right: 0 none;
+    right: 0;
+  }
+}
+
+@media screen and(min-width: $desktop-viewport-width) {
+  .js--menu-scroller--arrow {
+    &.left--arrow {
+      @include border-radius();
+      border: 1px solid $btn-default-border-color;
+      left: 0;
+
+      &:hover {
+        border-color: $btn-default-hover-border-color;
+      }
+    }
+
+    &.right--arrow {
+      @include border-radius();
+      border: 1px solid $btn-default-border-color;
+      right: 0;
+
+      &:hover {
+        border-color: $btn-default-hover-border-color;
+      }
+    }
+  }
+}

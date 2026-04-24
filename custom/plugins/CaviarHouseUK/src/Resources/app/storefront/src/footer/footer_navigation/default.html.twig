@@ -1,0 +1,182 @@
+{#{% sw_extends '@Storfront/storefront/layout/footer/footer.html.twig' %}#}
+{# Logo Bar #}
+{#<div class="logo-bar">#}
+{#    <div class="container">#}
+{#        <div class="logo">#}
+{#            <img srcset="" alt="Logo" />#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+{# Footer Navigation #}
+<div class="container">
+
+    {# Service Hotline #}
+    <div class="footer--column column--hotline is--first block">
+{#        {% block layout_footer_service_hotline_headline %}#}
+            <div class="column--headline">
+                {{ "footer.serviceHotlineHeadline"|trans|striptags }}
+            </div>
+{#        {% endblock %}#}
+
+{#        {% block layout_footer_service_hotline_content %}#}
+            <div class="column--content">
+                <p class="column--desc">
+                    {{ "footer.serviceHotline"|trans|raw }}
+                </p>
+            </div>
+{#        {% endblock %}#}
+    </div>
+</div>
+
+{#    {% block layout_footer_inner_container %}#}
+{#    {% endblock %}#}
+{# Service hotline #}
+{#{% block layout_footer_inner_container %}#}
+{#    {{ parent() }}#}
+{#{% endblock %}#}
+{#    {{ parent() }}#}
+{#    {% block layout_footer_service_hotline %}#}
+{#        <div class="footer--column column--hotline is--first block">#}
+{#            {% block layout_footer_service_hotline_headline %}#}
+{#                <div class="column--headline">{{ "footer.serviceHotlineHeadline"|trans|striptags }}</div>#}
+{#            {% endblock %}#}
+
+{#            {% block layout_footer_service_hotline_content %}#}
+{#                <div class="column--content">#}
+{#                    <p class="column--desc">#}
+{#                        {{ "footer.serviceHotline"|trans|raw }}#}
+{#                    </p>#}
+{#                </div>#}
+{#            {% endblock %}#}
+{#        </div>#}
+{#    {{ parent() }}#}
+{#    {% endblock %}#}
+{#{% endblock %}#}
+
+
+{# Service menu #}
+{#{% block layout_footer_service_menu %}#}
+{#    {{ dump() }}#}
+{#    <div class="footer--column column--menu block">#}
+{#        {% block layout_footer_service_menu_headline %}#}
+{#            <div class="column--headline">{{ "footer.serviceMenuTitle"|trans|striptags }}</div>#}
+{#        {% endblock %}#}
+
+{#        {% block layout_footer_service_menu_content %}#}
+{#            <nav class="column--navigation column--content">#}
+{#                <ul class="navigation--list" role="menu">#}
+{#                    {% block layout_footer_service_menu_before %}{% endblock %}#}
+
+{#                    #}{# Footer navigation items - would need to be configured in Shopware 6 backend #}
+{#                    {% if footer.navigation.tree %}#}
+{#                        {% for item in footer.navigation.tree['019974f06fdf7cf7b74a96b96a076fb5'].children %}#}
+{#                            {{ dump(item) }}#}
+{#                            {{ item.category.translated.name }}#}
+{#                            {% block layout_footer_service_menu_entry %}#}
+{#                                <li class="navigation--entry" role="menuitem">#}
+{#                                    <a class="navigation--link"#}
+{#                                       href="{% if item.category.translated.externalLink %}{{ item.category.translated.externalLink }}{% else %}{{ path('frontend.cms.page', {'id': item.id}) }}{% endif %}"#}
+{#                                       title="{{ item.category.translated.name|striptags }}"#}
+{#                                       {% if item.category.translated.linkNewTab %}target="_blank"{% endif %}>#}
+{#                                        {{ item.category.translated.name }}#}
+{#                                    </a>#}
+
+{#                                    #}{# Sub categories #}
+{#                                    {% if item.children|length > 0 %}#}
+{#                                        <ul class="navigation--list is--level1" role="menu">#}
+{#                                            {% for subItem in item.children %}#}
+{#                                                <li class="navigation--entry" role="menuitem">#}
+{#                                                    <a class="navigation--link"#}
+{#                                                       href="{% if subItem.externalLink %}{{ subItem.externalLink }}{% else %}{{ path('frontend.cms.page', {'id': subItem.id}) }}{% endif %}"#}
+{#                                                       title="{{ subItem.translated.name|striptags }}"#}
+{#                                                       {% if subItem.linkNewTab %}target="_blank"{% endif %}>#}
+{#                                                        {{ subItem.translated.name }}#}
+{#                                                    </a>#}
+{#                                                </li>#}
+{#                                            {% endfor %}#}
+{#                                        </ul>#}
+{#                                    {% endif %}#}
+{#                                </li>#}
+{#                            {% endblock %}#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+
+{#                    {% block layout_footer_service_menu_after %}{% endblock %}#}
+{#                </ul>#}
+{#            </nav>#}
+{#        {% endblock %}#}
+{#    </div>#}
+{#{% endblock %}#}
+
+{# Information menu #}
+{#{% block layout_footer_information_menu %}#}
+{#    <div class="footer--column column--menu block">#}
+{#        {% block layout_footer_information_menu_headline %}#}
+{#            <div class="column--headline">{{ "footer.informationMenuTitle"|trans|striptags }}</div>#}
+{#        {% endblock %}#}
+
+{#        {% block layout_footer_information_menu_content %}#}
+{#            <nav class="column--navigation column--content">#}
+{#                <ul class="navigation--list" role="menu">#}
+{#                    {% block layout_footer_information_menu_before %}{% endblock %}#}
+
+{#                    #}{# Information navigation items - would need separate configuration #}
+{#                    {% if page.footer.serviceMenu %}#}
+{#                        {% for item in page.footer.serviceMenu %}#}
+{#                            {% block layout_footer_information_menu_entry %}#}
+{#                                <li class="navigation--entry" role="menuitem">#}
+{#                                    <a class="navigation--link"#}
+{#                                       href="{% if item.externalLink %}{{ item.externalLink }}{% else %}{{ path('frontend.cms.page', {'id': item.id}) }}{% endif %}"#}
+{#                                       title="{{ item.translated.name|striptags }}"#}
+{#                                       {% if item.linkNewTab %}target="_blank"{% endif %}>#}
+{#                                        {{ item.translated.name }}#}
+{#                                    </a>#}
+
+{#                                    #}{# Sub categories #}
+{#                                    {% if item.children|length > 0 %}#}
+{#                                        <ul class="navigation--list is--level1" role="menu">#}
+{#                                            {% for subItem in item.children %}#}
+{#                                                <li class="navigation--entry" role="menuitem">#}
+{#                                                    <a class="navigation--link"#}
+{#                                                       href="{% if subItem.externalLink %}{{ subItem.externalLink }}{% else %}{{ path('frontend.cms.page', {'id': subItem.id}) }}{% endif %}"#}
+{#                                                       title="{{ subItem.translated.name|striptags }}"#}
+{#                                                       {% if subItem.linkNewTab %}target="_blank"{% endif %}>#}
+{#                                                        {{ subItem.translated.name }}#}
+{#                                                    </a>#}
+{#                                                </li>#}
+{#                                            {% endfor %}#}
+{#                                        </ul>#}
+{#                                    {% endif %}#}
+{#                                </li>#}
+{#                            {% endblock %}#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+
+{#                    {% block layout_footer_information_menu_after %}{% endblock %}#}
+{#                </ul>#}
+{#            </nav>#}
+{#        {% endblock %}#}
+{#    </div>#}
+{#{% endblock %}#}
+
+{# Newsletter #}
+{#{% block layout_footer_newsletter %}#}
+{#    <div class="footer--column column--newsletter is--last block">#}
+{#        {% block layout_footer_newsletter_headline %}#}
+{#            <div class="column--headline">{{ "footer.newsletterTitle"|trans|striptags }}</div>#}
+{#        {% endblock %}#}
+
+{#        {% block layout_footer_newsletter_content %}#}
+{#            <div class="column--content">#}
+{#                <p class="column--desc">#}
+{#                    {{ "footer.newsletterDescription"|trans|striptags }}#}
+{#                </p>#}
+
+{#                {% block layout_footer_newsletter_form %}#}
+{#                    {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter.html.twig' %}#}
+{#                {% endblock %}#}
+{#            </div>#}
+{#        {% endblock %}#}
+{#    </div>#}
+{#{% endblock %}#}

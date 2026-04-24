@@ -1,0 +1,38 @@
+{% block swag_pack_language_entry %}
+<div class="swag-language-pack-entry">
+
+    {% block swag_pack_language_entry_flag %}
+    <div class="swag-language-pack-entry__flag-container">
+        <img :src="flagSource(flagLocale)" :alt="flagLocale" class="swag-language-pack-entry__flag"/>
+    </div>
+    {% endblock %}
+
+    {% block swag_pack_language_entry_content %}
+    <div class="swag-language-pack-entry__content">
+
+        {% block swag_pack_language_entry_content_name %}
+        <div class="swag-language-pack-entry__name">
+            {{ label }}
+        </div>
+        {% endblock %}
+
+        {% block swag_pack_language_entry_content_description %}
+        <div class="swag-language-pack-entry__description">
+            {{ description }}
+        </div>
+        {% endblock %}
+
+    </div>
+    {% endblock %}
+
+    {% block swag_pack_language_entry_switch %}
+    <mt-switch
+        class="swag-language-pack-entry__switch"
+        ref="packLanguageToggle"
+        :checked="value[field]"
+        :disabled="disabled"
+        @change="onChange"
+    />
+    {% endblock %}
+</div>
+{% endblock %}

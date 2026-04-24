@@ -1,0 +1,127 @@
+/*
+Collapse components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for collapsible elements, accordions, and expandable content.
+*/
+
+// TODO: Add collapse styles from original LESS file
+/*
+Collapse Box
+================================================
+A collapse box for panels and text elements.
+
+Displays a folding box that responds if the content does not fit the element.
+
+```
+
+<div class="collapse--header">
+  Collapse box title
+    <span class="collapse--toggler">
+    </span>
+</div>
+<div class="collapse--content is--collapsed">
+    This content will be shown by the is--collapsed class.
+</div>
+
+<div class="collapse--header">
+  Collapse box title
+    <span class="collapse--toggler">
+    </span>
+</div>
+<div class="collapse--content">
+    Lorem ipsum dolor
+</div>
+
+<div class="collapse--header">
+  Collapse box title
+    <span class="collapse--toggler">
+    </span>
+</div>
+<div class="collapse--content">
+    Lorem ipsum dolor
+</div>
+
+```
+*/
+@import "../abstract";
+@import "../mixins";
+.collapse--header {
+  @include unitize-padding(10, 20);
+  @include unitize-margin(10, 0, 0, 0);
+  @include unitize(font-size, 16);
+  @include unitize(line-height, 16);
+  @include linear-gradient(#ffffff, $gray-light);
+  @include border-radius();
+  @include box-shadow(0 1px 1px 0 rgba(236, 238, 241, 0.8));
+  display: block;
+  position: relative;
+  z-index: $zindex-collapse-header;
+  border: 1px solid $border-color;
+  cursor: pointer;
+
+  .collapse--toggler {
+    @include unitize-height(16);
+    @include unitize(top, 10);
+    @include unitize(right, 20);
+    @include unitize(font-size, 6);
+    @include unitize(line-height, 16);
+    position: absolute;
+    font-weight: $font-base-weight;
+    font-family: $sw-icon-fontname;
+
+    &:before {
+      content: $sw-icon-arrow-down;
+    }
+  }
+
+  &:hover {
+    color: $brand-primary;
+  }
+
+  &.is--active {
+    @include secondary-gradient();
+    @include box-shadow(0 1px 3px 0 rgba(95, 114, 133, 0.5));
+    color: #fff;
+    font-weight: $font-bold-weight;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: darken($border-color, 15%);
+    z-index: $zindex-collapse-header-active;
+
+    .collapse--toggler {
+      &:before {
+        content: $sw-icon-arrow-up;
+      }
+    }
+  }
+}
+
+.collapse--content {
+  @include unitize-padding(5, 0, 0, 0);
+  @include unitize(-5, 16, top);
+  @include border-radius-multi(0, 0, 3px, 3px);
+  @include box-shadow(0 1px 1px 0 rgba(236, 238, 241, 0.8));
+  display: none;
+  position: relative;
+  z-index: $zindex-collapse-content;
+  background: #fff;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: $border-color;
+
+  &.is--collapsed {
+    display: block;
+    z-index: $zindex-collapse-content-collapsed;
+  }
+}
+
+.js--collapse-target {
+  display: none;
+
+  &.is--collapsed {
+    display: block;
+  }
+}

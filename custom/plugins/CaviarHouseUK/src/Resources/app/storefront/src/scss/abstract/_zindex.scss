@@ -1,0 +1,127 @@
+/*
+Z-Index
+================================
+The z-index variables list all different values for the z-index layers used inside the Shopware responsive theme.
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+*/
+
+// === COMPONENTS ===
+
+// badge.scss
+$zindex-badge: 500 !default;
+
+// checkbox.scss
+$zindex-checkbox-state: 60 !default;
+$zindex-checkbox-element: 65 !default;
+
+// collapse.scss
+$zindex-collapse-content: 1000 !default;
+$zindex-collapse-header: 1100 !default;
+$zindex-collapse-content-collapsed: 1200 !default;
+$zindex-collapse-header-active: 1300 !default;
+
+// collapse-cart.scss
+$zindex-collapse-cart: 3000 !default;
+$zindex-collapse-cart-offcanvas: 8000 !default;
+
+// datepicker.scss
+$zindex-datepicker: 8100 !default;
+
+// emotions.scss
+$zindex-emotion-mapping-link: 110 !default;
+$zindex-emotion-image-slider-title: 100 !default;
+$zindex-emotion-product-slider-content: 400 !default;
+$zindex-emotion-product-slider-title: 500 !default;
+$zindex-emotion-overlay: 1000 !default;
+$zindex-emotion-video-element: 1000 !default;
+$zindex-emotion-video-text: 1100 !default;
+$zindex-emotion-video-play-btn: 1200 !default;
+$zindex-emotion-video-cover: 1300 !default;
+
+// filter-panel.scss
+$zindex-filter-panel-flyout: 500 !default;
+$zindex-filter-panel-flyout-collapsed: 800 !default;
+$zindex-filter-panel-checkbox: 65 !default;
+$zindex-filter-panel-checkbox-state: 60 !default;
+$zindex-filter-panel-radio: 65 !default;
+$zindex-filter-panel-radio-state: 60 !default;
+$zindex-filter-panel-media-checkbox: 65 !default;
+$zindex-filter-panel-rating-star: 65 !default;
+
+// image-gallery.scss
+$zindex-image-gallery-button: 1 !default;
+
+// image-slider.scss
+$zindex-image-slider: 1000 !default;
+$zindex-image-slider-arrow: 1000 !default;
+
+// image-zoom.scss
+$zindex-image-zoom-flyout: 2500 !default;
+
+// loading-indicator.scss
+$zindex-loading-indicator: 6000 !default;
+
+// menu-scroller.scss
+$zindex-menu-scroller-arrow: 750 !default;
+
+// modal.scss
+$zindex-modalbox: 7000 !default;
+
+// offcanvas-menu.scss
+$zindex-offcanvas: 8000 !default;
+$zindex-offcanvas-higher-viewport: 1000 !default;
+
+// overlay.scss
+$zindex-overlay: 5000 !default;
+
+// panel.scss
+$zindex-panel-arrow: 2000 !default;
+$zindex-panel-link: 2000 !default;
+
+// product-slider.scss
+$zindex-product-slider: 750 !default;
+
+// === MODULES ===
+
+// cart.scss
+$zindex-cart-product-image-element: 500 !default;
+$zindex-cart-premium-product-badge: 750 !default;
+
+// deprecated variable (spelling fixed)
+$zindex-cart-premium-prodict-badge: 750 !default;
+
+// compare.scss
+$zindex-compare-list: 4000 !default;
+
+// configurator.scss
+$zindex-configurator-option-label: 500 !default;
+$zindex-configurator-option-input: 1000 !default;
+
+// detail.scss
+$zindex-detail-notification-field-focus: 1 !default;
+
+// footer.scss
+$zindex-footer-newsletter-field-focus: 1 !default;
+
+// header.scss
+$zindex-header-search-form: 3000 !default;
+$zindex-header-search-button: 2 !default;
+$zindex-header-search-results: 3500 !default;
+$zindex-header-language-flag: 900 !default;
+$zindex-header-service-list: 3500 !default;
+$zindex-header-navigation-dropdown: 3500 !default;
+
+// listing.scss
+$zindex-listing-filter-header: 1100 !default;
+$zindex-listing-filter-header-active: 1300 !default;
+
+// product-box.scss
+$zindex-product-box-image-element: 500 !default;
+$zindex-product-box-product-badge: 750 !default;
+
+// sidebar.scss
+$zindex-sidebar-language-flag: 900 !default;
+$zindex-sidebar-offcanvas-overlay: 1200 !default;
+$zindex-sidebar-offcanvas-overlay-background: 1100 !default;
+$zindex-sidebar-offcanvas-higher-viewport: 1000 !default;

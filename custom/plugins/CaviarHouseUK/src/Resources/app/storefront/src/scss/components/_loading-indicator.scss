@@ -1,0 +1,117 @@
+/*
+Loading indicator components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for loading spinners, progress bars, and loading states.
+*/
+
+// TODO: Add loading indicator styles from original LESS file
+/*
+Loading indicator
+=============================================
+Displays a spinning circle to indicate a loading status.
+
+Can be imported by using the `i` tag with the `icon--loading-indicator` class.
+
+`<i class="icon--loading-indicator"></i>`
+
+The functionality is provided by the `jquery.loading-indicator.js` file.
+*/
+@import "../abstract";
+@import "../mixins";
+.js--is-loading {
+  position: relative;
+}
+
+.js--loading-indicator {
+  position: absolute;
+  display: none;
+  z-index: $zindex-loading-indicator;
+  top: 50%;
+  left: 50%;
+
+  body > & {
+    position: fixed;
+  }
+
+  &.indicator--relative {
+    @include unitize-width(30);
+    @include unitize-height(30);
+    @include unitize(padding-top, 50);
+    @include unitize(padding-bottom, 50);
+    background: none;
+    position: relative;
+    display: block;
+    left: 50%;
+    top: auto;
+    border: 0 none;
+  }
+
+  &.indicator--absolute {
+    @include unitize-width(30);
+    @include unitize-height(30);
+    @include unitize(padding-top, 50);
+    @include unitize(padding-bottom, 50);
+    background: none;
+    display: block;
+    left: 50%;
+    border: 0 none;
+    position: absolute;
+    padding: 0;
+    top: 50%;
+
+    &.js--loading-indicator {
+      @include unitize-margin(-15, 0, 0, -15);
+    };
+  }
+}
+
+.has--cssanimations {
+  .js--loading-indicator {
+    @include unitize-margin(-13, 0, 0, -13);
+
+    div[class^="icon--"] {
+      @include unitize-width(26);
+      @include unitize-height(26);
+
+      display: block;
+    }
+
+    .icon--default:before,
+    .icon--default::before {
+      @include unitize-width(22);
+      @include unitize-height(22);
+      @include border-radius(100%);
+      @include animation(keyframe--spin 1s linear infinite);
+      display: block;
+      content: "";
+      border: 2px solid $border-color;
+      border-top: 2px solid darken($border-color, 25%);
+    }
+  }
+}
+
+.has--no-cssanimations {
+  .js--loading-indicator {
+    @include unitize-margin(-13, 0, 0, -13);
+
+    div[class^="icon--"] {
+      @include unitize-width(16);
+      @include unitize-height(16);
+
+      display: block;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .icon--default {
+      $hash-loading-indicator: swhash('../../img/icons/loading-indicator.gif');
+      @include unitize-height(16, 16);
+      @include unitize-width(16, 16);
+
+      background-image: url('../../img/icons/loading-indicator.gif?@{hash-loading-indicator}');
+    }
+  }
+}

@@ -1,0 +1,41 @@
+/*
+Navigation list components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for navigation lists, menus, and navigation elements.
+*/
+
+// TODO: Add navigation list styles from original LESS file
+/*
+Navigation list styling
+=========================================
+Defines a global component for navigation lists.
+
+Navigation lists can be extended by custom styling declarations.
+
+```
+<ul class="navigation--list">
+    <li class="navigation--entry is--active">
+        <a class="navigation--link" href="">
+            List entry
+        </a>
+    </li>
+    <li class="navigation--entry">
+        <a class="navigation--link" href="">
+            <span>List entry</span>
+        </a>
+    </li>
+    <li class="navigation--entry">
+        <a class="navigation--link" href="">
+            <span>List entry</span>
+        </a>
+    </li>
+</ul>
+```
+*/
+
+.navigation--list {
+  list-style: none;
+}

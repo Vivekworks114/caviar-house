@@ -1,0 +1,23 @@
+{
+  "name": "LuxuryCaviarRetailer",
+  "author": "Luxury Caviar Retailer",
+  "views": [
+    "@Storefront",
+    "@Plugins",
+    "@LuxuryCaviarRetailer"
+  ],
+  "style": [
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront"
+  ],
+  "asset": [
+    "@Storefront",
+    "app/storefront/src/assets"
+  ],
+  "config": {
+    "fields": []
+  }
+}

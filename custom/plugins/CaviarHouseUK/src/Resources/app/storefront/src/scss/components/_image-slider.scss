@@ -1,0 +1,326 @@
+/*
+Image slider components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for image sliders, image carousels, and image navigation.
+*/
+
+// TODO: Add image slider styles from original LESS file
+/*
+Image slider element
+============================================
+Defines the styles for the image slider element that is a part of the basic Shopware 5 shopping world elements.
+
+The element can be added by using the Shopware 5 backend shopping world editor.
+
+The element contains thumbnail image previews, navigation dots and navigation arrows to change the current active image.
+
+It contains the viewport specific styles inside media queries.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.image-slider {
+  @include clearfix();
+  @include backface-visibility(hidden);
+  display: block;
+  z-index: $zindex-image-slider;
+  position: relative;
+}
+
+.force--3d {
+  backface-visibility: hidden;
+}
+
+.image-slider--container {
+  @include unitize-height(200);
+  @include tap-highlight-color(rgba(0, 0, 0, 0));
+  @include backface-visibility(hidden);
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  .arrow {
+    @include unitize-width(30);
+    @include unitize-height(70);
+    @include unitize(-35, 16, margin-top);
+    @include unitize(line-height, 68);
+    @include unitize(font-size, 16);
+    @include user-select(none);
+    @include touch-callout(none);
+    @include tap-highlight-color(rgba(0, 0, 0, 0));
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    z-index: $zindex-image-slider-arrow;
+    font-family: $sw-icon-fontname;
+    text-align: center;
+    color: $text-color;
+    cursor: pointer;
+    display: none;
+
+    &.is--left {
+      @include unitize(left, 0);
+      @include border-radius-multi(0, 3px, 3px, 0);
+
+      &:before,
+      &::before {
+        content: $sw-icon-arrow-left;
+      }
+    }
+
+    &.is--right {
+      @include unitize(right, 0);
+      @include border-radius-multi(3px, 0, 0, 3px);
+
+      &:before {
+        content: $sw-icon-arrow-right;
+      }
+    }
+
+    &:hover {
+      color: $brand-primary;
+      border-color: rgba(red($brand-primary), green($brand-primary), blue($brand-primary), 0.5);
+    }
+  }
+
+  &.is--dragging .image-slider--item {
+    cursor: move;
+  }
+}
+
+.image-slider--slide {
+  @include clearfix();
+  @include backface-visibility(hidden);
+  display: block;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  font-size: 0;
+  -ms-touch-action: pan-y;
+}
+
+.image-slider--item {
+  @include backface-visibility(hidden);
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+
+  .image--element {
+    display: inline-block;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .image--media {
+    margin: 0 auto;
+    text-align: center;
+
+    &.image--svg {
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.image-slider--dots {
+  @include unitize-padding(10, 0);
+  text-align: center;
+}
+
+.image-slider--thumbnails {
+  @include unitize-height(70);
+  @include unitize(top, 440);
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  left: 0;
+
+  .image-slider--thumbnails-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .thumbnail--link {
+    @include unitize-width(70);
+    @include unitize-height(70);
+    @include unitize-padding(5, 5);
+    @include unitize-margin(0, 10, 0, 0);
+    @include unitize(line-height, 57);
+    @include border-radius();
+    @include tap-highlight-color();
+    display: inline-block;
+    text-align: center;
+    border: 1px solid $border-color;
+
+    &.is--active {
+      border-color: $brand-primary;
+    }
+  }
+
+  .thumbnail--image {
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .thumbnails--arrow {
+    @include unitize-width(20);
+    @include unitize-height(70);
+    @include unitize(line-height, 70);
+    @include unitize(font-size, 14);
+    @include border-radius();
+    @include user-select(none);
+    @include touch-callout(none);
+    @include tap-highlight-color(rgba(0, 0, 0, 0));
+    @include linear-gradient(#ffffff, $gray-light);
+    display: none;
+    position: absolute;
+    z-index: $zindex-image-slider-arrow;
+    font-family: $sw-icon-fontname;
+    text-align: center;
+    color: $text-color;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.85);
+
+    &:hover {
+      color: $brand-primary;
+      border-color: rgba(red($brand-primary), green($brand-primary), blue($brand-primary), 0.85);
+    }
+
+    &.is--top,
+    &.is--bottom {
+      @include unitize(font-size, 8);
+      @include unitize-width(70);
+      @include unitize-height(24);
+      @include unitize-padding(2, 0, 0, 0);
+      @include unitize(line-height, 18);
+      left: 0;
+    }
+
+    &.is--top {
+      @include border-radius-multi(0, 0, 3px, 3px);
+      top: 0;
+
+      &::before {
+        content: $sw-icon-arrow-up;
+      }
+    }
+
+    &.is--bottom {
+      @include border-radius-multi(3px, 3px, 0, 0);
+      bottom: 0;
+
+      &::before {
+        content: $sw-icon-arrow-down;
+      }
+    }
+
+    &.is--left {
+      @include border-radius-multi(0, 3px, 3px, 0);
+      @include unitize-width(24, 16);
+      top: 0;
+      left: 0;
+
+      &::before {
+        content: $sw-icon-arrow-left;
+      }
+    }
+
+    &.is--right {
+      @include border-radius-multi(3px, 0, 0, 3px);
+      @include unitize-width(24, 16);
+      top: 0;
+      right: 0;
+
+      &::before {
+        content: $sw-icon-arrow-right;
+      }
+    }
+
+    &.is--active {
+      display: block;
+    }
+  }
+}
+
+@media screen and(min-width: $tablet-viewport-width) {
+
+  .image-slider--container {
+    @include unitize-height(400);
+
+    .arrow {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-landscape-viewport-width) {
+
+  .image-slider--thumbnails {
+    display: block;
+  }
+
+  .image-slider--container {
+    @include unitize-height(400);
+    @include unitize(margin-bottom, 110);
+
+    &.no--thumbnails {
+      margin-bottom: 0;
+    }
+
+    &.no--image .image-slider--item {
+      cursor: default;
+    }
+  }
+
+  .image-slider--dots {
+    @include unitize(top, 405);
+    position: absolute;
+    width: 100%;
+  }
+}
+
+@media screen and(min-width: $desktop-viewport-width) {
+
+  .image-slider--container {
+    @include unitize-height(430);
+    margin-bottom: 0;
+  }
+
+  .image-slider--thumbnails {
+    @include unitize-width(70);
+    @include unitize-height(430);
+    @include unitize-margin(0, 20, 0, 0);
+    position: relative;
+    top:0;
+    left: 0;
+    float: left;
+
+    .thumbnail--link {
+      @include unitize-margin(0, 0, 20, 0);
+      display: block;
+    }
+  }
+
+  .image-slider--dots {
+    @include unitize-padding(10, 0, 10, 90);
+    position: relative;
+    top: auto;
+    display: block;
+  }
+}

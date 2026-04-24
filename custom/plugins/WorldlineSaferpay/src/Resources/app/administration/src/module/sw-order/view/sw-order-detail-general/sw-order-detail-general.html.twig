@@ -1,0 +1,13 @@
+{% block sw_order_detail_general_line_items_grid %}
+    <sw-order-line-items-grid
+        ref="sw-order-line-item-grid"
+        :order="order"
+        :context="versionContext"
+        :editable="acl.can('order.editor')"
+        @item-delete="recalculateAndReload"
+        @item-edit="recalculateAndReload"
+        @existing-item-edit="saveAndRecalculate"
+        @item-cancel="recalculateAndReload"
+        @item-retoure="onSaveEdits"
+    />
+{% endblock %}

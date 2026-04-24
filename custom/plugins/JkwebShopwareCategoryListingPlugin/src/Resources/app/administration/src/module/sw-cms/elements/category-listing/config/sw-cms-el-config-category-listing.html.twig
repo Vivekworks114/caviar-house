@@ -1,0 +1,46 @@
+{% block sw_cms_element_config_category_listing %}
+    <div class="sw-cms-el-config-category-listing">
+        <div class="sw-cms-el-config-category-listing-form">
+            <sw-entity-multi-select
+                class="sw-cms-el-config-category-listing-categories"
+                v-model:value="element.config.categories.value"
+                @update:entityCollection="onCategoryChange"
+                entityName="category"
+                :entityCollection="categoryCollection"
+                :label="$tc('sw-cms.elements.categoryListing.config.categoryLabel')"
+                :placeholder="$tc('sw-cms.elements.categoryListing.config.categoryPlaceholder')"
+                :help-text="$tc('sw-cms.elements.categoryListing.config.categoryHelpText')"
+                :resultLimit="100"
+            >
+            </sw-entity-multi-select>
+            <sw-text-field
+                class="sw-cms-el-config-category-listing-row-name"
+                v-model:value="element.config.rowElementClassName.value"
+                type="text"
+                :label="$tc('sw-cms.elements.categoryListing.config.rowClassNameLabel')"
+            >
+            </sw-text-field>
+            <sw-text-field
+                class="sw-cms-el-config-category-listing-col-name"
+                v-model:value="element.config.colElementClassName.value"
+                type="text"
+                :label="$tc('sw-cms.elements.categoryListing.config.colClassNameLabel')"
+            >
+            </sw-text-field>
+            <sw-single-select
+                size="medium"
+                :options="headingPositionValues"
+                v-model:value="element.config.headingPosition.value"
+                :label="$tc('sw-cms.elements.categoryListing.config.headingPositionLabel')"
+            >>
+            </sw-single-select>
+        </div>
+        <sw-alert variant="info">
+            {{ $tc('sw-cms.elements.categoryListing.config.infoText') }}
+        </sw-alert>
+        <p>
+            {{ $tc('sw-cms.elements.categoryListing.config.helpText') }}
+        </p>
+        <code>@Storefront/storefront/element/cms-element-category-listing.html.twig</code>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+/*
+Modules
+==================================================
+The `_modules.scss` file contains the imports to all module elements of Shopware.
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+*/
+
+@import "modules/account";
+@import "modules/address";
+@import "modules/blog";
+@import "modules/breadcrumb";
+@import "modules/cart";
+@import "modules/checkout";
+@import "modules/compare";
+@import "modules/configurator";
+@import "modules/confirm";
+@import "modules/content-types";
+@import "modules/cookie-permisson";
+@import "modules/custom";
+@import "modules/detail";
+@import "modules/finish";
+@import "modules/footer";
+@import "modules/forms";
+@import "modules/global";
+@import "modules/global2";
+@import "modules/header";
+@import "modules/header2";
+@import "modules/header3";
+@import "modules/header-topbar-navigation2";
+@import "modules/home";
+@import "modules/last-viewed";
+@import "modules/listing";
+@import "modules/listing2";
+@import "modules/main-navigation";
+@import "modules/newsletter";
+@import "modules/note";
+@import "modules/payment";
+@import "modules/product-box";
+@import "modules/product-box2";
+@import "modules/register";
+@import "modules/register2";
+@import "modules/search";
+@import "modules/sidebar";
+@import "modules/sidebar2";
+@import "modules/sitemap";
+@import "modules/tell-a-friend";
+@import "modules/top-seller";

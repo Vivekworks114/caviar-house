@@ -1,0 +1,26 @@
+@import '~scss/variables';
+
+.sw-cms-el-preview-category-listing {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+
+    .sw-cms-el-preview-category-listing-img {
+        width: 100%;
+    }
+
+    .sw-cms-el-preview-category-listing-title-placeholder {
+        border-radius: 4px;
+        background-color: $color-gray-100;
+        min-height: 0.75rem;
+        margin: 0.25rem 0;
+
+        &.small {
+            min-height: 0.5rem;
+        }
+
+        &.title {
+            margin-bottom: 0.5rem;
+        }
+    }
+}

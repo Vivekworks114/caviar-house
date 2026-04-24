@@ -1,0 +1,36 @@
+#mc_embed_signup {
+
+  &.euro {
+
+    label {
+      color: $brand-primary;
+
+      a {
+        color: darken($brand-primary, 20%);
+      }
+
+    }
+
+  }
+
+}
+
+body .mc-modal {
+  @include unitize(bottom, 80);
+}
+
+#mc_embed_signup{
+  label {
+    color: $brand-primary;
+
+    a {
+      text-decoration: underline;
+    }
+
+  }
+
+  input[type="submit"] {
+    background-color: $brand-primary;
+  }
+
+}

@@ -1,0 +1,110 @@
+.content--breadcrumb {
+  border-bottom: none;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: $brand-primary;
+    height: 1px;
+    width: 100vw;
+    margin-left: -20px;
+  }
+
+}
+.js--modal{
+  z-index: 99999;
+}
+
+#scrollToTop {
+  background-color: $brand-secondary;
+  box-shadow: 0 3px 7px rgba(0,0,0, .5);
+  cursor: pointer;
+  opacity: 0;
+  position: fixed;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(50px);
+  z-index: 50000;
+  @include unitize(border-radius, 3);
+  @include unitize(bottom, 50);
+  @include unitize(height, 59);
+  @include unitize(right, 20);
+  //right: 'calc(50% - 29px)';
+  @include unitize(width, 86);
+  @include unitize-padding(10, 10);
+
+  i {
+    color: #fff;
+    display: block;
+    @include unitize-margin(0, 0, 11, 0);
+  }
+
+  .info {
+    color: #fff;
+    display: block;
+    @include unitize(font-size, 12);
+  }
+
+}
+
+.last-seen-products .last-seen-products--title {
+  border-bottom: none;
+  color: #000;
+  font-weight: 700;
+  @include unitize(font-size, 14);
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: $brand-primary;
+    height: 1px;
+    width: 100vw;
+    margin-left: -30px;
+  }
+
+}
+
+@media screen and (min-width: $tabletViewportWidth) {
+
+  .footer-main .is--three-columns .footer--column {
+    width: 33.3%;
+  }
+
+}
+
+@media screen and (min-width: $desktopViewportWidth) {
+
+  .content--breadcrumb {
+    border-bottom: none;
+
+    &:after {
+      content: '';
+      display: block;
+      background-color: $brand-primary;
+      height: 1px;
+      width: 100vw;
+      margin-left: 'calc((100vw - 1180px) / -2)';
+    }
+
+  }
+
+  .last-seen-products .last-seen-products--title:after,
+  .tab--navigation:after {
+    content: '';
+    display: block;
+    background-color: $brand-primary;
+    height: 1px;
+    width: 100vw;
+    margin-left: 'calc((100vw - 1160px) / -2)';
+  }
+
+}
+
+body.cvh-swiss {
+	textarea, input[type="text"], input[type="search"], input[type="password"], input[type="number"], input[type="email"], input[type="tel"], #paypal-acdc-form .field {
+		&:not(:focus):not(.has--error)::placeholder {
+			color: white;
+		}
+	}
+}
+

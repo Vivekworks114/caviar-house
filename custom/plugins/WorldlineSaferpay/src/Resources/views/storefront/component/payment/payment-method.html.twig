@@ -1,0 +1,279 @@
+{% sw_extends '@Storefront/storefront/component/payment/payment-method.html.twig' %}
+
+{% block component_payment_fieldset_template %}
+    {{ parent() }}
+
+    {% block worldline_saferpay_account_stored_payment_data %}
+        {%
+            if page.hasExtension('worldline_saferpay')
+            and page.getExtension('worldline_saferpay').secureCardData is defined
+            and page.getExtension('worldline_saferpay').secureCardData
+            and page.getExtension('worldline_saferpay').secureCardData[payment.id] is defined
+            and page.getExtension('worldline_saferpay').secureCardData[payment.id]
+        %}
+            {% block worldline_saferpay_account_stored_payment_data_table %}
+                <div class="worldline-saferpay-stored-payment-data container pb-5">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>{{ 'worldline.saferpay.scd.saved'|trans }}</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for storedPayment in page.getExtension('worldline_saferpay').secureCardData[payment.id] %}
+                            <tr>
+                                <td>
+                                    {{ storedPayment.name }} {{ storedPayment.displayText }}
+                                </td>
+                                <td>
+                                    <a href="{{ path(
+                                        'frontend.worldline-saferpay.transaction.delete-scd',
+                                        { transactionId: storedPayment.transactionId }
+                                    ) }}">{{ 'worldline.saferpay.scd.delete'|trans }}</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endblock %}
+        {% endif %}
+    {% endblock %}
+
+    {% block worldline_saferpay_checkout_saferpay_fields %}
+
+        {%
+            if page.hasExtension('worldline_saferpay')
+            and page.getExtension('worldline_saferpay').saferpayFields is defined
+            and page.getExtension('worldline_saferpay').saferpayFields
+            and payment.handlerIdentifier === 'Worldline\\Saferpay\\Checkout\\Payment\\Cart\\PaymentHandler\\SaferpayPaymentHandler'
+            and payment.id is same as(selectedPaymentMethodId)
+        %}
+            {% set scd = page.getExtension('worldline_saferpay').storedPaymentData ? true : false %}
+
+            <div class="worldline-saferpay-container">
+
+                {% if scd %}
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <label class="nav-link active" for="worldline-saferpay-scd-alias">{{ 'worldline.saferpay.scd.saved'|trans }}</label>
+                        </li>
+                        <li class="nav-item">
+                            <label class="nav-link" for="worldline-saferpay-scd-new">{{ 'worldline.saferpay.scd.other'|trans }}</label>
+                        </li>
+                    </ul>
+
+                    <input
+                            type="radio"
+                            name="worldline_saferpay_scd"
+                            id="worldline-saferpay-scd-alias"
+                            value="alias"
+                            checked="checked"
+                            form="confirmOrderForm"
+                    />
+
+                    <input
+                            type="radio"
+                            name="worldline_saferpay_scd"
+                            id="worldline-saferpay-scd-new"
+                            value="new"
+                            form="confirmOrderForm"
+                    />
+
+
+                    <div class="worldline-saferpay-alias">
+                        {% for storedPayment in page.getExtension('worldline_saferpay').storedPaymentData %}
+                            <div class="form-check payment-method-radio">
+                                <input id="worldline-saferpay-storedPayment-{{ loop.index }}"
+                                       type="radio"
+                                       class="form-check-input payment-method-input"
+                                       name="worldline_saferpay_scd_transaction_id"
+                                       form="confirmOrderForm"
+                                        {% if loop.first %}
+                                            checked="checked"
+                                        {% endif %}
+                                       value="{{ storedPayment.transactionId }}"
+                                />
+                                <label for="worldline-saferpay-storedPayment-{{ loop.index }}">
+                                    {{ storedPayment.name }}<br />
+                                    {{ storedPayment.displayText }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div style="clear: both">&nbsp;</div>
+                {% endif %}
+
+                {% block worldline_saferpay_fields_form %}
+                    <div class="worldline-saferpay-fields">
+                        {% if page.getExtension('worldline_saferpay').cardFormHolderNameBehavior === 'MANDATORY' %}
+                            <div class="row">
+                                <div class="col-md-12 field">
+                                    <div id="fields-holder-name"></div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-md-12 field">
+                                <div id="fields-card-number"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 field">
+                                <div id="fields-expiration"></div>
+                            </div>
+                            <div class="col-md-5 field">
+                                <div id="fields-cvc"></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+
+            {% block worldline_saferpay_scd_script %}
+                <script>
+                    (function() {
+                        const inputElements = document.querySelectorAll('input[name="worldline_saferpay_scd"]');
+
+                        for (const inputElement of inputElements) {
+                            inputElement.addEventListener('change', function() {
+                                for (const inputElement of inputElements) {
+                                    document.querySelector('label[for="' + inputElement.id + '"]').classList.remove('active');
+                                }
+
+                                if (inputElement.checked) {
+                                    document.querySelector('label[for="' + inputElement.id + '"]').classList.add('active');
+                                }
+                            });
+                        }
+                    })();
+                </script>
+            {% endblock %}
+
+            {% if scd %}
+                {% block worldline_saferpay_scd_style %}
+                    <style>
+                        label[for="worldline-saferpay-scd-alias"],
+                        label[for="worldline-saferpay-scd-new"] {
+                            cursor: pointer;
+                        }
+
+                        .worldline-saferpay-alias {
+                            margin-top: 1em;
+                            display: none;
+                        }
+
+                        .worldline-saferpay-fields {
+                            visibility: hidden;
+                            pointer-events: none;
+                            height: 1px;
+                        }
+
+                        input[name="worldline_saferpay_scd"] {
+                            display: none;
+                        }
+
+                        [name="worldline_saferpay_scd"][value="alias"]:checked ~ .worldline-saferpay-alias {
+                            display: block;
+                        }
+
+                        [name="worldline_saferpay_scd"][value="new"]:checked ~ .worldline-saferpay-fields {
+                            visibility: visible;
+                            pointer-events: all;
+                            height: auto;
+                        }
+                    </style>
+                {% endblock %}
+            {% endif %}
+
+            {% block worldline_saferpay_fields_style %}
+                <style>
+                    .worldline-saferpay-container {
+                        margin-top: -1.5em;
+                        margin-left: 1.5em;
+                    }
+
+                    .worldline-saferpay-fields {
+                        margin-top: -0.5em;
+                    }
+
+                    .worldline-saferpay-fields iframe {
+                        min-height: 2rem !important;
+                        margin-bottom: 1em;
+                    }
+                </style>
+            {% endblock %}
+
+            <script src="{{ page.getExtension('worldline_saferpay').saferpayFieldsJs }}"></script>
+
+            {% block worldline_saferpay_fields_script %}
+                <script>
+                    SaferpayFields.init({
+                        accessToken: '{{ page.getExtension('worldline_saferpay').saferpayFieldsAccessToken }}',
+                        url: '{{ page.getExtension('worldline_saferpay').saferpayFieldsUrl }}/{{ page.getExtension('worldline_saferpay').saferpayCustomerId }}',
+                        paymentMethods: {{ page.getExtension('worldline_saferpay').saferpayPaymentMeans|json_encode|raw }},
+
+                        {% block worldline_saferpay_fields_script_additional_init_options %}{% endblock %}
+
+                        onSuccess: function() {
+                            const confirmOrderForm = document.getElementById('confirmOrderForm');
+                            if (!confirmOrderForm) {
+                                return;
+                            }
+
+                            const aliasElement = document.querySelector('input[name="worldline_saferpay_scd"][value="alias"]');
+                            if (aliasElement) {
+                                aliasElement.checked = true;
+                            }
+
+                            confirmOrderForm.addEventListener('submit', (event) => {
+                                if (aliasElement && aliasElement.checked) {
+                                    return;
+                                }
+
+                                event.preventDefault();
+                                event.stopPropagation();
+
+                                SaferpayFields.submit({
+                                    onSuccess: function(event) {
+                                        const tokenField = document.createElement('input');
+                                        tokenField.setAttribute('type', 'hidden');
+                                        tokenField.style.display = 'none';
+
+                                        tokenField.setAttribute('name', 'worldline_saferpay_fields_token');
+                                        tokenField.value = event.token;
+
+                                        confirmOrderForm.appendChild(tokenField);
+
+                                        confirmOrderForm.submit();
+                                    },
+                                    onError: function() {
+                                        const fieldsElement = document.getElementsByClassName('worldline-saferpay-fields')[0];
+                                        if (fieldsElement) {
+                                            fieldsElement.scrollIntoView({
+                                                behavior: 'smooth',
+                                                block: 'center',
+                                                inline: 'nearest'
+                                            });
+                                        }
+                                    }
+                                });
+                            }, true);
+                        },
+                        onError: function(event) {
+                            console.log('Saferpay fields init error: ' + event.message);
+                        },
+                        placeholders: {
+                            holdername: '{{ 'worldline.saferpay.fields.placeholders.holdername'|trans }}',
+                            cardnumber: '{{ 'worldline.saferpay.fields.placeholders.cardnumber'|trans }}',
+                            expiration: '{{ 'worldline.saferpay.fields.placeholders.expiration'|trans }}',
+                            cvc: '{{ 'worldline.saferpay.fields.placeholders.cvc'|trans }}'
+                        }
+                    });
+                </script>
+            {% endblock %}
+        {% endif %}
+
+    {% endblock %}
+{% endblock %}

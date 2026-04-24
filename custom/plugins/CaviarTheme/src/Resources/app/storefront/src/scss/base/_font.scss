@@ -1,0 +1,36 @@
+//dax  font
+@font-face {
+  font-family: 'dax-regular';
+  src: url('#{$myasset-path}/fonts/dax-regular/dax-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+//Bodoni  font
+@font-face {
+  font-family: 'Bodoni';
+  src: url('#{$myasset-path}/fonts/Bodoni/BodoniModa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+//Fontawesome
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('#{$myasset-path}/fonts/fontawesome/fa-brands-400.woff2') format('woff2'),
+  url('#{$myasset-path}/fonts/fontawesome/fa-brands-400.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('#{$myasset-path}/fonts/fontawesome/fa-solid-900.woff2') format('woff2'),
+  url('#{$myasset-path}/fonts/fontawesome/fa-solid-900.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

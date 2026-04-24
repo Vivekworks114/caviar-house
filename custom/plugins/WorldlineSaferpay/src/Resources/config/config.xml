@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>General settings</title>
+        <title lang="de-DE">Allgemeine Einstellungen</title>
+        <input-field type="single-select">
+            <name>operationMode</name>
+            <label>Operation mode</label>
+            <label lang="de-DE">Betriebsart</label>
+            <options>
+                <option>
+                    <id>test</id>
+                    <name>Test</name>
+                </option>
+                <option>
+                    <id>live</id>
+                    <name>Live</name>
+                </option>
+            </options>
+            <defaultValue>test</defaultValue>
+        </input-field>
+        <input-field>
+            <name>merchantEmails</name>
+            <label>Merchant email addresses</label>
+            <label lang="de-DE">Händler-E-Mail-Adressen</label>
+            <placeholder>merchant@example.com, payment@example.com</placeholder>
+            <helpText>
+                List of merchant email addresses to which a confirmation email will be sent after successful payment authorizations.
+                A maximum of 10 email addresses is allowed.
+                Multiple email addresses must be separated by a comma.
+            </helpText>
+            <helpText lang="de-DE">
+                Liste der Händler-E-Mail-Adressen, an die nach erfolgreicher Zahlungsautorisierung eine Bestätigungs-E-Mail gesendet wird.
+                Es sind maximal 10 E-Mail-Adressen erlaubt.
+                Mehrere E-Mail-Adressen müssen durch ein Komma getrennt werden.
+            </helpText>
+        </input-field>
+        <input-field type="checkbox">
+            <name>enableCustomerNotification</name>
+            <label>Send Saferpay status notification emails to buyer</label>
+            <label lang="de-DE">Saferpay Zahlungsbestätigungsemail an den Käufer senden</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Appeareance</title>
+        <title lang="de-DE">Erscheinungsbild</title>
+        <input-field>
+            <name>paymentPageConfigName</name>
+            <label>Payment page config name</label>
+            <label lang="de-DE">Payment Page-Konfiguration</label>
+            <helpText>
+                Defines which payment page configuration (PPConfig) should be used. If empty, the default PPConfig will be used (if available).
+                If the PPConfig cannot be found (e.g. wrong name), the Saferpay basic style will be applied.
+            </helpText>
+            <helpText lang="de-DE">
+                Legt fest, welche Payment Page-Konfiguration (PPConfig) verwendet werden soll. Falls leer, wird die Standard-PPConfig verwendet (falls vorhanden).
+                Wenn die PPConfig nicht gefunden werden kann (z.B. falscher Name), wird der Saferpay-Basisstil angewendet.
+            </helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Payment behavior</title>
+        <title lang="de-DE">Zahlungsverhalten</title>
+        <input-field type="checkbox">
+            <name>savePaymentData</name>
+            <label>Save payment data</label>
+            <label lang="de-DE">Zahlungsdaten speichern</label>
+            <helpText>
+                Defines whether the payment data should be saved for the next order (see https://docs.saferpay.com/home/integration-guide/licences-and-interfaces/secure-card-data).
+            </helpText>
+            <helpText lang="de-DE">
+                Legt fest, ob die Zahlungsdaten für die nächste Bestellung gespeichert werden sollen (siehe https://docs.saferpay.com/home/integration-guide/licences-and-interfaces/secure-card-data).
+            </helpText>
+        </input-field>
+        <input-field type="checkbox">
+            <name>force3ds</name>
+            <label>Force 3-D Secure</label>
+            <label lang="de-DE">3-D Secure erzwingen</label>
+            <helpText>
+                Defines whether 3-D Secure is to be enforced (see https://docs.saferpay.com/home/integration-guide/licences-and-interfaces/general-information/3d-secure#forcing-a-3ds-challenge).
+            </helpText>
+            <helpText lang="de-DE">
+                Legt fest, ob 3-D Secure erzwungen werden soll (siehe https://docs.saferpay.com/home/integration-guide/licences-and-interfaces/general-information/3d-secure#forcing-a-3ds-challenge).
+            </helpText>
+        </input-field>
+        <input-field type="single-select">
+            <name>paymentReference</name>
+            <label>Payment reference</label>
+            <label lang="de-DE">Zahlungsreferenz</label>
+            <helpText>
+                Specifies which value should be transferred as the reference number for payments.
+            </helpText>
+            <helpText lang="de-DE">
+                Legt fest, welcher Wert als Referenznummer bei Zahlungen übergeben werden soll.
+            </helpText>
+            <options>
+                <option>
+                    <id>ORDER_NUMBER</id>
+                    <name>Ordernumber</name>
+                    <name lang="de-DE">Bestellnummer</name>
+                </option>
+                <option>
+                    <id>ORDER_ID</id>
+                    <name>Order ID</name>
+                    <name lang="de-DE">ID der Bestellung</name>
+                </option>
+            </options>
+            <defaultValue>ORDER_NUMBER</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Refund behavior</title>
+        <title lang="de-DE">Rückerstattungsverhalten</title>
+        <input-field type="single-select">
+            <name>refundReference</name>
+            <label>Refund reference</label>
+            <label lang="de-DE">Rückerstattungsreferenz</label>
+            <helpText>
+                Specifies which value should be transferred as the reference number for refunds.
+            </helpText>
+            <helpText lang="de-DE">
+                Legt fest, welcher Wert als Referenznummer bei Rückerstattungen übergeben werden soll.
+            </helpText>
+            <options>
+                <option>
+                    <id>ORDER_NUMBER</id>
+                    <name>Ordernumber</name>
+                    <name lang="de-DE">Bestellnummer</name>
+                </option>
+                <option>
+                    <id>ORDER_ID</id>
+                    <name>Order ID</name>
+                    <name lang="de-DE">ID der Bestellung</name>
+                </option>
+            </options>
+            <defaultValue>ORDER_NUMBER</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Payment API (JSON API) live credentials</title>
+        <title lang="de-DE">Payment API (JSON API) Live-Zugangsdaten</title>
+
+        <input-field>
+            <name>customerIdLive</name>
+            <label>Customer ID (live)</label>
+            <placeholder>456123</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>terminalIdLive</name>
+            <label>Terminal ID (live)</label>
+            <placeholder>17654321</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>usernameLive</name>
+            <label lang="de-DE">Benutzername (live)</label>
+            <label>Username</label>
+            <placeholder>API_456123_87654321</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>passwordLive</name>
+            <label lang="de-DE">Passwort (live)</label>
+            <label>Password (live)</label>
+            <placeholder>JsonApiPwd1_abcDEFGhI7Kl</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>saferpayFieldsAccessTokenLive</name>
+            <label>Saferpay fields access token (live)</label>
+            <placeholder>12345678-9fab-cdef-1234-0b38e7542af4</placeholder>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Payment API (JSON API) test credentials</title>
+        <title lang="de-DE">Payment API (JSON API) Test-Zugangsdaten</title>
+
+        <input-field>
+            <name>customerIdTest</name>
+            <label>Customer ID (Test)</label>
+            <placeholder>456123</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>terminalIdTest</name>
+            <label>Terminal ID (Test)</label>
+            <placeholder>17654321</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>usernameTest</name>
+            <label lang="de-DE">Benutzername (Test)</label>
+            <label>Username (Test)</label>
+            <placeholder>API_456123_87654321</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>passwordTest</name>
+            <label lang="de-DE">Passwort (Test)</label>
+            <label>Password (Test)</label>
+            <placeholder>JsonApiPwd1_abcDEFGhI7Kl</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>saferpayFieldsAccessTokenTest</name>
+            <label>Saferpay fields access token (test)</label>
+            <placeholder>12345678-9fab-cdef-1234-0b38e7542af4</placeholder>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Payment data entry form</title>
+        <title lang="de-DE">Eingabeformular für Zahlungsdaten</title>
+
+        <input-field type="single-select">
+            <name>paymentDataEntryFormCardHolderNameBehavior</name>
+            <label>Card holder name</label>
+            <label lang="de-DE">Name des Karteninhabers</label>
+            <helpText>
+                Defines whether the credit card holder must be entered in a form field or not (only applies to card payments).
+            </helpText>
+            <helpText lang="de-DE">
+                Legt fest, ob der Kreditkarteninhaber in ein Formularfeld eingegeben werden muss oder nicht (betrifft nur Kartenzahlungen).
+            </helpText>
+            <options>
+                <option>
+                    <id>MANDATORY</id>
+                    <name>Show as mandatory field</name>
+                    <name lang="de-DE">Als Pflichtfeld anzeigen</name>
+                </option>
+                <option>
+                    <id>NONE</id>
+                    <name>Not shown</name>
+                    <name lang="de-DE">Nicht anzeigen</name>
+                </option>
+            </options>
+            <defaultValue>NONE</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Payment capture behavior</title>
+        <title lang="de-DE">Zahlungserfassungsverhalten</title>
+
+        <input-field type="single-select">
+            <name>captureBehaviorAMEX</name>
+            <label>American Express</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorDINERS</name>
+            <label>Diners Club/Discover</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorJCB</name>
+            <label>JCB</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorKLARNA</name>
+            <label>Klarna</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorMAESTRO</name>
+            <label>Maestro</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorMASTERCARD</name>
+            <label>Mastercard</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorPAYDIREKT</name>
+            <label>paydirekt</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorPAYPAL</name>
+            <label>PayPal</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorPOSTFINANCEPAY</name>
+            <label>PostFinance Pay</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorDIRECTDEBIT</name>
+            <label>Direct debit</label>
+            <label lang="de-DE">Lastschrift</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorTWINT</name>
+            <label>TWINT</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>captureBehaviorVISA</name>
+            <label>Visa</label>
+            <options>
+                <option>
+                    <id>manual</id>
+                    <name>Manual (payments must be captured manually)</name>
+                    <name lang="de-DE">Manuell (Zahlungen müssen manuell erfasst werden)</name>
+                </option>
+                <option>
+                    <id>auto</id>
+                    <name>Auto (payments are captured automatically)</name>
+                    <name lang="de-DE">Automatisch (Zahlungen werden automatisch erfasst)</name>
+                </option>
+            </options>
+            <defaultValue>auto</defaultValue>
+        </input-field>
+    </card>
+</config>

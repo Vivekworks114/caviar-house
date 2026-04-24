@@ -1,0 +1,332 @@
+/*
+==================================================
+Global Styles Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add global styles, resets, and base styling from the original Responsive theme.
+*/
+
+/*
+Global
+==========================================
+Defines the global styles of Shopware.
+
+It contains the global modifier classes that help working with the Shopware elements and the typographic styles.
+
+######Global modifier classes
+Add a `is--` class to an element to easily change the properties.
+
+`.is--rounded` - changes the border-radius to 3pxgi<br/>
+`.is--block` - sets element to display: block<br/>
+`.is--inline` - sets element to display: inline<br/>
+`.is--inline-block` - sets element to display: inline-block<br/>
+`.is--hidden` - sets element to display: none<br/>
+`.is--invisible` - sets element to  visibility: none<br/>
+
+`.is--align-left` - sets element to text-align: left;<br/>
+`.is--align-right` - sets element to text-align: right<br/>
+`.is--align-center` - sets element to text-align: center<br/>
+`.is--underline` - sets element to text-decoration: underline<br/>
+`.is--line-through` - sets element to text-decoration: line-through<br/>
+`.is--uppercase` - sets element to text-transform: uppercase<br/>
+`.is--strong` - sets element to font-weight: @font-bold-weight<br/>
+`.is--bold` - sets element to font-weight: @font-bold-weight<br/>
+`.is--italic` - sets element to font-style: italic<br/>
+`.is--nowrap` - sets element to white-space: nowrap<br/>
+
+`.is--dark` - changes color to @text-color-dark<br/>
+`.is--light` - changes color to darken(@gray-dark, 20%)<br/>
+`.is--soft` - changes color to @gray-dark<br/>
+*/
+@import "../abstract";
+@import "../mixins";
+
+* {
+  @include box-sizing();
+}
+
+// Fix the body for off-canvas handling
+html {
+  width: 100%;
+  height: 100%;
+
+  &.no--scroll {
+    position: relative;
+    overflow: hidden;
+
+    body {
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  @include unitize(font-size, $font-size-base);
+  font-family: $font-base-stack;
+  font-weight: $font-base-weight;
+  color: $text-color;
+  background: $body-bg;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content--breadcrumb {
+  border-bottom: none;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: $brand-primary;
+    height: 1px;
+    width: 100vw;
+    margin-left: -20px;
+  }
+
+}
+
+.js--modal {
+  z-index: 99999;
+}
+// All images should be responsive by default
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.scroll-up-container { display: none !important; }
+//#scrollToTop {
+//  background-color: $brand-secondary;
+//  box-shadow: 0 3px 7px rgba(0,0,0, .5);
+//  cursor: pointer;
+//  opacity: 0;
+//  position: fixed;
+//  text-align: center;
+//  transition: all 0.5s ease-in-out;
+//  transform: translateY(50px);
+//  z-index: 50000;
+//  border-radius: 3px;
+//  bottom: 50px;
+//  height: 59px;
+//  right: 20px;
+//  // right: calc(50% - 29px);
+//  width: 86px;
+//  padding: 10px;
+//
+//  i {
+//    color: #fff;
+//    display: block;
+//    margin: 0 0 11px 0;
+//  }
+//
+//  .info {
+//    color: #fff;
+//    display: block;
+//    font-size: 12px;
+//  }
+//
+//}
+.last-seen-products .last-seen-products--title {
+  border-bottom: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: $brand-primary;
+    height: 1px;
+    width: 100vw;
+    margin-left: -30px;
+  }
+
+}
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+// Star rating
+.product--rating {
+  i[class^=icon] { color: $rating-star-color; }
+  i.icon--star-empty { color: $border-color; }
+}
+
+// Font
+h1, h2, h3, h4, h5, h6 {
+  @include unitize(line-height, 26);
+  @include unitize-margin(28, 0, 10, 0);
+  font-family: $font-headline-stack;
+  font-weight: $font-bold-weight;
+  color: $text-color-dark;
+}
+
+h1 {
+  @include unitize($font-size-h1, 16, font-size);
+  @include unitize(line-height, 28);
+  @include unitize-margin(34, 0, 20, 0);
+  color: $text-color-dark;
+}
+
+h2 {
+  @include unitize($font-size-h2, 16, font-size);
+}
+
+h3 {
+  @include unitize($font-size-h3, 16, font-size);
+}
+
+h4 {
+  @include unitize($font-size-h4, 16, font-size);
+}
+
+h5 {
+  @include unitize($font-size-h5, 16, font-size);
+}
+
+h6 {
+  @include unitize($font-size-h6, 16, font-size);
+}
+
+p {
+  @include unitize(font-size, $font-size-base, 16);
+  @include unitize(line-height, 24);
+  @include unitize-margin(0, 0, 20, 0);
+}
+
+blockquote {
+  @include unitize-padding(10, 10);
+  @include border-radius();
+  @include box-shadow(inset 0 0 3px 0 rgba(0, 0, 0, 0.2));
+  background: $gray;
+  text-align: left;
+  margin: 0;
+}
+
+// Hide ajax loader by default
+.ajax-loader { display: none }
+
+// Global Modifier
+.is--rounded { @include border-radius(); }
+
+.is--block { display: block !important; }
+.is--inline { display: inline !important; }
+.is--inline-block { display: inline-block !important; }
+.is--hidden { display: none !important; }
+.is--invisible { visibility: hidden !important; }
+
+.is--align-left { text-align: left !important; }
+.is--align-right { text-align: right !important; }
+.is--align-center { text-align: center !important; }
+.is--underline { text-decoration: underline !important; }
+.is--line-through { text-decoration: line-through !important; }
+.is--uppercase { text-transform: uppercase !important; }
+.is--strong { font-weight: $font-bold-weight !important; }
+.is--bold { font-weight: $font-bold-weight !important; }
+.is--italic { font-style: italic; }
+.is--nowrap { white-space: nowrap !important; }
+
+.is--dark { color: $text-color-dark !important; }
+.is--light { color: darken($gray-dark, 20%) !important; }
+.is--soft { color: $gray-dark !important; }
+
+.is--fluid { width: 100% !important; }
+
+.left { float: left; }
+.right { float: right; }
+
+::-moz-placeholder { color: $input-placeholder-color; }
+::-webkit-input-placeholder { color: $input-placeholder-color; }
+:-ms-input-placeholder { color: $input-placeholder-color; }
+
+.page-wrap {
+  @include unitize-min-width(320, 16);
+}
+
+.content-main,
+.content--wrapper {
+  @include clearfix();
+}
+
+.content-main--inner {
+  @include unitize-padding(0, 10, 16);
+  @include clearfix();
+}
+
+.content {
+  width: 100%;
+  float: left;
+}
+
+@media screen and(min-width: $tablet-viewport-width) {
+  .content-main {
+    @include box-shadow(0 0 4px 1px $border-color);
+
+    &:not(.is--small) {
+      @include unitize(min-height, 750);
+    }
+  }
+
+  .content-main--inner {
+    @include unitize-padding(0, 30, 16);
+    width: 100%;
+  }
+  .footer-main .is--three-columns .footer--column {
+    width: 33.3%;
+  }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+  .content-main {
+    @include unitize(margin-top, 20);
+    @include unitize(margin-bottom, 45);
+
+    &:not(.is--small) {
+      @include unitize(min-height, 700);
+    }
+  }
+
+  .content-main--inner {
+    @include unitize-padding(0, 50, 50, 50);
+  }
+
+  .content--breadcrumb {
+    border-bottom: none;
+
+    &:after {
+      content: '';
+      display: block;
+      background-color: $brand-primary;
+      height: 1px;
+      width: 100vw;
+      margin-left: calc((100vw - 1180px) / -2);
+    }
+
+  }
+
+  .last-seen-products .last-seen-products--title:after,
+  .tab--navigation:after {
+    content: '';
+    display: block;
+    background-color: $brand-primary;
+    height: 1px;
+    width: 100vw;
+    margin-left: calc((100vw - 1160px) / -2);
+  }
+}
+body.cvh-swiss {
+  textarea, input[type="text"], input[type="search"], input[type="password"], input[type="number"], input[type="email"], input[type="tel"], #paypal-acdc-form .field {
+    &:not(:focus):not(.has--error)::placeholder {
+      color: white;
+    }
+  }
+}

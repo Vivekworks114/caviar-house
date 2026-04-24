@@ -1,0 +1,19 @@
+/**
+ * Checkout Module Styles
+ *
+ * Contains styles for the checkout process including delivery terms,
+ * basket footer styling and checkout-specific elements.
+ *
+ * Compatible with Shopware 6
+ */
+
+.delivery_agb {
+  margin-top: 20px;
+}
+
+body.cvh-swiss .basket--footer,
+body.cvh-swiss .basket--footer label,
+body.cvh-swiss .basket--footer .aggregation--list,
+body.cvh-swiss .basket--footer .aggregation--list .entry--total {
+  color: white;
+}

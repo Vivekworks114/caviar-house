@@ -1,0 +1,16 @@
+{% block sw_order_detail_content_tabs_extension %}
+
+    {% parent() %}
+
+    {% block sw_order_detail_content_tabs_wlsprefunds %}
+    <sw-tabs-item
+        v-if="wlsp__hasLastOrderTransactionHandledViaSaferpayRefunds"
+        class="sw-order-detail__tabs-tab-wlsprefunds"
+        :route="{ name: 'sw.order.detail.wlsprefunds', params: { id: $route.params.id } }"
+        :title="$tc('saferpay.retoureBase.tabTitle')"
+    >
+        {{ $tc('saferpay.retoureBase.tabTitle') }}
+    </sw-tabs-item>
+    {% endblock %}
+
+{% endblock %}

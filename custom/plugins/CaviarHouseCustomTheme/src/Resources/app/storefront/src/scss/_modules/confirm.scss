@@ -1,0 +1,9 @@
+.shipping-payment--information .custom--shipping-info ul {
+  border-top: 1px solid #cbae5d;
+  @include unitize(padding-left, 32);
+  @include unitize-margin(0, 20);
+
+  li {
+    @include unitize-margin(10, 0);
+  }
+}

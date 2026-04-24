@@ -1,0 +1,26 @@
+// Listing - Converted from AlphaTheme LESS
+// ==================================================
+
+@import "../abstract/variables";
+
+// Placeholder for product listing page styles
+// Original file content would be converted here
+
+.listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.is--ctl-listing .sidebar-main + .content--wrapper {
+  margin-left: 0;
+}
+
+.is--ctl-listing .sidebar-main .sidebar--categories-wrapper {
+  display: none;
+}
+
+.content.listing--content {
+  margin-top: 0;
+  padding-top: 0;
+}

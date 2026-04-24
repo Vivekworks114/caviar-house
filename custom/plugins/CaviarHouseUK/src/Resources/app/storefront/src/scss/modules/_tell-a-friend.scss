@@ -1,0 +1,75 @@
+/*
+==================================================
+Tell a Friend Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add tell a friend functionality styling and forms from the original Responsive theme.
+*/
+/*
+Tell-a-friend
+==========================================
+Contains the tell-a-friend element styling that can be used to share products.
+
+The option can be enabled in the Shopware backend and is disabled by default.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.tellafriend--content {
+  @include unitize(padding-top, 10);
+  width: 100%;
+
+  .tellafriend--field {
+    @include unitize-margin(0, 0, 10, 0);
+    width: 100%;
+  }
+
+  .tellafriend--buttons {
+    @include clearfix();
+  }
+
+  .captcha--placeholder {
+    @include unitize(margin-bottom, 10);
+  }
+
+  .captcha--notice {
+    @include unitize(margin-bottom, 10);
+    display: block;
+  }
+
+  .alert {
+    @include unitize(margin-top, 30);
+  }
+
+  .review--notice {
+    @include unitize(margin-bottom, 10);
+    @include unitize(font-size, 14);
+  }
+}
+
+// Tablet view
+@media screen and(min-width: $tablet-viewport-width) {
+
+  .tellafriend--content {
+    @include unitize(padding-top, 20);
+    width: 100%;
+
+    .tellafriend--field {
+      @include unitize(margin-bottom, 15);
+    }
+
+    .alert {
+      @include unitize-margin(0, 0, 16, 0);
+    }
+  }
+}
+
+// Desktop view
+@media screen and(min-width: $desktop-viewport-width) {
+  .tellafriend--content {
+    @include unitize(padding-top, 45);
+  }
+}

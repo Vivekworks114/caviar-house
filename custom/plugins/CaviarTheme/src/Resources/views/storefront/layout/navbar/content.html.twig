@@ -1,0 +1,18 @@
+{% sw_extends '@Storefront/storefront/layout/navbar/content.html.twig' %}
+
+{% block layout_navbar_content_row %}{% endblock %}
+{% block layout_navbar_content_row_content_teaser %}{% endblock %}
+
+{% block layout_navbar_content_row_content_categories %}
+    <div class="col">
+        <div class="">
+            {% block layout_navbar_content_row_content_categories_recoursion %}
+                {% sw_include '@Storefront/storefront/layout/navbar/categories.html.twig' with {
+                    navigationTree: navigationTree.children,
+                    navigationMedia: category.media,
+                    page: page
+                } only %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

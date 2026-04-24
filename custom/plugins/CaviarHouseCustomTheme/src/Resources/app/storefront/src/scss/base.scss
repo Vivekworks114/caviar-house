@@ -1,0 +1,31 @@
+@import "components";
+@import "modules";
+
+$asset-path: '#{$sw-asset-theme-url}/bundles/storefront/assets' !default;
+$app-css-relative-asset-path: '../assets' !default;
+@font-face {
+  font-family: 'Playlist-Script';
+  src:url('#{$app-css-relative-asset-path}/fonts/playscript/Playlist-Script.ttf.woff') format('woff'),
+  url('#{$app-css-relative-asset-path}/fonts/playscript/Playlist-Script.ttf.svg#Playlist-Script') format('svg'),
+  url('#{$app-css-relative-asset-path}/fonts/playscript/Playlist-Script.ttf.eot'),
+  url('#{$app-css-relative-asset-path}/fonts/playscript/Playlist-Script.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Glacial-Indifference';
+    src:url('#{$app-css-relative-asset-path}/fonts/glacial-indifference/Glacial-Indifference-Regular.ttf.woff') format('woff'),
+        url('#{$app-css-relative-asset-path}/fonts/glacial-indifference/Glacial-Indifference-Regular.ttf.svg#Glacial-Indifference-Regular') format('svg'),
+        url('#{$app-css-relative-asset-path}/fonts/glacial-indifference/Glacial-Indifference-Regular.ttf.eot'),
+        url('#{$app-css-relative-asset-path}/fonts/glacial-indifference/Glacial-Indifference-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Icebear';
+  src:url('#{$app-css-relative-asset-path}/fonts/icebear/iceBEAR-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,17 @@
+@media screen and (min-width: $tabletViewportWidth) {
+
+  .filter--facet-container .filter-panel {
+    margin-left: 0;
+  }
+
+}
+
+.cvh-swiss {
+
+  .navigation--smartphone .entry--close-off-canvas .navigation--link,
+  .offcanvas--overlay .overlay--category .category--headline,
+  .off-canvas .navigation--headline {
+    color: #fff;
+  }
+
+}

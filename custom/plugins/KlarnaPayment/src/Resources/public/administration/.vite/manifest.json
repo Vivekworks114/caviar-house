@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/klarna-payment-ruTjWCpm.js",
+    "name": "klarna-payment",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/klarna-payment-txWckByf.css"
+    ]
+  }
+}

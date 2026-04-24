@@ -1,0 +1,124 @@
+{% block klarna_payment_settings %}
+    <sw-page class="klarna-payment">
+        {% block klarna_payment_settings_header %}
+            <template #smart-bar-header>
+                <h2>
+                    {{ $tc('sw-settings.index.title') }}
+                    <mt-icon
+                        :name="arrowIconName"
+                        small
+                    />
+                    {{ $tc('klarna-payment-configuration.settingsForm.title') }}
+                </h2>
+            </template>
+        {% endblock %}
+
+        {% block klarna_payment_settings_actions %}
+            <template #smart-bar-actions>
+                {% block klarna_payment_settings_actions_wizard %}
+                    <mt-button
+                      :disabled="isLoading || isTesting"
+                      variant="secondary"
+                      size='default'
+                      @click="onWizard">
+                        {{ $tc('klarna-payment-configuration.settingsForm.buttons.wizard') }}
+                    </mt-button>
+                {% endblock %}
+                {% block klarna_payment_settings_actions_test %}
+                    <sw-button-process
+                      :is-loading="isTesting"
+                      :process-success="isTestSuccessful"
+                      @update:process-success="onTestFinished()"
+                      :disabled="isLoading"
+                      @click="onTest()">
+                        {{ $tc('klarna-payment-configuration.settingsForm.buttons.test') }}
+                    </sw-button-process>
+                {% endblock %}
+
+                {% block klarna_payment_settings_actions_save %}
+                    <sw-button-process
+                      class="sw-settings-login-registration__save-action"
+                      :is-loading="isLoading"
+                      :process-success="isSaveSuccessful"
+                      @update:process-success="onSaveFinished()"
+                      :disabled="isLoading || isTesting"
+                      variant="primary"
+                      @click="onSave">
+                        {{ $tc('klarna-payment-configuration.settingsForm.buttons.save') }}
+                    </sw-button-process>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block klarna_payment_settings_content %}
+            <template #content>
+                <mt-card :hero="true" :isLoading="false" :large="false">
+                    <sw-alert variant="info" appearance="default" :show-icon="true" :closable="false">
+                        {{ $tc('klarna-payment-configuration.settingsForm.inheritanceWarning') }}
+                    </sw-alert>
+                </mt-card>
+
+                <mt-card v-if="showNotificationGlobalPurchaseFlowMissing">
+                    <sw-alert variant="info" appearance="default" :show-icon="true" :closable="false">
+                        {{ $tc('klarna-payment-configuration.settingsForm.globalPurchaseMissingInfo') }}
+                    </sw-alert>
+                </mt-card>
+
+                <sw-card-view>
+                    <sw-system-config
+                        ref="systemConfig"
+                        salesChannelSwitchable
+                        inherit
+                        @config-changed="onConfigChange"
+                        @saleschannel-changed="setSalesChannelDomainsWithoutHttps"
+                        domain="KlarnaPayment.settings">
+
+                        <template #beforeElements="{ card, config }">
+                            <template v-if="!showNotificationGlobalPurchaseFlowMissing">
+                                <template v-if="card.name == 'payment_settings'">
+                                    <sw-alert variant="info" appearance="default" :show-icon="true" :closable="false">
+                                        {{ $tc('klarna-payment-configuration.settingsForm.deprecatedConfiguration') }}
+                                    </sw-alert>
+                                </template>
+                            </template>
+                        </template>
+
+                        <template #card-element="{ element, config }">
+                            <div v-show="displayField(element, config)">
+                                <div v-if="element.name.endsWith('testMode')">
+                                    <sw-alert
+                                        variant="info"
+                                        appearance="pill">
+                                        {{ $tc('klarna-payment-configuration.settingsForm.apiConfiguration.notice') }}
+                                    </sw-alert>
+                                </div>
+
+                                <sw-form-field-renderer
+                                    v-bind="$refs.systemConfig.getElementBind(element)"
+                                    v-model:value="$refs.systemConfig.actualConfigData[$refs.systemConfig.currentSalesChannelId][element.name]"
+                                />
+
+                                <div v-if="element.name.endsWith('isOnsiteMessagingActive')" class="klarna-field--osm-description">
+                                    <p>
+                                        <a v-if="getConfigValue('testMode')" target="_blank"
+                                          :href="$tc('klarna-payment-configuration.settingsForm.onsiteMessaging.playgroundUrl')">
+                                            <mt-button size="x-small">
+                                                {{ $tc('klarna-payment-configuration.settingsForm.onsiteMessaging.generate')}}
+                                            </mt-button>
+                                        </a>
+                                        <a v-else target="_blank"
+                                          :href="$tc('klarna-payment-configuration.settingsForm.onsiteMessaging.defaultUrl')">
+                                            <mt-button size="x-small">
+                                                {{ $tc('klarna-payment-configuration.settingsForm.onsiteMessaging.generate')}}
+                                            </mt-button>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                    </sw-system-config>
+                </sw-card-view>
+            </template>
+        {% endblock %}
+    </sw-page>
+{% endblock %}

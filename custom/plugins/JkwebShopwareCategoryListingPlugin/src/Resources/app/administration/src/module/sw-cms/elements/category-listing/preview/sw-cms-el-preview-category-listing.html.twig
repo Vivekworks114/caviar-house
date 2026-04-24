@@ -1,0 +1,21 @@
+{% block sw_cms_element_preview_category_listing %}
+    <div class="sw-cms-el-preview-category-listing">
+        <div
+            v-for="i in 3"
+            :key="i"
+        >
+            <img
+                class="sw-cms-el-preview-category-listing-img"
+                :src="assetFilter('/administration/static/img/cms/preview_mountain_small.jpg')"
+            />
+            <div
+                class="sw-cms-el-preview-category-listing-title-placeholder title"
+            ></div>
+            <div
+                v-for="j in 3"
+                :key="j"
+                class="sw-cms-el-preview-category-listing-title-placeholder small"
+            ></div>
+        </div>
+    </div>
+{% endblock %}

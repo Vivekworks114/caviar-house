@@ -1,0 +1,49 @@
+<div class="top-bar">
+    <div class="cav-wrapper">
+        <div class="container block-group">
+            <div class="header-nav">
+                {% for item in header.navigation.tree['019956f2ab8871d7a72f59b7b181f20d'].children['0199760aae7c788b875777df6e0f5c0e'].children %}
+                    <a
+                        class="navigation--link"
+                        href="{{ item.category.seoUrl }}"
+                        {% if item.category.shouldOpenInNewTab %}target="_blank"{% endif %}
+                        title="{{ item.category.translated.name }}"
+                    >
+                        {{ item.category.translated.name }}
+                    </a>
+                {% endfor %}
+            </div>
+
+            <nav class="top-bar--navigation block" role="menubar">
+                <a
+                    class="alpha_social"
+                    href="mailto:"
+                    target="_blank"
+                >
+                    <i class="icon--mail"></i>
+                </a>
+                <a
+                        class="alpha_social"
+                        href="https://www.instagram.com/{$theme.tob_bar_instagram}"
+                        target="_blank"
+                >
+                    <i class="icon--instagram"></i>
+                </a>
+                <a
+                        class="alpha_social"
+                        href="https://www.facebook.com/{$theme.tob_bar_facebook}"
+                        target="_blank"
+                >
+                    <i class="icon--facebook3"></i>
+                </a>
+                <a
+                        class="alpha_social"
+                        href="https://www.youtube.com/@{$theme.tob_bar_youtube|replace:'--':'-&-'}"
+                        target="_blank"
+                >
+                    <i class="icon--video"></i>
+                </a>
+            </nav>
+        </div>
+    </div>
+</div>

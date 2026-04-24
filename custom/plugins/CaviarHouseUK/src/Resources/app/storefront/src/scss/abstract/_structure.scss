@@ -1,0 +1,18 @@
+/*
+Structure
+================================
+The variables define the widths for the different viewports.
+
+**Structure**<br/>
+`$phone-landscape-viewport-width` - viewport phone-landscape width *(default: 480px)*<br/>
+`$tablet-viewport-width` - viewport tablet width *(default: 768px)*<br/>
+`$tablet-landscape-viewport-width` - viewport tablet-landscape width *(default: 1024px)*<br/>
+`$desktop-viewport-width` - viewport desktop width *(default: 1260px)*<br/>
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+*/
+
+$phone-landscape-viewport-width: 30em !default;     // 480px
+$tablet-viewport-width: 48em !default;             // 768px
+$tablet-landscape-viewport-width: 64em !default;    // 1024px
+$desktop-viewport-width: 78.75em !default;         // 1260px

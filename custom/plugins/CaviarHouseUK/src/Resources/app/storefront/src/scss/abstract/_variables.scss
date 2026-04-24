@@ -1,0 +1,127 @@
+/*
+Variables - Converted from AlphaTheme LESS
+==================================================
+The _variables.scss file contains the imports to all variables that Shopware 6 uses.
+
+Most variables are controllable by using the backend theme manager.
+
+For Shopware 6 compatibility, variables are imported from Shopware's core structure.
+*/
+
+// Import Shopware 6 core variables
+//@import "../../../../../../../../../../vendor/shopware/storefront/Resources/app/storefront/src/scss/abstract/variables";
+
+// Import Shopware 6 responsive breakpoints
+// Note: In Shopware 6, these are available as $sm-min, $md-min, $lg-min, $xl-min
+
+// Legacy responsive path imports converted to Shopware 6 structure
+// Original Shopware 5 responsive imports are replaced with Shopware 6 equivalents
+
+// AlphaTheme specific variables (to be defined based on theme requirements)
+$brand-primary: #cbae5d !default;
+$brand-secondary: #000 !default;
+$text-color: #333 !default;
+
+// Font family variables
+$font-family-serif: 'Merriweather', serif !default;
+$font-family-condensed: 'Roboto Condensed', sans-serif !default;
+
+// Responsive breakpoints (inherited from Shopware 6)
+$tablet-viewport-width: 768px !default;
+$desktop-viewport-width: 1200px !default;
+$phone-landscape-viewport-width: 480px !default;
+
+$rem-scale-factor: 16;
+
+$highlight-info: #4AA3DF;
+$highlight-success: #2ECC71;
+$highlight-error: #E74C3C;
+$highlight-notice: #F1C40F;
+$font-bold-weight: 700;
+$btn-default-text-color: $text-color;
+
+$gray: #F5F5F8;
+$gray-light: lighten($gray, 1%);
+$gray-dark: darken($gray-light, 10%);
+$border-color: $gray-dark;
+$brand-primary-light: saturate(lighten($brand-primary,12%), 5%);
+$brand-secondary-dark: darken($brand-secondary, 15%);
+
+$btn-default-top-bg: #FFFFFF;
+$btn-default-bottom-bg: $gray-light;
+$btn-default-hover-bg: #FFFFFF;
+$btn-default-text-color: $text-color;
+$btn-default-hover-text-color: $brand-primary;
+$btn-default-border-color: $border-color;
+$btn-default-hover-border-color: $brand-primary;
+$btn-primary-top-bg: $brand-primary-light;
+$btn-primary-bottom-bg: $brand-primary;
+$btn-primary-hover-bg: $brand-primary;
+$btn-primary-text-color: #FFFFFF;
+$btn-primary-hover-text-color: $btn-primary-text-color;
+$btn-secondary-top-bg: $brand-secondary;
+$btn-secondary-bottom-bg: $brand-secondary-dark;
+$btn-secondary-hover-bg: $brand-secondary-dark;
+$btn-secondary-text-color: #FFFFFF;
+$btn-secondary-hover-text-color: $btn-secondary-text-color;
+$body-bg: darken($gray-light, 5%);
+$text-color-dark: $brand-secondary-dark;
+
+$input-bg: $gray-light;
+$input-border: $border-color;
+$input-font-size: 14;
+$input-focus-bg: #FFFFFF;
+$input-focus-border: $brand-primary;
+$input-focus-color: $brand-secondary;
+$input-error-bg: desaturate(lighten($highlight-error, 38%), 20%);
+$input-error-border: $highlight-error;
+$input-error-color: $highlight-error;
+$label-color: $text-color;
+$label-font-size: 14;
+$rating-star-color: $highlight-notice;
+$panel-border: $border-color;
+$link-color: $brand-primary;
+
+$overlay-bg: #000000;
+$overlay-theme-dark-bg: $overlay-bg;
+$overlay-opacity: 0.7;
+$overlay-theme-light-bg: #FFFFFF;
+
+$panel-bg: #FFFFFF;
+$panel-header-bg: $gray-light;
+$panel-header-color: $text-color;
+$panel-header-font-size: 1;
+
+$table-row-bg: #FFFFFF;
+$table-row-color: $brand-secondary;
+$table-row-highlight-bg: darken($table-row-bg, 4%);
+$table-header-bg: $brand-secondary;
+$table-header-color: #FFFFFF;
+
+$panel-table-header-bg: $panel-bg;
+$panel-table-header-color: $text-color-dark;
+$font-size-h1: 26;
+
+$badge-discount-bg: $highlight-error;
+$badge-discount-color: #FFFFFF;
+$font-base-stack: '"Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;';
+$font-size-base: 14;
+
+$font-headline-stack: $font-base-stack;
+$font-size-h2: 21;
+$font-size-h3: 18;
+$font-size-h4: 16;
+$font-size-h5: $font-size-base;
+$font-size-h6: 12;
+$input-placeholder-color: lighten($text-color, 15%);
+$badge-newcomer-bg: $highlight-notice;
+$badge-newcomer-color: #FFFFFF;
+$badge-recommendation-bg: $highlight-success;
+$badge-recommendation-color: #FFFFFF;
+$badge-download-bg: $highlight-info;
+$badge-download-color: #FFFFFF;
+$header_menu_color_one_field: #2B2525;
+$header_menu_color_two: #363636;
+
+$footer_color_one_field: #e5e5e5;
+$footer_color_two: #9b9b9b;

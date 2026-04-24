@@ -1,0 +1,112 @@
+{% block sw_order_detail_wlsprefunds %}
+<div class="sw-order-detail-wlsprefunds">
+    {% block sw_order_detail_wlsprefunds_capture %}
+    <template
+        v-for="capture in wlsp__lastOrderTransactionHandledViaSaferpayRefunds"
+        :key="capture.id"
+    >
+        {% block sw_order_detail_wlsprefunds_refunds %}
+        <sw-card
+            v-for="refund in capture.refunds"
+            :key="refund.externalReference"
+            position-identifier="sw-order-detail-wlsprefund"
+            :class="`sw-order-detail-wlsprefunds__refund sw-order-detail-wlsprefunds__refund--${refund.externalReference}`"
+            :title="$tc('saferpay.retoureDetail.cardTitle') + ' ' + refund.externalReference"
+        >
+
+            {% block sw_order_detail_wlsprefunds_capture_refund %}
+            <sw-data-grid
+                :data-source="wlsp__formatRetourePositions(refund)"
+                :columns="wlsp__getRetoureDataItemColumns()"
+                :show-settings="false"
+                :show-selection="false"
+                :show-actions="false"
+                :is-loading="loading.order"
+                :allow-inline-edit="false">
+
+                {% block sw_order_detail_wlsprefunds_capture_refund_grid_columns_quantity %}
+                <template #column-quantity="{ item }">
+
+                    {% block sw_order_detail_wlsprefunds_capture_refund_grid_columns_quantity_content %}
+                        {{ item.quantity }} x
+                    {% endblock %}
+
+                </template>
+                {% endblock %}
+
+                {% block sw_order_detail_wlsprefunds_capture_refund_grid_columns_unit_price %}
+                <template #column-unitPrice="{ item }">
+
+                    {% block sw_order_detail_wlsprefunds_capture_refund_grid_columns_unit_price_content %}
+                    <span>{{ currencyFilter(item.unitPrice, currency.isoCode, order.itemRounding.decimals) }}</span>
+                    {% endblock %}
+
+                </template>
+                {% endblock %}
+
+                {% block sw_order_detail_wlsprefunds_capture_refund_grid_columns_total_price %}
+                <template #column-totalPrice="{ item }">
+
+                    {% block sw_order_detail_wlsprefunds_capture_refund_grid_columns_total_price_content %}
+                    <span>{{ currencyFilter(item.totalPrice, currency.isoCode, order.itemRounding.decimals) }}</span>
+                    {% endblock %}
+
+                </template>
+                {% endblock %}
+
+            </sw-data-grid>
+            {% endblock %}
+
+            {% block sw_order_detail_wlsprefunds_capture_refund_additional %}
+                <sw-data-grid
+                        style="margin-top:2rem"
+                        v-if="wlsp__formatRetoureAdditionalPositions(refund).length"
+                        :data-source="wlsp__formatRetoureAdditionalPositions(refund)"
+                        :columns="wlsp__getAdditionalRetoureDataItemColumns()"
+                        :show-settings="false"
+                        :show-selection="false"
+                        :show-actions="false"
+                        :is-loading="loading.order"
+                        :allow-inline-edit="false">
+
+                    {% block sw_order_detail_wlsprefunds_capture_refund_additional_grid_columns_price %}
+                        <template #column-price="{ item }">
+
+                            {% block sw_order_detail_wlsprefunds_capture_refund_additional_grid_columns_price_content %}
+                                <span>{{ currencyFilter(item.price, currency.isoCode, order.itemRounding.decimals) }}</span>
+                            {% endblock %}
+
+                        </template>
+                    {% endblock %}
+
+                </sw-data-grid>
+            {% endblock %}
+
+            {% block sw_order_detail_wlsprefunds_capture_refund_summary %}
+            <sw-card-section
+                divider="top"
+                slim
+            >
+                <sw-description-list
+                    class="sw-order-detail__summary"
+                    grid="1fr 1fr"
+                >
+
+                    {% block sw_order_detail_wlsprefunds_capture_refund_summary_entries %}
+                        {% block sw_order_detail_wlsprefunds_capture_refund_summary_amount_total %}
+                        <dt><strong>{{ $tc('saferpay.retoureDetail.summaryLabelAmount') }}</strong></dt>
+                        <dd><strong>{{ currencyFilter(refund.amount.totalPrice, currency.isoCode, order.totalRounding.decimals) }}</strong></dd>
+                        {% endblock %}
+                    {% endblock %}
+                </sw-description-list>
+            </sw-card-section>
+            {% endblock %}
+
+        </sw-card>
+        {% endblock %}
+
+    </template>
+    {% endblock %}
+
+</div>
+{% endblock %}

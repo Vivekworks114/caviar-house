@@ -1,0 +1,19 @@
+{
+  "CaviarTheme": {
+    "aboutlink": "Über uns",
+    "prunierlink": "Prunier Manufaktur",
+    "baliklink": "Balik Manufaktur",
+    "storeslink": "Unsere Stores",
+    "eventslink": "Events",
+    "rezeptelink": "Rezepte",
+    "kooperationlink": "Kooperation & Partner",
+    "charitylink": "Charity",
+    "social": {
+      "instagram": "https://www.instagram.com/caviarhouse_prunier_de",
+      "facebook": "https://www.facebook.com/caviarhouse.prunier.de",
+      "youtube": "https://www.youtube.com/@caviarhouseprunier"
+    },
+    "footer.contact": "<p>Sie haben eine Frage, möchten sich beraten lassen oder eine Bestellung aufgeben?<br>Wir sind für Sie da, rufen Sie uns einfach an.</p><p><span class=\\\"contact-phone\\\">Freecall: <a href=\\\"tel:08002225855\\\">0800 2225855</a><br>Tel.: <a href=\\\"tel:+492241944970\\\">+49 (0)2241 94497-0</a></span><br>Mo. – Do.: 08:00 – 17:00 Uhr<br>Fr.: 08:00 – 14:00 Uhr</p>",
+    "listing.artikel": "Produkte"
+  }
+}

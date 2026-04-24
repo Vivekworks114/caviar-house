@@ -1,0 +1,46 @@
+// Sidebar - Converted from AlphaTheme LESS
+// ==================================================
+
+@import "../abstract/variables";
+
+// Unitize mixin
+@mixin unitize($property, $value) {
+    #{$property}: #{$value}px;
+}
+
+// Breakpoints
+$tablet-viewport-width: 768px !default;
+
+.sidebar-main:not(.is--active) .show-offcanvas-only {
+    display: none;
+}
+
+aside.sidebar-main.off-canvas.is--active {
+    z-index: 10000000;
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+    aside.sidebar-main.off-canvas {
+        display: none;
+    }
+}
+
+.social-media {
+    @media screen and (min-width: $tablet-viewport-width) {
+        display: none;
+    }
+}
+
+.sidebar-main .mobile--switches .social-media {
+    @media screen and (min-width: $tablet-viewport-width) {
+        display: none;
+    }
+
+    a {
+        @include unitize(margin-right, 10);
+
+        i {
+            @include unitize(font-size, 22);
+        }
+    }
+}

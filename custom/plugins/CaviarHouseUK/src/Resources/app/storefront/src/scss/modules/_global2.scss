@@ -1,0 +1,38 @@
+// Global - Converted from AlphaTheme LESS
+// ==================================================
+
+body {
+    overflow-x: hidden;
+}
+
+body .is--rounded,
+.select-field select,
+.footer-main .newsletter--field,
+.footer-main .newsletter--button,
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+.btn,
+.navigation-main .navigation--link {
+    border-radius: 0;
+}
+
+.page-wrap {
+    background-color: #fff;
+}
+
+section.content-main {
+    box-shadow: none;
+}
+
+// Shopware 6 breakpoint adaptation (xl breakpoint ~1200px)
+@media screen and (min-width: 1280px) {
+    // max-width of content +10px spacing right and left, like between emotion elements
+    body.is--ctl-index section.content-main .content-main--inner {
+        padding: 0;
+    }
+}

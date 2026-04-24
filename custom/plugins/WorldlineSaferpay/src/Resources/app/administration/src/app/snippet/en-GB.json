@@ -1,0 +1,34 @@
+{
+    "saferpay": {
+        "retoureBase": {
+            "title": "Saferpay refunds",
+            "tabTitle": "Saferpay refunds",
+            "modal": {
+                "title": "Refund via Saferpay",
+                "trigger": "Refund via Saferpay",
+                "send": "Refund",
+                "addAdditionalRetoureItems": "Add additional retoure item",
+                "contextMenuDelete": "Delete item"
+            },
+            "column": {
+                "retoureComment": "Comment",
+                "retoureQuantity": "Quantity",
+                "additionalRetoureItemLabel": "Label",
+                "additionalRetoureItemPrice": "Price"
+            },
+            "placeholder": {
+                "retoureComment": "Comment",
+                "noRetoureComment": "No comment",
+                "noRetoureAdditionalItemLabel": "Label"
+            }
+        },
+        "retoureDetail": {
+            "cardTitle": "Refund",
+            "column": {
+                "reason": "Comment",
+                "unitPrice": "Unit price"
+            },
+            "summaryLabelAmount": "Total"
+        }
+    }
+}

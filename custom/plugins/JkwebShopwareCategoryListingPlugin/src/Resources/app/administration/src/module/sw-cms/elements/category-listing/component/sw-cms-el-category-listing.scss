@@ -1,0 +1,51 @@
+@import '~scss/variables';
+
+@import './mixin-grid';
+
+.sw-cms-el-category-listing {
+    min-height: 100px;
+    width: 100%;
+
+    .sw-cms-el-category-listing-no-categories {
+        text-align: center;
+    }
+
+    .sw-cms-el-category-listing-item {
+        margin-bottom: 1.5rem;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .row {
+        @include make-row();
+    }
+
+    @include make-grid-columns();
+}
+
+.sw-cms-el-child-listing {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+
+    .sw-cms-el-child-listing-img {
+        width: 100%;
+    }
+
+    .sw-cms-el-child-listing-title-placeholder {
+        border-radius: 4px;
+        background-color: $color-gray-100;
+        min-height: 1rem;
+        margin: 0.5rem 0;
+
+        &.small {
+            min-height: 0.75rem;
+        }
+
+        &.title {
+            margin-bottom: 1rem;
+        }
+    }
+}

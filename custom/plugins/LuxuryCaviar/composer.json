@@ -1,0 +1,23 @@
+{
+    "name": "caviar-house/luxury-caviar-theme",
+    "description": "Shopware 6 storefront theme for Luxury Caviar Retailer",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "LuxuryCaviarRetailer\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "LuxuryCaviarRetailer\\LuxuryCaviarRetailer",
+        "label": {
+            "en-GB": "Luxury Caviar Retailer Theme",
+            "fr-FR": "Theme Luxury Caviar Retailer"
+        }
+    },
+    "require": {
+        "shopware/core": "~6.7.0 || ~6.6.0 || ~6.5.0",
+        "shopware/storefront": "~6.7.0 || ~6.6.0 || ~6.5.0"
+    }
+}

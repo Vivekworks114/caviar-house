@@ -1,0 +1,45 @@
+  .header-main{
+    background: #083f3a;
+    border-bottom: 1px solid #0f5d55;
+    min-height: 72px;
+  }
+
+  .header-row {
+    min-height: 72px;
+    height: 72px;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+  }
+
+  .header-logo-col {
+    margin: 0 auto !important;
+    padding: 0;
+    .header-logo-main {
+      max-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-logo-main-img {
+      max-height: 44px;
+      width: auto;
+    }
+  }
+
+  .header-logo-text-fallback {
+    color: #f4f1e7;
+    font-family: "Times New Roman", serif;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: .02em;
+    display: inline-block;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .header-main{
+      .header-row{
+        padding: 0;
+      }
+    }
+  }

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Worldline\Saferpay\Service\PaymentService">
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransactionCapture\OrderTransactionCaptureStateHandler"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStateHandler"/>
+            <argument type="service" id="order_transaction.repository"/>
+            <argument type="service" id="order_transaction_capture.repository"/>
+            <argument type="service" id="order_transaction_capture_refund.repository"/>
+            <argument type="service" id="payment_method.repository"/>
+            <argument type="service" id="payment_method_translation.repository"/>
+            <argument type="service" id="state_machine_state.repository"/>
+            <argument type="service" id="customer.repository"/>
+            <argument type="service" id="router"/>
+            <argument type="service" id="translator"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+        </service>
+        <service id="Worldline\Saferpay\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundBuilder">
+            <argument type="service" id="order_transaction_capture_refund.repository"/>
+            <argument type="service" id="state_machine_state.repository"/>
+            <argument type="service" id="order_line_item.repository"/>
+        </service>
+        <service id="Worldline\Saferpay\Checkout\Payment\Cart\PaymentHandler\SaferpayPaymentHandler">
+            <argument type="service" id="Worldline\Saferpay\Service\PaymentService"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStateHandler"/>
+            <argument type="service" id="order_transaction_capture_refund.repository"/>
+            <argument type="service" id="order_transaction.repository"/>
+            <argument type="service" id="logger" />
+            <tag name="shopware.payment.method" />
+        </service>
+        <service id="Worldline\Saferpay\Core\Framework\Api\Controller\ApiController" public="true">
+            <argument type="service" id="order.repository"/>
+            <argument type="service" id="order_transaction.repository"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStateHandler"/>
+            <argument type="service" id="Worldline\Saferpay\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundBuilder"/>
+            <argument type="service" id="Shopware\Core\Checkout\Payment\Cart\PaymentRefundProcessor"/>
+            <argument type="service" id="Worldline\Saferpay\Service\PaymentService"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+        <service id="Worldline\Saferpay\Storefront\Controller\TransactionController" public="true">
+            <argument type="service" id="order_transaction.repository"/>
+            <argument type="service" id="state_machine_state.repository"/>
+            <argument type="service" id="Worldline\Saferpay\Service\PaymentService"/>
+            <argument type="service" id="logger" />
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <call method="setTwig">
+                <argument type="service" id="twig"/>
+            </call>
+        </service>
+        <service id="Worldline\Saferpay\Subscriber\AccountPaymentMethodPageSubscriber">
+            <argument type="service" id="Worldline\Saferpay\Service\PaymentService"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+        <service id="Worldline\Saferpay\Subscriber\CheckoutConfirmPageSubscriber">
+            <argument type="service" id="Worldline\Saferpay\Service\PaymentService"/>
+            <argument type="service" id="order_transaction.repository"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+        <service id="Worldline\Saferpay\Subscriber\OrderTransactionSubscriber">
+            <argument type="service" id="Worldline\Saferpay\Service\PaymentService"/>
+            <argument type="service" id="order_transaction.repository"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+        <service id="Worldline\Saferpay\Subscriber\OrderTransactionCaptureSubscriber">
+            <argument type="service" id="order_transaction_capture.repository"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+        <service id="Worldline\Saferpay\Subscriber\ResponseSubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>

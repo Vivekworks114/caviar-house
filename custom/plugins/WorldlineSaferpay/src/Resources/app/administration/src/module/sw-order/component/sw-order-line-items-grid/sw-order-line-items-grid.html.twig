@@ -1,0 +1,178 @@
+{% block sw_order_line_items_grid_grid_actions_modals_items %}
+<sw-modal
+    v-if="wlsp__isRetoureModalVisible"
+    class="sw-order-line-items-grid__retoure-item-modal"
+    :title="$tc('saferpay.retoureBase.modal.title')"
+    @modal-close="wlsp__closeRetoureModal"
+    variant="big"
+>
+
+    <sw-data-grid
+        ref="retoureDataGrid"
+        class="sw-order-line-items-grid__data-grid"
+        identifier="wlsp__sw-order-retoure-line-item-grid"
+        id="sw-order-retoure-line-item-grid"
+        :data-source="wlsp__retoureItems"
+        :columns="wlsp__getRetoureLineItemColumns()"
+        :show-settings="false"
+        :show-selection="false"
+        :is-loading="isLoading"
+        :allow-inline-edit="editable"
+        @inline-edit-cancel="wlsp__onRetoureInlineEditCancel"
+        @inline-edit-save="wlsp__onRetoureInlineEditSave"
+    >
+
+        <template #column-label="{ item }">
+            <div class="sw-order-line-items-grid__item-product">
+                <div class="sw-order-line-items-grid__item-payload-options">
+                    <span class="sw-order-line-items-grid__item-label">
+                        {{ item.label }}
+                    </span>
+                </div>
+            </div>
+        </template>
+
+        <template #column-quantity="{ item }">
+            <span>{{ item.quantity }}</span>
+        </template>
+
+        <template #column-wlsp__retoureQuantity="{ item, isInlineEdit }">
+            <sw-number-field
+                v-if="isInlineEdit"
+                v-model:value="item.wlsp__retoureQuantity"
+                :step="1"
+                number-type="int"
+                :min="1"
+                :max="item.quantity"
+                size="small"
+                placeholder="0"
+            />
+
+            <span v-else>{{ item.wlsp__retoureQuantity }}</span>
+        </template>
+
+        <template #column-wlsp__retoureComment="{ item, isInlineEdit }">
+            <sw-text-field
+                v-if="isInlineEdit"
+                v-model:value="item.wlsp__retoureComment"
+                :placeholder="$tc('saferpay.retoureBase.placeholder.retoureComment')"
+            />
+
+            <span v-else>
+                <template v-if="item.wlsp__retoureComment">
+                    {{ item.wlsp__retoureComment }}
+                </template>
+                <template v-else>
+                    {{ $tc('saferpay.retoureBase.placeholder.noRetoureComment') }}
+                </template>
+            </span>
+        </template>
+    </sw-data-grid>
+
+    <div class="wlsp__additional-retoure-items-buttons">
+        <sw-button
+            size="small"
+            @click="wlsp__addAdditionalRetoureItems()"
+        >
+            {{ $tc('saferpay.retoureBase.modal.addAdditionalRetoureItems') }}
+        </sw-button>
+    </div>
+
+    <sw-data-grid
+        v-if="wlsp__additionalRetoureItems.length"
+        ref="additionalRetoureDataGrid"
+        class="sw-order-line-items-grid__data-grid wlsp__additional-retoure-items-grid"
+        identifier="wlsp__sw-order-additional-retoure-line-item-grid"
+        id="sw-order-additional-retoure-line-item-grid"
+        :data-source="wlsp__additionalRetoureItems"
+        :columns="wlsp__getAdditionalRetoureLineItemColumns()"
+        :show-settings="false"
+        :show-selection="false"
+        :is-loading="isLoading"
+        :allow-inline-edit="editable"
+        @inline-edit-cancel="wlsp__onAdditionalRetoureInlineEditCancel"
+        @inline-edit-save="wlsp__onAdditionalRetoureInlineEditSave"
+    >
+
+        <template #column-wlsp__additionalRetoureItemLabel="{ item, isInlineEdit }">
+            <sw-text-field
+                v-if="isInlineEdit"
+                v-model:value="item.wlsp__additionalRetoureItemLabel"
+                :placeholder="$tc('saferpay.retoureBase.placeholder.noRetoureAdditionalItemLabel')"
+            />
+
+            <span v-else>
+                <template v-if="item.wlsp__additionalRetoureItemLabel">
+                    {{ item.wlsp__additionalRetoureItemLabel }}
+                </template>
+                <template v-else>
+                    {{ $tc('saferpay.retoureBase.placeholder.noRetoureAdditionalItemLabel') }}
+                </template>
+            </span>
+        </template>
+
+        <template #column-wlsp__additionalRetoureItemPrice="{ item, isInlineEdit }">
+            <sw-number-field
+                v-if="isInlineEdit"
+                v-model:value="item.wlsp__additionalRetoureItemPrice"
+                size="small"
+                :placeholder="0"
+                :digits="order.itemRounding.decimals"
+            />
+
+            <span v-else>{{ currencyFilter(item.wlsp__additionalRetoureItemPrice, currency.isoCode, order.itemRounding.decimals) }}</span>
+        </template>
+
+        <template #actions="{ item, itemIndex }">
+            <sw-context-menu-item
+                v-tooltip.left="{
+                    message: $tc('sw-privileges.tooltip.warning'),
+                    disabled: editable,
+                    showOnDisabledElements: true
+                }"
+                variant="danger"
+                class="sw_order_line_items_grid-item__delete-action"
+                :disabled="!editable"
+                @click="wlsp__onDeleteAdditionalItem(item, itemIndex)"
+            >
+                {{ $tc('saferpay.retoureBase.modal.contextMenuDelete') }}
+            </sw-context-menu-item>
+
+        </template>
+    </sw-data-grid>
+
+    <template #modal-footer>
+        <sw-button
+            size="small"
+            class="sw_order_line_items_grid-actions_modal__close-action"
+            @click="wlsp__closeRetoureModal"
+        >
+            {{ $tc('global.default.cancel') }}
+        </sw-button>
+
+        <sw-button
+            size="small"
+            class="sw_order_line_items_grid-actions_modal__confirm-action"
+            @click="wlsp__sendRetoureData()"
+            :disabled="wlsp__pendingRequest"
+        >
+            {{ $tc('saferpay.retoureBase.modal.send') }}
+            <span>{{ currencyFilter(wlsp__retoureItemsSum, currency.isoCode, order.itemRounding.decimals) }}</span>
+        </sw-button>
+    </template>
+</sw-modal>
+{% endblock %}
+
+
+{% block sw_order_line_items_grid_bulk_actions_delete %}
+    {% parent %}
+
+    <a
+        v-if="wlsp__hasTransactionCaptures && (!wlsp__hasLastOrderTransactionHandledViaSaferpayRefunds && wlsp__hasLastOrderTransactionHandledViaSaferpay && wlsp__isLastOrderTransactionHandledViaSaferpayPaid)"
+        class="link"
+        style="color: #46beaa"
+        @click="wlsp__showRetoureModal"
+    >
+        {{ $tc('saferpay.retoureBase.modal.trigger') }}
+    </a>
+{% endblock %}

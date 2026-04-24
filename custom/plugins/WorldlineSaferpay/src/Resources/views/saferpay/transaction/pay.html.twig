@@ -1,0 +1,49 @@
+{% sw_extends '@WorldlineSaferpay/saferpay/transaction/_page.html.twig' %}
+
+{% block worldline_saferpay_content %}
+    {% block worldline_saferpay_content_iframe %}
+        <iframe id="worldline-saferpay-iframe" src="{{ redirectUrl }}"></iframe>
+    {% endblock %}
+
+    {{ parent() }}
+
+{% endblock %}
+
+{% block worldline_saferpay_styles %}
+
+    {{ parent() }}
+
+    {% block worldline_saferpay_styles_iframe %}
+        <style>
+            #worldline-saferpay-iframe {
+                flex: 1;
+                min-width: 450px;
+                min-height: 450px;
+            }
+        </style>
+    {% endblock %}
+
+{% endblock %}
+
+{% block worldline_saferpay_scripts %}
+
+    {{ parent() }}
+
+    {% block worldline_saferpay_scripts_iframe %}
+        <script>
+            (function() {
+                const iframe = document.getElementById('worldline-saferpay-iframe');
+                const spinner = document.getElementById('worldline-saferpay-spinner');
+
+                if (!iframe || !spinner) {
+                    return;
+                }
+
+                iframe.onload = function() {
+                    spinner.style.display = 'none';
+                };
+            })();
+        </script>
+    {% endblock %}
+
+{% endblock %}

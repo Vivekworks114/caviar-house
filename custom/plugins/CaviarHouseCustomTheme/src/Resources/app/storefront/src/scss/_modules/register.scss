@@ -1,0 +1,18 @@
+i.register-notice {
+  border: 1px solid $border-color;
+  @include unitize(font-size, 17);
+  @include unitize(margin-top, 30);
+  @include unitize-padding(15, 15);
+}
+.register--gdpr-message{
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 48em){
+  .register--gdpr-message{
+    width: 34%;
+  }
+}
+

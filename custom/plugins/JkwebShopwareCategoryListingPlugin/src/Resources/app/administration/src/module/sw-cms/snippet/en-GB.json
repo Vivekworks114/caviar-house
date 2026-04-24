@@ -1,0 +1,31 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "commerce": {
+                "categoryListing": {
+                    "label": "Category listing"
+                }
+            }
+        },
+        "elements": {
+            "categoryListing": {
+                "label": "Category listing (select)",
+                "config": {
+                    "helpText": "The Layout of this element be changed in a custom twig tempalte.",
+                    "infoText": "This element's category data is automatically loaded by the currently selected category. The content just shows a sample preview.",
+                    "categoryLabel": "Categories",
+                    "rowClassNameLabel": "CSS class name of row element",
+                    "colClassNameLabel": "CSS class name of col element",
+                    "categoryPlaceholder": "Choose categories",
+                    "categoryHelpText": "Ordering is equal to the order of adding categories. If no category selected subcategories of the current page will be displayed",
+                    "headingPositionLabel": "Heading position",
+                    "headingPosition": {
+                        "top": "Top",
+                        "bottom": "Bottom",
+                        "overlay": "Overlay"
+                    }
+                }
+            }
+        }
+    }
+}

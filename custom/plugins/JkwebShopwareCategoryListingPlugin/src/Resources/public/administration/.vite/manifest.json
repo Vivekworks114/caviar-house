@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/jkweb-shopware-category-listing-plugin-C463dKaF.js",
+    "name": "jkweb-shopware-category-listing-plugin",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/jkweb-shopware-category-listing-plugin-DPgw9LpX.css"
+    ]
+  }
+}

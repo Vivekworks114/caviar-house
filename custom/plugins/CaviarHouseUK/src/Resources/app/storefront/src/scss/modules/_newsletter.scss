@@ -1,0 +1,245 @@
+/*
+==================================================
+Newsletter Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add newsletter subscription forms and styling from the original Responsive theme.
+*/
+/*
+Newsletter
+==========================================
+Contains the styles of the newsletter sign-up page and the form element inside it.
+
+It contains the viewport specific styles inside media queries.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.newsletter--content {
+  @include unitize(padding-top, 10);
+  @include clearfix();
+
+  .newsletter--error-messages {
+    @include unitize(margin-bottom, 10);
+  }
+
+  .newsletter--headline {
+    @include unitize(margin-bottom, 10);
+
+    .newsletter--title {
+      @include unitize(margin-top, 10);
+    }
+
+    .newsletter--info {
+      margin: 0;
+    }
+  }
+
+  .select-field {
+    @include unitize(margin-bottom, 10);
+    max-width: 100%;
+  }
+
+  .newsletter--required-info {
+    @include unitize(margin-bottom, 16);
+  }
+
+  .newsletter--action {
+    @include clearfix();
+  }
+}
+
+// Newsletter listing
+.newsletter-listing--content {
+  @include unitize(margin-top, 10);
+
+  .newsletter-listing--headline {
+    @include unitize(margin-bottom, 10);
+  }
+  .newsletter--title {
+    @include unitize-margin(10, 0);
+  }
+
+  .newsletter-listing--table-headline {
+
+    .newsletter-listing--headline-name {
+      width: 65%;
+    }
+
+    .newsletter-listing--headline-button {
+      width: 35%;
+    }
+  }
+
+  .newsletter-listing--entry {
+    @include unitize-padding(10, 0, 10, 0, 16);
+    border-bottom: 1px solid $border-color;
+
+    .newsletter-listing--entry-description {
+      @include unitize(margin-top, 4);
+      width: 65%;
+    }
+
+    .newsletter-listing--entry-button {
+      width: 35%;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+// Newsletter detail
+.newsletter-detail--content {
+  @include unitize(margin-top, 10);
+
+  .newsletter-detail--container {
+    @include clearfix();
+
+    .newsletter-detail--iframe {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+
+      iframe {
+        @include unitize(min-height, 500);
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .newsletter-detail--buttons {
+    @include unitize-margin(10, 0, 10, 0);
+
+    .newsletter-detail--backlink {
+      width: 100%;
+    }
+
+    .newsletter-detail--window {
+      @include unitize(margin-bottom, 10);
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $phone-landscape-viewport-width) {
+
+  .newsletter-listing--content {
+    .newsletter-listing--table-headline {
+      .newsletter-listing--headline-name {
+        width: 80%;
+      }
+      .newsletter-listing--headline-button {
+        width: 20%;
+      }
+    }
+    .newsletter-listing--entry {
+      .newsletter-listing--entry-description {
+        width: 80%;
+      }
+      .newsletter-listing--entry-button {
+        width: 20%;
+      }
+    }
+  }
+
+  .newsletter-detail--content {
+    .newsletter-detail--buttons {
+      .newsletter-detail--backlink,
+      .newsletter-detail--window {
+        width: auto;
+        margin: 0;
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+
+  .newsletter--content {
+    @include unitize(padding-top, 20);
+
+    .newsletter--error-messages {
+      @include unitize(margin-bottom, 20);
+    }
+
+    .newsletter--headline {
+      @include unitize(margin-bottom, 20);
+    }
+
+    .select-field {
+      @include unitize(margin-bottom, 15);
+      @include unitize(max-width, 290);
+    }
+  }
+
+  // Newsletter listing
+  .newsletter-listing--content {
+    @include unitize(margin-top, 20);
+
+    .newsletter-listing--headline {
+      @include unitize(margin-bottom, 20);
+    }
+  }
+
+  // Newsletter detail
+  .newsletter-detail--content {
+    @include unitize(margin-top, 20);
+
+    .newsletter-detail--buttons .newsletter-detail--window {
+      width: auto;
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+
+  // Padding Newsletter Error Message Desktop
+  .newsletter--error-messages {
+    @include unitize(padding-top, 0);
+  }
+
+  .newsletter--content {
+    @include unitize(margin-top, 45);
+    padding: 0;
+
+    .newsletter--headline .newsletter--title {
+      @include unitize(margin-top, 0);
+    }
+
+  }
+
+  // Newsletter listing
+  .newsletter-listing--content {
+    @include unitize(margin-top, 45);
+
+    .newsletter-listing--table-headline {
+      .newsletter-listing--headline-name {
+        width: 90%;
+      }
+      .newsletter-listing--headline-button {
+        width: 10%;
+      }
+    }
+    .newsletter-listing--entry {
+      .newsletter-listing--entry-description {
+        width: 90%;
+      }
+      .newsletter-listing--entry-button {
+        width: 10%;
+      }
+    }
+  }
+
+  // Newsletter detail
+  .newsletter-detail--content {
+    @include unitize(margin-top, 45);
+  }
+}

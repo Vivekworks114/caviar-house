@@ -1,0 +1,24 @@
+/*
+Linear Gradient Mixins
+======================
+Provides convenient mixins for common gradient patterns.
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+*/
+
+@mixin primary-gradient() {
+    @include linear-gradient($brand-primary-light, $brand-primary);
+}
+
+@mixin secondary-gradient() {
+    @include linear-gradient($brand-secondary, $brand-secondary-dark);
+}
+
+@mixin white-gradient() {
+    @include linear-gradient(#fff, $gray-light);
+}
+
+// Base linear gradient mixin (assumes it exists elsewhere or will be provided by Shopware 6)
+@mixin linear-gradient($start-color, $end-color, $direction: to bottom) {
+    background: linear-gradient(#{$direction}, #{$start-color}, #{$end-color});
+}

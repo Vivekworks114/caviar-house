@@ -1,0 +1,31 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "commerce": {
+                "categoryListing": {
+                    "label": "Kategorie-Listing"
+                }
+            }
+        },
+        "elements": {
+            "categoryListing": {
+                "label": "Kategorie-Listing",
+                "config": {
+                    "helpText": "Das Layout dieses Elements kann mit einem manuellen Twig-Template angepasst werden.",
+                    "infoText": "Die Kategoriedaten für dieses Element werden automatisiert über die aktuelle Kategorie geladen. Der Inhalt zeigt nur eine ungefähre Vorschau.",
+                    "categoryLabel": "Kategorien",
+                    "rowClassNameLabel": "CSS Klassenname des Zeilen-Elements",
+                    "colClassNameLabel": "CSS Klassenname des Spalten-Elements",
+                    "categoryPlaceholder": "Ausgewählte Kategorien",
+                    "categoryHelpText": "Sortierung gleich wie die Reihenfolge des Hinzufügens. Wenn keine Kategorien ausgewählt wurden werden die Unterkategorien der aktuellen Seite angezeigt.",
+                    "headingPositionLabel": "Position der Überschrift",
+                    "headingPosition": {
+                        "top": "Oben",
+                        "bottom": "Unten",
+                        "overlay": "Overlay"
+                    }
+                }
+            }
+        }
+    }
+}

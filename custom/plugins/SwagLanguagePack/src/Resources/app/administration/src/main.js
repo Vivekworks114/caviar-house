@@ -1,0 +1,9 @@
+import './init/locale.init';
+
+import './component/structure/sw-language-switch/extension';
+import './module/sw-extension';
+import './module/sw-first-run-wizard';
+import './module/sw-sales-channel-detail';
+import './module/sw-settings-language';
+import './module/swag-language-pack-settings';
+import './module/sw-users-permissions';

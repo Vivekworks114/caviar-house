@@ -1,0 +1,230 @@
+/*
+==================================================
+Note/Wishlist Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add note/wishlist functionality styling from the original Responsive theme.
+*/
+/*
+Note
+==============================================
+Contains the styling of the note page inside Shopware 5.
+
+The users can add an article to their note list if they are interested in the product and the product will be saved inside the list if the user is logged in inside their account.
+
+The articles are displayed inside a slim product box with an article thumbnail and the general item information.
+
+The styling also contains the viewport specific styles inside media queries.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.note--content {
+  @include unitize-margin(20, 0);
+}
+
+.note--overview .panel--td {
+  padding: 0;
+}
+
+.note--item {
+  @include unitize-padding(20, 0);
+  position: relative;
+}
+
+.note--info,
+.note--sale {
+  width: 80%;
+}
+
+.note--image-container {
+  @include unitize-width(75);
+  @include unitize-margin(0, 20, 20, 0);
+  display: table-row;
+  float: left;
+}
+
+.note--image-link {
+  @include unitize-width(75);
+  @include unitize-height(75);
+  @include unitize-padding(5, 5);
+  @include unitize(line-height, 65);
+  @include border-radius();
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid $border-color;
+}
+
+.note--image {
+  @include unitize-max-width(65);
+  @include unitize-max-height(65);
+  margin: 0 auto;
+}
+
+.note--title {
+  @include unitize-margin(0, 0, 5, 95);
+  @include unitize(font-size, 18);
+  display: block;
+  font-weight: $font-bold-weight;
+  color: $text-color-dark;
+
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+.note--rating {
+  @include unitize-margin(0, 0, 10, 95);
+
+  [class^="icon--"] {
+    color: $rating-star-color;
+  }
+}
+
+.note--supplier {
+  display: none;
+}
+
+.note--ordernumber,
+.note--date,
+.note--overview .product--rating {
+  @include unitize-margin(0, 0, 0, 95);
+  display: block;
+}
+
+.note--delivery {
+  @include unitize-margin(0, 0, 0, 95);
+
+  .delivery--status-icon {
+    display: none;
+  }
+
+  .delivery--text-available {
+    display: block;
+  }
+}
+
+.note--compare {
+  @include unitize-margin(10, 0, 0, 95);
+  display: none;
+
+  .compare--link {
+    @include clear-form-button();
+    color: $text-color;
+
+    &:hover { color: $link-color; }
+  }
+
+  [class^="icon--"] {
+    @include unitize-margin(0, 5, 0, 0);
+    @include unitize(font-size, 12);
+  }
+}
+
+.note--price-unit {
+  @include unitize-margin(5, 0, 0, 95);
+  @include unitize(font-size, 12);
+  @include unitize(line-height, 18);
+  display: block;
+}
+
+.note--price {
+  @include unitize(font-size, 18);
+  @include unitize-margin(15, 0, 0, 95);
+  color: $text-color-dark;
+  font-weight: $font-bold-weight;
+}
+
+.note--delete {
+  @include unitize-width(40);
+  @include unitize-height(40);
+  @include unitize(font-size, 10);
+  @include unitize(line-height, 38);
+  @include linear-gradient($btn-default-top-bg, $btn-default-bottom-bg);
+  @include border-radius();
+  @include unitize(top, 20);
+  right: 0;
+  left: auto;
+  display: block;
+  position: absolute;
+  border: 1px solid $btn-default-border-color;
+  text-align: center;
+  font-weight: $font-base-weight;
+  color: $text-color;
+
+  &:hover {
+    color: $btn-default-hover-text-color;
+    border-color: $btn-default-hover-border-color;
+  }
+}
+
+@media screen and(min-width: $tablet-viewport-width) {
+  .note--overview .panel--table {
+    @include unitize-padding(0, 20);
+    border: 1px solid $border-color;
+  }
+
+  .note--compare { display: block; }
+}
+
+@media screen and(min-width: $tablet-landscape-viewport-width) {
+  .note--info {
+    @include unitize(padding-right, 20);
+    width: 70%;
+  }
+
+  .note--sale {
+    @include unitize(padding-right, 55);
+    width: 30%;
+  }
+
+  .note--zoom {
+    @include unitize(font-size, 12);
+    display: block;
+    color: $text-color;
+    text-align: center;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+
+  .note--title {
+    @include unitize-margin(0, 0, 5, 105);
+  }
+
+  .note--supplier,
+  .note--ordernumber,
+  .note--date,
+  .note--overview .product--rating {
+    @include unitize-margin(0, 0, 0, 105);
+    display: block;
+  }
+
+  .note--delivery {
+    @include unitize-margin(0, 0, 0, 105);
+  }
+
+  .note--compare {
+    @include unitize-margin(5, 0, 0, 0);
+  }
+
+  .note--price {
+    margin: 0;
+  }
+
+  .note--price-unit {
+    @include unitize(padding-right, 50);
+    @include unitize-margin(5, 0, 0, 0);
+  }
+}
+
+@media screen and(min-width: $desktop-viewport-width) {
+  .note--content {
+    @include unitize-margin(45, 0, 0, 0);
+  }
+}

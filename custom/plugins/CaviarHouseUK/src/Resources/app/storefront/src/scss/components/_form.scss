@@ -1,0 +1,56 @@
+/*
+Form components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for forms, form layouts, and form validation states.
+*/
+
+// TODO: Add form styles from original LESS file
+/*
+Form
+============================
+
+Contains the general layout and styling for the Shopware form elements and fieldsets.
+
+The fieldset padding size is defined with the unitize mixin.
+
+```
+<fieldset>
+    <form>
+        <table>
+            <tr>
+                <td>Table cell</td>
+            </tr>
+            <tr>
+                <td>Table cell</td>
+            </tr>
+            <tr>
+                <td>Table cell</td>
+            </tr>
+        <table>
+    <form>
+</fieldset>
+```
+
+*/
+@import "../abstract";
+@import "../mixins";
+
+form {
+  display: block;
+
+  table {
+    width: 100%;
+
+    td {
+      padding: 10px;
+    }
+  }
+}
+
+fieldset {
+  @include unitize-padding(10, 10);
+  border: 1px solid $border-color;
+}

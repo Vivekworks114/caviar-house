@@ -1,0 +1,14 @@
+{
+  "name": "worldlinesaferpay-admin",
+  "version": "1.0.0",
+  "description": "Administration for Worldline Saferpay",
+  "main": "index.js",
+  "author": "Arrabiata Solutions GmbH",
+  "license": "MIT",
+  "dependencies": {
+    "@shopware-ag/meteor-admin-sdk": "^5.7.5"
+  },
+  "optionalDependencies": {
+    "administration": "^6.x"
+  }
+}

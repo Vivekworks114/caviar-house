@@ -1,0 +1,11 @@
+// Product Box - Converted from AlphaTheme LESS
+// ==================================================
+
+// Define breakpoints (adapt to Shopware 6 breakpoints)
+$tablet-landscape-viewport-width: 1024px !default;
+
+@media screen and (min-width: $tablet-landscape-viewport-width) {
+    .box--image {
+        width: 33%;
+    }
+}

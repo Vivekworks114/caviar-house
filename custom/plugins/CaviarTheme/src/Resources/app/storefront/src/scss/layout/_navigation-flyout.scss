@@ -1,0 +1,31 @@
+@include media-breakpoint-up(lg) {
+  .navbar-expand-lg {
+    .navbar-nav {
+      .dropdown-menu {
+        width: auto;
+        padding: 12px 20px;
+      }
+      .nav-link{
+        box-shadow: none;
+      }
+    }
+  }
+
+  .navigation-flyout-categories {
+    &.is-level-0 {
+      > .navigation-flyout-col {
+        margin-bottom: 0;
+
+        &:before{
+          content: "\f054";
+          font-family: 'FontAwesome', serif;
+          font-size: 12px;
+          top: 8px;
+          left: 15px;
+          border: none;
+          color: $sw-color-brand-primary;
+        }
+      }
+    }
+  }
+}

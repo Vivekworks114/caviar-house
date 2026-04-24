@@ -1,0 +1,15 @@
+#sw-order-retoure-line-item-grid .sw-data-grid__actions-menu,
+#sw-order-additional-retoure-line-item-grid .sw-data-grid__cell:first-child {
+    display: none;
+}
+
+.wlsp__additional-retoure-items-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 20px;
+}
+
+.wlsp__additional-retoure-items-grid {
+    margin-top: 10px;
+}

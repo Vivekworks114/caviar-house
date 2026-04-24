@@ -1,0 +1,46 @@
+/*
+Mailchimp Component
+===================
+Styling for Mailchimp newsletter integration.
+
+Converted from CaviarHouseCustomTheme LESS to Shopware 6 compatible SCSS.
+*/
+@import "../abstract";
+@import "../mixins";
+
+#mc_embed_signup {
+
+  &.euro {
+
+    label {
+      color: $brand-primary;
+
+      a {
+        color: darken($brand-primary, 20%);
+      }
+
+    }
+
+  }
+
+}
+
+body .mc-modal {
+  bottom: 80px;
+}
+
+#mc_embed_signup {
+  label {
+    color: $brand-primary;
+
+    a {
+      text-decoration: underline;
+    }
+
+  }
+
+  input[type="submit"] {
+    background-color: $brand-primary;
+  }
+
+}

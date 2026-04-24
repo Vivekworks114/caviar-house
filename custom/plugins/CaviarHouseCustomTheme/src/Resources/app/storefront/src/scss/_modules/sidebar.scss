@@ -1,0 +1,11 @@
+@media screen and (min-width: $tabletViewportWidth) {
+
+  .no--sidebar .sidebar--categories-navigation {
+    display: none;
+  }
+
+  .no--sidebar.is--ctl-listing .sidebar-main + .content--wrapper {
+    margin-left: 0;
+  }
+
+}

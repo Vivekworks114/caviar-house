@@ -1,0 +1,19 @@
+/*
+Captcha honeypot components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for captcha elements, honeypot fields, and form security components.
+*/
+
+// TODO: Add captcha honeypot styles from original LESS file
+
+.c-firstname-confirmation {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

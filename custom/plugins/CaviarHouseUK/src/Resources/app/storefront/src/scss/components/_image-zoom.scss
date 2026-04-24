@@ -1,0 +1,63 @@
+/*
+Image zoom components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for image zoom functionality, magnification, and zoom controls.
+*/
+
+// TODO: Add image zoom styles from original LESS file
+/*
+Image-zoom
+====================================================
+Defines the styles for the Shopware 5 image-zoom element.
+
+It displays a magnifying glass when hovering the article images on the product detail page.
+
+The functionality is provided by the `jquery.image-zoom.js` file.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.js--img-zoom--container {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.js--img-zoom--lens {
+  @include border-radius();
+  display: none;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid $border-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.js--img-zoom--flyout {
+  @include unitize-width(460);
+  @include unitize-height(340);
+  @include unitize(-490, 16, right);
+  @include border-radius();
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: $zindex-image-zoom-flyout;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid $border-color;
+}
+
+.js--img-zoom--title {
+  @include unitize-padding(5, 20);
+  @include unitize(font-size, 14);
+  @include unitize(line-height, 16);
+  @include secondary-gradient();
+  color: #fff;
+  font-weight: $font-bold-weight;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+}

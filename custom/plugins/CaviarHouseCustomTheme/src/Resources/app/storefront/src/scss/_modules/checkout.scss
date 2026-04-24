@@ -1,0 +1,11 @@
+.delivery_agb {
+  @include unitize(margin-top, 20);
+}
+
+body.cvh-swiss .basket--footer,
+body.cvh-swiss .basket--footer label,
+body.cvh-swiss .basket--footer .aggregation--list,
+body.cvh-swiss .basket--footer .aggregation--list .entry--total {
+color: white;
+}
+

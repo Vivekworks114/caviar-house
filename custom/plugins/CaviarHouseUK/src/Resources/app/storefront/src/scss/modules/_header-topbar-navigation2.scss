@@ -1,0 +1,64 @@
+// Header Topbar Navigation - Converted from AlphaTheme LESS
+// ==================================================
+
+@import "../abstract/variables";
+
+// Placeholder for header topbar navigation styles
+// Original file content would be converted here
+
+@mixin unitize($property, $value) {
+  #{$property}: #{$value}px;
+}
+
+@mixin unitize-multiple($topValue, $rightValue: $topValue, $bottomValue: $topValue, $leftValue: $rightValue, $baseValue: $rem-scale-factor, $property: padding) {
+  $emTopValue: ($topValue / $baseValue);
+  $emRightValue: ($rightValue / $baseValue);
+  $emBottomValue: ($bottomValue / $baseValue);
+  $emLeftValue: ($leftValue / $baseValue);
+
+  #{$property}: "#{$emTopValue}rem #{$emRightValue}rem #{$emBottomValue}rem #{$emLeftValue}rem";
+}
+
+@mixin unitize-padding($topValue, $rightValue: $topValue, $bottomValue: $topValue, $leftValue: $rightValue, $baseValue: $rem-scale-factor) {
+  @include unitize-multiple($topValue, $rightValue, $bottomValue, $leftValue, $baseValue, padding);
+}
+header.header-main.inline .top-bar {
+  @include unitize-padding(10, 0);
+
+  .cav-wrapper {
+    padding: 0 10px;
+
+    .container {
+      justify-content: space-between;
+      @include unitize(line-height, 14);
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      a.alpha_social i {
+        color: $text-color;
+        line-height: 28px;
+      }
+
+    }
+
+    .header-nav {
+      align-items: center;
+      column-gap: 20px;
+      display: flex;
+
+      a.navigation--link {
+        color:$text-color;
+      }
+
+    }
+
+    .top-bar--language {
+      float: right;
+    }
+
+  }
+
+}

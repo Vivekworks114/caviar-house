@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block base_header %}
+    {% sw_include '@Storefront/storefront/layout/header/header-minimal.html.twig' %}
+{% endblock %}
+
+{% block base_navigation %}{% endblock %}
+
+{% block base_content %}
+
+    {% block worldline_saferpay_content %}
+        {% block worldline_saferpay_spinner %}
+            <div id="worldline-saferpay-spinner">
+                <div class="spinner-border" role="status"></div>
+            </div>
+        {% endblock %}
+    {% endblock %}
+
+    {% block worldline_saferpay_styles %}
+        <style>
+            .container-main {
+                display: flex;
+            }
+
+            #worldline-saferpay-spinner {
+                display: inline-block;
+                position: absolute;
+                margin-top: -3rem;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    {% endblock %}
+
+    {% block worldline_saferpay_scripts %}
+    {% endblock %}
+
+{% endblock %}
+
+{% block page_checkout_aside %}
+{% endblock %}
+
+{% block base_footer %}
+    {% sw_include '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
+{% endblock %}

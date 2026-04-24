@@ -1,0 +1,31 @@
+// Register - Converted from AlphaTheme LESS
+// ==================================================
+
+@import "../abstract/variables";
+
+// Placeholder for registration page styles
+// Original file content would be converted here
+
+.steps--content {
+  .steps--entry:not(.is--active) .text--inner {
+    color: #fff;
+  }
+}
+.register-notice {
+  border: 1px solid $border-color;
+  font-size: 17px;
+  margin-top: 30px;
+  padding: 15px 15px;
+}
+
+.register--gdpr-message {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 48em) {
+  .register--gdpr-message {
+    width: 34%;
+  }
+}

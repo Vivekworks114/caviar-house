@@ -1,0 +1,100 @@
+/*
+Product quick view components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for product quick view modals, product previews, and quick action interfaces.
+*/
+
+// TODO: Add product quick view styles from original LESS file
+/*
+Product quick-view
+======================================
+Defines the styling of the product quick-view page.
+
+The product quick-view is an element during the checkout process in Shopware 5 that displays the user the important information of his product without having to switch to the product detail page and interrupt the checkout.
+*/
+@import "../abstract";
+@import "../mixins";
+.product--quick-view {
+  @include unitize-padding(20, 20);
+
+  .quick-view--image {
+    @include unitize-height(200);
+    @include border-radius(3px);
+    @include unitize-margin(0, 0, 20, 0);
+    border: 1px solid $border-color;
+    width: 100%;
+    display: block;
+    position: relative;
+    float: left;
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+
+  .quick-view--title {
+    @include unitize(font-size, 18);
+    color: $brand-secondary-dark;
+    display: block;
+    font-weight: $font-bold-weight;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+
+  .quick-view--supplier {
+    @include unitize(font-size, 14);
+    @include unitize-padding(10, 0, 5, 0);
+    font-weight: $font-bold-weight;
+  }
+
+  .quick-view--description-title {
+    @include unitize(font-size, 16);
+    @include unitize(padding-bottom, 5);
+    @include unitize(margin-top, 15);
+    color: $brand-secondary-dark;
+    border-bottom: 1px solid $border-color;
+    font-weight: $font-bold-weight;
+    clear: both;
+  }
+
+  .quick-view--description {
+    @include unitize(font-size, 14);
+    @include unitize(padding-top, 10);
+    color: $brand-secondary;
+  }
+
+  .quick-view--description,
+  .quick-view--description > p {
+    margin: 0;
+  }
+}
+
+@media screen and(min-width: $phone-landscape-viewport-width) {
+  .product--quick-view {
+    @include unitize-padding(20, 20);
+
+    .quick-view--image {
+      width: 50%;
+    }
+
+    .quick-view--header {
+      @include unitize(padding-left, 20);
+      width: 50%;
+      float: right;
+    }
+
+    .quick-view--description-title {
+      margin-top: 0;
+    }
+  }
+}

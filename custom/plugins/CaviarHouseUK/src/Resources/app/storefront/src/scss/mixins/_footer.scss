@@ -1,0 +1,29 @@
+// Footer Mixins - Converted from AlphaTheme LESS
+// ==================================================
+
+// TODO: Since this footer-gradient-mixin is also used in the header, consider renaming
+@mixin footer-background-color($color) {
+    @if type-of($color) == color {
+        background-color: $color;
+    }
+}
+
+/*
+TODO: Generally revise the mixin - if e.g. no @c is specified, simply omit it (i.e. the direction description)
+Also, the mixin is currently also applied when @a or @b are not colors, why?
+*/
+@mixin footer-background-gradient($color1, $color2, $direction: to bottom) {
+    @if type-of($color1) == color and type-of($color2) == color {
+        background: linear-gradient(#{$direction}, #{$color1} 0%, #{$color2} 100%);
+    }
+}
+
+@mixin footer-logo-position($position) {
+    @if $position == center {
+        margin: 0 auto;
+    } @else if $position == left {
+        float: left;
+    } @else if $position == right {
+        float: right;
+    }
+}

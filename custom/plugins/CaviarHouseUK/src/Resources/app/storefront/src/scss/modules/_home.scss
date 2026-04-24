@@ -1,0 +1,29 @@
+/*
+==================================================
+Homepage Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add homepage styling, hero sections, and homepage widgets from the original Responsive theme.
+*/
+/*
+Home
+==============================================
+Defines the styling of the home-page content elements.
+*/
+@import "../abstract";
+@import "../mixins";
+
+.content--home {
+  @include unitize(margin-top, 20);
+
+  @media screen and (min-width: $tablet-viewport-width) {
+    @include unitize(margin-top, 30);
+  }
+
+  @media screen and (min-width: $desktop-viewport-width) {
+    @include unitize(margin-top, 50);
+  }
+}

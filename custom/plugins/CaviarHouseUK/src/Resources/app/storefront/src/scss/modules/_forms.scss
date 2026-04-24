@@ -1,0 +1,162 @@
+/*
+==================================================
+Forms Module
+==================================================
+
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+This is a placeholder file that needs content from the original LESS file.
+
+TODO: Add form styling, input fields, buttons, and form validation from the original Responsive theme.
+*/
+/*
+Forms
+==========================================
+Defines the general form element styles.
+
+It contains the components as: `capacha`, `description`, `required information` etc.
+*/
+@import "../abstract";
+@import "../mixins";
+
+// General
+.forms--content {
+  width: 100%;
+
+  .forms--headline {
+    @include unitize(margin-bottom, 20);
+
+    .forms--title {
+      @include unitize(margin-top, 0);
+    }
+
+    .forms--text {
+      p { @include unitize(margin-bottom, 12); }
+    }
+  }
+
+  // Margin alert message
+  .alert {
+    @include unitize-margin(30, 0, 0, 0);
+  }
+
+  .forms--field {
+    @include unitize(margin-bottom, 5);
+    width: 100%;
+  }
+
+  input {
+    @include unitize(margin-bottom, 10);
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+  }
+
+  textarea {
+    @include unitize(margin-bottom, 10);
+    width: 100%;
+  }
+
+  .field--select {
+    @include unitize(margin-bottom, 10);
+  }
+
+  .btn {
+    float: right;
+  }
+
+  .buttons {
+    @include clearfix();
+  }
+
+  .strasse {
+    margin-right: 2%;
+    width: 80%;
+    float: left;
+  }
+
+  .nr {
+    width: 18%;
+    float: left;
+  }
+
+  .plz {
+    margin-right: 2%;
+    width: 28%;
+    float: left;
+  }
+
+  .ort {
+    @include clearfix();
+    width: 70%;
+    float: left;
+  }
+
+  .forms--required {
+    @include unitize(font-size, 12);
+    @include unitize(margin-bottom, 10);
+  }
+
+  .forms--description {
+    @include unitize-margin(-8, 0, 10, 0, 16);
+    clear: both;
+  }
+
+  .forms--captcha {
+
+    strong.captcha--notice {
+      @include unitize(margin-bottom, 8);
+      display: block;
+    }
+
+  }
+
+  .forms--checkbox {
+    label {
+      @include unitize(-2, 16, top);
+      position: relative;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+    }
+  }
+
+}
+
+@media screen and (min-width: $tablet-viewport-width) {
+
+  .forms--content {
+    @include unitize(margin-top, 45);
+
+    input {
+      @include unitize(margin-bottom, 15);
+    }
+
+    textarea {
+      @include unitize(margin-bottom, 15);
+    }
+
+    .forms--captcha {
+
+      strong.captcha--notice {
+        @include unitize(margin-bottom, 16);
+      }
+
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+
+  .forms--content {
+    @include unitize(margin-top, 45);
+
+    // Margin alert message
+    .alert {
+      @include unitize-margin(0, 0, 0, 0, 16);
+    }
+  }
+
+}

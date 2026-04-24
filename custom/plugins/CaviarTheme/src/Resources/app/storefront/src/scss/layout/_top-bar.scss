@@ -1,0 +1,118 @@
+.top-bar{
+    background: #083f3a;
+    display: block !important;
+    min-height: 96px;
+}
+
+.top-bar-nav{
+    color: #fff;
+    min-height: 96px;
+    padding: 0 20px;
+    max-width: 1359px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-announcement-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    gap: 18px;
+}
+
+.top-bar-logo-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.top-bar-logo-img {
+    width: 214px;
+    height: 92.92px;
+    max-width: 214px;
+}
+
+.top-bar-message {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .01em;
+    color: #fff;
+    margin-bottom: 26px;
+}
+
+.top-bar-meta {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 26px;
+}
+
+.top-bar-locator {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.top-bar-locator-icon {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    svg {
+        width: 12px;
+        height: 12px;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 1;
+    }
+}
+
+.top-bar-locale {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-bar-flag {
+    width: 14px;
+    height: 10px;
+    display: inline-block;
+    svg {
+        width: 14px;
+        height: 10px;
+        display: block;
+    }
+}
+
+.top-bar-locale-text {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+}
+
+@include media-breakpoint-up(md) {
+    .top-bar-nav {
+        min-height: 96px;
+        padding: 0 20px;
+    }
+}
+@include media-breakpoint-up(lg) {
+    .top-bar-announcement-row { justify-content: space-between; }
+}

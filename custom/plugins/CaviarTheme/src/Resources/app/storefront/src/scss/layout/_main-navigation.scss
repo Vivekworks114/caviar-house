@@ -1,0 +1,105 @@
+
+/* Main navigation */
+.nav-main {
+    border-bottom: none;
+    background: #fff;
+    margin-bottom: 0;
+}
+
+.caviar-main-nav-row {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 88px;
+    gap: 16px;
+    padding: 0;
+}
+
+.main-navigation-menu {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.main-navigation-menu .navbar-collapse {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.main-navigation-menu-list {
+    height: 100%;
+    align-items: flex-end;
+}
+
+/* Main navigation link */
+.main-navigation-link {
+    font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 16px;
+    color: #1f1f1f;
+    text-align: center;
+    padding: 0 18px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+
+    &.active{
+        color: #1f1f1f;
+    }
+
+    &:hover,
+    &:focus{
+        color: #0f5d55;
+    }
+
+    &.home-link {
+        display: none;
+    }
+    &:first-child{
+        padding-left: 0;
+    }
+}
+
+.caviar-nav-actions {
+    display: inline-flex;
+    align-items: flex-start;
+    align-self: flex-start;
+    gap: 14px;
+    flex-shrink: 0;
+    margin-top: 21px;
+}
+
+.caviar-nav-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: #1f1f1f;
+    text-decoration: none;
+    img,
+    svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+}
+
+
+
+@include media-breakpoint-up(lg) {
+
+    .main-navigation-menu {
+        margin-left: 0;
+        flex: 1 1 auto;
+    }
+
+    .main-navigation-menu-list {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+}

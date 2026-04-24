@@ -1,0 +1,20 @@
+/*
+Container components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles container layouts and grid system components.
+*/
+
+// TODO: Add container styles from original LESS file
+@import "../abstract";
+@import "../mixins";
+
+.container {
+  @include clearfix();
+  @include unitize-max-width(1260, 16);
+  background: #fff;
+  margin: 0 auto;
+  width: 100%;
+}

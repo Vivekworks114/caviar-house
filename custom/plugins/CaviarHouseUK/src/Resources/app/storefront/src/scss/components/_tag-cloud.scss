@@ -1,0 +1,58 @@
+/*
+Tag cloud components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for tag clouds, tag collections, and related navigation elements.
+*/
+
+// TODO: Add tag cloud styles from original LESS file
+/*
+Tagcloud
+=============================================
+The tagcloud element shows recent keywords inside a box, ordered in importance by font-size.
+```
+<div class="panel has--border tagcloud--content">
+    <div class="panel--body is--wide tagcloud">
+        <a href="#" title="tagcloud-item" class="tag0">Tagcloud-Item</a>
+        <a href="#" title="tagcloud-item" class="tag1">Tagcloud-Item</a>
+        <a href="#" title="tagcloud-item" class="tag2">Tagcloud-Item</a>
+        <a href="#" title="tagcloud-item" class="tag3">Tagcloud-Item</a>
+    </div>
+</div>
+```
+*/
+@import "../abstract";
+@import "../mixins";
+.tagcloud {
+
+  a {
+    color: $text-color;
+    @include unitize-margin(0, 10, 0, 0);
+
+    &:hover { color: $link-color; }
+  }
+
+  .tag0 {
+    @include unitize(font-size, 21);
+    @include unitize(line-height, 21);
+  }
+
+  .tag1 {
+    @include unitize(font-size, 16);
+    @include unitize(line-height, 16);
+    font-weight: $font-bold-weight;
+  }
+
+  .tag2 {
+    @include unitize(font-size, 14);
+    @include unitize(line-height, 14);
+  }
+
+  .tag3 {
+    @include unitize(font-size, 12);
+    @include unitize(line-height, 12);
+    font-weight: $font-bold-weight;
+  }
+}

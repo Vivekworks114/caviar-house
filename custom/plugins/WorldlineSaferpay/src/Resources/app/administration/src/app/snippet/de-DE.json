@@ -1,0 +1,34 @@
+{
+    "saferpay": {
+        "retoureBase": {
+            "title": "Saferpay Rückerstattungen",
+            "tabTitle": "Saferpay Rückerstattungen",
+            "modal": {
+                "title": "Über Saferpay rückerstatten",
+                "trigger": "Über Saferpay rückerstatten",
+                "send": "Rückerstatten",
+                "addAdditionalRetoureItems": "Zusätzliches Rückerstattungsposten hinzufügen",
+                "contextMenuDelete": "Position löschen"
+            },
+            "column": {
+                "retoureComment": "Kommentar",
+                "retoureQuantity": "Anzahl",
+                "additionalRetoureItemLabel": "Bezeichnung",
+                "additionalRetoureItemPrice": "Preis"
+            },
+            "placeholder": {
+                "retoureComment": "Kommentar",
+                "noRetoureComment": "Kein Kommentar",
+                "noRetoureAdditionalItemLabel": "Bezeichnung"
+            }
+        },
+        "retoureDetail": {
+            "cardTitle": "Rückerstattung",
+            "column": {
+                "reason": "Kommentar",
+                "unitPrice": "Einzelpreis"
+            },
+            "summaryLabelAmount": "Summe"
+        }
+    }
+}

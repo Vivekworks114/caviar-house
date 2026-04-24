@@ -1,0 +1,55 @@
+/*
+Label components
+====================================
+Converted from Responsive theme LESS to Shopware 6 compatible SCSS.
+
+This is a placeholder file that needs content from the original LESS file.
+Handles styling for labels, form labels, and descriptive text elements.
+*/
+
+// TODO: Add label styles from original LESS file
+/*
+Labels
+===================================================================
+######Creates a label for displaying a status.
+
+To work properly the `span`-element needs the general `label`-class and a color scheme option:
+
+Options: `success`, `info`, `warning`, `error`.
+```
+<span class="label success">Success!</span>
+<span class="label info">Info!</span>
+<span class="label warning">Warning!</span>
+<span class="label error">Error!</span>
+```
+*/
+@import "../abstract";
+@import "../mixins";
+.label {
+  @include unitize-padding(3, 8);
+  @include unitize-margin(0, 5);
+  @include unitize($label-font-size, 16, font-size);
+  @include unitize(line-height, 18);
+  @include border-radius();
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  color: $label-color;
+  background: $text-color;
+
+  &.success {
+    background: $highlight-success;
+  }
+
+  &.info {
+    background: $highlight-info;
+  }
+
+  &.warning {
+    background: $highlight-notice;
+  }
+
+  &.error {
+    background: $highlight-error;
+  }
+}

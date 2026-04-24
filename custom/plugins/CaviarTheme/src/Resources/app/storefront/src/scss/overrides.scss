@@ -1,0 +1,20 @@
+/*
+Override variable defaults
+==================================================
+This file is used to override default SCSS variables from the Shopware Storefront or Bootstrap.
+
+Because of the !default flags, theme variable overrides have to be declared beforehand.
+https://getbootstrap.com/docs/5.3/customize/sass/#variable-defaults
+*/
+
+$sw-color-brand-primary: #cbae5d;
+$sw-color-brand-primary-hover: #cbae5d;
+$border-color: $sw-color-brand-primary;
+$sw-color-brand-secondary: #2b2525;
+$footer-bg: $sw-color-brand-secondary;
+$sw-text-color: #000;
+$sw-theme-gray: #e5e5e5;
+$sw-white-color: #fff;
+
+
+$myasset-path: '/bundles/caviartheme/assets' !default;

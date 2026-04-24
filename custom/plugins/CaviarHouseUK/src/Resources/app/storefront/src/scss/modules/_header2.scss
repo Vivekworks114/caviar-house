@@ -1,0 +1,391 @@
+// Header - Converted from AlphaTheme LESS
+// ==================================================
+
+// Import variables and mixins
+@import "../abstract/variables";
+
+// Unitize mixin for Shopware 6 compatibility
+@mixin unitize($property, $value) {
+    #{$property}: #{$value}px;
+}
+
+@mixin unitize-height($value) {
+    height: #{$value}px;
+}
+
+@mixin unitize-padding($top, $right: $top, $bottom: $top, $left: $right) {
+    padding: #{$top}px #{$right}px #{$bottom}px #{$left}px;
+}
+
+// Define breakpoints (adapt to Shopware 6 breakpoints)
+$tablet-viewport-width: 768px !default;
+$desktop-viewport-width: 1200px !default;
+$phone-landscape-viewport-width: 576px !default;
+
+body.is--minimal-header .logo-main {
+    .logo--shop {
+        max-width: 25%;
+    }
+
+    .logo--supportinfo {
+        color: #fff;
+    }
+}
+
+header.header-main {
+    border-bottom: none;
+    padding-bottom: 0;
+    @include unitize(margin-bottom, 50);
+
+    .top-bar {
+        background-color: $brand-primary;
+
+        .container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .alpha_social i {
+            color: $brand-primary;
+            font-size: 20px;
+            margin-left: 10px;
+
+            &.icon--mail {
+                font-size: 18px;
+            }
+        }
+
+        .field--select .select-field.country-text,
+        .select-field select:hover,
+        .js--fancy-select select:hover {
+            color: $text-color;
+        }
+    }
+}
+
+.account--menu-container .is--primary {
+    color: #000;
+}
+
+.shop--navigation {
+    .navigation--entry {
+        &.entry--notepad,
+        &.entry--search {
+            display: inline-flex;
+        }
+
+        &.entry--account {
+            margin-right: 0;
+        }
+
+        .icon--search {
+            @include unitize(font-size, 21);
+        }
+
+        .btn {
+            background-color: transparent;
+            background-image: none;
+            border: none;
+        }
+
+        .account--link.account--user-loggedin:after {
+            background-color: transparent;
+        }
+    }
+
+    .entry--menu-left {
+        .btn {
+            color: $brand-primary;
+        }
+    }
+
+    .icon--account,
+    .icon--basket,
+    .icon--heart,
+    .icon--search {
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .entry--search {
+        .is--active.btn {
+            background-color: transparent;
+        }
+
+        &.is--active .main-search--form {
+            padding-top: 0;
+            background: linear-gradient(to right, $brand-primary, darken($brand-primary, 10%));
+            background-color: $brand-primary;
+            @include unitize(top, 65);
+        }
+    }
+
+    .main-search--results {
+        @include unitize(top, 148);
+    }
+}
+
+footer.footer-main .bottom-bar {
+    @include unitize-padding(0, 10);
+}
+
+header.header-main.inline {
+    background: linear-gradient(to bottom, $brand-primary, darken($brand-primary, 10%));
+    background-color: $brand-primary;
+
+    .top-bar .container,
+    .container {
+        background-color: transparent;
+        position: relative;
+
+        .top-bar--navigation {
+            .navigation--entry,
+            .navigation--link {
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .logo-main {
+        left: calc((100% - 61px) / 2);
+        padding: 0;
+        position: absolute;
+        z-index: 5;
+        @include unitize(top, 7);
+        @include unitize-height(61);
+
+        @media screen and (min-width: $tablet-viewport-width) {
+            top: unset;
+            top: inherit;
+            @include unitize(bottom, 9);
+        }
+
+        .logo--shop {
+            width: 100%;
+            @include unitize-height(61);
+
+            .logo--link {
+                @include unitize-height(61);
+            }
+        }
+    }
+
+    nav.navigation-main {
+        background-color: transparent;
+        border-bottom: none;
+        @include unitize(margin-left, 120);
+        @include unitize(margin-top, 20);
+
+        .navigation--list-wrapper {
+            overflow: visible;
+        }
+
+        .submenu {
+            background-color: #fff;
+            box-shadow: 5px 5px 50px #5e5e5e;
+            display: none;
+            list-style: none;
+            position: absolute;
+
+            li {
+                @include unitize-padding(5, 5);
+            }
+
+            a {
+                color: $text-color;
+
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+        }
+
+        .navigation--entry:hover .submenu {
+            display: block;
+        }
+
+        .is--active .navigation--link,
+        .navigation--link {
+            color: $brand-primary;
+            background: none;
+            background-color: transparent;
+        }
+    }
+
+    .header--navigation {
+        display: inline-block;
+        float: right;
+
+        nav {
+            width: 100%;
+        }
+    }
+
+    &:after {
+        -webkit-box-shadow: 0 1px 28px rgba(33, 33, 33, .7);
+        -moz-box-shadow: 0 1px 28px rgba(33, 33, 33, .7);
+        box-shadow: 0 1px 28px rgba(33, 33, 33, .7);
+        content: '';
+        display: block;
+        @include unitize-height(13);
+        background: linear-gradient(to right, $brand-primary, darken($brand-primary, 10%));
+        background-color: $brand-primary;
+    }
+}
+
+.mobile--switches .top-bar--language .select-field.country-text {
+    @include unitize(width, 38);
+
+    select {
+        text-indent: inherit;
+    }
+}
+
+@media screen and (min-width: $phone-landscape-viewport-width) {
+    .shop--navigation {
+        .entry--search.minimal {
+            position: inherit;
+            width: calc(100% - 200px);
+            @include unitize(margin-right, 5);
+        }
+
+        .entry--search .main-search--form {
+            .main-search--field {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+// Tablet styling for the global shop header
+@media screen and (min-width: $tablet-viewport-width) {
+    body:not(.is--minimal-header) {
+        header.header-main {
+            @include unitize(margin-bottom, 35);
+
+            .top-bar--navigation {
+                // Language switcher
+                .top-bar--language {
+                    .country-text {
+                        width: auto;
+
+                        select {
+                            text-indent: unset;
+                            width: auto;
+                        }
+
+                        &:after {
+                            color: $text-color;
+                            content: "\e6d6";
+                            @include unitize(font-size, 15);
+                            @include unitize(line-height, 27);
+                        }
+                    }
+                }
+            }
+
+            .logo-main {
+                left: inherit;
+                padding-left: 0;
+                position: absolute;
+                z-index: 5;
+                width: auto;
+                @include unitize-height(100);
+
+                .logo--shop {
+                    width: 100%;
+                    @include unitize-height(100);
+
+                    .logo--link {
+                        @include unitize-height(100);
+                    }
+                }
+            }
+
+            &.inline {
+                .header--navigation {
+                    @include unitize-padding(17, 0, 10);
+                }
+
+                nav.navigation-main {
+                    display: inline-block;
+
+                    .is--active .navigation--link {
+                        font-weight: normal;
+                    }
+
+                    .is--active .submenu .navigation--link {
+                        color: #333;
+                    }
+
+                    .navigation--entry {
+                        &.top-btn {
+                            background-color: $brand-primary;
+
+                            &:hover {
+                                background-color: #231F20;
+                            }
+
+                            .navigation--link {
+                                color: #333;
+
+                                &:hover {
+                                    color: $brand-primary;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            background-color: #231F20;
+                        }
+                    }
+                }
+
+                .logo-main {
+                    padding-left: 0;
+                    @include unitize-height(100);
+
+                    .logo--shop {
+                        width: 100%;
+                        @include unitize-height(100);
+
+                        .logo--link {
+                            @include unitize-height(100);
+                        }
+                    }
+                }
+            }
+
+            .shop--navigation {
+                .entry--menu-left {
+                    display: none;
+                }
+
+                .entry--search.is--active .main-search--form {
+                    @include unitize(left, -256);
+                    @include unitize-padding(5);
+                    @include unitize(width, 400);
+                }
+
+                .entry--search.minimal {
+                    background-color: transparent;
+                    position: inherit;
+                    width: auto;
+                    margin-right: calc((100% - 825px) / 2);
+                }
+
+                .navigation--entry {
+                    .cart--link {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktop-viewport-width) {
+    .navigation--entry .cart--link {
+        @include unitize(padding-left, 34);
+    }
+}
