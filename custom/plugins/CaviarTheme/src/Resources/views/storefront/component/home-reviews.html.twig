@@ -1,0 +1,114 @@
+<section class="caviar-home-reviews" aria-label="Avis client placeholder">
+    <div class="caviar-home-reviews__container">
+        <div class="caviar-home-reviews__header">
+            <h2 class="caviar-home-reviews__title">Avis client placeholder</h2>
+            <div class="caviar-home-reviews__badge" aria-hidden="true">
+                <div class="caviar-home-reviews__badge-score">4,77</div>
+                <div class="caviar-home-reviews__badge-label">Tres bien</div>
+                <div class="caviar-home-reviews__badge-sub">Protection acheteur</div>
+            </div>
+        </div>
+
+        <div class="caviar-home-reviews__track-wrap">
+            <button class="caviar-home-reviews__arrow caviar-home-reviews__arrow--left" type="button" aria-label="Previous reviews" data-reviews-prev>&lsaquo;</button>
+
+            {% set testimonials = [
+                {
+                    stars: '★★★★★',
+                    date: '12/03/2026',
+                    text: 'Caviar frais, conditionnement impeccable et livraison rapide. Tres belle experience.',
+                    author: 'Camille D.'
+                },
+                {
+                    stars: '★★★★★',
+                    date: '28/02/2026',
+                    text: 'Excellent gout et presentation elegante. Parfait pour un diner special en famille.',
+                    author: 'Nicolas P.'
+                },
+                {
+                    stars: '★★★★☆',
+                    date: '14/02/2026',
+                    text: 'Qualite tres bonne, service client reactif et conseils utiles avant commande.',
+                    author: 'Sarah M.'
+                },
+                {
+                    stars: '★★★★★',
+                    date: '31/01/2026',
+                    text: 'Commande recue dans les temps, produits haut de gamme et tres bien emballes.',
+                    author: 'Julien R.'
+                },
+                {
+                    stars: '★★★★★',
+                    date: '19/01/2026',
+                    text: 'Selection remarquable et saveurs subtiles. Je recommanderai sans hesitation.',
+                    author: 'Amelie T.'
+                }
+            ] %}
+
+            <div class="caviar-home-reviews__track" data-reviews-track>
+                {% for testimonial in testimonials %}
+                    <article class="caviar-home-review-card" data-review-index="{{ loop.index0 }}">
+                        <div class="caviar-home-review-card__head">
+                            <div class="caviar-home-review-card__stars" aria-hidden="true">{{ testimonial.stars }}</div>
+                            <div class="caviar-home-review-card__date">{{ testimonial.date }}</div>
+                        </div>
+                        <p class="caviar-home-review-card__text">{{ testimonial.text }}</p>
+                        <div class="caviar-home-review-card__foot">
+                            <span class="caviar-home-review-card__author">{{ testimonial.author }}</span>
+                            <span class="caviar-home-review-card__verified" aria-hidden="true">&#10038;</span>
+                            <a href="#" class="caviar-home-review-card__more">Voir plus</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+
+            <button class="caviar-home-reviews__arrow caviar-home-reviews__arrow--right" type="button" aria-label="Next reviews" data-reviews-next>&rsaquo;</button>
+        </div>
+    </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var track = document.querySelector('[data-reviews-track]');
+    if (!track) return;
+
+    var cards = Array.prototype.slice.call(track.querySelectorAll('[data-review-index]'));
+    var prevBtn = track.parentElement.querySelector('[data-reviews-prev]');
+    var nextBtn = track.parentElement.querySelector('[data-reviews-next]');
+    var total = cards.length;
+    var startIndex = 0;
+
+    if (!total) return;
+
+    var getVisibleCount = function () {
+      if (window.matchMedia('(max-width: 575.98px)').matches) return 1;
+      if (window.matchMedia('(max-width: 767.98px)').matches) return 2;
+      return 3;
+    };
+
+    var render = function () {
+      var visibleCount = getVisibleCount();
+      cards.forEach(function (card, index) {
+        var normalized = (index - startIndex + total) % total;
+        card.style.display = normalized < visibleCount ? '' : 'none';
+      });
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        startIndex = (startIndex - 1 + total) % total;
+        render();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        startIndex = (startIndex + 1) % total;
+        render();
+      });
+    }
+
+    render();
+    window.addEventListener('resize', render);
+  });
+</script>

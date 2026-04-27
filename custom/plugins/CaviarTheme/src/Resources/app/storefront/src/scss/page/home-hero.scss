@@ -22,7 +22,6 @@
   left: 56px;
   top: 228px;
   width: 420px;
-  min-height: 402px;
   background: #0d4b43;
   padding: 24px 28px 30px;
   color: #fff;
@@ -31,9 +30,9 @@
 
 .caviar-home-hero__overlay-eyebrow {
   margin: 0 0 12px;
-  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-family: "ITC Franklin Gothic Std", "dax-regular", "Franklin Gothic Medium", Arial, sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 1px;
   line-height: 1;
   text-transform: uppercase;
@@ -45,7 +44,7 @@
   margin: 0 0 18px;
   font-family: "Roxie Rossa", $caviar-font-heading;
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.2;
   letter-spacing: 2px;
   color: #fff;
@@ -58,9 +57,9 @@
   max-width: 280px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-family: "ITC Franklin Gothic Std", "dax-regular", "Franklin Gothic Medium", Arial, sans-serif;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
   text-align: center;
@@ -79,9 +78,9 @@
   padding: 8px 16px;
   color: #fff;
   text-decoration: none;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "ITC Franklin Gothic Std", "dax-regular", "Franklin Gothic Medium", Arial, sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0.01em;
   margin: 0 auto;
@@ -117,7 +116,7 @@
 
 .caviar-home-claim__inner {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   padding: 50px 144px 0;
 }
 
@@ -125,7 +124,8 @@
   margin: 0;
   width: 100%;
   text-align: center;
-  font-family: $caviar-font-heading;
+  font-family: "Roxie Rossa", $caviar-font-heading;
+  font-weight: 400;
   font-size: 42px;
   line-height: 0.9;
   letter-spacing: 0;
@@ -195,12 +195,16 @@
 
 .caviar-home-block-a {
   width: 100%;
-  background: $caviar-color-bg;
+  background-color: $caviar-color-bg;
+  background-image: url('/bundles/caviartheme/storefront/assets/img/bg-second.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
   padding: 56px 0 42px;
 }
 
 .caviar-home-block-a__container {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   min-height: 640px;
   padding: 0 80px;
@@ -211,7 +215,11 @@
 }
 
 .caviar-home-block-a__content {
-  max-width: 458px;
+  max-width: 447px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
@@ -240,32 +248,42 @@
 }
 
 .caviar-home-block-a__title {
-  margin: 0 0 20px;
-  font-family: $caviar-font-heading;
-  font-size: 48px;
-  line-height: 0.95;
-  color: $caviar-color-text;
-  text-transform: uppercase;
+  width: 396px;
+  max-width: 100%;
+  margin: 0 0 28px;
+  font-family: "Roxie Rossa", $caviar-font-heading;
+  font-weight: 100;
+  font-size: 46px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: #000000;
+  text-transform: none;
 }
 
 .caviar-home-block-a__text {
-  margin: 0 0 42px;
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 31px;
-  line-height: 1.2;
-  letter-spacing: 0;
-  color: $caviar-color-text;
+  width: 447px;
+  max-width: 100%;
+  margin: 0px 0 90px;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", "Libre Franklin", "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  color: #21272a;
 }
 
 .caviar-home-block-a__cta {
-  min-width: 166px;
-  height: 43px;
+  width: 293px;
+  max-width: 100%;
+  min-height: 47px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 30px;
-  border: 1px solid #7f7f7f;
-  background: transparent;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid #3f3f3e;
+  border-radius: 4px;
+  background: #fcfdfd;
   color: #2f2f2f;
   text-decoration: none;
   font-family: "Roboto", Arial, sans-serif;
@@ -305,6 +323,7 @@
 
   .caviar-home-block-a__content {
     max-width: 100%;
+    padding-left: 0;
   }
 
   .caviar-home-block-a__content::before {
@@ -315,15 +334,21 @@
   }
 
   .caviar-home-block-a__title {
-    font-size: 34px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 40px;
   }
 
   .caviar-home-block-a__text {
+    width: 100%;
+    margin-bottom: 36px;
     font-size: 20px;
+    letter-spacing: 0.5px;
   }
 
   .caviar-home-block-a__cta {
-    min-width: 166px;
+    width: 100%;
+    max-width: 293px;
   }
 
   .caviar-home-block-a__media {
@@ -335,38 +360,60 @@
 .caviar-home-featured {
   width: 100%;
   background: $caviar-color-bg;
-  padding: 40px 0 72px;
+  padding: 34px 0 58px;
 }
 
 .caviar-home-featured__container {
-  max-width: 1440px;
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
-  min-height: 720px;
+  min-height: 0;
   padding: 0 80px;
 }
 
 .caviar-home-featured__title {
-  margin: 0 0 30px;
+  margin: 0 0 18px;
   text-align: left;
   font-family: "Roxie Rossa", $caviar-font-heading;
   font-weight: 400;
-  font-size: 42px;
+  font-size: 52px;
   line-height: 1.2;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
   color: $caviar-color-text;
 }
 
 .caviar-home-featured__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
   gap: 14px;
-  margin-bottom: 34px;
+  width: max-content;
+  margin-bottom: 42px;
+}
+
+.caviar-home-featured__slider {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.caviar-home-featured__slider::-webkit-scrollbar {
+  display: none;
 }
 
 .caviar-home-featured-card {
   border: 1px solid $caviar-color-border;
   background: $caviar-color-bg;
   position: relative;
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  min-height: 0;
+  padding: 5px 5px 0;
 }
 
 .caviar-home-featured-card__media-link {
@@ -375,102 +422,146 @@
 
 .caviar-home-featured-card__media {
   width: 100%;
-  height: 250px;
+  height: 236px;
   object-fit: contain;
   display: block;
   background: $caviar-color-surface;
 }
 
 .caviar-home-featured-card__body {
-  padding: 14px 10px 10px;
+  padding: 12px 10px 10px;
   text-align: center;
 }
 
 .caviar-home-featured-card__badge {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 10px;
+  left: 9px;
   z-index: 2;
-  padding: 6px 10px;
+  padding: 3px 10px;
   border-radius: 999px;
-  background: #e9e9e9;
-  color: #6a6a6a;
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1;
+  background: #ececec;
+  color: #828282;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .caviar-home-featured-card__heart {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
   z-index: 2;
-  color: #9a9a9a;
-  font-size: 19px;
+  color: #b1b1b1;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 1;
 }
 
 .caviar-home-featured-card__name {
-  margin: 0 0 6px;
-  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  margin: 0 0 5px;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.4px;
   color: $caviar-color-text;
+  text-align: center;
+}
+
+.caviar-home-featured-card__desc {
+  margin: 0 0 5px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #666;
+  text-align: center;
 }
 
 .caviar-home-featured-card__meta {
-  margin: 0 0 12px;
-  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
-  font-size: 14px;
+  margin: 0 0 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 10px;
   font-weight: 400;
+  font-style: normal;
   line-height: 1.1;
   letter-spacing: 0.5px;
   color: #008d7a;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .caviar-home-featured-card__price-row {
-  border-top: 1px solid #d7d7d7;
-  margin: 0 -10px;
-  padding: 8px 8px 0;
+  border-top: 1px solid #e1e1e1;
+  margin: 0 -9px;
+  padding: 6px 0 6px 8px;
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: auto auto 1fr auto;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   text-align: left;
+  min-height: 44px;
 }
 
 .caviar-home-featured-card__price-prefix {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1;
-  letter-spacing: 0.01em;
-  color: #8a8a8a;
+  letter-spacing: 0;
+  color: #757575;
+  white-space: nowrap;
 }
 
 .caviar-home-featured-card__price-value {
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 18px;
+  font-size: 34px;
   font-weight: 700;
-  line-height: 1.1;
+  font-style: normal;
+  line-height: 0.92;
   letter-spacing: 0;
   color: $caviar-color-text;
+  white-space: nowrap;
 }
 
 .caviar-home-featured-card__add {
-  justify-self: end;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #c9c9c9;
-  border-radius: 4px;
-  background: #fff;
-  color: #8b8b8b;
-  font-size: 13px;
+  justify-self: stretch;
+  align-self: stretch;
+  width: 36px;
+  border: 0;
+  border-left: 1px solid #d5d5d5;
+  border-right: 1px solid #e1e1e1;
+  background: #f7f7f7;
+  color: transparent;
+  font-size: 0;
   line-height: 1;
   padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caviar-home-featured-card__add::before {
+  content: "+";
+  width: 15px;
+  height: 15px;
+  border: 1px solid #9f9f9f;
+  border-radius: 2px;
+  color: #8f8f8f;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .caviar-home-featured__actions {
@@ -478,19 +569,42 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  gap: 20px;
+  min-height: 36px;
 }
 
 .caviar-home-featured__pagination {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 16px;
-  color: #8a8a8a;
+  font-size: 18px;
+  color: #9b9b9b;
 }
 
-.caviar-home-featured__pagination .is-active {
+.caviar-home-featured__pagination-pages {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.caviar-home-featured__pagination-btn,
+.caviar-home-featured__pagination-page {
+  border: 0;
+  background: transparent;
+  color: #9b9b9b;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.caviar-home-featured__pagination-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.caviar-home-featured__pagination-page.is-active {
   color: #008d7a;
 }
 
@@ -499,123 +613,278 @@
   right: 0;
   bottom: 0;
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  text-transform: none;
   color: #6f6f6f;
   text-decoration: underline;
 }
 
 @include media-breakpoint-down(lg) {
   .caviar-home-featured {
-    padding: 20px 0 56px;
+    padding: 20px 0 48px;
   }
 
   .caviar-home-featured__container {
-    min-height: auto;
+    min-height: 0;
     padding: 0 20px;
+    width: 100%;
+  }
+
+  .caviar-home-featured__slider {
+    width: 100%;
+    margin: 0;
   }
 
   .caviar-home-featured__title {
-    font-size: 34px;
-    margin-bottom: 32px;
+    font-size: 42px;
+    margin-bottom: 24px;
     text-align: left;
   }
 
   .caviar-home-featured__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .caviar-home-featured-card {
+    flex-basis: 236px;
+  }
+
+  .caviar-home-featured-card__name {
+    font-size: 16px;
+  }
+
+  .caviar-home-featured-card__price-prefix {
+    font-size: 13px;
+  }
+
+  .caviar-home-featured-card__price-value {
+    font-size: 24px;
   }
 
   .caviar-home-featured-card__media {
-    height: 220px;
+    height: 206px;
+  }
+
+  .caviar-home-featured__pagination,
+  .caviar-home-featured__cta-link {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .caviar-home-featured__grid {
+    margin-bottom: 22px;
+  }
+
+  .caviar-home-featured-card {
+    flex-basis: 214px;
+  }
+
+  .caviar-home-featured-card__media {
+    height: 190px;
+  }
+
+  .caviar-home-featured-card__name {
+    font-size: 14px;
+  }
+
+  .caviar-home-featured-card__desc {
+    font-size: 11px;
+  }
+
+  .caviar-home-featured-card__price-prefix {
+    font-size: 12px;
+  }
+
+  .caviar-home-featured-card__price-value {
+    font-size: 20px;
+  }
+
+  .caviar-home-featured__actions {
+    align-items: flex-start;
+    min-height: 56px;
+  }
+
+  .caviar-home-featured__pagination {
+    gap: 14px;
+    font-size: 15px;
+  }
+
+  .caviar-home-featured__cta-link {
+    font-size: 14px;
   }
 }
 
 @include media-breakpoint-down(sm) {
+  .caviar-home-featured__container {
+    padding: 0 12px;
+  }
+
+  .caviar-home-featured__title {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+
   .caviar-home-featured__grid {
-    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .caviar-home-featured-card {
+    flex: 0 0 minmax(220px, 85vw);
   }
 
   .caviar-home-featured__actions {
-    padding-bottom: 24px;
+    justify-content: space-between;
+    min-height: 44px;
   }
 
   .caviar-home-featured__cta-link {
     position: static;
+    font-size: 13px;
   }
 }
 
 .caviar-home-categories {
   width: 100%;
   background: $caviar-color-bg;
-  padding: 0 0 80px;
+  padding: 18px 0 86px;
 }
 
 .caviar-home-categories__container {
-  max-width: 1440px;
+  max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
-  min-height: 826px;
-  padding: 80px;
+  min-height: 0;
+  padding: 0 80px;
   display: grid;
-  grid-template-columns: 458px 1fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: minmax(280px, 320px) minmax(0, 1fr);
+  gap: 44px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .caviar-home-categories__title {
-  margin: 0 0 24px;
-  font-family: $caviar-font-heading;
-  font-size: 52px;
-  line-height: 0.95;
+  margin: 0;
+  font-family: "Roxie Rossa", $caviar-font-heading;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0.2px;
   color: $caviar-color-text;
 }
 
 .caviar-home-categories__text {
-  margin: 0 0 40px;
-  font-family: $caviar-font-body;
-  font-size: 18px;
-  line-height: 1.55;
-  color: $caviar-color-text;
+  margin: 0;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0;
+  color: #2f2f2f;
 }
 
-.caviar-home-categories__cta {
-  min-width: 302px;
-  min-height: 46px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.caviar-home-categories__divider {
+  width: 210px;
+  height: 2px;
+  margin: 18px 0 24px;
+  background: #232323;
 }
 
-.caviar-home-categories__cards {
+.caviar-home-categories__gallery {
+  width: min(840px, 100%);
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  justify-self: end;
+}
+
+.caviar-home-categories__slides {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
+  background: #fff;
 }
 
-.caviar-home-category-card {
-  background: $caviar-color-bg;
+.caviar-home-categories__slide {
+  min-width: 0;
 }
 
-.caviar-home-category-card__media-link {
+.caviar-home-categories__slide-link {
   display: block;
 }
 
-.caviar-home-category-card__media {
+.caviar-home-categories__slide-image {
   width: 100%;
-  height: 604px;
+  height: 390px;
   object-fit: cover;
   display: block;
   background: $caviar-color-surface;
 }
 
-.caviar-home-category-card__caption {
-  padding: 14px 10px 0;
-  text-align: center;
-  font-family: $caviar-font-body;
-  font-size: 15px;
-  letter-spacing: 0.08em;
+.caviar-home-categories__slide-label {
+  margin: 0;
+  padding: 14px 0 0;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: $caviar-color-text;
+}
+
+.caviar-home-categories__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  padding: 18px 30px 0;
+}
+
+.caviar-home-categories__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: start;
+}
+
+.caviar-home-categories__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #aaa;
+}
+
+.caviar-home-categories__dots span.is-active {
+  background: #0e927f;
+}
+
+.caviar-home-categories__pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  color: #9b9b9b;
+  justify-self: start;
+}
+
+.caviar-home-categories__pager-btn {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.caviar-home-categories__pager .is-active {
+  color: #0e927f;
 }
 
 @include media-breakpoint-down(lg) {
@@ -631,30 +900,628 @@
   }
 
   .caviar-home-categories__title {
-    font-size: 36px;
+    font-size: 38px;
+  }
+
+  .caviar-home-categories__divider {
+    margin: 20px 0 24px;
   }
 
   .caviar-home-categories__text {
-    font-size: 16px;
-    margin-bottom: 28px;
+    font-size: 24px;
+    margin-bottom: 0;
   }
 
-  .caviar-home-categories__cta {
-    min-width: 220px;
-  }
-
-  .caviar-home-category-card__media {
+  .caviar-home-categories__slide-image {
     height: 420px;
+  }
+
+  .caviar-home-categories__slide-label {
+    font-size: 26px;
+  }
+
+  .caviar-home-categories__controls {
+    padding: 18px 10px 0;
   }
 }
 
 @include media-breakpoint-down(sm) {
-  .caviar-home-categories__cards {
+  .caviar-home-categories__slides {
     grid-template-columns: 1fr;
-    gap: 14px;
   }
 
-  .caviar-home-category-card__media {
+  .caviar-home-categories__slide-image {
     height: 320px;
+  }
+
+  .caviar-home-categories__slide-label {
+    font-size: 22px;
+  }
+
+  .caviar-home-categories__controls {
+    padding: 16px 0 0;
+  }
+
+  .caviar-home-categories__pager {
+    gap: 14px;
+    font-size: 16px;
+  }
+}
+
+.caviar-home-reviews {
+  width: 100%;
+  background: $caviar-color-bg;
+  padding: 22px 0 40px;
+}
+
+.caviar-home-reviews__container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.caviar-home-reviews__header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 18px;
+}
+
+.caviar-home-reviews__title {
+  margin: 0;
+  font-family: "Roxie Rossa", $caviar-font-heading;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: $caviar-color-text;
+}
+
+.caviar-home-reviews__badge {
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  border-radius: 2px;
+  padding: 6px 10px;
+  min-width: 116px;
+  line-height: 1.1;
+  color: #222;
+}
+
+.caviar-home-reviews__badge-score {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.caviar-home-reviews__badge-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.caviar-home-reviews__badge-sub {
+  font-size: 9px;
+  color: #666;
+}
+
+.caviar-home-reviews__track-wrap {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 30px;
+  align-items: center;
+  gap: 16px;
+}
+
+.caviar-home-reviews__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.caviar-home-reviews__arrow {
+  border: 0;
+  background: transparent;
+  color: #b3b3b3;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.caviar-home-review-card {
+  background: #edf4f1;
+  border: 1px solid #d7e7e1;
+  border-radius: 14px;
+  min-height: 148px;
+  padding: 12px 18px 10px;
+}
+
+.caviar-home-review-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.caviar-home-review-card__stars {
+  font-size: 14px;
+  line-height: 1;
+  color: #1e8f7d;
+  letter-spacing: 1px;
+}
+
+.caviar-home-review-card__date {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #3f3f3f;
+}
+
+.caviar-home-review-card__text {
+  margin: 0 0 8px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #2d3236;
+}
+
+.caviar-home-review-card__foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.caviar-home-review-card__author {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.caviar-home-review-card__verified {
+  font-size: 12px;
+  color: #111;
+  line-height: 1;
+}
+
+.caviar-home-review-card__more {
+  margin-left: auto;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2f6f66;
+  text-decoration: underline;
+}
+
+@include media-breakpoint-down(lg) {
+  .caviar-home-reviews__container {
+    padding: 0 20px;
+  }
+
+  .caviar-home-reviews__title {
+    font-size: 40px;
+  }
+
+  .caviar-home-review-card__text {
+    font-size: 22px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .caviar-home-reviews__track-wrap {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .caviar-home-reviews__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .caviar-home-reviews__arrow {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .caviar-home-reviews__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .caviar-home-reviews__title {
+    font-size: 34px;
+  }
+
+  .caviar-home-reviews__track {
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-home-review-card__text {
+    font-size: 18px;
+  }
+}
+
+.caviar-home-stores {
+  position: relative;
+  width: 100%;
+  min-height: 455px;
+  overflow: hidden;
+  background: #0f1218;
+}
+
+.caviar-home-stores__media,
+.caviar-home-stores__image,
+.caviar-home-stores__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.caviar-home-stores__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caviar-home-stores__overlay {
+  background: linear-gradient(0deg, rgba(8, 10, 14, 0.45), rgba(8, 10, 14, 0.45));
+}
+
+.caviar-home-stores__content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 150px 20px 0;
+  text-align: center;
+}
+
+.caviar-home-stores__title {
+  margin: 0;
+  font-family: "Roxie Rossa", $caviar-font-heading;
+  font-size: 58px;
+  line-height: 1.12;
+  font-weight: 400;
+  color: #fff;
+}
+
+.caviar-home-stores__title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.caviar-home-stores__cta {
+  margin-top: 22px;
+  width: 286px;
+  max-width: 100%;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+
+@include media-breakpoint-down(lg) {
+  .caviar-home-stores {
+    min-height: 390px;
+  }
+
+  .caviar-home-stores__content {
+    padding-top: 124px;
+  }
+
+  .caviar-home-stores__title {
+    font-size: 44px;
+  }
+
+}
+
+@include media-breakpoint-down(sm) {
+  .caviar-home-stores {
+    min-height: 330px;
+  }
+
+  .caviar-home-stores__content {
+    padding-top: 92px;
+  }
+
+  .caviar-home-stores__title {
+    font-size: 34px;
+  }
+
+  .caviar-home-stores__cta {
+    width: 240px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+}
+
+.caviar-home-benefits {
+  width: 100%;
+  background: #f6f8f7;
+  padding: 40px 0px 40px;
+}
+
+.caviar-home-benefits__container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.caviar-home-benefits__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px;
+  padding-bottom: 30px;
+}
+
+.caviar-home-benefit-item {
+  text-align: center;
+  max-width: 270px;
+  margin: 0 auto;
+}
+
+.caviar-home-benefit-item__icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10px;
+  color: #1a8d78;
+}
+
+.caviar-home-benefit-item__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.caviar-home-benefit-item__title {
+  margin: 0 0 6px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #232323;
+}
+
+.caviar-home-benefit-item__title span {
+  color: #149b84;
+}
+
+.caviar-home-benefit-item__text {
+  margin: 0;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.42;
+  color: #4b4b4b;
+}
+
+.caviar-home-newsletter {
+  border-top: 1px solid #dedede;
+  display: grid;
+  grid-template-columns: 1fr 560px;
+  align-items: center;
+  gap: 26px;
+  padding: 30px 0 34px;
+}
+
+.caviar-home-newsletter__title {
+  margin: 0 0 8px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #242424;
+}
+
+.caviar-home-newsletter__text {
+  margin: 0;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.24;
+  color: #3f3f3f;
+}
+
+.caviar-home-newsletter__form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px;
+  border: 1px solid #d6d6d6;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.caviar-home-newsletter__input {
+  height: 42px;
+  border: 0;
+  padding: 0 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 13px;
+}
+
+.caviar-home-newsletter__submit {
+  border: 0;
+  background: #0f1114;
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+@include media-breakpoint-down(lg) {
+  .caviar-home-benefits__container {
+    padding: 0 20px;
+  }
+
+  .caviar-home-benefits__items {
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .caviar-home-benefit-item__title {
+    font-size: 20px;
+  }
+
+  .caviar-home-benefit-item__text {
+    font-size: 15px;
+  }
+
+  .caviar-home-newsletter {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .caviar-home-newsletter__title {
+    font-size: 34px;
+  }
+
+  .caviar-home-newsletter__text {
+    font-size: 24px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .caviar-home-benefits__items {
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-home-newsletter__form {
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-home-newsletter__submit {
+    height: 42px;
+  }
+}
+
+.caviar-home-footer-links {
+  width: 100%;
+  background: #055149;
+  color: #fff;
+  padding: 44px 0 34px;
+  min-height: 448px;
+}
+
+.caviar-home-footer-links__container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.caviar-home-footer-links__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.caviar-home-footer-links__brand-crest {
+  width: 220px;
+  height: auto;
+  display: block;
+  filter: none;
+  object-fit: contain;
+  margin-bottom: 2px;
+}
+
+.caviar-home-footer-links__social-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.caviar-home-footer-links__nous {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.95;
+}
+
+.caviar-home-footer-links__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.caviar-home-footer-links__social a {
+  color: #fff;
+  text-decoration: none;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.caviar-home-footer-links__social a svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.caviar-home-footer-links__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.caviar-home-footer-links__links {
+  padding: 16px 0 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.caviar-home-footer-links__links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.caviar-home-footer-links__links li {
+  margin: 0 0 14px;
+}
+
+.caviar-home-footer-links__links a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+.caviar-home-footer-links__copyright {
+  padding-top: 14px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@include media-breakpoint-down(md) {
+  .caviar-home-footer-links {
+    padding: 28px 0 20px;
+  }
+
+  .caviar-home-footer-links__container {
+    padding: 0 20px;
+  }
+
+  .caviar-home-footer-links__top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .caviar-home-footer-links__links {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }

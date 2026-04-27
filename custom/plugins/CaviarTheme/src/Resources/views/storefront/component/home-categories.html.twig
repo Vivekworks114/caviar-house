@@ -1,54 +1,103 @@
 <section class="caviar-home-categories" aria-label="{{ 'CaviarTheme.home.categories.aria'|trans|sw_sanitize }}">
-    {% set categoryFallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600' viewBox='0 0 900 600'%3E%3Crect width='900' height='600' fill='%23f3f1ed'/%3E%3Cellipse cx='360' cy='300' rx='220' ry='180' fill='%23d8cfbf'/%3E%3Cellipse cx='560' cy='340' rx='180' ry='150' fill='%23c9beac'/%3E%3C/svg%3E" %}
+    {% set categoryFallbackImage = asset('/bundles/caviartheme/storefront/assets/hero/home-hero-banner.png') %}
     <div class="caviar-home-categories__container">
         <div class="caviar-home-categories__intro">
-            <h2 class="caviar-home-categories__title">{{ 'CaviarTheme.home.categories.title'|trans|sw_sanitize }}</h2>
-            <p class="caviar-home-categories__text">{{ 'CaviarTheme.home.categories.text'|trans|sw_sanitize }}</p>
-            <a class="caviar-home-categories__cta caviar-btn" href="{{ path('frontend.navigation.page', { navigationId: context.salesChannel.navigationCategoryId }) }}">
-                {{ 'CaviarTheme.home.categories.cta'|trans|sw_sanitize }}
-            </a>
+            <h2 class="caviar-home-categories__title">CAVIAR HOUSE,<br>Placeholder</h2>
+            <div class="caviar-home-categories__divider" aria-hidden="true"></div>
+            <p class="caviar-home-categories__text">
+                Découvrez notre sélection du produit,<br>
+                pour un moment de dégustation<br>
+                privilégié, à offrir ou à partager
+            </p>
         </div>
 
-        <div class="caviar-home-categories__cards">
-            {% set dynamicCategories = homeCategories ?? null %}
-            {% if dynamicCategories and dynamicCategories|length > 0 %}
-                {% for category in dynamicCategories|slice(0, 2) %}
-                    <article class="caviar-home-category-card">
-                        <a href="{{ seoUrl('frontend.navigation.page', { navigationId: category.id }) }}" class="caviar-home-category-card__media-link">
-                            {% if category.media and category.media.url %}
-                                <img
-                                    src="{{ category.media.url }}"
-                                    class="caviar-home-category-card__media"
-                                    alt="{{ category.translated.name }}"
-                                    loading="lazy"
-                                >
-                            {% else %}
-                                <img
-                                    src="{{ categoryFallbackImage }}"
-                                    class="caviar-home-category-card__media"
-                                    alt="{{ 'CaviarTheme.home.categories.cardAlt'|trans|sw_sanitize }}"
-                                    loading="lazy"
-                                >
-                            {% endif %}
-                        </a>
-                        <div class="caviar-home-category-card__caption">{{ category.translated.name }}</div>
-                    </article>
-                {% endfor %}
-            {% else %}
-                {% for i in 1..2 %}
-                    <article class="caviar-home-category-card">
-                        <a href="#" class="caviar-home-category-card__media-link">
+        <div class="caviar-home-categories__gallery">
+            {% set dynamicCategories = homeCategories ?? [] %}
+            {% set baseSlides = dynamicCategories|length > 0 ? dynamicCategories|slice(0, 5) : [] %}
+            {% set fallbackSlide = baseSlides|length > 0 ? baseSlides|first : null %}
+            {% set slideCount = 5 %}
+
+            <div class="caviar-home-categories__slides" data-categories-slider data-total="{{ slideCount }}">
+                {% for index in 0..4 %}
+                    {% set category = baseSlides[index] is defined ? baseSlides[index] : fallbackSlide %}
+                    {% set categoryImage = category and category.media and category.media.url ? category.media.url : categoryFallbackImage %}
+                    {% set categoryName = category and category.translated and category.translated.name ? category.translated.name : 'Caviar' %}
+                    {% set categoryUrl = category and category.id ? seoUrl('frontend.navigation.page', { navigationId: category.id }) : '#' %}
+                    <article class="caviar-home-categories__slide" data-slide-index="{{ index }}">
+                        <a href="{{ categoryUrl }}" class="caviar-home-categories__slide-link">
                             <img
-                                src="{{ categoryFallbackImage }}"
-                                class="caviar-home-category-card__media"
-                                alt="{{ 'CaviarTheme.home.categories.cardAlt'|trans|sw_sanitize }}"
+                                src="{{ categoryImage }}"
+                                class="caviar-home-categories__slide-image"
+                                alt="{{ categoryName }}"
                                 loading="lazy"
                             >
                         </a>
-                        <div class="caviar-home-category-card__caption">{{ 'CaviarTheme.home.categories.cardLabel'|trans|sw_sanitize }}</div>
+                        <h3 class="caviar-home-categories__slide-label">{{ categoryName|upper }}</h3>
                     </article>
                 {% endfor %}
-            {% endif %}
+            </div>
+
+            <div class="caviar-home-categories__controls">
+                <div class="caviar-home-categories__dots" data-slider-dots aria-hidden="true">
+                    {% for dotIndex in 1..slideCount %}
+                        <span class="{{ dotIndex == 1 ? 'is-active' : '' }}"></span>
+                    {% endfor %}
+                </div>
+                <div class="caviar-home-categories__pager">
+                    <button type="button" class="caviar-home-categories__pager-btn" data-slider-prev aria-label="Previous category">&lsaquo;</button>
+                    <span class="is-active" data-slider-current>1 / {{ slideCount }}</span>
+                    <button type="button" class="caviar-home-categories__pager-btn" data-slider-next aria-label="Next category">&rsaquo;</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var slider = document.querySelector('[data-categories-slider]');
+    if (!slider) return;
+
+    var slides = Array.prototype.slice.call(slider.querySelectorAll('[data-slide-index]'));
+    var dotsWrap = slider.parentElement.querySelector('[data-slider-dots]');
+    var dots = dotsWrap ? Array.prototype.slice.call(dotsWrap.querySelectorAll('span')) : [];
+    var currentLabel = slider.parentElement.querySelector('[data-slider-current]');
+    var prevBtn = slider.parentElement.querySelector('[data-slider-prev]');
+    var nextBtn = slider.parentElement.querySelector('[data-slider-next]');
+    var total = slides.length;
+    var current = 0;
+
+    if (!total) return;
+
+    var render = function () {
+      slides.forEach(function (slide, index) {
+        var shouldShow = index === current || (total > 1 && index === (current + 1) % total);
+        slide.style.display = shouldShow ? '' : 'none';
+      });
+
+      dots.forEach(function (dot, index) {
+        dot.classList.toggle('is-active', index === current);
+      });
+
+      if (currentLabel) {
+        currentLabel.textContent = (current + 1) + ' / ' + total;
+      }
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        current = (current - 1 + total) % total;
+        render();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        current = (current + 1) % total;
+        render();
+      });
+    }
+
+    render();
+  });
+</script>

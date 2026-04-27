@@ -33,9 +33,9 @@
             <name>featuredProductsLimit</name>
             <label>Number of products</label>
             <label lang="de-DE">Anzahl Produkte</label>
-            <defaultValue>4</defaultValue>
+            <defaultValue>15</defaultValue>
             <min>1</min>
-            <max>12</max>
+            <max>24</max>
         </input-field>
 
         <input-field type="text">

@@ -2,7 +2,7 @@
 
 {% block cms_breadcrumb %}
     {% if app.request.attributes.get('_route') != 'frontend.home.page' %}
-        {{ parent() }}
+        {# {{ parent() }} #}
     {% endif %}
 {% endblock %}
 
@@ -13,7 +13,11 @@
         {% sw_include '@CaviarTheme/storefront/component/home-placeholder-a.html.twig' %}
         {% sw_include '@CaviarTheme/storefront/component/home-featured-products.html.twig' %}
         {% sw_include '@CaviarTheme/storefront/component/home-categories.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-reviews.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-stores-banner.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-benefits-newsletter.html.twig' %}
+        {% sw_include '@CaviarTheme/storefront/component/home-footer-links.html.twig' %}
     {% endif %}
 
-    {{ parent() }}
+    {# {{ parent() }} #}
 {% endblock %}

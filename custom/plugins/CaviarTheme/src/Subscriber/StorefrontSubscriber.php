@@ -125,13 +125,13 @@ class StorefrontSubscriber implements EventSubscriberInterface
 
     private function getFeaturedLimit(): int
     {
-        $configuredLimit = (int) ($this->systemConfigService->get('CaviarTheme.config.featuredProductsLimit') ?? 4);
+        $configuredLimit = (int) ($this->systemConfigService->get('CaviarTheme.config.featuredProductsLimit') ?? 15);
 
         if ($configuredLimit < 1) {
-            return 4;
+            return 15;
         }
 
-        return min($configuredLimit, 12);
+        return min($configuredLimit, 24);
     }
 
     private function applyFeaturedSourceFilters(Criteria $criteria): void
