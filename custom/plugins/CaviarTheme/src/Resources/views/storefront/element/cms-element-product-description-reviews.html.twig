@@ -1,0 +1,271 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-product-description-reviews.html.twig' %}
+
+{% block element_product_description_reviews %}
+    {% set config = element.fieldConfig.elements %}
+    {% set product = element.data.product %}
+    {% set descriptionTabId = 'description-tab-' ~ product.id %}
+    {% set descriptionTabHref = '#description-tab-' ~ product.id ~ '-pane' %}
+    {% set descriptionTabContent = 'description-tab-' ~ product.id ~ '-pane' %}
+    {% set ingredientsTabId = 'ingredients-tab-' ~ product.id %}
+    {% set ingredientsTabHref = '#ingredients-tab-' ~ product.id ~ '-pane' %}
+    {% set ingredientsTabContent = 'ingredients-tab-' ~ product.id ~ '-pane' %}
+    {% set adviceTabId = 'advice-tab-' ~ product.id %}
+    {% set adviceTabHref = '#advice-tab-' ~ product.id ~ '-pane' %}
+    {% set adviceTabContent = 'advice-tab-' ~ product.id ~ '-pane' %}
+    {% set reviewTabId = 'review-tab-' ~ product.id %}
+    {% set reviewTabHref = '#review-tab-' ~ product.id ~ '-pane' %}
+    {% set reviewTabContent = 'review-tab-' ~ product.id ~ '-pane' %}
+    {% set productCustomFields = product.translated.customFields ?? product.customFields ?? {} %}
+    {% set ingredientsContent = productCustomFields.ingredients_allergenes
+        ?? productCustomFields.ingredientsAllergenes
+        ?? productCustomFields.ingredients
+        ?? '' %}
+    {% set adviceContent = productCustomFields.conseils_degustation
+        ?? productCustomFields.conseilsDegustation
+        ?? productCustomFields.tasting_advice
+        ?? productCustomFields.tastingAdvice
+        ?? '' %}
+
+    {% if element.data.product %}
+        <div class="product-detail-tabs cms-element-{{ element.type }}{% if config.alignment.value %} has-vertical-alignment{% endif %}">
+            {% if config.alignment.value %}
+                <div class="cms-element-alignment{% if config.alignment.value == 'center' %} align-self-center{% elseif config.alignment.value == 'flex-end' %} align-self-end{% else %} align-self-start{% endif %}">
+            {% endif %}
+                <div class="card card-tabs">
+                    <div class="cms-card-header card-header product-detail-tab-navigation product-description-reviews-tab-navigation">
+                        <ul class="nav nav-tabs product-detail-tab-navigation-list" id="product-detail-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link description-tab"
+                                   id="{{ descriptionTabId }}"
+                                   data-bs-toggle="tab"
+                                   data-off-canvas-tabs="true"
+                                   href="{{ descriptionTabHref }}"
+                                   role="tab"
+                                   aria-controls="{{ descriptionTabContent }}"
+                                   aria-selected="true">
+                                    <span>{{ 'CaviarTheme.pdp.tabs.description'|trans|sw_sanitize }}</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link product-detail-tab-navigation-link ingredients-tab"
+                                   id="{{ ingredientsTabId }}"
+                                   data-bs-toggle="tab"
+                                   data-off-canvas-tabs="true"
+                                   href="{{ ingredientsTabHref }}"
+                                   role="tab"
+                                   aria-controls="{{ ingredientsTabContent }}"
+                                   aria-selected="false">
+                                    <span>{{ 'CaviarTheme.pdp.tabs.ingredients'|trans|sw_sanitize }}</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link product-detail-tab-navigation-link advice-tab"
+                                   id="{{ adviceTabId }}"
+                                   data-bs-toggle="tab"
+                                   data-off-canvas-tabs="true"
+                                   href="{{ adviceTabHref }}"
+                                   role="tab"
+                                   aria-controls="{{ adviceTabContent }}"
+                                   aria-selected="false">
+                                    <span>{{ 'CaviarTheme.pdp.tabs.advice'|trans|sw_sanitize }}</span>
+                                </a>
+                            </li>
+
+                            {% if config('core.listing.showReview') %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link review-tab"
+                                       id="{{ reviewTabId }}"
+                                       data-bs-toggle="tab"
+                                       data-off-canvas-tabs="true"
+                                       href="{{ reviewTabHref }}"
+                                       role="tab"
+                                       aria-controls="{{ reviewTabContent }}"
+                                       aria-selected="false">
+                                        <span>{{ 'CaviarTheme.pdp.tabs.reviews'|trans|sw_sanitize }}</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+                    <div class="product-detail-tabs-content card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show {% if (element.data.ratingSuccess != 1) and (element.data.ratingSuccess != -1) %}active{% endif %}"
+                                 id="{{ descriptionTabContent }}"
+                                 role="tabpanel"
+                                 aria-labelledby="{{ descriptionTabId }}">
+                                {% sw_include '@Storefront/storefront/component/product/description.html.twig' with {
+                                    product: element.data.product
+                                } %}
+                            </div>
+
+                            <div class="tab-pane fade"
+                                 id="{{ ingredientsTabContent }}"
+                                 role="tabpanel"
+                                 aria-labelledby="{{ ingredientsTabId }}">
+                                <div class="product-detail-description tab-pane-container">
+                                    <div class="product-detail-description-text">
+                                        {% if ingredientsContent %}
+                                            {{ ingredientsContent|raw }}
+                                        {% else %}
+                                            {{ product.translated.description|raw }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade"
+                                 id="{{ adviceTabContent }}"
+                                 role="tabpanel"
+                                 aria-labelledby="{{ adviceTabId }}">
+                                <div class="product-detail-description tab-pane-container">
+                                    <div class="product-detail-description-text">
+                                        {% if adviceContent %}
+                                            {{ adviceContent|raw }}
+                                        {% else %}
+                                            {{ product.translated.description|raw }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if config('core.listing.showReview') %}
+                                <div class="tab-pane fade show {% if (element.data.ratingSuccess == 1) or (element.data.ratingSuccess == -1) %}active{% endif %}"
+                                     id="{{ reviewTabContent }}"
+                                     role="tabpanel"
+                                     aria-labelledby="{{ reviewTabId }}">
+                                    {% sw_include '@Storefront/storefront/component/review/review.html.twig' with {
+                                        reviews: element.data.reviews,
+                                        product: element.data.product
+                                    } %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <section class="caviar-pdp-knowhow" aria-label="{{ 'CaviarTheme.pdp.knowhow.eyebrow'|trans|sw_sanitize }}">
+                    <div class="caviar-pdp-knowhow__media" aria-hidden="true">
+                        <img src="{{ asset('bundles/caviartheme/assets/header/logo-latest.svg') }}" alt="" loading="lazy">
+                    </div>
+                    <div class="caviar-pdp-knowhow__content">
+                        <p class="caviar-pdp-knowhow__eyebrow">- {{ 'CaviarTheme.pdp.knowhow.eyebrow'|trans|sw_sanitize }} -</p>
+                        <h3 class="caviar-pdp-knowhow__title">{{ 'CaviarTheme.pdp.knowhow.title'|trans|sw_sanitize }}</h3>
+                        <a class="caviar-pdp-knowhow__cta" href="#">{{ 'CaviarTheme.pdp.knowhow.cta'|trans|sw_sanitize }}</a>
+                    </div>
+                </section>
+
+                <section class="caviar-pdp-faq" aria-label="FAQ">
+                    <h3 class="caviar-pdp-faq__title">{{ 'CaviarTheme.caviars.faq.title'|trans|sw_sanitize }}</h3>
+
+                    <div class="caviar-pdp-faq__top">
+                        <div class="caviar-pdp-faq__media" aria-hidden="true">
+                            <span class="caviar-pdp-faq__placeholder"></span>
+                        </div>
+
+                        <div class="caviar-pdp-faq__questions">
+                            <button type="button" class="caviar-pdp-faq__question">
+                                <span>{{ 'CaviarTheme.caviars.faq.q1'|trans|sw_sanitize }}</span>
+                                <span aria-hidden="true">+</span>
+                            </button>
+                            <button type="button" class="caviar-pdp-faq__question">
+                                <span>{{ 'CaviarTheme.caviars.faq.q2'|trans|sw_sanitize }}</span>
+                                <span aria-hidden="true">+</span>
+                            </button>
+                            <button type="button" class="caviar-pdp-faq__question">
+                                <span>{{ 'CaviarTheme.caviars.faq.q3'|trans|sw_sanitize }}</span>
+                                <span aria-hidden="true">+</span>
+                            </button>
+                            <button type="button" class="caviar-pdp-faq__question">
+                                <span>{{ 'CaviarTheme.caviars.faq.q4'|trans|sw_sanitize }}</span>
+                                <span aria-hidden="true">+</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="caviar-pdp-faq__content">
+                        <article class="caviar-pdp-faq__entry">
+                            <h4>{{ 'CaviarTheme.caviars.faq.entry1.title'|trans|sw_sanitize }}</h4>
+                            <p>{{ 'CaviarTheme.caviars.faq.entry1.text'|trans|sw_sanitize }}</p>
+                            <a href="#">{{ 'CaviarTheme.caviars.common.readMore'|trans|sw_sanitize }}</a>
+                        </article>
+
+                        <article class="caviar-pdp-faq__entry">
+                            <h4>{{ 'CaviarTheme.caviars.faq.entry2.title'|trans|sw_sanitize }}</h4>
+                            <p>{{ 'CaviarTheme.caviars.faq.entry2.text'|trans|sw_sanitize }}</p>
+                            <a href="#">{{ 'CaviarTheme.caviars.common.readMore'|trans|sw_sanitize }}</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="caviar-pdp-selected" aria-label="{{ 'CaviarTheme.pdp.selected.title'|trans|sw_sanitize }}">
+                    <h3 class="caviar-pdp-selected__title">{{ 'CaviarTheme.pdp.selected.title'|trans|sw_sanitize }}</h3>
+                    <div class="caviar-pdp-selected__grid">
+                        {% for i in 1..4 %}
+                            <article class="caviar-home-featured-card caviar-pdp-selected__card">
+                                <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                                <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
+                                <span class="caviar-home-featured-card__media-link">
+                                    <img src="{{ asset('/bundles/caviartheme/assets/img/caviar_pro.png') }}" class="caviar-home-featured-card__media" alt="{{ 'CaviarTheme.home.featured.cardName'|trans|sw_sanitize }}" loading="lazy">
+                                </span>
+                                <div class="caviar-home-featured-card__body">
+                                    <h4 class="caviar-home-featured-card__name">{{ 'CaviarTheme.home.featured.cardName'|trans|sw_sanitize }}</h4>
+                                    <p class="caviar-home-featured-card__meta">{{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}</p>
+                                    <div class="caviar-home-featured-card__price-row">
+                                        <div class="caviar-home-featured-card__price-row-inner">
+                                            <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                            <span class="caviar-home-featured-card__price-value">{{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}</span>
+                                        </div>
+                                        <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <section class="caviar-home-benefits caviar-all-caviars-benefits-only" aria-label="Services">
+                    <div class="caviar-home-benefits__container">
+                        <div class="caviar-home-benefits__items">
+                            <article class="caviar-home-benefit-item">
+                                <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                    <img src="{{ asset('bundles/caviartheme/assets/img/boxlogo1.png') }}" alt="" loading="lazy">
+                                </div>
+                                <h3 class="caviar-home-benefit-item__title">Livraison offerte dès <span>350€</span> d'achat</h3>
+                                <p class="caviar-home-benefit-item__text">Chaine du froid garantie, à la date de votre<br>choix</p>
+                            </article>
+
+                            <article class="caviar-home-benefit-item">
+                                <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                    <img src="{{ asset('bundles/caviartheme/assets/img/Contact Icon.png') }}" alt="" loading="lazy">
+                                </div>
+                                <h3 class="caviar-home-benefit-item__title">Conseils d’experts</h3>
+                                <p class="caviar-home-benefit-item__text">Notre équipe répond à toutes vos<br>questions</p>
+                            </article>
+
+                            <article class="caviar-home-benefit-item">
+                                <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                    <img src="{{ asset('bundles/caviartheme/assets/img/fishl-logo.png') }}" alt="" loading="lazy">
+                                </div>
+                                <h3 class="caviar-home-benefit-item__title">L’art d’offrir</h3>
+                                <p class="caviar-home-benefit-item__text">Choisissez votre coffret et votre<br>message personnalisé</p>
+                            </article>
+
+                            <article class="caviar-home-benefit-item">
+                                <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                    <img src="{{ asset('bundles/caviartheme/assets/img/payment-logo.png') }}" alt="" loading="lazy">
+                                </div>
+                                <h3 class="caviar-home-benefit-item__title">Paiements sécurisés</h3>
+                                <p class="caviar-home-benefit-item__text">et paiement en plusieurs fois avec<br>Alma</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            {% if config.verticalAlign.value %}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -16,5 +16,21 @@
             <tag name="kernel.event_subscriber"/>
         </service>
 
+        <service id="CaviarTheme\Controller\AllCaviarsController" public="true">
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="sales_channel.product.repository"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="CaviarTheme\Controller\AllSalmonsController" public="true">
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="sales_channel.product.repository"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
     </services>
 </container>

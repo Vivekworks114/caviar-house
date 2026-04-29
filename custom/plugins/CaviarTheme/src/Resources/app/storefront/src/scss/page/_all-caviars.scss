@@ -1,0 +1,906 @@
+.caviar-all-caviars-page {
+  background: #f5f5f5;
+  padding: 26px 0 34px;
+}
+
+.caviar-all-caviars-page__container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.caviar-all-caviars-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 34px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 12px;
+  color: #6f6f6f;
+}
+.caviar-all-caviars-page__breadcrumb a {
+  color: #6f6f6f;
+  text-decoration: none;
+}
+
+.caviar-all-caviars-page__hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.caviar-all-caviars-page__title {
+  margin: 0 0 18px;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 50px;
+  font-weight: 300;
+  color: #232323;
+  line-height: 1.04;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.caviar-all-caviars-page__text {
+  margin: 0 0 12px;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #2e2e2e;
+}
+
+.caviar-all-caviars-page__read-more {
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 13px;
+  color: #2f2f2f;
+  text-decoration: underline;
+}
+
+.caviar-all-caviars-page__media img {
+  width: min(100%, 700px);
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+}
+
+.caviar-all-caviars-page__highlights {
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+}
+
+.caviar-all-caviars-page__highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 14px;
+  color: #4a4a4a;
+  padding: 10px 4px;
+}
+
+.caviar-all-caviars-page__highlight-icon {
+  display: inline-flex;
+  width: 18px;
+  justify-content: center;
+  color: #6c6c6c;
+}
+
+.caviar-all-caviars-products {
+  padding-top: 70px;
+}
+
+.caviar-all-caviars-products__title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  color: #242424;
+}
+
+.caviar-all-caviars-products__chips {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.caviar-all-caviars-products__chip {
+  border: 0;
+  border-radius: 999px;
+  background: #e9eaec;
+  color: #666;
+  text-transform: uppercase;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 14px;
+}
+
+.caviar-all-caviars-products__chip.is-active {
+  background: #dfe1e3;
+}
+
+.caviar-all-caviars-products__filters {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.caviar-all-caviars-products__filter-item {
+  position: relative;
+}
+
+.caviar-all-caviars-products__filter {
+  border: 0;
+  border-bottom: 1px solid #bebebe;
+  background: transparent;
+  min-width: 110px;
+  text-align: left;
+  padding: 0 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 16px;
+  color: #4f4f4f;
+  cursor: pointer;
+}
+
+.caviar-all-caviars-products__filter-chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid #7a7a7a;
+  border-bottom: 1px solid #7a7a7a;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+.caviar-all-caviars-products__filter[aria-expanded="true"] .caviar-all-caviars-products__filter-chevron {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.caviar-all-caviars-products__filter-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  z-index: 4;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.caviar-all-caviars-products__filter-options {
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.caviar-all-caviars-products__filter-options li {
+  padding: 8px 12px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+.caviar-all-caviars-products__count {
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 16px;
+  color: #4f4f4f;
+}
+
+.caviar-all-caviars-products__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.caviar-all-caviars-products__subtitle {
+  margin: 0;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+.caviar-all-caviars-products__arrows {
+  display: inline-flex;
+  gap: 14px;
+}
+
+.caviar-all-caviars-products__arrows button {
+  border: 0;
+  background: transparent;
+  font-size: 50px;
+  color: #7d7d7d;
+  line-height: 1;
+  padding: 0;
+}
+
+.caviar-all-caviars-products__slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.caviar-all-caviars-products__slider::-webkit-scrollbar {
+  display: none;
+}
+
+.caviar-all-caviars-products__card {
+  flex: 0 0 250px;
+}
+
+.caviar-all-caviars-products__dots {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.caviar-all-caviars-products__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b8b8b8;
+}
+
+.caviar-all-caviars-products__dots span.is-active {
+  background: #0f8f7a;
+}
+
+.caviar-all-caviars-species {
+  margin-top: 24px;
+}
+
+.caviar-all-caviars-species--secondary {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+.caviar-all-caviars-species__title {
+  margin: 0 0 18px;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1f1f1f;
+}
+
+.caviar-all-caviars-species__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.caviar-all-caviars-species-card {
+  position: relative;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.caviar-all-caviars-species-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #e4e4e4;
+  color: #7a7a7a;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.caviar-all-caviars-species-card__heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #a1a1a1;
+  font-size: 16px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.caviar-all-caviars-species-card__media-link {
+  display: block;
+}
+
+.caviar-all-caviars-species-card__media,
+.caviar-all-caviars-species-card__placeholder {
+  width: 100%;
+  height: 205px;
+  display: block;
+  background: #cfd3d8;
+}
+
+.caviar-all-caviars-species-card__media {
+  object-fit: contain;
+}
+
+.caviar-all-caviars-species-card__placeholder {
+  position: relative;
+}
+
+.caviar-all-caviars-species-card__placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 105px;
+  height: 105px;
+  border: 9px solid #e5e8ec;
+  box-sizing: border-box;
+}
+
+.caviar-all-caviars-species-card__placeholder::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 88px;
+  height: 88px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(45deg, transparent 47%, #e5e8ec 47%, #e5e8ec 53%, transparent 53%),
+    linear-gradient(-45deg, transparent 47%, #e5e8ec 47%, #e5e8ec 53%, transparent 53%);
+}
+
+.caviar-all-caviars-species-card__body {
+  padding: 8px 8px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.caviar-all-caviars-species-card__name {
+  margin: 0 0 3px;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: #1f1f1f;
+  min-height: 43px;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.caviar-all-caviars-species-card__desc {
+  margin: 0 0 3px;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.15;
+  color: #4f4f4f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 18px;
+}
+
+.caviar-all-caviars-species-card__meta {
+  margin: 0 0 8px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #00a89a;
+}
+
+.caviar-all-caviars-species-card__price-row {
+  border-top: 1px solid #e1e1e1;
+  margin: 0 -8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  margin-top: auto;
+  width: calc(100% + 16px);
+}
+
+.caviar-all-caviars-species-card__price-row-inner {
+  flex: 1;
+  min-width: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 5px 8px 5px 11px;
+}
+
+.caviar-all-caviars-species-card__price-prefix {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: #727272;
+}
+
+.caviar-all-caviars-species-card__price-value {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  color: #1f1a17;
+}
+
+.caviar-all-caviars-species-card__add {
+  flex: 0 0 54px;
+  align-self: stretch;
+  width: 54px;
+  min-height: 40px;
+  border: 0;
+  background: #fff;
+  color: transparent;
+  font-size: 0;
+  line-height: 1;
+  margin-right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.caviar-all-caviars-species-card__add::before {
+  content: "";
+  width: 40px;
+  height: 35px;
+  background-image: url('/bundles/caviartheme/assets/img/lock-logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.caviar-all-caviars-species__more {
+  margin: 34px auto 0;
+  display: block;
+  width: max-content;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  color: #111;
+  text-decoration: none;
+}
+
+.caviar-all-caviars-guide {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 40% minmax(0, 1fr);
+  min-height: 150px;
+  background: #d0d2d5;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.caviar-all-caviars-guide__media {
+  overflow: hidden;
+}
+
+.caviar-all-caviars-guide__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.18) brightness(0.62);
+}
+
+.caviar-all-caviars-guide__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px 20px;
+}
+
+.caviar-all-caviars-guide__eyebrow {
+  margin: 0 0 4px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.6px;
+  color: #1f1f1f;
+}
+
+.caviar-all-caviars-guide__title {
+  margin: 0 0 6px;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1c1c1c;
+}
+
+.caviar-all-caviars-guide__cta {
+  min-width: 136px;
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 14px;
+  border: 1px solid #8f8f8f;
+  background: #f5f5f5;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+.caviar-all-caviars-guide--salmon {
+  min-height: 150px;
+}
+
+.caviar-all-caviars-guide--salmon .caviar-all-caviars-guide__content {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.caviar-all-caviars-brands {
+  margin-top: 20px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.caviar-all-caviars-brands__title {
+  margin: 0;
+  padding: 72px 20px 30px;
+  text-align: center;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: #1d1d1d;
+  background: #f5f5f5;
+}
+
+.caviar-all-caviars-brands__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.caviar-all-caviars-brands__card {
+  position: relative;
+  height: 700px;
+}
+
+.caviar-all-caviars-brands__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.caviar-all-caviars-brands__overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 42px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.caviar-all-caviars-brands__name {
+  margin: 0 0 12px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.caviar-all-caviars-brands__cta {
+  min-width: 128px;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  background: #fff;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+.caviar-all-caviars-tasting {
+  padding: 72px 0 50px;
+}
+
+.caviar-all-caviars-tasting__title {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1f1f1f;
+}
+
+.caviar-all-caviars-tasting__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.caviar-all-caviars-tasting__card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.caviar-all-caviars-tasting__name {
+  margin: 18px 0 10px;
+  text-align: center;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: #2a2a2a;
+}
+
+.caviar-all-caviars-tasting__text {
+  margin: 0 auto;
+  max-width: 88%;
+  text-align: center;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.18;
+  color: #2d2d2d;
+}
+
+.caviar-all-caviars-faq {
+  padding: 34px 0 42px;
+}
+
+.caviar-all-caviars-faq__title {
+  margin: 0 0 22px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1f1f1f
+}
+
+.caviar-all-caviars-faq__top {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+.caviar-all-caviars-faq__media {
+  width: 100%;
+  height: 240px;
+  background: #cfd3d8;
+  border-radius: 4px;
+  position: relative;
+}
+
+.caviar-all-caviars-faq__placeholder {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 95px;
+  height: 95px;
+  border: 7px solid #e5e8ec;
+  box-sizing: border-box;
+}
+
+.caviar-all-caviars-faq__placeholder::before,
+.caviar-all-caviars-faq__placeholder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 1px;
+  background: #e5e8ec;
+}
+
+.caviar-all-caviars-faq__placeholder::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.caviar-all-caviars-faq__placeholder::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.caviar-all-caviars-faq__questions {
+  width: 100%;
+}
+
+.caviar-all-caviars-faq__question {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d6d6d6;
+  background: transparent;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #2e2e2e;
+}
+
+.caviar-all-caviars-faq__question span:last-child {
+  font-size: 28px;
+  line-height: 1;
+  color: #373737;
+}
+
+.caviar-all-caviars-faq__content {
+  display: grid;
+  gap: 28px;
+  max-width: 92%;
+}
+
+.caviar-all-caviars-faq__entry h4 {
+  margin: 0 0 10px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #262626;
+}
+
+.caviar-all-caviars-faq__entry p {
+  margin: 0 0 10px;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 200;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  color: #333;
+}
+
+.caviar-all-caviars-faq__entry a {
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 13px;
+  color: #2f2f2f;
+  text-decoration: underline;
+}
+
+@include media-breakpoint-down(lg) {
+  .caviar-all-caviars-products {
+    padding-top: 40px;
+  }
+
+  .caviar-all-caviars-page__hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .caviar-all-caviars-page__title {
+    font-size: 44px;
+  }
+
+  .caviar-all-caviars-page__highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-all-caviars-products__chips {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .caviar-all-caviars-products__subtitle {
+    font-size: 40px;
+  }
+
+  .caviar-all-caviars-species__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .caviar-all-caviars-species__more {
+    font-size: 18px;
+  }
+
+  .caviar-all-caviars-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-all-caviars-guide__media {
+    height: 150px;
+  }
+
+  .caviar-all-caviars-guide__title {
+    font-size: 40px;
+  }
+
+  .caviar-all-caviars-brands__title {
+    font-size: 44px;
+  }
+
+  .caviar-all-caviars-brands__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-all-caviars-brands__card {
+    min-height: 340px;
+  }
+
+  .caviar-all-caviars-brands__name {
+    font-size: 28px;
+  }
+
+  .caviar-all-caviars-brands__cta {
+    font-size: 22px;
+  }
+
+  .caviar-all-caviars-tasting__title {
+    font-size: 42px;
+  }
+
+  .caviar-all-caviars-tasting__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .caviar-all-caviars-tasting__card img {
+    height: 300px;
+  }
+
+  .caviar-all-caviars-tasting__name {
+    font-size: 34px;
+  }
+
+  .caviar-all-caviars-tasting__text {
+    font-size: 24px;
+    max-width: 100%;
+  }
+
+  .caviar-all-caviars-faq__top {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .caviar-all-caviars-faq__media {
+    max-width: 240px;
+  }
+
+  .caviar-all-caviars-faq__content {
+    max-width: 100%;
+  }
+}

@@ -2,11 +2,12 @@
     <div class="caviar-home-reviews__container">
         <div class="caviar-home-reviews__header">
             <h2 class="caviar-home-reviews__title">Avis client placeholder</h2>
-            <div class="caviar-home-reviews__badge" aria-hidden="true">
-                <div class="caviar-home-reviews__badge-score">4,77</div>
-                <div class="caviar-home-reviews__badge-label">Tres bien</div>
-                <div class="caviar-home-reviews__badge-sub">Protection acheteur</div>
-            </div>
+            <img
+                src="{{ asset('bundles/caviartheme/assets/img/avis-logo.png') }}"
+                class="caviar-home-reviews__badge-logo"
+                alt="Avis clients"
+                loading="lazy"
+            >
         </div>
 
         <div class="caviar-home-reviews__track-wrap">
@@ -15,39 +16,39 @@
             {% set testimonials = [
                 {
                     stars: '★★★★★',
-                    date: '12/03/2026',
-                    text: 'Caviar frais, conditionnement impeccable et livraison rapide. Tres belle experience.',
-                    author: 'Camille D.'
+                    date: 'JJ/MM/AAAA',
+                    text: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.',
+                    author: 'Anonyme'
                 },
                 {
                     stars: '★★★★★',
-                    date: '28/02/2026',
-                    text: 'Excellent gout et presentation elegante. Parfait pour un diner special en famille.',
-                    author: 'Nicolas P.'
+                    date: 'JJ/MM/AAAA',
+                    text: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.',
+                    author: 'Anonyme'
                 },
                 {
                     stars: '★★★★☆',
-                    date: '14/02/2026',
-                    text: 'Qualite tres bonne, service client reactif et conseils utiles avant commande.',
-                    author: 'Sarah M.'
+                    date: 'JJ/MM/AAAA',
+                    text: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.',
+                    author: 'Anonyme'
                 },
                 {
                     stars: '★★★★★',
-                    date: '31/01/2026',
-                    text: 'Commande recue dans les temps, produits haut de gamme et tres bien emballes.',
-                    author: 'Julien R.'
+                    date: 'JJ/MM/AAAA',
+                    text: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.',
+                    author: 'Anonyme'
                 },
                 {
                     stars: '★★★★★',
-                    date: '19/01/2026',
-                    text: 'Selection remarquable et saveurs subtiles. Je recommanderai sans hesitation.',
-                    author: 'Amelie T.'
+                    date: 'JJ/MM/AAAA',
+                    text: 'Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed.',
+                    author: 'Anonyme'
                 }
             ] %}
 
             <div class="caviar-home-reviews__track" data-reviews-track>
                 {% for testimonial in testimonials %}
-                    <article class="caviar-home-review-card" data-review-index="{{ loop.index0 }}">
+                    <article class="caviar-home-review-card">
                         <div class="caviar-home-review-card__head">
                             <div class="caviar-home-review-card__stars" aria-hidden="true">{{ testimonial.stars }}</div>
                             <div class="caviar-home-review-card__date">{{ testimonial.date }}</div>
@@ -69,46 +70,44 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var track = document.querySelector('[data-reviews-track]');
-    if (!track) return;
+    var tracks = document.querySelectorAll('[data-reviews-track]');
+    if (!tracks.length) return;
 
-    var cards = Array.prototype.slice.call(track.querySelectorAll('[data-review-index]'));
-    var prevBtn = track.parentElement.querySelector('[data-reviews-prev]');
-    var nextBtn = track.parentElement.querySelector('[data-reviews-next]');
-    var total = cards.length;
-    var startIndex = 0;
+    tracks.forEach(function (track) {
+      var wrap = track.parentElement;
+      var prevBtn = wrap.querySelector('[data-reviews-prev]');
+      var nextBtn = wrap.querySelector('[data-reviews-next]');
 
-    if (!total) return;
+      var getScrollAmount = function () {
+        var firstCard = track.querySelector('.caviar-home-review-card');
+        if (!firstCard) return 0;
+        var cardWidth = firstCard.getBoundingClientRect().width;
+        var gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || '0');
+        return cardWidth + gap;
+      };
 
-    var getVisibleCount = function () {
-      if (window.matchMedia('(max-width: 575.98px)').matches) return 1;
-      if (window.matchMedia('(max-width: 767.98px)').matches) return 2;
-      return 3;
-    };
+      var updateArrows = function () {
+        if (!prevBtn || !nextBtn) return;
+        var maxScrollLeft = track.scrollWidth - track.clientWidth;
+        prevBtn.disabled = track.scrollLeft <= 4;
+        nextBtn.disabled = track.scrollLeft >= maxScrollLeft - 4;
+      };
 
-    var render = function () {
-      var visibleCount = getVisibleCount();
-      cards.forEach(function (card, index) {
-        var normalized = (index - startIndex + total) % total;
-        card.style.display = normalized < visibleCount ? '' : 'none';
-      });
-    };
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+      }
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        startIndex = (startIndex - 1 + total) % total;
-        render();
-      });
-    }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+      }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        startIndex = (startIndex + 1) % total;
-        render();
-      });
-    }
-
-    render();
-    window.addEventListener('resize', render);
+      track.addEventListener('scroll', updateArrows, { passive: true });
+      window.addEventListener('resize', updateArrows);
+      updateArrows();
+    });
   });
 </script>

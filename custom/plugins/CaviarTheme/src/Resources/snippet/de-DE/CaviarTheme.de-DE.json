@@ -47,6 +47,172 @@
     "home.categories.cta": "KATEGORIEN ANSEHEN",
     "home.categories.cardAlt": "Kategoriebild",
     "home.categories.cardLabel": "Kategorie",
+    "caviars": {
+      "breadcrumb": "Caviars",
+      "page": {
+        "title": "Nos caviars",
+        "description": "Notre collection de caviars, fabrication sur-mesure et exclusivement en direct de nos élevages situés en Aquitaine. Découvrez nos différentes gammes d’or noir, et nos caviars Baerii, Osciètre, mais aussi Beluga, élevés, produits, sélectionnés et affinés..."
+      },
+      "finder": {
+        "title": "Trouver le caviar qu'il vous faut :",
+        "chip": {
+          "classics": "Nos grands classiques",
+          "premium": "Nos caviars premium",
+          "prestige": "Nos caviars de prestige"
+        }
+      },
+      "filters": {
+        "brand": "Marque",
+        "weight": "Grammage",
+        "intensity": "Intensité iodée"
+      },
+      "listing": {
+        "bestsellers": "Meilleures ventes"
+      },
+      "species": {
+        "one": "Format A",
+        "two": "Format B",
+        "more": "Plus de produits",
+        "primaryName": "Coeur de Filet Saumon",
+        "secondaryName": "Filet Saumon Gravlax",
+        "secondaryTop1": "Saumon Fumé Norvège",
+        "secondaryTop2": "Saumon Fumé Ecosse",
+        "secondaryTop3": "Saumon Fumé Norvège",
+        "secondaryFallbackName": "Nom du produit"
+      },
+      "card": {
+        "fallbackName": "Filet Saumon Gravlax",
+        "fallbackDesc": "Id eros pellentesque facilisi id mollis"
+      },
+      "guide": {
+        "title": "Comment choisir son caviar ?",
+        "cta": "Découvrir le guide"
+      },
+      "brands": {
+        "title": "Toutes nos marques",
+        "left": "CAVIAR HOUSE",
+        "right": "PRUNIER"
+      },
+      "tasting": {
+        "title": "Complétez votre dégustation",
+        "card1": { "title": "Accessoires", "text": "Tout le nécessaire pour une dégustation parfaite" },
+        "card2": { "title": "Coffrets", "text": "Des assortiments élégants à offrir ou à partager" },
+        "card3": { "title": "Saumons", "text": "Une sélection raffinée pour accompagner le caviar" }
+      },
+      "faq": {
+        "title": "FAQ - Notre expert répond à vos questions",
+        "q1": "Rhoncus morbi et augue nec",
+        "q2": "Condimentum sit nunc",
+        "q3": "Commodo in viverra nunc",
+        "q4": "Aliquet scelerisque",
+        "entry1": {
+          "title": "Titre Placeholder",
+          "text": "Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ullamcorper ut."
+        },
+        "entry2": {
+          "title": "Titre Placeholder",
+          "text": "Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ullamcorper ut. Non, amet, aliquet scelerisque nullam sagittis, pulvinar. Fermentum scelerisque siconsectetur hac mi."
+        }
+      },
+      "common": {
+        "readMore": "Lire plus",
+        "discover": "Découvrir"
+      }
+    },
+    "salmons": {
+      "breadcrumb": "Saumons",
+      "page": {
+        "title": "NOS SAUMONS",
+        "description": "Notre collection de saumons, fabrication sur-mesure et exclusivement en direct de nos élevages situés en Aquitaine.\n\nMollis leo eleifend ultricies purus iaculis. Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed."
+      },
+      "finder": {
+        "title": "Trouver le Saumon qu'il vous faut :",
+        "chip": {
+          "classics": "Nos grands classiques",
+          "premium": "Nos saumons premium",
+          "prestige": "Nos saumons de prestige",
+          "balik": "SAUMONS BALIK",
+          "caviarHouse": "SAUMONS CAVIAR HOUSE",
+          "bestsellers": "MEILLEURES VENTES"
+        }
+      },
+      "filters": {
+        "origin": "Origine",
+        "brand": "Marque",
+        "weight": "Poids",
+        "intensity": "Intensité fumée"
+      },
+      "listing": {
+        "bestsellers": "Meilleures ventes",
+        "count": "123 Produits"
+      },
+      "cards": {
+        "top1": "Filet Saumon Gravlax",
+        "top2": "Saumon Fumé Norvège",
+        "top3": "Saumon Fumé Ecosse",
+        "top4": "Coeur de Filet Saumon",
+        "brand": "CAVIAR HOUSE"
+      },
+      "species": {
+        "one": "Espèce 1",
+        "two": "Espèce 2",
+        "more": "Plus de produits"
+      },
+      "card": {
+        "fallbackName": "Nom du produit",
+        "fallbackDesc": "Id eros pellentesque facilisi id mollis"
+      },
+      "guide": {
+        "title": "Comment choisir son saumon ?",
+        "cta": "Découvrir le guide"
+      },
+      "brands": {
+        "title": "Toutes nos marques",
+        "left": "CAVIAR HOUSE",
+        "right": "BALIK"
+      },
+      "tasting": {
+        "title": "Complétez votre dégustation",
+        "card1": { "title": "Accessoires", "text": "Tout le nécessaire pour une dégustation parfaite" },
+        "card2": { "title": "Coffrets", "text": "Des assortiments élégants à offrir ou à partager" },
+        "card3": { "title": "Saumons", "text": "Une sélection raffinée pour accompagner le caviar" }
+      },
+      "faq": {
+        "title": "FAQ - Notre expert répond à vos questions",
+        "q1": "Comment conserver le saumon ?",
+        "q2": "Quel format choisir ?",
+        "q3": "Comment servir le saumon ?",
+        "q4": "Quels accords recommandez-vous ?",
+        "entry1": {
+          "title": "Conseils de conservation",
+          "text": "Conservez votre saumon au réfrigérateur dans son emballage d'origine et respectez les indications de date pour garantir la meilleure qualité."
+        },
+        "entry2": {
+          "title": "Conseils de dégustation",
+          "text": "Servez le saumon bien frais, en tranches fines, et accompagnez-le de blinis, crème fraîche et condiments adaptés pour une expérience optimale."
+        }
+      },
+      "common": {
+        "readMore": "Lire plus",
+        "discover": "Découvrir"
+      }
+    },
+    "pdp": {
+      "tabs": {
+        "description": "Beschreibung",
+        "ingredients": "Ingrédients & Allergènes",
+        "advice": "Conseils de dégustation",
+        "reviews": "Avis client"
+      },
+      "knowhow": {
+        "eyebrow": "SAVOIR-FAIRE DE LA MAISON",
+        "title": "Explorez nos savoir-faire de la maison",
+        "cta": "DÉCOUVRIR"
+      },
+      "selected": {
+        "title": "Sélectionnés pour vous"
+      }
+    },
     "nav.caviars": "CAVIARS",
     "nav.saumons": "SAUMONS",
     "nav.epicerie": "ÉPICERIE & CAVE",

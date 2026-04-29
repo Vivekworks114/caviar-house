@@ -2,6 +2,19 @@
   padding-top: 20px;
 }
 
+.is-ctl-product {
+  background: #f6f6f6;
+}
+
+.is-ctl-product .content-main {
+  background: #f6f6f6;
+}
+
+.is-ctl-product [aria-label="breadcrumb"] {
+  margin-bottom: 26px;
+  font-size: 13px;
+}
+
 .product-detail-headline {
   margin-bottom: 30px;
   font-family: 'Bodoni', sans-serif;
@@ -12,12 +25,16 @@
 }
 
 .product-detail-media{
+  background: #f2f2f2;
+  padding: 16px 16px 10px;
+  min-height: 520px;
   .gallery-slider-thumbnails-item {
-    width: 83px;
-    height: 83px;
+    width: 56px;
+    height: 56px;
     .gallery-slider-thumbnails-image {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .gallery-slider-thumbnails-controls{
@@ -31,11 +48,42 @@
       box-shadow: none;
     }
   }
+
+  .gallery-slider-single-image {
+    object-fit: contain;
+    max-height: 440px;
+  }
 }
 
 .product-detail-buy {
+  padding-left: 8px;
+
+  .product-detail-name {
+    font-size: 48px;
+    line-height: 1.08;
+    font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+  }
+
+  .product-detail-manufacturer {
+    margin-bottom: 10px;
+  }
+
+  .product-detail-rating {
+    margin-bottom: 10px;
+  }
+
+  .product-detail-description {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #222;
+    margin-bottom: 12px;
+  }
+
   .product-numbers {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     font-size: 14px;
     line-height: 22px;
 
@@ -45,7 +93,7 @@
   }
 
   .product-detail-price-container{
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     .product-detail-tax-link {
       font-size: 12px;
       line-height: 22px;
@@ -53,9 +101,10 @@
   }
 
   .product-detail-price {
-    font-size: 28px;
-    line-height: 28px;
-    font-family: 'Bodoni', sans-serif;
+    font-size: 44px;
+    line-height: 1;
+    font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+    font-weight: 600;
   }
 
   .product-detail-list-price-wrapper {
@@ -126,12 +175,34 @@
   }
 
   .product-detail-form-container {
+    margin-top: 8px;
+
+    .buy-widget-container {
+      row-gap: 12px;
+    }
+
+    .input-group.product-detail-quantity-select {
+      max-width: 170px;
+      height: 46px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #b7b7b7;
+    }
+
     .btn-buy {
-      font-size: 18px;
-      line-height: 62px;
-      background: $sw-color-brand-primary;
-      border: none;
+      font-size: 16px;
+      line-height: 46px;
+      min-height: 46px;
+      background: #0f1011;
+      border: 1px solid #0f1011;
       font-weight: normal;
+      border-radius: 2px;
+      letter-spacing: 0.35px;
+    }
+
+    .btn-buy:hover {
+      background: #1a1b1d;
+      border-color: #1a1b1d;
     }
   }
 
@@ -143,7 +214,13 @@
 }
 
 .product-detail-tabs {
+  margin-top: 34px;
+
   .product-detail-description-text {
+    max-width: 760px;
+    margin: 0;
+    padding: 0 0 0 110px;
+
     h2 {
       font-size: 30px;
       line-height: 28px;
@@ -159,9 +236,12 @@
     }
 
     p {
-      font-size: 16px;
-      line-height: 26px;
-      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+      font-weight: 400;
+      color: #303030;
 
       a {
         font-size: 16px;
@@ -224,6 +304,8 @@
   }
 
 .product-detail-cross-selling {
+  display: none;
+
   .product-detail-tabs-content {
     width: 100%;
     display: flex;
@@ -246,6 +328,287 @@
       }
     }
   }
+}
+
+.caviar-pdp-knowhow {
+  margin: 0 auto 24px;
+  max-width: 1359px;
+  min-height: 360px;
+  background: #f6f6f6;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  overflow: hidden;
+}
+
+.caviar-pdp-knowhow__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.caviar-pdp-knowhow__media img {
+  width: 78%;
+  max-width: 600px;
+  opacity: 0.08;
+  filter: grayscale(1);
+}
+
+.caviar-pdp-knowhow__content {
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.caviar-pdp-knowhow__eyebrow {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #2e2e2e;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+}
+
+.caviar-pdp-knowhow__title {
+  margin: 0 0 20px;
+  font-size: 56px;
+  line-height: 1.05;
+  font-weight: 400;
+  color: #1f1f1f;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+}
+
+.caviar-pdp-knowhow__cta {
+  min-width: 230px;
+  height: 44px;
+  border: 1px solid #8e8e8e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #232323;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+}
+
+.caviar-pdp-faq {
+  max-width: 1359px;
+  margin: 0 auto 44px;
+  padding: 34px 0 42px;
+}
+
+.caviar-pdp-faq__title {
+  margin: 0 0 22px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1f1f1f;
+}
+
+.caviar-pdp-faq__top {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+.caviar-pdp-faq__media {
+  width: 100%;
+  height: 240px;
+  background: #cfd3d8;
+  border-radius: 4px;
+  position: relative;
+}
+
+.caviar-pdp-faq__placeholder {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 95px;
+  height: 95px;
+  border: 7px solid #e5e8ec;
+  box-sizing: border-box;
+}
+
+.caviar-pdp-faq__placeholder::before,
+.caviar-pdp-faq__placeholder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 1px;
+  background: #e5e8ec;
+}
+
+.caviar-pdp-faq__placeholder::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.caviar-pdp-faq__placeholder::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.caviar-pdp-faq__questions {
+  width: 100%;
+}
+
+.caviar-pdp-faq__question {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d6d6d6;
+  background: transparent;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #2e2e2e;
+}
+
+.caviar-pdp-faq__question span:last-child {
+  font-size: 28px;
+  line-height: 1;
+  color: #373737;
+}
+
+.caviar-pdp-faq__content {
+  display: grid;
+  gap: 28px;
+  max-width: 92%;
+}
+
+.caviar-pdp-faq__entry h4 {
+  margin: 0 0 10px;
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #262626;
+}
+
+.caviar-pdp-faq__entry p {
+  margin: 0 0 10px;
+  font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 200;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  color: #333;
+}
+
+.caviar-pdp-faq__entry a {
+  font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+  font-size: 13px;
+  color: #2f2f2f;
+  text-decoration: underline;
+}
+
+.caviar-pdp-selected {
+  max-width: 1359px;
+  margin: 0 auto 52px;
+  padding-top: 8px;
+}
+
+.caviar-pdp-selected__title {
+  margin: 0 0 20px;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #222;
+}
+
+.caviar-pdp-selected__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.caviar-pdp-selected__card {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0 2px;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__badge {
+  top: 8px;
+  left: 10px;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__heart {
+  top: 10px;
+  right: 10px;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__media-link {
+  min-height: 255px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__media {
+  max-height: 245px;
+  width: auto;
+  object-fit: contain;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__body {
+  padding: 6px 2px 0;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__name {
+  font-size: 23px;
+  line-height: 1.2;
+  margin-bottom: 3px;
+  font-family: "Roxie Rossa", "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__meta {
+  font-size: 10px;
+  margin-bottom: 6px;
+  letter-spacing: 0.35px;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__price-prefix {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__price-value {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__add {
+  width: 20px;
+  height: 18px;
+  min-width: 20px;
+  border: 1px solid #d0d0d0;
+  border-radius: 1px;
+  color: transparent;
+  font-size: 0;
+  line-height: 1;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__add::before {
+  width: 14px;
+  height: 12px;
+}
+
+.caviar-pdp-selected__card .caviar-home-featured-card__price-row {
+  margin-top: 4px;
 }
 
 @include media-breakpoint-up(md) {
@@ -285,33 +648,57 @@
   .cms-block-gallery-buybox {
     max-width: 1359px;
     margin: 0 auto;
+
+    .cms-element-image-gallery {
+      padding-right: 8px;
+    }
+
+    .cms-element-buy-box {
+      padding-left: 8px;
+    }
   }
 
   .product-detail-tab-navigation {
-    border-bottom: 1px solid $sw-color-brand-primary;
+    border-bottom: 1px solid #d7d7d7;
     margin: 0 -20px;
     padding: 0 20px !important;
+    background: #f6f6f6;
 
     .product-detail-tab-navigation-list {
       max-width: 1359px;
       margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-left: 0;
+      gap: 10%;
     }
 
     .nav-item {
-      margin-right: 60px;
+      margin-right: 56px;
+    }
+
+    .nav-item:last-child {
+      margin-right: 0;
     }
 
     .product-detail-tab-navigation-link {
       font-size: 16px;
-      line-height: 18px;
+      line-height: 1.2;
       border-bottom: none;
+      color: #8c8c8c;
+      padding: 0 0 18px;
+      font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+      font-weight: 400;
+
       &.active {
-        border-bottom: 3px solid $sw-color-brand-primary;
-        padding-bottom: 10px;
-        color: $sw-color-brand-primary !important;
+        border-bottom: 2px solid #117a70;
+        color: #117a70 !important;
       }
       &:hover {
         background: none;
+        color: #117a70;
       }
     }
   }
@@ -320,6 +707,7 @@
     max-width: 1359px;
     margin: 0 auto;
     width: 100%;
+    border-bottom: 1px solid #d7d7d7;
   }
 
   .product-detail-tabs {
@@ -336,8 +724,8 @@
       }
     }
     .product-detail-tabs-content {
-      padding-top: 80px;
-      padding-bottom: 60px;
+      padding-top: 44px;
+      padding-bottom: 34px;
     }
     &.product-detail-cross-selling{
       .product-detail-tabs-content {
@@ -350,6 +738,99 @@
   .product-detail-cross-selling{
     .card-tabs{
       margin-top: 80px;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .caviar-pdp-selected__title {
+    font-size: 40px;
+  }
+
+  .caviar-pdp-selected__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .caviar-pdp-faq {
+    padding: 24px 0 30px;
+  }
+
+  .caviar-pdp-faq__top {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .caviar-pdp-faq__media {
+    height: 200px;
+  }
+
+  .caviar-pdp-faq__content {
+    max-width: 100%;
+  }
+
+  .caviar-pdp-faq__entry p {
+    font-size: 16px;
+  }
+
+  .caviar-pdp-knowhow {
+    min-height: 280px;
+    grid-template-columns: 1fr;
+  }
+
+  .caviar-pdp-knowhow__media {
+    min-height: 150px;
+  }
+
+  .caviar-pdp-knowhow__title {
+    font-size: 40px;
+  }
+
+  .product-detail-tabs {
+    .product-detail-description-text {
+      max-width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  .product-detail-tab-navigation {
+    .product-detail-tab-navigation-list {
+      min-height: 58px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-left: 0;
+    }
+
+    .nav-item {
+      margin-right: 28px;
+      white-space: nowrap;
+    }
+
+    .product-detail-tab-navigation-link {
+      font-size: 17px;
+      padding-bottom: 12px;
+    }
+  }
+
+  .product-detail-tabs .product-detail-description-text p {
+    font-size: 15px;
+    margin-bottom: 22px;
+  }
+
+  .product-detail-media {
+    padding: 12px 12px 8px;
+    min-height: auto;
+  }
+
+  .product-detail-buy {
+    padding-left: 0;
+
+    .product-detail-name {
+      font-size: 38px;
+    }
+
+    .product-detail-price {
+      font-size: 36px;
     }
   }
 }
