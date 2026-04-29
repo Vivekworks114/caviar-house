@@ -1,5 +1,6 @@
 <section class="caviar-home-categories" aria-label="{{ 'CaviarTheme.home.categories.aria'|trans|sw_sanitize }}">
-    {% set categoryFallbackImage = asset('/bundles/caviartheme/storefront/assets/hero/home-hero-banner.png') %}
+    {% set caviarCategoryImage = asset('bundles/caviartheme/assets/img/caviar.png') %}
+    {% set saumonCategoryImage = asset('bundles/caviartheme/assets/img/saumon.png') %}
     <div class="caviar-home-categories__container">
         <div class="caviar-home-categories__intro">
             <h2 class="caviar-home-categories__title">CAVIAR HOUSE,<br>Placeholder</h2>
@@ -15,13 +16,18 @@
             {% set dynamicCategories = homeCategories ?? [] %}
             {% set baseSlides = dynamicCategories|length > 0 ? dynamicCategories|slice(0, 5) : [] %}
             {% set fallbackSlide = baseSlides|length > 0 ? baseSlides|first : null %}
+            {% set fallbackSlides = [
+                { image: caviarCategoryImage, name: 'Caviar' },
+                { image: saumonCategoryImage, name: 'Saumon' }
+            ] %}
             {% set slideCount = 5 %}
 
             <div class="caviar-home-categories__slides" data-categories-slider data-total="{{ slideCount }}">
                 {% for index in 0..4 %}
                     {% set category = baseSlides[index] is defined ? baseSlides[index] : fallbackSlide %}
-                    {% set categoryImage = category and category.media and category.media.url ? category.media.url : categoryFallbackImage %}
-                    {% set categoryName = category and category.translated and category.translated.name ? category.translated.name : 'Caviar' %}
+                    {% set fallbackCategory = fallbackSlides[index % (fallbackSlides|length)] %}
+                    {% set categoryImage = category and category.media and category.media.url ? category.media.url : fallbackCategory.image %}
+                    {% set categoryName = category and category.translated and category.translated.name ? category.translated.name : fallbackCategory.name %}
                     {% set categoryUrl = category and category.id ? seoUrl('frontend.navigation.page', { navigationId: category.id }) : '#' %}
                     <article class="caviar-home-categories__slide" data-slide-index="{{ index }}">
                         <a href="{{ categoryUrl }}" class="caviar-home-categories__slide-link">

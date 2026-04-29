@@ -8,13 +8,19 @@
 
 .caviar-main-nav-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: center;
     gap: 4px;
     height: 88px;
     max-width: 1440px;
     margin: 0 auto;
     padding: 10px 40px;
+}
+
+.caviar-main-nav {
+    position: relative;
+    border-bottom: 1px solid #e9e9e9;
+    background: #fff;
 }
 
 .caviar-main-nav-icons {
@@ -43,24 +49,28 @@
 }
 
 .main-navigation-menu-list {
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
 }
 
 /* Main navigation link */
 .main-navigation-link {
     font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     color: #111;
     text-align: center;
     padding: 10px !important;
-    line-height: 1;
+    line-height: 20px;
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0;
+    white-space: nowrap;
 
     &.active{
         color: #111;
@@ -79,6 +89,18 @@
     }
 }
 
+.caviar-nav-tab {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.18s ease;
+}
+
+.caviar-nav-tab.is-active {
+    color: #0f5d55;
+    font-weight: 600;
+}
+
 .caviar-nav-action {
     display: inline-flex;
     align-items: center;
@@ -95,6 +117,131 @@
     }
 }
 
+.caviar-nav-panels {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 1px);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+}
+
+.caviar-main-nav.is-open .caviar-nav-panels {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.caviar-nav-panel {
+    display: none;
+    background: #fff;
+    border-top: 1px solid #ececec;
+    box-shadow: 0 14px 30px rgba(21, 34, 33, 0.08);
+}
+
+.caviar-nav-panel.is-active {
+    display: block;
+}
+
+.caviar-nav-panel__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 34px 60px 38px;
+    display: flex;
+    gap: 46px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.caviar-nav-panel__columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    gap: 40px;
+    flex: 1;
+}
+
+.caviar-nav-panel__column {
+    min-width: 0;
+}
+
+.caviar-nav-panel__heading {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #2b9f92;
+    color: #202020;
+    text-decoration: none;
+    font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.14;
+}
+
+.caviar-nav-panel__links {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+.caviar-nav-panel__links li {
+    margin: 0 0 8px;
+}
+
+.caviar-nav-panel__links a,
+.caviar-nav-panel__more {
+    color: #232323;
+    text-decoration: none;
+    font-family: "ITC Franklin Gothic Std Book", "ITC Franklin Gothic Std", "Franklin Gothic Book", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 400;
+}
+
+.caviar-nav-panel__more {
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.caviar-nav-panel__group + .caviar-nav-panel__group {
+    margin-top: 12px;
+}
+
+.caviar-nav-panel__subheading {
+    font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #202020;
+    margin: 0 0 8px;
+}
+
+.caviar-nav-panel__teaser {
+    flex: 0 0 300px;
+    width: 300px;
+}
+
+.caviar-nav-panel__teaser img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.caviar-nav-panel__teaser-title {
+    margin: 10px 0 0;
+    font-family: "ITC Franklin Gothic Std", "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: #202020;
+}
+
 @include media-breakpoint-up(lg) {
     .main-navigation-menu {
         margin: 0;
@@ -108,6 +255,10 @@
 }
 
 @include media-breakpoint-down(lg) {
+    .caviar-nav-panels {
+        display: none;
+    }
+
     .caviar-main-nav-row {
         height: auto;
         padding: 10px 20px;
@@ -119,5 +270,7 @@
 
     .main-navigation-link {
         font-size: 13px;
+        line-height: 18px;
+        white-space: nowrap;
     }
 }

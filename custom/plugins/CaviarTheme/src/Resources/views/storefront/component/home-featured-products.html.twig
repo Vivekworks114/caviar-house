@@ -5,77 +5,71 @@
 
         <div class="caviar-home-featured__slider">
             <div class="caviar-home-featured__grid">
-            {% set dynamicProducts = featuredProducts ?? null %}
-            {% if dynamicProducts and dynamicProducts|length > 0 %}
-                {% for product in dynamicProducts %}
-                    {% set cover = product.cover.media ?? null %}
-                    {% set featuredImage = cover and cover.url ? cover.url : featuredFallbackImage %}
+            {% set dynamicProducts = featuredProducts ?? [] %}
+            {% set baseProducts = dynamicProducts|length > 0 ? dynamicProducts|slice(0, 15) : [] %}
+            {% set baseProductCount = baseProducts|length %}
+
+            {% if baseProductCount > 0 %}
+                {% for i in 0..14 %}
+                    {% set product = baseProducts[i % baseProductCount] %}
+                    {% set productName = product.translated.name ?? ('CaviarTheme.home.featured.cardName'|trans|sw_sanitize) %}
+                    {% set productDescription = product.translated.description ?? '' %}
+                    {% set productDescriptionText = productDescription|striptags|trim %}
+                    {% set productImage = featuredFallbackImage %}
+                    {% if product.cover and product.cover.media and product.cover.media.url %}
+                        {% set productImage = product.cover.media.url %}
+                    {% elseif product.media and product.media.elements and product.media.elements|length > 0 %}
+                        {% set firstMedia = product.media.elements|first %}
+                        {% if firstMedia and firstMedia.media and firstMedia.media.url %}
+                            {% set productImage = firstMedia.media.url %}
+                        {% endif %}
+                    {% endif %}
+
                     <article class="caviar-home-featured-card">
                         <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
                         <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
                         <a href="{{ seoUrl('frontend.detail.page', { productId: product.id }) }}" class="caviar-home-featured-card__media-link">
                             <img
-                                src="{{ featuredImage }}"
+                                src="{{ productImage }}"
                                 class="caviar-home-featured-card__media"
-                                alt="{{ product.translated.name ?: ('CaviarTheme.home.featured.cardAlt'|trans|sw_sanitize) }}"
+                                alt="{{ productName ?: ('CaviarTheme.home.featured.cardAlt'|trans|sw_sanitize) }}"
                                 loading="lazy"
                             >
                         </a>
                         <div class="caviar-home-featured-card__body">
-                            <h3 class="caviar-home-featured-card__name">{{ product.translated.name ?: ('CaviarTheme.home.featured.cardName'|trans|sw_sanitize) }}</h3>
-                            <p class="caviar-home-featured-card__desc">{{ 'Id eros pellentesque facilisi id mollis' }}</p>
+                            <h3 class="caviar-home-featured-card__name">{{ productName }}</h3>
+                            <p class="caviar-home-featured-card__desc">
+                                {% if productDescriptionText %}
+                                    {{ productDescriptionText|slice(0, 42) }}{% if productDescriptionText|length > 42 %}…{% endif %}
+                                {% else %}
+                                    {{ 'Id eros pellentesque facilisi id mollis' }}
+                                {% endif %}
+                            </p>
                             <p class="caviar-home-featured-card__meta">
                                 {% if product.manufacturer and product.manufacturer.translated and product.manufacturer.translated.name %}
                                     • {{ product.manufacturer.translated.name|upper }} •
                                 {% else %}
-                                    • CAVIAR HOUSE •
+                                    {{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}
                                 {% endif %}
                             </p>
                             <div class="caviar-home-featured-card__price-row">
+                                <div class="caviar-home-featured-card__price-row-inner">
                                 <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
                                 <span class="caviar-home-featured-card__price-value">
                                     {% if product.calculatedPrice is defined and product.calculatedPrice %}
-                                        {{ (product.calculatedPrice.unitPrice|number_format(0, ',', ' ') ~ '&nbsp;€')|raw }}
+                                        {{ product.calculatedPrice.unitPrice|currency }}
                                     {% else %}
                                         {{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}
                                     {% endif %}
                                 </span>
+                                </div>
                                 <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
                             </div>
                         </div>
                     </article>
                 {% endfor %}
-
-                {% set minimumCards = 12 %}
-                {% set missingCards = minimumCards - (dynamicProducts|length) %}
-                {% if missingCards > 0 %}
-                    {% for i in 1..missingCards %}
-                        <article class="caviar-home-featured-card">
-                            <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
-                            <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
-                            <a href="#" class="caviar-home-featured-card__media-link">
-                                <img
-                                    src="{{ featuredFallbackImage }}"
-                                    class="caviar-home-featured-card__media"
-                                    alt="{{ 'CaviarTheme.home.featured.cardAlt'|trans|sw_sanitize }}"
-                                    loading="lazy"
-                                >
-                            </a>
-                            <div class="caviar-home-featured-card__body">
-                                <h3 class="caviar-home-featured-card__name">{{ 'CaviarTheme.home.featured.cardName'|trans|sw_sanitize }}</h3>
-                                <p class="caviar-home-featured-card__desc">{{ 'Id eros pellentesque facilisi id mollis' }}</p>
-                                <p class="caviar-home-featured-card__meta">{{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}</p>
-                                <div class="caviar-home-featured-card__price-row">
-                                    <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
-                                    <span class="caviar-home-featured-card__price-value">{{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}</span>
-                                    <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
-                                </div>
-                            </div>
-                        </article>
-                    {% endfor %}
-                {% endif %}
             {% else %}
-                {% for i in 1..12 %}
+                {% for i in 1..15 %}
                 <article class="caviar-home-featured-card">
                     <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
                     <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
@@ -92,8 +86,10 @@
                         <p class="caviar-home-featured-card__desc">{{ 'Id eros pellentesque facilisi id mollis' }}</p>
                         <p class="caviar-home-featured-card__meta">{{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}</p>
                         <div class="caviar-home-featured-card__price-row">
+                            <div class="caviar-home-featured-card__price-row-inner">
                             <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
                             <span class="caviar-home-featured-card__price-value">{{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}</span>
+                            </div>
                             <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
                         </div>
                     </div>
@@ -104,10 +100,13 @@
         </div>
 
         <div class="caviar-home-featured__actions">
-            <div class="caviar-home-featured__pagination" aria-label="{{ 'CaviarTheme.home.featured.aria'|trans|sw_sanitize }}">
-                <button type="button" class="caviar-home-featured__pagination-btn" data-featured-nav="prev" aria-label="Previous products page">&lsaquo;</button>
-                <div class="caviar-home-featured__pagination-pages" data-featured-pages></div>
-                <button type="button" class="caviar-home-featured__pagination-btn" data-featured-nav="next" aria-label="Next products page">&rsaquo;</button>
+            <div class="caviar-home-featured__pagination" aria-hidden="true">
+                <span>&lsaquo;</span>
+                <span>1</span>
+                <span class="is-active">2</span>
+                <span>…</span>
+                <span>5</span>
+                <span>&rsaquo;</span>
             </div>
             <a href="{{ path('frontend.search.page') }}" class="caviar-home-featured__cta-link">
                 {{ 'CaviarTheme.home.featured.cta'|trans|sw_sanitize }}
@@ -115,109 +114,3 @@
         </div>
     </div>
 </section>
-
-<script>
-(() => {
-    const sections = document.querySelectorAll('.caviar-home-featured');
-    if (!sections.length) {
-        return;
-    }
-
-    sections.forEach((section) => {
-        const slider = section.querySelector('.caviar-home-featured__slider');
-        const grid = section.querySelector('.caviar-home-featured__grid');
-        const cards = grid ? Array.from(grid.querySelectorAll('.caviar-home-featured-card')) : [];
-        const pagesHost = section.querySelector('[data-featured-pages]');
-        const prevBtn = section.querySelector('[data-featured-nav="prev"]');
-        const nextBtn = section.querySelector('[data-featured-nav="next"]');
-
-        if (!slider || !grid || !cards.length || !pagesHost || !prevBtn || !nextBtn) {
-            return;
-        }
-
-        let currentPage = 0;
-        let pageButtons = [];
-        let totalPages = 1;
-        let cardsPerPage = 1;
-
-        const getStep = () => {
-            const cardRect = cards[0].getBoundingClientRect();
-            const cardWidth = cardRect.width || cards[0].offsetWidth || 1;
-            const gap = parseFloat(window.getComputedStyle(grid).columnGap || window.getComputedStyle(grid).gap || '0') || 0;
-            return cardWidth + gap;
-        };
-
-        const getCardsPerPage = () => {
-            const step = getStep();
-            return Math.max(1, Math.floor((slider.clientWidth + 1) / step));
-        };
-
-        const syncPaginationState = () => {
-            pageButtons.forEach((btn, index) => {
-                btn.classList.toggle('is-active', index === currentPage);
-                btn.setAttribute('aria-current', index === currentPage ? 'page' : 'false');
-            });
-
-            prevBtn.disabled = currentPage <= 0;
-            nextBtn.disabled = currentPage >= totalPages - 1;
-        };
-
-        const scrollToPage = (pageIndex, behavior = 'smooth') => {
-            currentPage = Math.max(0, Math.min(totalPages - 1, pageIndex));
-            const cardIndex = Math.min(cards.length - 1, currentPage * cardsPerPage);
-            const card = cards[cardIndex];
-            const left = card.offsetLeft - grid.offsetLeft;
-
-            slider.scrollTo({ left, behavior });
-            syncPaginationState();
-        };
-
-        const buildPagination = () => {
-            cardsPerPage = getCardsPerPage();
-            totalPages = Math.max(1, Math.ceil(cards.length / cardsPerPage));
-            pagesHost.innerHTML = '';
-            pageButtons = [];
-
-            for (let i = 0; i < totalPages; i += 1) {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'caviar-home-featured__pagination-page';
-                btn.textContent = String(i + 1);
-                btn.addEventListener('click', () => scrollToPage(i));
-                pagesHost.appendChild(btn);
-                pageButtons.push(btn);
-            }
-
-            currentPage = Math.min(currentPage, totalPages - 1);
-            syncPaginationState();
-        };
-
-        prevBtn.addEventListener('click', () => scrollToPage(currentPage - 1));
-        nextBtn.addEventListener('click', () => scrollToPage(currentPage + 1));
-
-        slider.addEventListener('scroll', () => {
-            const step = getStep() * cardsPerPage;
-            if (!step) {
-                return;
-            }
-
-            const calculatedPage = Math.round(slider.scrollLeft / step);
-            const boundedPage = Math.max(0, Math.min(totalPages - 1, calculatedPage));
-
-            if (boundedPage !== currentPage) {
-                currentPage = boundedPage;
-                syncPaginationState();
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            const before = currentPage;
-            buildPagination();
-            scrollToPage(before, 'auto');
-        });
-
-        buildPagination();
-        scrollToPage(0, 'auto');
-    });
-})();
-</script>

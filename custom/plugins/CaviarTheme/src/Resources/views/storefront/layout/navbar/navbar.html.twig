@@ -1,31 +1,219 @@
 {% sw_extends '@Storefront/storefront/layout/navbar/navbar.html.twig' %}
 
 {% block layout_navbar %}
-    <div class="caviar-main-nav-row" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-        <div class="caviar-main-nav-icons" aria-label="{{ 'header.actionsAriaLabel'|trans|striptags }}">
-            <a href="#" class="caviar-nav-action" aria-label="{{ 'header.searchButton'|trans|striptags }}">
-                <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-search.svg') }}" alt="">
-            </a>
-            <a href="{{ path('frontend.account.home.page') }}" class="caviar-nav-action" aria-label="{{ 'header.accountButton'|trans|striptags }}">
-                <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-account.svg') }}" alt="">
-            </a>
-            <a href="{{ path('frontend.checkout.cart.page') }}" class="caviar-nav-action" aria-label="{{ 'header.cartButton'|trans|striptags }}">
-                <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-cart.svg') }}" alt="">
-            </a>
+    {% set navigationTree = page.header.navigation.tree ?? page.header.navigationTree.tree ?? [] %}
+    {% set hasDynamicNavigation = navigationTree|length > 0 %}
+    {% set topNavigation = hasDynamicNavigation ? navigationTree|slice(0, 7) : [
+        { id: 'caviars-fallback', name: ('CaviarTheme.nav.caviars'|trans) },
+        { id: 'saumons-fallback', name: ('CaviarTheme.nav.saumons'|trans) },
+        { id: 'epicerie-fallback', name: ('CaviarTheme.nav.epicerie'|trans) },
+        { id: 'cadeaux-fallback', name: ('CaviarTheme.nav.cadeaux'|trans) },
+        { id: 'accessoires-fallback', name: ('CaviarTheme.nav.accessoires'|trans) },
+        { id: 'marque-fallback', name: ('CaviarTheme.nav.marque'|trans) },
+        { id: 'contact-fallback', name: ('CaviarTheme.nav.contact'|trans) }
+    ] %}
+
+    <div class="caviar-main-nav" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" data-caviar-mega-nav>
+        <div class="caviar-main-nav-row">
+            <div class="caviar-main-nav-icons" aria-label="{{ 'header.actionsAriaLabel'|trans|striptags }}">
+                <a href="#" class="caviar-nav-action" aria-label="{{ 'header.searchButton'|trans|striptags }}">
+                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-search.svg') }}" alt="">
+                </a>
+                <a href="{{ path('frontend.account.home.page') }}" class="caviar-nav-action" aria-label="{{ 'header.accountButton'|trans|striptags }}">
+                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-account.svg') }}" alt="">
+                </a>
+                <a href="{{ path('frontend.checkout.cart.page') }}" class="caviar-nav-action" aria-label="{{ 'header.cartButton'|trans|striptags }}">
+                    <img src="{{ asset('/bundles/caviartheme/storefront/assets/navbar/icon-cart.svg') }}" alt="">
+                </a>
+            </div>
+
+            <nav class="navbar navbar-expand-lg main-navigation-menu" id="main-navigation-menu" aria-label="{{ 'header.navigationAriaLabel'|trans|striptags }}">
+                <div class="collapse navbar-collapse" id="main_nav">
+                    <ul class="navbar-nav main-navigation-menu-list">
+                        {% for node in topNavigation %}
+                            {% set navCategory = hasDynamicNavigation ? node.category : null %}
+                            {% set navName = hasDynamicNavigation ? (navCategory.translated.name ?? navCategory.name) : node.name %}
+                            {% set panelId = 'caviar-nav-panel-' ~ (hasDynamicNavigation ? navCategory.id : node.id) %}
+                            {% set navUrl = hasDynamicNavigation and navCategory ? category_url(navCategory) : '#' %}
+                            <li class="nav-item">
+                                <a
+                                    href="{{ navUrl }}"
+                                    class="nav-link main-navigation-link p-2 caviar-nav-tab"
+                                    data-nav-tab
+                                    data-target-panel="{{ panelId }}"
+                                    aria-controls="{{ panelId }}"
+                                    aria-expanded="false"
+                                >
+                                    {{ navName }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </nav>
         </div>
 
-        <nav class="navbar navbar-expand-lg main-navigation-menu" id="main-navigation-menu" aria-label="{{ 'header.navigationAriaLabel'|trans|striptags }}">
-            <div class="collapse navbar-collapse" id="main_nav">
-                <ul class="navbar-nav main-navigation-menu-list">
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.caviars'|trans|sw_sanitize }}</a></li>
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.saumons'|trans|sw_sanitize }}</a></li>
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.epicerie'|trans|sw_sanitize }}</a></li>
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.cadeaux'|trans|sw_sanitize }}</a></li>
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.accessoires'|trans|sw_sanitize }}</a></li>
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.marque'|trans|sw_sanitize }}</a></li>
-                    <li class="nav-item"><a class="nav-link main-navigation-link p-2" href="#">{{ 'CaviarTheme.nav.contact'|trans|sw_sanitize }}</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="caviar-nav-panels">
+            {% for node in topNavigation %}
+                {% set navCategory = hasDynamicNavigation ? node.category : null %}
+                {% set navName = hasDynamicNavigation ? (navCategory.translated.name ?? navCategory.name) : node.name %}
+                {% set panelId = 'caviar-nav-panel-' ~ (hasDynamicNavigation ? navCategory.id : node.id) %}
+                {% set presetColumns = [] %}
+                {% set presetTeaserImage = null %}
+                {% set presetTeaserTitle = null %}
+
+                {% if loop.index == 1 %}
+                    {% set presetColumns = [
+                        { title: 'Par Sélection', links: ['Caviar House', 'Prunier'], more: 'Tous nos caviars >', moreLink: '/all-caviars' },
+                        { title: 'Par Espèces', links: ['Caviar Baeri', 'Caviar Beluga', 'Caviar Kaluga', 'Caviar Osciètre', 'Caviar Qiandao'], more: 'Tous nos caviars >', moreLink: '/all-caviars' },
+                        { title: 'Accompagner le caviar', groups: [
+                            { subtitle: 'Blinis', links: ['Grands Blinis (4pc)', 'Petits Blinis (16pc)'] },
+                            { subtitle: 'Accessoires', links: ['Cuillères en nacre', 'Ouvre boîte à caviar', 'Service à caviar', 'Service à vodka'] }
+                        ], more: 'Tous nos caviars >', moreLink: '/all-caviars' }
+                    ] %}
+                    {% set presetTeaserImage = asset('bundles/caviartheme/assets/img/header1.png') %}
+                    {% set presetTeaserTitle = 'Nos meilleurs ventes' %}
+                {% elseif loop.index == 2 %}
+                    {% set presetColumns = [
+                        { title: 'Par Sélection', links: ['Balik', 'Caviar House', 'Prunier'] },
+                        { title: 'Par Format', links: ['Saumon en filet', 'Saumons en tranches', 'Saumons entiers'], more: 'Tous nos saumons >', moreLink: '/all-salmons' },
+                        { title: 'Accompagner le saumon', groups: [
+                            { subtitle: 'Blinis', links: ['Grands Blinis (4pc)', 'Petits Blinis (16pc)'] },
+                            { subtitle: 'Moutarde et crèmes', links: ['Crème fraîche', 'Crème aux herbes (smetana)', 'Moutarde pour saumon Balik'] }
+                        ] }
+                    ] %}
+                    {% set presetTeaserImage = asset('bundles/caviartheme/assets/img/header2.png') %}
+                {% elseif loop.index == 3 %}
+                    {% set presetColumns = [
+                        { title: 'Blinis', links: ['Grands Blinis (4pc)', 'Petits Blinis (16pc)'] },
+                        { title: 'Produits de la mer', links: ['Tartinables', 'Sardines', 'Saumons entiers', 'Soupes & Bisques', 'Oeufs de poisson', 'Pinces de crabe'] },
+                        { title: 'Moutarde et crèmes', links: ['Crème fraîche', 'Crème aux herbes (smetana)', 'Moutarde pour saumon Balik'], groups: [
+                            { subtitle: 'Foies gras', links: ['Foies gras entiers', 'Foies gras tranchés'] }
+                        ], more: 'Toute l’épicerie >' },
+                        { title: 'La Cave', links: ['Vodka', 'Champagnes', 'Vins'], more: 'Toute la cave >' }
+                    ] %}
+                {% elseif loop.index == 4 %}
+                    {% set presetColumns = [
+                        { title: 'Nos coffrets 100% caviar', links: [] },
+                        { title: 'Nos paniers garnis', links: [] }
+                    ] %}
+                {% elseif loop.index == 5 %}
+                    {% set presetColumns = [
+                        { title: 'Accessoires', links: ['Cuillères en nacre', 'Petits Blinis (16pc)', 'Service à caviar', 'Service à vodka'], more: 'Tous nos accessoires >' }
+                    ] %}
+                    {% set presetTeaserImage = asset('bundles/caviartheme/assets/img/header3.png') %}
+                {% elseif loop.index == 6 %}
+                    {% set presetColumns = [
+                        { title: 'La marque', links: [] },
+                        { title: 'Nos Marques partenaires', links: ['Prunier', 'Balik'] },
+                        { title: 'Où nous trouver', links: [] },
+                        { title: 'Blog', links: [] }
+                    ] %}
+                {% elseif loop.index == 7 %}
+                    {% set presetColumns = [
+                        { title: 'Service Client', links: [] },
+                        { title: 'Contact Entreprise', links: [] }
+                    ] %}
+                {% endif %}
+
+                <section id="{{ panelId }}" class="caviar-nav-panel" data-nav-panel aria-label="{{ navName }}">
+                    <div class="caviar-nav-panel__inner">
+                        <div class="caviar-nav-panel__columns">
+                            {% for column in presetColumns %}
+                                <div class="caviar-nav-panel__column">
+                                    <a href="#" class="caviar-nav-panel__heading">{{ column.title }}</a>
+                                    {% if column.links is defined and column.links|length > 0 %}
+                                        <ul class="caviar-nav-panel__links">
+                                            {% for item in column.links %}
+                                                <li><a href="#">{{ item }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+
+                                    {% if column.groups is defined and column.groups|length > 0 %}
+                                        {% for group in column.groups %}
+                                            <div class="caviar-nav-panel__group">
+                                                <div class="caviar-nav-panel__subheading">{{ group.subtitle }}</div>
+                                                <ul class="caviar-nav-panel__links">
+                                                    {% for item in group.links %}
+                                                        <li><a href="#">{{ item }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+
+                                    {% if column.more is defined and column.more %}
+                                        <a href="{{ column.moreLink|default('#') }}" class="caviar-nav-panel__more">{{ column.more }}</a>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if presetTeaserImage %}
+                            <div class="caviar-nav-panel__teaser">
+                                <img src="{{ presetTeaserImage }}" alt="{{ navName }}" loading="lazy">
+                                {% if presetTeaserTitle %}
+                                    <p class="caviar-nav-panel__teaser-title">{{ presetTeaserTitle }}</p>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endfor %}
+        </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var navRoot = document.querySelector('[data-caviar-mega-nav]');
+        if (!navRoot) return;
+
+        var tabs = Array.prototype.slice.call(navRoot.querySelectorAll('[data-nav-tab]'));
+        var panels = Array.prototype.slice.call(navRoot.querySelectorAll('[data-nav-panel]'));
+        var closeTimer = null;
+
+        if (!tabs.length || !panels.length) return;
+
+        var setActive = function (targetId) {
+          tabs.forEach(function (tab) {
+            var active = tab.getAttribute('data-target-panel') === targetId;
+            tab.classList.toggle('is-active', active);
+            tab.setAttribute('aria-expanded', active ? 'true' : 'false');
+          });
+
+          panels.forEach(function (panel) {
+            panel.classList.toggle('is-active', panel.id === targetId);
+          });
+
+          navRoot.classList.toggle('is-open', !!targetId);
+        };
+
+        var clearCloseTimer = function () {
+          if (closeTimer) {
+            clearTimeout(closeTimer);
+            closeTimer = null;
+          }
+        };
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('mouseenter', function () {
+            clearCloseTimer();
+            setActive(tab.getAttribute('data-target-panel'));
+          });
+
+          tab.addEventListener('focus', function () {
+            setActive(tab.getAttribute('data-target-panel'));
+          });
+        });
+
+        navRoot.addEventListener('mouseleave', function () {
+          clearCloseTimer();
+          closeTimer = setTimeout(function () { setActive(null); }, 120);
+        });
+
+        navRoot.addEventListener('mouseenter', function () {
+          clearCloseTimer();
+        });
+      });
+    </script>
 {% endblock %}

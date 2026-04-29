@@ -1,0 +1,642 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_main_inner %}
+    {% set isSalmonPage = isSalmonPage|default(false) %}
+    {% set pageHeading = isSalmonPage ? 'CaviarTheme.salmons.page.title'|trans|sw_sanitize : 'CaviarTheme.caviars.page.title'|trans|sw_sanitize %}
+    {% set pageDescription = isSalmonPage ? 'CaviarTheme.salmons.page.description'|trans|sw_sanitize : 'CaviarTheme.caviars.page.description'|trans|sw_sanitize %}
+    {% set breadcrumbLabel = isSalmonPage ? 'CaviarTheme.salmons.breadcrumb'|trans|sw_sanitize : 'CaviarTheme.caviars.breadcrumb'|trans|sw_sanitize %}
+    {% set heroImage = isSalmonPage ? 'bundles/caviartheme/assets/img/saumon.png' : 'bundles/caviartheme/assets/img/allcaviar.png' %}
+    {% set heroImageAlt = isSalmonPage ? 'CaviarTheme.salmons.page.title'|trans|sw_sanitize : 'CaviarTheme.caviars.page.title'|trans|sw_sanitize %}
+    {% set finderTitle = isSalmonPage ? 'CaviarTheme.salmons.finder.title'|trans|sw_sanitize : 'CaviarTheme.caviars.finder.title'|trans|sw_sanitize %}
+    {% set listingTitle = isSalmonPage ? 'CaviarTheme.salmons.listing.bestsellers'|trans|sw_sanitize : 'CaviarTheme.caviars.listing.bestsellers'|trans|sw_sanitize %}
+    {% set speciesOneTitle = isSalmonPage ? 'CaviarTheme.salmons.species.one'|trans|sw_sanitize : 'CaviarTheme.caviars.species.one'|trans|sw_sanitize %}
+    {% set speciesTwoTitle = isSalmonPage ? 'CaviarTheme.salmons.species.two'|trans|sw_sanitize : 'CaviarTheme.caviars.species.two'|trans|sw_sanitize %}
+    {% set guideTitle = isSalmonPage ? 'CaviarTheme.salmons.guide.title'|trans|sw_sanitize : 'CaviarTheme.caviars.guide.title'|trans|sw_sanitize %}
+    {% set guideCta = isSalmonPage ? 'CaviarTheme.salmons.guide.cta'|trans|sw_sanitize : 'CaviarTheme.caviars.guide.cta'|trans|sw_sanitize %}
+    {% set brandsTitle = isSalmonPage ? 'CaviarTheme.salmons.brands.title'|trans|sw_sanitize : 'CaviarTheme.caviars.brands.title'|trans|sw_sanitize %}
+    {% set tastingTitle = isSalmonPage ? 'CaviarTheme.salmons.tasting.title'|trans|sw_sanitize : 'CaviarTheme.caviars.tasting.title'|trans|sw_sanitize %}
+    {% set faqTitle = isSalmonPage ? 'CaviarTheme.salmons.faq.title'|trans|sw_sanitize : 'CaviarTheme.caviars.faq.title'|trans|sw_sanitize %}
+    {% set readMoreText = isSalmonPage ? 'CaviarTheme.salmons.common.readMore'|trans|sw_sanitize : 'CaviarTheme.caviars.common.readMore'|trans|sw_sanitize %}
+
+    <div class="container-main">
+        <div class="content-main">
+            <section class="caviar-all-caviars-page" aria-label="All caviars">
+                <div class="caviar-all-caviars-page__container">
+                    <nav class="caviar-all-caviars-page__breadcrumb" aria-label="breadcrumb">
+                        <a href="{{ path('frontend.home.page') }}">Accueil</a>
+                        <span>/</span>
+                        <span>{{ breadcrumbLabel }}</span>
+                    </nav>
+
+                    <div class="caviar-all-caviars-page__hero">
+                        <div class="caviar-all-caviars-page__copy">
+                            <h1 class="caviar-all-caviars-page__title">{{ pageHeading }}</h1>
+                            <p class="caviar-all-caviars-page__text">
+                                {{ pageDescription|nl2br }}
+                            </p>
+                            <a href="#" class="caviar-all-caviars-page__read-more">{{ readMoreText }}</a>
+                        </div>
+
+                        <div class="caviar-all-caviars-page__media">
+                            <img
+                                src="{{ asset(heroImage) }}"
+                                alt="{{ heroImageAlt }}"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="caviar-all-caviars-page__highlights">
+                        <div class="caviar-all-caviars-page__highlight">
+                            <span class="caviar-all-caviars-page__highlight-icon" aria-hidden="true">✻</span>
+                            <span>Livraison réfrigérée, offerte dès XX€/£/CHF</span>
+                        </div>
+                        <div class="caviar-all-caviars-page__highlight">
+                            <span class="caviar-all-caviars-page__highlight-icon" aria-hidden="true">◍</span>
+                            <span>Notre service client à votre écoute</span>
+                        </div>
+                        <div class="caviar-all-caviars-page__highlight">
+                            <span class="caviar-all-caviars-page__highlight-icon" aria-hidden="true">✉</span>
+                            <span>Paiement sécurisé (CB, Paypal, Alma)</span>
+                        </div>
+                    </div>
+
+                    <section class="caviar-all-caviars-products" aria-label="Trouver le caviar">
+                        <h2 class="caviar-all-caviars-products__title">{{ finderTitle }}</h2>
+
+                        <div class="caviar-all-caviars-products__chips" aria-hidden="true">
+                            {% if isSalmonPage %}
+                                <button type="button" class="caviar-all-caviars-products__chip">{{ 'CaviarTheme.salmons.finder.chip.balik'|trans|sw_sanitize }}</button>
+                                <button type="button" class="caviar-all-caviars-products__chip">{{ 'CaviarTheme.salmons.finder.chip.caviarHouse'|trans|sw_sanitize }}</button>
+                                <button type="button" class="caviar-all-caviars-products__chip is-active">{{ 'CaviarTheme.salmons.finder.chip.bestsellers'|trans|sw_sanitize }}</button>
+                            {% else %}
+                                <button type="button" class="caviar-all-caviars-products__chip">{{ 'CaviarTheme.caviars.finder.chip.classics'|trans|sw_sanitize }}</button>
+                                <button type="button" class="caviar-all-caviars-products__chip">{{ 'CaviarTheme.caviars.finder.chip.premium'|trans|sw_sanitize }}</button>
+                                <button type="button" class="caviar-all-caviars-products__chip">{{ 'CaviarTheme.caviars.finder.chip.prestige'|trans|sw_sanitize }}</button>
+                                <button type="button" class="caviar-all-caviars-products__chip is-active">{{ listingTitle }}</button>
+                            {% endif %}
+                        </div>
+
+                        <div class="caviar-all-caviars-products__filters">
+                            <div class="caviar-all-caviars-products__filter-item" data-filter-item>
+                                <button
+                                    type="button"
+                                    class="caviar-all-caviars-products__filter"
+                                    data-filter-trigger
+                                    data-filter-key="brand"
+                                    aria-expanded="false"
+                                    aria-controls="all-caviars-filter-brand"
+                                >
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.filters.brand' : 'CaviarTheme.caviars.filters.brand')|trans|sw_sanitize }}</span>
+                                    <span class="caviar-all-caviars-products__filter-chevron" aria-hidden="true"></span>
+                                </button>
+                                <div class="caviar-all-caviars-products__filter-panel" id="all-caviars-filter-brand" hidden>
+                                    <ul class="caviar-all-caviars-products__filter-options" data-filter-options="brand">
+                                        <li>Options dynamiques depuis l'administration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="caviar-all-caviars-products__filter-item" data-filter-item>
+                                <button
+                                    type="button"
+                                    class="caviar-all-caviars-products__filter"
+                                    data-filter-trigger
+                                    data-filter-key="weight"
+                                    aria-expanded="false"
+                                    aria-controls="all-caviars-filter-weight"
+                                >
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.filters.weight' : 'CaviarTheme.caviars.filters.weight')|trans|sw_sanitize }}</span>
+                                    <span class="caviar-all-caviars-products__filter-chevron" aria-hidden="true"></span>
+                                </button>
+                                <div class="caviar-all-caviars-products__filter-panel" id="all-caviars-filter-weight" hidden>
+                                    <ul class="caviar-all-caviars-products__filter-options" data-filter-options="weight">
+                                        <li>Options dynamiques depuis l'administration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="caviar-all-caviars-products__filter-item" data-filter-item>
+                                <button
+                                    type="button"
+                                    class="caviar-all-caviars-products__filter"
+                                    data-filter-trigger
+                                    data-filter-key="intensity"
+                                    aria-expanded="false"
+                                    aria-controls="all-caviars-filter-intensity"
+                                >
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.filters.intensity' : 'CaviarTheme.caviars.filters.intensity')|trans|sw_sanitize }}</span>
+                                    <span class="caviar-all-caviars-products__filter-chevron" aria-hidden="true"></span>
+                                </button>
+                                <div class="caviar-all-caviars-products__filter-panel" id="all-caviars-filter-intensity" hidden>
+                                    <ul class="caviar-all-caviars-products__filter-options" data-filter-options="intensity">
+                                        <li>Options dynamiques depuis l'administration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="caviar-all-caviars-products__count">
+                                {% if isSalmonPage %}
+                                    {{ 'CaviarTheme.salmons.listing.count'|trans|sw_sanitize }}
+                                {% else %}
+                                    {{ caviarProducts|length }} {{ 'CaviarTheme.listing.artikel'|trans|sw_sanitize }}
+                                {% endif %}
+                            </span>
+                        </div>
+
+                        <div class="caviar-all-caviars-products__head">
+                            <h3 class="caviar-all-caviars-products__subtitle">{{ listingTitle }}</h3>
+                            <div class="caviar-all-caviars-products__arrows">
+                                <button type="button" data-all-caviars-prev aria-label="Précédent">&lsaquo;</button>
+                                <button type="button" data-all-caviars-next aria-label="Suivant">&rsaquo;</button>
+                            </div>
+                        </div>
+
+                        <div class="caviar-all-caviars-products__slider" data-all-caviars-slider>
+                            {% if caviarProducts|length > 0 %}
+                                {% for product in caviarProducts %}
+                                    {% set productName = product.translated.name ?? ('CaviarTheme.home.featured.cardName'|trans|sw_sanitize) %}
+                                    {% set productDescription = product.translated.description ?? '' %}
+                                    {% set productDescriptionText = productDescription|striptags|trim %}
+                                    {% set productImage = asset('/bundles/caviartheme/assets/img/caviar_pro.png') %}
+                                    {% set salmonNameByIndex = null %}
+                                    {% if isSalmonPage %}
+                                        {% set salmonNameByIndex = {
+                                            1: 'CaviarTheme.salmons.cards.top1',
+                                            2: 'CaviarTheme.salmons.cards.top2',
+                                            3: 'CaviarTheme.salmons.cards.top3',
+                                            4: 'CaviarTheme.salmons.cards.top4'
+                                        }[loop.index]|default(null) %}
+                                    {% endif %}
+                                    {% if salmonNameByIndex %}
+                                        {% set productName = salmonNameByIndex|trans|sw_sanitize %}
+                                    {% endif %}
+                                    {% if product.cover and product.cover.media and product.cover.media.url %}
+                                        {% set productImage = product.cover.media.url %}
+                                    {% endif %}
+                                    <article class="caviar-home-featured-card caviar-all-caviars-products__card">
+                                        <div class="caviar-home-featured-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                                        <span class="caviar-home-featured-card__heart" aria-hidden="true">&#9825;</span>
+                                        <a href="{{ seoUrl('frontend.detail.page', { productId: product.id }) }}" class="caviar-home-featured-card__media-link">
+                                            <img src="{{ productImage }}" class="caviar-home-featured-card__media" alt="{{ productName }}" loading="lazy">
+                                        </a>
+                                        <div class="caviar-home-featured-card__body">
+                                            <h3 class="caviar-home-featured-card__name">{{ productName }}</h3>
+                                            <p class="caviar-home-featured-card__desc">
+                                                {% if productDescriptionText %}
+                                                    {{ productDescriptionText|slice(0, 42) }}{% if productDescriptionText|length > 42 %}…{% endif %}
+                                                {% else %}
+                                                    {{ (isSalmonPage ? 'CaviarTheme.salmons.card.fallbackDesc' : 'CaviarTheme.caviars.card.fallbackDesc')|trans|sw_sanitize }}
+                                                {% endif %}
+                                            </p>
+                                            <p class="caviar-home-featured-card__meta">
+                                                {% if isSalmonPage %}
+                                                    • {{ 'CaviarTheme.salmons.cards.brand'|trans|sw_sanitize }} •
+                                                {% elseif product.manufacturer and product.manufacturer.translated and product.manufacturer.translated.name %}
+                                                    • {{ product.manufacturer.translated.name|upper }} •
+                                                {% else %}
+                                                    {{ 'CaviarTheme.home.featured.cardMeta'|trans|sw_sanitize }}
+                                                {% endif %}
+                                            </p>
+                                            <div class="caviar-home-featured-card__price-row">
+                                                <div class="caviar-home-featured-card__price-row-inner">
+                                                    <span class="caviar-home-featured-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                                    <span class="caviar-home-featured-card__price-value">
+                                                        {% if product.calculatedPrice is defined and product.calculatedPrice %}
+                                                            {{ product.calculatedPrice.unitPrice|currency }}
+                                                        {% else %}
+                                                            {{ 'CaviarTheme.home.featured.cardPrice'|trans|sw_sanitize }}
+                                                        {% endif %}
+                                                    </span>
+                                                </div>
+                                                <button class="caviar-home-featured-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+
+                        <div class="caviar-all-caviars-products__dots" aria-hidden="true">
+                            <span class="is-active"></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </section>
+
+                    <section class="caviar-all-caviars-species" aria-label="Espèce 1">
+                        <h3 class="caviar-all-caviars-species__title">{{ speciesOneTitle }}</h3>
+                        <div class="caviar-all-caviars-species__grid">
+                            {% set speciesProducts = caviarProducts|slice(0, 8) %}
+                            {% for product in speciesProducts %}
+                                {% set productName = product.translated.name ?? 'Nom du produit' %}
+                                {% if isSalmonPage %}
+                                    {% set productName = (loop.index == 1 ? 'CaviarTheme.salmons.species.primaryName' : 'CaviarTheme.salmons.species.secondaryName')|trans|sw_sanitize %}
+                                {% endif %}
+                                {% set productDescription = product.translated.description ?? '' %}
+                                {% set productDescriptionText = productDescription|striptags|trim %}
+                                {% set manufacturerName = 'PRUNIER' %}
+                                {% if product.manufacturer and product.manufacturer.translated and product.manufacturer.translated.name %}
+                                    {% set manufacturerName = product.manufacturer.translated.name|upper %}
+                                {% endif %}
+                                <article class="caviar-all-caviars-species-card">
+                                    <div class="caviar-all-caviars-species-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                                    <span class="caviar-all-caviars-species-card__heart" aria-hidden="true">&#9825;</span>
+                                    <a href="{{ seoUrl('frontend.detail.page', { productId: product.id }) }}" class="caviar-all-caviars-species-card__media-link">
+                                        {% if product.cover and product.cover.media and product.cover.media.url %}
+                                            <img src="{{ product.cover.media.url }}" class="caviar-all-caviars-species-card__media" alt="{{ productName }}" loading="lazy">
+                                        {% else %}
+                                            <span class="caviar-all-caviars-species-card__placeholder" aria-hidden="true"></span>
+                                        {% endif %}
+                                    </a>
+                                    <div class="caviar-all-caviars-species-card__body">
+                                        <h4 class="caviar-all-caviars-species-card__name">{{ productName }}</h4>
+                                        <p class="caviar-all-caviars-species-card__desc">
+                                            {% if productDescriptionText %}
+                                                {{ productDescriptionText|slice(0, 42) }}{% if productDescriptionText|length > 42 %}…{% endif %}
+                                            {% else %}
+                                                {{ (isSalmonPage ? 'CaviarTheme.salmons.card.fallbackDesc' : 'CaviarTheme.caviars.card.fallbackDesc')|trans|sw_sanitize }}
+                                            {% endif %}
+                                        </p>
+                                        <p class="caviar-all-caviars-species-card__meta">• {{ manufacturerName }} •</p>
+                                        <div class="caviar-all-caviars-species-card__price-row">
+                                            <div class="caviar-all-caviars-species-card__price-row-inner">
+                                                <span class="caviar-all-caviars-species-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                                <span class="caviar-all-caviars-species-card__price-value">
+                                                    {% if product.calculatedPrice is defined and product.calculatedPrice %}
+                                                        {{ product.calculatedPrice.unitPrice|currency }}
+                                                    {% else %}
+                                                        89 €
+                                                    {% endif %}
+                                                </span>
+                                            </div>
+                                            <button class="caviar-all-caviars-species-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            {% endfor %}
+
+                            {% set speciesProductsMissing = 8 - (speciesProducts|length) %}
+                            {% if speciesProductsMissing > 0 %}
+                                {% for i in 1..speciesProductsMissing %}
+                                    <article class="caviar-all-caviars-species-card">
+                                        <div class="caviar-all-caviars-species-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                                        <span class="caviar-all-caviars-species-card__heart" aria-hidden="true">&#9825;</span>
+                                        <span class="caviar-all-caviars-species-card__media-link">
+                                            <span class="caviar-all-caviars-species-card__placeholder" aria-hidden="true"></span>
+                                        </span>
+                                        <div class="caviar-all-caviars-species-card__body">
+                                            <h4 class="caviar-all-caviars-species-card__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.card.fallbackName' : 'CaviarTheme.caviars.card.fallbackName')|trans|sw_sanitize }}</h4>
+                                            <p class="caviar-all-caviars-species-card__desc">{{ (isSalmonPage ? 'CaviarTheme.salmons.card.fallbackDesc' : 'CaviarTheme.caviars.card.fallbackDesc')|trans|sw_sanitize }}</p>
+                                            <p class="caviar-all-caviars-species-card__meta">• PRUNIER •</p>
+                                            <div class="caviar-all-caviars-species-card__price-row">
+                                                <div class="caviar-all-caviars-species-card__price-row-inner">
+                                                    <span class="caviar-all-caviars-species-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                                    <span class="caviar-all-caviars-species-card__price-value">89 €</span>
+                                                </div>
+                                                <button class="caviar-all-caviars-species-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </section>
+
+                    <section class="caviar-all-caviars-species caviar-all-caviars-species--secondary" aria-label="Espèce 2">
+                        <h3 class="caviar-all-caviars-species__title">{{ speciesTwoTitle }}</h3>
+                        <div class="caviar-all-caviars-species__grid">
+                            {% set speciesProductsSecondary = caviarProducts|slice(8, 8) %}
+                            {% if speciesProductsSecondary|length == 0 %}
+                                {% set speciesProductsSecondary = caviarProducts|slice(0, 8) %}
+                            {% endif %}
+
+                            {% for product in speciesProductsSecondary %}
+                                {% set productName = product.translated.name ?? 'Nom du produit' %}
+                                {% if isSalmonPage %}
+                                    {% set salmonSecondaryNameByIndex = {
+                                        1: 'CaviarTheme.salmons.species.secondaryTop1',
+                                        2: 'CaviarTheme.salmons.species.secondaryTop2',
+                                        3: 'CaviarTheme.salmons.species.secondaryTop3'
+                                    }[loop.index]|default('CaviarTheme.salmons.species.secondaryFallbackName') %}
+                                    {% set productName = salmonSecondaryNameByIndex|trans|sw_sanitize %}
+                                {% endif %}
+                                {% set productDescription = product.translated.description ?? '' %}
+                                {% set productDescriptionText = productDescription|striptags|trim %}
+                                {% set manufacturerName = 'PRUNIER' %}
+                                {% if product.manufacturer and product.manufacturer.translated and product.manufacturer.translated.name %}
+                                    {% set manufacturerName = product.manufacturer.translated.name|upper %}
+                                {% endif %}
+                                <article class="caviar-all-caviars-species-card">
+                                    <div class="caviar-all-caviars-species-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                                    <span class="caviar-all-caviars-species-card__heart" aria-hidden="true">&#9825;</span>
+                                    <a href="{{ seoUrl('frontend.detail.page', { productId: product.id }) }}" class="caviar-all-caviars-species-card__media-link">
+                                        {% if product.cover and product.cover.media and product.cover.media.url %}
+                                            <img src="{{ product.cover.media.url }}" class="caviar-all-caviars-species-card__media" alt="{{ productName }}" loading="lazy">
+                                        {% else %}
+                                            <span class="caviar-all-caviars-species-card__placeholder" aria-hidden="true"></span>
+                                        {% endif %}
+                                    </a>
+                                    <div class="caviar-all-caviars-species-card__body">
+                                        <h4 class="caviar-all-caviars-species-card__name">{{ productName }}</h4>
+                                        <p class="caviar-all-caviars-species-card__desc">
+                                            {% if productDescriptionText %}
+                                                {{ productDescriptionText|slice(0, 42) }}{% if productDescriptionText|length > 42 %}…{% endif %}
+                                            {% else %}
+                                                {{ (isSalmonPage ? 'CaviarTheme.salmons.card.fallbackDesc' : 'CaviarTheme.caviars.card.fallbackDesc')|trans|sw_sanitize }}
+                                            {% endif %}
+                                        </p>
+                                        <p class="caviar-all-caviars-species-card__meta">• {{ manufacturerName }} •</p>
+                                        <div class="caviar-all-caviars-species-card__price-row">
+                                            <div class="caviar-all-caviars-species-card__price-row-inner">
+                                                <span class="caviar-all-caviars-species-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                                <span class="caviar-all-caviars-species-card__price-value">
+                                                    {% if product.calculatedPrice is defined and product.calculatedPrice %}
+                                                        {{ product.calculatedPrice.unitPrice|currency }}
+                                                    {% else %}
+                                                        89 €
+                                                    {% endif %}
+                                                </span>
+                                            </div>
+                                            <button class="caviar-all-caviars-species-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            {% endfor %}
+
+                            {% set speciesProductsSecondaryMissing = 8 - (speciesProductsSecondary|length) %}
+                            {% if speciesProductsSecondaryMissing > 0 %}
+                                {% for i in 1..speciesProductsSecondaryMissing %}
+                                    <article class="caviar-all-caviars-species-card">
+                                        <div class="caviar-all-caviars-species-card__badge">{{ 'CaviarTheme.home.featured.badge'|trans|sw_sanitize }}</div>
+                                        <span class="caviar-all-caviars-species-card__heart" aria-hidden="true">&#9825;</span>
+                                        <span class="caviar-all-caviars-species-card__media-link">
+                                            <span class="caviar-all-caviars-species-card__placeholder" aria-hidden="true"></span>
+                                        </span>
+                                        <div class="caviar-all-caviars-species-card__body">
+                                            <h4 class="caviar-all-caviars-species-card__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.species.secondaryFallbackName' : 'CaviarTheme.caviars.card.fallbackName')|trans|sw_sanitize }}</h4>
+                                            <p class="caviar-all-caviars-species-card__desc">{{ (isSalmonPage ? 'CaviarTheme.salmons.card.fallbackDesc' : 'CaviarTheme.caviars.card.fallbackDesc')|trans|sw_sanitize }}</p>
+                                            <p class="caviar-all-caviars-species-card__meta">• PRUNIER •</p>
+                                            <div class="caviar-all-caviars-species-card__price-row">
+                                                <div class="caviar-all-caviars-species-card__price-row-inner">
+                                                    <span class="caviar-all-caviars-species-card__price-prefix">{{ 'CaviarTheme.home.featured.pricePrefix'|trans|sw_sanitize }}</span>
+                                                    <span class="caviar-all-caviars-species-card__price-value">89 €</span>
+                                                </div>
+                                                <button class="caviar-all-caviars-species-card__add" type="button" aria-label="{{ 'CaviarTheme.home.featured.addToCart'|trans|striptags }}">+</button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <a href="#" class="caviar-all-caviars-species__more">{{ (isSalmonPage ? 'CaviarTheme.salmons.species.more' : 'CaviarTheme.caviars.species.more')|trans|sw_sanitize }}</a>
+                    </section>
+
+                    <section class="caviar-all-caviars-guide" aria-label="Guide caviar">
+                        <div class="caviar-all-caviars-guide__media">
+                            <img
+                                src="{{ asset('/bundles/caviartheme/assets/img/caviar_pro.png') }}"
+                                alt="Guide caviar"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="caviar-all-caviars-guide__content">
+                            <p class="caviar-all-caviars-guide__eyebrow">- GUIDE -</p>
+                            <h3 class="caviar-all-caviars-guide__title">{{ guideTitle }}</h3>
+                            <a href="#" class="caviar-all-caviars-guide__cta">{{ guideCta }}</a>
+                        </div>
+                    </section>
+
+                    <section class="caviar-all-caviars-brands" aria-label="Toutes nos marques">
+                        <h3 class="caviar-all-caviars-brands__title">{{ brandsTitle }}</h3>
+                        <div class="caviar-all-caviars-brands__grid">
+                            <article class="caviar-all-caviars-brands__card">
+                                <img
+                                    src="{{ asset('bundles/caviartheme/assets/img/header1.png') }}"
+                                    alt="Caviar House"
+                                    loading="lazy"
+                                >
+                                <div class="caviar-all-caviars-brands__overlay">
+                                    <h4 class="caviar-all-caviars-brands__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.brands.left' : 'CaviarTheme.caviars.brands.left')|trans|sw_sanitize }}</h4>
+                                    <a href="#" class="caviar-all-caviars-brands__cta">{{ (isSalmonPage ? 'CaviarTheme.salmons.common.discover' : 'CaviarTheme.caviars.common.discover')|trans|sw_sanitize }}</a>
+                                </div>
+                            </article>
+                            <article class="caviar-all-caviars-brands__card">
+                                <img
+                                    src="{{ asset('bundles/caviartheme/assets/img/header2.png') }}"
+                                    alt="Prunier"
+                                    loading="lazy"
+                                >
+                                <div class="caviar-all-caviars-brands__overlay">
+                                    <h4 class="caviar-all-caviars-brands__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.brands.right' : 'CaviarTheme.caviars.brands.right')|trans|sw_sanitize }}</h4>
+                                    <a href="#" class="caviar-all-caviars-brands__cta">{{ (isSalmonPage ? 'CaviarTheme.salmons.common.discover' : 'CaviarTheme.caviars.common.discover')|trans|sw_sanitize }}</a>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="caviar-all-caviars-tasting" aria-label="Complétez votre dégustation">
+                        <h3 class="caviar-all-caviars-tasting__title">{{ tastingTitle }}</h3>
+                        <div class="caviar-all-caviars-tasting__grid">
+                            <article class="caviar-all-caviars-tasting__card">
+                                <img
+                                    src="{{ asset('bundles/caviartheme/assets/img/header2.png') }}"
+                                    alt="Accessoires"
+                                    loading="lazy"
+                                >
+                                <h4 class="caviar-all-caviars-tasting__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.tasting.card1.title' : 'CaviarTheme.caviars.tasting.card1.title')|trans|sw_sanitize }}</h4>
+                                <p class="caviar-all-caviars-tasting__text">{{ (isSalmonPage ? 'CaviarTheme.salmons.tasting.card1.text' : 'CaviarTheme.caviars.tasting.card1.text')|trans|sw_sanitize }}</p>
+                            </article>
+
+                            <article class="caviar-all-caviars-tasting__card">
+                                <img
+                                    src="{{ asset('bundles/caviartheme/assets/img/header3.png') }}"
+                                    alt="Coffrets"
+                                    loading="lazy"
+                                >
+                                <h4 class="caviar-all-caviars-tasting__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.tasting.card2.title' : 'CaviarTheme.caviars.tasting.card2.title')|trans|sw_sanitize }}</h4>
+                                <p class="caviar-all-caviars-tasting__text">{{ (isSalmonPage ? 'CaviarTheme.salmons.tasting.card2.text' : 'CaviarTheme.caviars.tasting.card2.text')|trans|sw_sanitize }}</p>
+                            </article>
+
+                            <article class="caviar-all-caviars-tasting__card">
+                                <img
+                                    src="{{ asset('bundles/caviartheme/assets/img/header1.png') }}"
+                                    alt="Saumons"
+                                    loading="lazy"
+                                >
+                                <h4 class="caviar-all-caviars-tasting__name">{{ (isSalmonPage ? 'CaviarTheme.salmons.tasting.card3.title' : 'CaviarTheme.caviars.tasting.card3.title')|trans|sw_sanitize }}</h4>
+                                <p class="caviar-all-caviars-tasting__text">{{ (isSalmonPage ? 'CaviarTheme.salmons.tasting.card3.text' : 'CaviarTheme.caviars.tasting.card3.text')|trans|sw_sanitize }}</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="caviar-all-caviars-faq" aria-label="FAQ">
+                        <h3 class="caviar-all-caviars-faq__title">{{ faqTitle }}</h3>
+
+                        <div class="caviar-all-caviars-faq__top">
+                            <div class="caviar-all-caviars-faq__media" aria-hidden="true">
+                                <span class="caviar-all-caviars-faq__placeholder"></span>
+                            </div>
+
+                            <div class="caviar-all-caviars-faq__questions">
+                                <button type="button" class="caviar-all-caviars-faq__question">
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.q1' : 'CaviarTheme.caviars.faq.q1')|trans|sw_sanitize }}</span>
+                                    <span aria-hidden="true">+</span>
+                                </button>
+                                <button type="button" class="caviar-all-caviars-faq__question">
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.q2' : 'CaviarTheme.caviars.faq.q2')|trans|sw_sanitize }}</span>
+                                    <span aria-hidden="true">+</span>
+                                </button>
+                                <button type="button" class="caviar-all-caviars-faq__question">
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.q3' : 'CaviarTheme.caviars.faq.q3')|trans|sw_sanitize }}</span>
+                                    <span aria-hidden="true">+</span>
+                                </button>
+                                <button type="button" class="caviar-all-caviars-faq__question">
+                                    <span>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.q4' : 'CaviarTheme.caviars.faq.q4')|trans|sw_sanitize }}</span>
+                                    <span aria-hidden="true">+</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="caviar-all-caviars-faq__content">
+                            <article class="caviar-all-caviars-faq__entry">
+                                <h4>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.entry1.title' : 'CaviarTheme.caviars.faq.entry1.title')|trans|sw_sanitize }}</h4>
+                                <p>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.entry1.text' : 'CaviarTheme.caviars.faq.entry1.text')|trans|sw_sanitize }}</p>
+                                <a href="#">{{ readMoreText }}</a>
+                            </article>
+
+                            <article class="caviar-all-caviars-faq__entry">
+                                <h4>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.entry2.title' : 'CaviarTheme.caviars.faq.entry2.title')|trans|sw_sanitize }}</h4>
+                                <p>{{ (isSalmonPage ? 'CaviarTheme.salmons.faq.entry2.text' : 'CaviarTheme.caviars.faq.entry2.text')|trans|sw_sanitize }}</p>
+                                <a href="#">{{ readMoreText }}</a>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="caviar-home-benefits caviar-all-caviars-benefits-only" aria-label="Services">
+                        <div class="caviar-home-benefits__container">
+                            <div class="caviar-home-benefits__items">
+                                <article class="caviar-home-benefit-item">
+                                    <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                        <img src="{{ asset('bundles/caviartheme/assets/img/boxlogo1.png') }}" alt="" loading="lazy">
+                                    </div>
+                                    <h3 class="caviar-home-benefit-item__title">Livraison offerte dès <span>350€</span> d'achat</h3>
+                                    <p class="caviar-home-benefit-item__text">Chaine du froid garantie, à la date de votre<br>choix</p>
+                                </article>
+
+                                <article class="caviar-home-benefit-item">
+                                    <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                        <img src="{{ asset('bundles/caviartheme/assets/img/Contact Icon.png') }}" alt="" loading="lazy">
+                                    </div>
+                                    <h3 class="caviar-home-benefit-item__title">Conseils d’experts</h3>
+                                    <p class="caviar-home-benefit-item__text">Notre équipe répond à toutes vos<br>questions</p>
+                                </article>
+
+                                <article class="caviar-home-benefit-item">
+                                    <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                        <img src="{{ asset('bundles/caviartheme/assets/img/fishl-logo.png') }}" alt="" loading="lazy">
+                                    </div>
+                                    <h3 class="caviar-home-benefit-item__title">L’art d’offrir</h3>
+                                    <p class="caviar-home-benefit-item__text">Choisissez votre coffret et votre<br>message personnalisé</p>
+                                </article>
+
+                                <article class="caviar-home-benefit-item">
+                                    <div class="caviar-home-benefit-item__icon" aria-hidden="true">
+                                        <img src="{{ asset('bundles/caviartheme/assets/img/payment-logo.png') }}" alt="" loading="lazy">
+                                    </div>
+                                    <h3 class="caviar-home-benefit-item__title">Paiements sécurisés</h3>
+                                    <p class="caviar-home-benefit-item__text">et paiement en plusieurs fois avec<br>Alma</p>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var slider = document.querySelector('[data-all-caviars-slider]');
+        if (!slider) return;
+        var prev = document.querySelector('[data-all-caviars-prev]');
+        var next = document.querySelector('[data-all-caviars-next]');
+        var card = slider.querySelector('.caviar-all-caviars-products__card');
+        if (!card) return;
+
+        var step = function () {
+          var gap = parseFloat(window.getComputedStyle(slider).gap || '0');
+          return card.getBoundingClientRect().width + gap;
+        };
+
+        if (prev) {
+          prev.addEventListener('click', function () {
+            slider.scrollBy({ left: -step(), behavior: 'smooth' });
+          });
+        }
+
+        if (next) {
+          next.addEventListener('click', function () {
+            slider.scrollBy({ left: step(), behavior: 'smooth' });
+          });
+        }
+
+        var bindCardNavigation = function (selector) {
+          var cards = document.querySelectorAll(selector);
+          cards.forEach(function (card) {
+            var link = card.querySelector('a.caviar-home-featured-card__media-link, a.caviar-all-caviars-species-card__media-link');
+            if (!link || !link.href) return;
+
+            card.style.cursor = 'pointer';
+
+            card.addEventListener('click', function (event) {
+              if (event.target.closest('a, button, input, select, textarea, label')) return;
+              window.location.href = link.href;
+            });
+
+            card.addEventListener('keydown', function (event) {
+              if (event.key !== 'Enter' && event.key !== ' ') return;
+              if (event.target.closest('a, button, input, select, textarea, label')) return;
+              event.preventDefault();
+              window.location.href = link.href;
+            });
+
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'link');
+            card.setAttribute('aria-label', link.getAttribute('aria-label') || 'Voir le produit');
+          });
+        };
+
+        bindCardNavigation('.caviar-all-caviars-products__card');
+        bindCardNavigation('.caviar-all-caviars-species-card');
+
+        var filterItems = document.querySelectorAll('[data-filter-item]');
+        if (!filterItems.length) return;
+
+        var closeAllFilters = function (except) {
+          filterItems.forEach(function (item) {
+            if (except && item === except) return;
+            var button = item.querySelector('[data-filter-trigger]');
+            var panel = item.querySelector('.caviar-all-caviars-products__filter-panel');
+            if (!button || !panel) return;
+            button.setAttribute('aria-expanded', 'false');
+            panel.hidden = true;
+          });
+        };
+
+        filterItems.forEach(function (item) {
+          var button = item.querySelector('[data-filter-trigger]');
+          var panel = item.querySelector('.caviar-all-caviars-products__filter-panel');
+          if (!button || !panel) return;
+
+          button.addEventListener('click', function (event) {
+            event.stopPropagation();
+            var expanded = button.getAttribute('aria-expanded') === 'true';
+            closeAllFilters(item);
+            button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            panel.hidden = expanded;
+          });
+        });
+
+        document.addEventListener('click', function () {
+          closeAllFilters();
+        });
+      });
+    </script>
+{% endblock %}
+
